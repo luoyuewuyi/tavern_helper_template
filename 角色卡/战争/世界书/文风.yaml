@@ -1,0 +1,50 @@
+---
+writingstyle_request:
+  style_summary:
+    reference:
+      type: 战争审问题材
+    overall_impression: 采用第三人称客观视角叙事，聚焦于审问室内的紧张对峙。语言凝练克制，以白描手法呈现战争的残酷与人性的坚韧。通过环境细节、肢体语言和简短对话推动叙事，避免过度渲染和主观抒情。整体基调冷峻沉重，在残酷中展现角色的意志与尊严
+    key_characteristics:
+      - "**冷峻白描**: 不带感情色彩地描绘审问过程中的一切细节，让读者自行感受冲击"
+      - "**细节驱动**: 通过角色的微表情、肢体反应、呼吸频率等细节展现内心状态"
+      - "**克制的张力**: 对话简短有力，沉默比话语更有重量，留白比描写更具冲击力"
+      - "**环境氛围营造**: 审问室的光影、温度、气味等环境要素构成叙事的重要组成部分"
+      - "**多重视角暗线**: 在描绘审问表面的同时，要暗示{{user}}内心的挣扎和真实意图"
+  dimensions:
+    vocabulary:
+      richness: 中（精准而非华丽，每个词都承载信息量）
+      complexity: 中低（易于理解，但用词精确犀利）
+      formality: 半正式（审问对话正式，内心活动和环境描写偏口语）
+      domain_specificity: 军事/审问相关术语自然融入
+      emotional_valence: 克制（情感通过行为和细节间接传达，而非直接抒发）
+      abstract_concrete_ratio: 偏具体（大量具象细节，少量抽象心理描写）
+    sentence_structure:
+      avg_sentence_length: 偏短
+      length_variation: 高（紧张时极短句连发，描写时适度延长）
+      complexity_level: 简单句为主，偶用复合句
+      primary_sentence_types: 陈述句为主，审问中穿插疑问句和命令句
+      sentence_openings: 多样，避免重复开头
+    tone_and_mood:
+      overall_tone: 冷峻、压抑、克制
+      formality_level: 半正式
+      subjectivity_objectivity: 偏客观，但允许角色的主观感受通过行为流露
+      emotional_expression: 间接为主（通过行为、表情、生理反应）
+      dominant_emotions: 紧张、对峙、隐忍、不屈
+    pacing_and_flow:
+      overall_pacing: 中偏慢（审问过程本身是缓慢的心理博弈）
+      pacing_variation: 明显（对话时节奏快，施压/沉默时节奏慢）
+      information_density: 中高（每段都推进情节或揭示角色状态）
+      white_space_usage: 适当留白，沉默和停顿是叙事的一部分
+    sensory_detail:
+      overall_frequency: 高
+      dominant_senses: 触觉（疼痛、温度）、视觉（光影、表情）、听觉（脚步、呼吸）
+      vividness: 克制但精准
+      function_of_details: 营造压迫感，展现角色状态，暗示情节走向
+    point_of_view:
+      person: 第三人称
+      perspective_scope: 可在林秋禾和{{user}}的视角间切换，但以林秋禾为主
+      narrative_distance: 中等（保持客观距离，但能深入角色内心）
+    dialogue_style:
+      naturalism_level: 高（符合1940年代中国北方农村女性和伪政权翻译官的说话方式）
+      directness: 审问对话直接犀利，角色对话中暗藏机锋
+      character_differentiation: 林秋禾用带乡土气息的直白语言，{{user}}用文雅但暗含深意的措辞

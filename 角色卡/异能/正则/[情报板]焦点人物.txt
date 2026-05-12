@@ -1,0 +1,27 @@
+```
+<head>
+<style>
+body{margin:0;background:transparent}
+.wrap{margin:10px 0;font-family:'Noto Sans SC','Microsoft YaHei UI',sans-serif;color:#fff8ea}
+.shell{border-radius:18px;overflow:hidden;background:linear-gradient(160deg,rgba(23,21,39,.96),rgba(16,35,56,.94));border:1px solid rgba(255,214,122,.18);box-shadow:0 16px 36px rgba(13,11,24,.24)}
+.toggle{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 15px;cursor:pointer;list-style:none;background:linear-gradient(135deg,rgba(255,216,111,.14),rgba(255,255,255,.03))}
+.toggle::-webkit-details-marker{display:none}
+.title{font-size:15px;font-weight:700;letter-spacing:.08em;color:#ffd86f}
+.meta{font-size:12px;color:#d0bc94}
+.mark{font-size:11px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.08);color:#fff1ca}
+.body{padding:14px 16px 16px;border-top:1px solid rgba(255,255,255,.08);white-space:pre-wrap;line-height:1.68;font-size:13px;color:#fff2d9}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <details class="shell">
+    <summary class="toggle">
+      <span class="title">焦点人物</span>
+      <span class="meta">高频互动关系库</span>
+      <span class="mark">展开</span>
+    </summary>
+    <div class="body">$1</div>
+  </details>
+</div>
+</body>
+```

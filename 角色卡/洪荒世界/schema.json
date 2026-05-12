@@ -1,0 +1,410 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {},
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前纪元": {
+          "default": "洪荒初开",
+          "type": "string",
+          "enum": [
+            "鸿蒙",
+            "混沌",
+            "洪荒初开",
+            "龙汉大劫",
+            "巫妖纪元",
+            "封神纪元",
+            "西游纪元",
+            "历朝历代",
+            "末法近世",
+            "现代",
+            "灵气复苏"
+          ]
+        },
+        "当前年代": {
+          "default": "洪荒初开，万族立世之前",
+          "type": "string"
+        },
+        "当前时间": {
+          "default": "开局未定",
+          "type": "string"
+        },
+        "当前地点": {
+          "default": "开局未定",
+          "type": "string"
+        },
+        "历史节点": {
+          "default": "未定节点",
+          "type": "string"
+        },
+        "节点进度": {
+          "type": "number"
+        },
+        "天道强度": {
+          "default": 30,
+          "type": "number"
+        },
+        "灵气浓度": {
+          "default": 80,
+          "type": "number"
+        },
+        "劫气": {
+          "default": 10,
+          "type": "number"
+        },
+        "人道秩序": {
+          "type": "number"
+        },
+        "科技秩序": {
+          "type": "number"
+        },
+        "大势偏移": {
+          "type": "number"
+        },
+        "近期征兆": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "征兆名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "活跃事件": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "主角": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "待定",
+          "type": "string"
+        },
+        "性别": {
+          "default": "待定",
+          "type": "string"
+        },
+        "年龄": {
+          "default": "待定",
+          "type": "string"
+        },
+        "自定义背景": {
+          "default": "待定",
+          "type": "string"
+        },
+        "自定义开局": {
+          "default": "待定",
+          "type": "string"
+        },
+        "当前位置": {
+          "default": "随开局生成",
+          "type": "string"
+        },
+        "身份": {
+          "default": "无名修行者",
+          "type": "string"
+        },
+        "阵营": {
+          "default": "未定",
+          "type": "string"
+        },
+        "状态": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "状态名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "关系": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "对象名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "立场": {
+                "default": "未定",
+                "type": "string"
+              },
+              "亲近": {
+                "type": "number"
+              },
+              "因果": {
+                "default": "暂无",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "修炼": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "大阶段": {
+          "default": "凡境",
+          "type": "string",
+          "enum": [
+            "凡境",
+            "仙境",
+            "道境"
+          ]
+        },
+        "境界": {
+          "default": "凡人",
+          "type": "string"
+        },
+        "小境": {
+          "default": "初入",
+          "type": "string"
+        },
+        "修为": {
+          "type": "number"
+        },
+        "境界进度": {
+          "type": "number"
+        },
+        "根基": {
+          "default": 50,
+          "type": "number"
+        },
+        "悟性": {
+          "default": 50,
+          "type": "number"
+        },
+        "肉身": {
+          "default": 10,
+          "type": "number"
+        },
+        "神魂": {
+          "default": 10,
+          "type": "number"
+        },
+        "灵力": {
+          "type": "number"
+        },
+        "功德": {
+          "type": "number"
+        },
+        "业力": {
+          "type": "number"
+        },
+        "气运": {
+          "type": "number"
+        },
+        "心魔": {
+          "type": "number"
+        },
+        "突破条件": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "修为达标": {
+              "type": "boolean"
+            },
+            "根基达标": {
+              "type": "boolean"
+            },
+            "悟道契机": {
+              "type": "boolean"
+            },
+            "资源齐备": {
+              "type": "boolean"
+            },
+            "劫数已过": {
+              "type": "boolean"
+            }
+          }
+        },
+        "瓶颈": {
+          "default": "无",
+          "type": "string"
+        }
+      }
+    },
+    "功法": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "主修": {
+          "default": "无",
+          "type": "string"
+        },
+        "运转状态": {
+          "default": "未运转",
+          "type": "string",
+          "enum": [
+            "未运转",
+            "静修",
+            "战斗运转",
+            "闭关",
+            "走火入魔"
+          ]
+        },
+        "功法库": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "功法名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "品阶": {
+                "default": "未定",
+                "type": "string"
+              },
+              "熟练度": {
+                "type": "number"
+              },
+              "当前装备": {
+                "type": "boolean"
+              },
+              "效果": {
+                "default": "未定",
+                "type": "string"
+              },
+              "代价": {
+                "default": "未定",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "装备": {
+      "default": {
+        "兵器": {},
+        "防具": {},
+        "法宝": {},
+        "坐骑": {},
+        "洞府": {},
+        "随身世界": {}
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "兵器",
+          "防具",
+          "法宝",
+          "坐骑",
+          "洞府",
+          "随身世界"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "名称": {
+            "default": "无",
+            "type": "string"
+          },
+          "品阶": {
+            "default": "无",
+            "type": "string"
+          },
+          "状态": {
+            "default": "未装备",
+            "type": "string"
+          },
+          "效果": {
+            "default": "无",
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "兵器",
+        "防具",
+        "法宝",
+        "坐骑",
+        "洞府",
+        "随身世界"
+      ]
+    },
+    "资源": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "灵石": {
+          "type": "number"
+        },
+        "功德点": {
+          "type": "number"
+        },
+        "气运碎片": {
+          "type": "number"
+        },
+        "丹药": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "丹药名"
+          },
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "材料": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "材料名"
+          },
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "背包": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "数量": {
+                "default": 1,
+                "type": "number"
+              },
+              "描述": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

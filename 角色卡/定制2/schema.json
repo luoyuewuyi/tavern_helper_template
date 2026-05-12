@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "当前日": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "当前日"
+      ]
+    },
+    "角色库": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "好感度": {
+            "type": "number"
+          },
+          "信任度": {
+            "type": "number"
+          },
+          "吸引张力": {
+            "type": "number"
+          },
+          "动摇值": {
+            "type": "number"
+          },
+          "理智度": {
+            "type": "number"
+          },
+          "情绪空窗值": {
+            "type": "number"
+          },
+          "隐瞒倾向": {
+            "type": "number"
+          },
+          "关系稳定度": {
+            "type": "number"
+          },
+          "竞争者影响指数": {
+            "type": "number"
+          },
+          "淫乱度": {
+            "type": "number"
+          },
+          "对猪田好感度": {
+            "type": "number"
+          },
+          "当前位置": {
+            "type": "string"
+          },
+          "当前状态": {
+            "type": "string"
+          },
+          "情绪": {
+            "type": "string"
+          },
+          "关系阶段": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "好感度",
+          "信任度",
+          "吸引张力",
+          "动摇值",
+          "理智度",
+          "情绪空窗值",
+          "隐瞒倾向",
+          "关系稳定度",
+          "竞争者影响指数",
+          "淫乱度",
+          "对猪田好感度",
+          "当前位置",
+          "当前状态",
+          "情绪",
+          "关系阶段"
+        ]
+      }
+    },
+    "当前互动角色": {
+      "type": "string"
+    },
+    "猪田": {
+      "type": "object",
+      "properties": {
+        "魅力值": {
+          "type": "number"
+        },
+        "沟通力": {
+          "type": "number"
+        },
+        "价值感": {
+          "type": "number"
+        },
+        "主动度": {
+          "type": "number"
+        },
+        "氛围制造": {
+          "type": "number"
+        },
+        "敌对度": {
+          "type": "number"
+        },
+        "攻略阶段": {
+          "type": "number"
+        },
+        "特殊能力": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "魅力值",
+        "沟通力",
+        "价值感",
+        "主动度",
+        "氛围制造",
+        "敌对度",
+        "攻略阶段",
+        "特殊能力"
+      ]
+    },
+    "用户": {
+      "type": "object",
+      "properties": {
+        "绿帽值": {
+          "type": "number"
+        },
+        "心理承压阈值": {
+          "type": "number"
+        },
+        "生殖器长度": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "绿帽值",
+        "心理承压阈值",
+        "生殖器长度"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "角色库",
+    "当前互动角色",
+    "猪田",
+    "用户"
+  ]
+}

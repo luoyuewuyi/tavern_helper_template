@@ -1,0 +1,22 @@
+---
+变量输出格式:
+  rule:
+    - you must output the update analysis and the actual update commands at once in the end of the next reply
+    - the update commands works like the JSON Patch (RFC 6902) standard
+    - don't update field names starts with _
+  format: |-
+    <UpdateVariable>
+    <Analysis>$(IN ENGLISH, no more than 80 words)
+    - ${time passed}
+    - ${dramatic updates allowed: yes/no}
+    - ${analyze variables based on check rules}
+    </Analysis>
+    <JSONPatch>
+    [
+      { "op": "replace", "path": "${/path}", "value": "${value}" },
+      { "op": "delta", "path": "${/path}", "value": ${delta} },
+      { "op": "insert", "path": "${/path/-}", "value": "${value}" },
+      { "op": "remove", "path": "${/path}" }
+    ]
+    </JSONPatch>
+    </UpdateVariable>

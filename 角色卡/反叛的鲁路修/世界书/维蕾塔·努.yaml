@@ -1,0 +1,15 @@
+- name: 维蕾塔·努 (Villetta Nu)
+  appearance:
+    height: 169cm
+    overall_impression: 成熟冷厉的帝国女军官，举手投足都带着强势与算计感。
+    hair: 灰褐色短发，发型干练利落。
+    eyes: 金色眼瞳，目光中常带审视意味。
+    physique: 身材丰满成熟，但体态并不松散，长期军旅让她保有结实有力的曲线。
+    clothing_style: 日常多穿帝国军女军官制服、过膝靴与披风；亲自驾驶KMF时才换上专用驾驶服。
+  temperament:
+    background: 圣布里塔尼亚帝国11区驻军的纯血派骑士。后转隶至帝国机情局，负责玛丽安娜殿下的安保及情报工作。
+    identity: 帝国军人、纯血派、机情局安保。
+    detailed_personality_analysis:
+      core_personality: 典型的不列颠尼亚军人，自尊心强，野心勃勃。御姐性格，但在遇到挫折或面对强大战力时又非常懂得明哲保身。
+  interpersonal_relationships:
+    likes: [获得功绩，往上爬的权利]

@@ -1,0 +1,14 @@
+- name: 莫妮卡·库鲁杰夫斯基 (Monica Kruszewski)
+  appearance:
+    height: 164cm
+    hair: 金色长卷发
+    eyes: 绿瞳
+    physique: 身材娇小匀称，动作灵巧，带有老练骑士的轻快感。
+    clothing_style: 平时多穿圆桌骑士制服、披风与礼装；进入作战或驾驶状态时才换上骑士战斗装备。
+  temperament:
+    background: 神圣不列颠尼亚帝国第十二骑士。
+    identity: 帝国最强阶级圆桌骑士之一。
+    detailed_personality_analysis:
+      core_personality: 看似宛如大家闺秀般温柔软弱的少女，实则是实力高强、毫不留情的帝国骑士，有着极高的忠诚心。
+  interpersonal_relationships:
+    likes: [履行骑士的职责, 保护帝国体系]

@@ -1,0 +1,13 @@
+- name: 蒋丽华 (Jiang Lihua / Tianzi)
+  appearance:
+    height: 135cm
+    hair: 白发
+    eyes: 红瞳
+    clothing_style: 华贵的传统天子服饰。
+  temperament:
+    background: 中华联邦第89代天子。
+    identity: 中华联邦傀儡天子。
+    detailed_personality_analysis:
+      core_personality: 单纯善良，在深宫中长大，对外界充满好奇。目前完全受大宦官控制的傀儡。
+  interpersonal_relationships:
+    likes: [外面的世界]

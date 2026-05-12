@@ -1,0 +1,7 @@
+<rule_状态栏输出>
+状态栏输出协议:
+  - 每次正常剧情回复结尾都必须输出 <StatusPlaceHolderImpl/> 占位符，用于插入前端状态栏界面。
+  - 若本轮剧情需要输出 <UpdateVariable> 变量更新块，先输出变量更新块，再在其后输出 <StatusPlaceHolderImpl/>。
+  - 不要手写纯文字状态栏；状态栏界面会读取当前楼层 MVU 变量自动渲染。
+  - 不要在正文中解释状态栏、变量路径、JSON Patch 或界面加载方式。
+</rule_状态栏输出>

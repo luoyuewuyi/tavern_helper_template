@@ -1,0 +1,14 @@
+- name: 拉克夏塔·恰拉 (Rakshata Chawla)
+  appearance:
+    height: 172cm
+    hair: 白发
+    eyes: 蓝瞳
+    physique: 大胸黑皮
+    clothing_style: 总是叼着长烟斗，穿着充满异国风情的服饰。
+  temperament:
+    background: 中华联邦印度省出身的天才科学家，由于某些原因与罗伊德是老相识兼对手。
+    identity: 反抗组织的KMF开发与维护负责人。
+    detailed_personality_analysis:
+      core_personality: 性格随性、散漫，对除了科研之外的一切都不太关心。对自己的技术有着绝对的自信。
+  interpersonal_relationships:
+    likes: [研发KMF, 烟斗]

@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界状态": {
+      "type": "object",
+      "properties": {
+        "当前楼层": {
+          "type": "number"
+        },
+        "当前回合": {
+          "type": "number"
+        },
+        "当前阶段": {
+          "default": "探索",
+          "type": "string",
+          "enum": [
+            "探索",
+            "战斗",
+            "事件",
+            "休息"
+          ]
+        },
+        "当前时间": {
+          "default": "第1天 08:00",
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前楼层",
+        "当前回合"
+      ]
+    },
+    "玩家": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色名"
+      },
+      "additionalProperties": {
+        "default": {
+          "攻击": 1,
+          "防御": 1,
+          "HP": 10,
+          "最大HP": 10,
+          "等级": 1,
+          "经验值": 0,
+          "状态": "正常",
+          "技能": {
+            "名称": "未知",
+            "等级": 1,
+            "冷却剩余": 0,
+            "持续剩余": 0,
+            "是否激活": false
+          }
+        },
+        "type": "object",
+        "properties": {
+          "攻击": {
+            "default": 1,
+            "type": "number"
+          },
+          "防御": {
+            "default": 1,
+            "type": "number"
+          },
+          "HP": {
+            "default": 10,
+            "type": "number"
+          },
+          "最大HP": {
+            "default": 10,
+            "type": "number"
+          },
+          "等级": {
+            "default": 1,
+            "type": "number"
+          },
+          "经验值": {
+            "type": "number"
+          },
+          "状态": {
+            "default": "正常",
+            "type": "string",
+            "enum": [
+              "正常",
+              "受伤",
+              "濒死",
+              "死亡"
+            ]
+          },
+          "技能": {
+            "default": {
+              "名称": "未知",
+              "等级": 1,
+              "冷却剩余": 0,
+              "持续剩余": 0,
+              "是否激活": false
+            },
+            "type": "object",
+            "properties": {
+              "名称": {
+                "type": "string"
+              },
+              "等级": {
+                "default": 1,
+                "type": "number"
+              },
+              "冷却剩余": {
+                "type": "number"
+              },
+              "持续剩余": {
+                "type": "number"
+              },
+              "是否激活": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "名称"
+            ]
+          }
+        }
+      }
+    },
+    "战斗状态": {
+      "default": {
+        "是否战斗中": false,
+        "战斗回合数": 0,
+        "敌人": {}
+      },
+      "type": "object",
+      "properties": {
+        "是否战斗中": {
+          "type": "boolean"
+        },
+        "战斗回合数": {
+          "type": "number"
+        },
+        "敌人": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "敌人名"
+          },
+          "additionalProperties": {
+            "default": {
+              "攻击": 0,
+              "防御": 0,
+              "HP": 0,
+              "最大HP": 0
+            },
+            "type": "object",
+            "properties": {
+              "攻击": {
+                "type": "number"
+              },
+              "防御": {
+                "type": "number"
+              },
+              "HP": {
+                "type": "number"
+              },
+              "最大HP": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "堕落度": {
+      "default": {
+        "孙承芬": 0,
+        "汪碧静": 0
+      },
+      "type": "object",
+      "properties": {
+        "孙承芬": {
+          "type": "number"
+        },
+        "汪碧静": {
+          "type": "number"
+        }
+      }
+    },
+    "团队": {
+      "default": {
+        "存活人数": 5,
+        "已死亡": []
+      },
+      "type": "object",
+      "properties": {
+        "存活人数": {
+          "default": 5,
+          "type": "number"
+        },
+        "已死亡": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "道具栏": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "道具名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "描述": {
+            "type": "string"
+          },
+          "数量": {
+            "default": 1,
+            "type": "number"
+          },
+          "持有者": {
+            "default": "团队共有",
+            "type": "string"
+          }
+        },
+        "required": [
+          "描述"
+        ]
+      }
+    }
+  },
+  "required": [
+    "世界状态",
+    "玩家"
+  ]
+}

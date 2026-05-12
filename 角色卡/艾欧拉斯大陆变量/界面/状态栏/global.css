@@ -1,0 +1,81 @@
+:root {
+  /* 史诗西幻色彩系统 */
+  --c-obsidian: #0d0d0d;
+  --c-ruby-red: #9b111e;
+  --c-deep-gold: #8b6c42;
+  --c-gold-bright: #f1c40f;
+  --c-silver-ash: #bdc3c7;
+  --c-parchment-light: #fdf5e6;
+  --c-parchment-dark: #d2b48c;
+  --c-magic-purple: #8e44ad;
+  --c-magic-teal: #16a085;
+
+  /* 材质配色 */
+  --bg-leather: rgba(26, 22, 18, 0.98);
+  --bg-stone: rgba(30, 30, 30, 0.95);
+
+  /* 颜色补充 */
+  --c-gold-muted: rgba(139, 108, 66, 0.6);
+
+  /* 字体系统 */
+  --font-title: 'Cinzel', serif;
+  --font-archive: 'Trajan Pro', 'Cinzel', serif;
+  --font-body: 'Crimson Text', serif;
+
+  /* 特效 */
+  --glow-ruby: 0 0 15px rgba(155, 17, 30, 0.6);
+  --glow-gold: 0 0 15px rgba(241, 196, 15, 0.5);
+  --glow-magic: 0 0 20px rgba(142, 68, 173, 0.4);
+  --epic-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* 通用动画 */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px var(--glow-color));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px var(--glow-color));
+  }
+}
+
+.ani-fade-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--c-parchment-light);
+  font-family: var(--font-body);
+  letter-spacing: 0.5px;
+}
+
+.epic-frame {
+  border: 4px double var(--c-deep-gold);
+  background: var(--bg-leather);
+  box-shadow: var(--epic-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.runic-text {
+  font-family: var(--font-title);
+  text-shadow: var(--glow-magic);
+  letter-spacing: 2px;
+}

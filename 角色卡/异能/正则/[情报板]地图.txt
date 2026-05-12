@@ -1,0 +1,27 @@
+```
+<head>
+<style>
+body{margin:0;background:transparent}
+.wrap{margin:10px 0;font-family:'Noto Sans SC','Microsoft YaHei UI',sans-serif;color:#eef6ff}
+.shell{border-radius:18px;overflow:hidden;background:linear-gradient(160deg,rgba(12,20,38,.96),rgba(21,34,59,.94));border:1px solid rgba(125,222,255,.16);box-shadow:0 16px 38px rgba(5,10,22,.24)}
+.toggle{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 15px;cursor:pointer;list-style:none;background:linear-gradient(135deg,rgba(75,218,255,.16),rgba(255,255,255,.03))}
+.toggle::-webkit-details-marker{display:none}
+.title{font-size:15px;font-weight:700;letter-spacing:.08em;color:#79e7ff}
+.meta{font-size:12px;color:#a7bad7}
+.mark{font-size:11px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.08);color:#d7ebff}
+.body{padding:14px 16px 16px;border-top:1px solid rgba(255,255,255,.08);white-space:pre-wrap;line-height:1.66;font-size:13px;color:#dce9ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <details class="shell">
+    <summary class="toggle">
+      <span class="title">地图调度</span>
+      <span class="meta">可达区域总览</span>
+      <span class="mark">展开</span>
+    </summary>
+    <div class="body">$1</div>
+  </details>
+</div>
+</body>
+```

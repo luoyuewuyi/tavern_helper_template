@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --c-bg-dark: #1a0a20;
+  --c-bg-card: rgba(30, 12, 40, 0.95);
+  --c-bg-section: rgba(40, 18, 55, 0.8);
+  --c-border: rgba(200, 100, 255, 0.25);
+  --c-border-accent: rgba(232, 62, 140, 0.4);
+  --c-text-primary: #e8d5f0;
+  --c-text-secondary: rgba(200, 170, 220, 0.7);
+  --c-text-label: rgba(180, 140, 210, 0.9);
+  --c-accent-pink: #e83e8c;
+  --c-accent-purple: #9b59b6;
+  --c-accent-violet: #6c5ce7;
+  --c-accent-rose: #fd79a8;
+  --c-accent-warm: #e17055;
+  --c-accent-gold: #fdcb6e;
+  --c-accent-cyan: #00cec9;
+  --c-bar-bg: rgba(60, 30, 80, 0.5);
+  --c-bar-fill: linear-gradient(90deg, #e83e8c, #9b59b6);
+  --c-danger: #ff6b6b;
+  --c-success: #2ecc71;
+  --font-main: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'Consolas', 'Microsoft YaHei', monospace;
+}

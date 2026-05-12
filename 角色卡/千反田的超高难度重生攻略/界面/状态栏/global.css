@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 商战经营·深色金融风 */
+  --c-bg-deep: #0d1117;
+  --c-bg-card: #161b22;
+  --c-bg-panel: #1c2128;
+  --c-border: #30363d;
+  --c-border-light: #484f58;
+  --c-text-primary: #e6edf3;
+  --c-text-secondary: #8b949e;
+  --c-text-muted: #6e7681;
+  --c-accent-gold: #d4a843;
+  --c-accent-gold-dim: rgba(212, 168, 67, 0.15);
+  --c-accent-green: #3fb950;
+  --c-accent-green-dim: rgba(63, 185, 80, 0.15);
+  --c-accent-red: #f85149;
+  --c-accent-red-dim: rgba(248, 81, 73, 0.15);
+  --c-accent-blue: #58a6ff;
+  --c-accent-blue-dim: rgba(88, 166, 255, 0.15);
+  --c-accent-purple: #bc8cff;
+
+  /* 字体 */
+  --font-main: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', 'Microsoft YaHei', monospace;
+}
+
+body {
+  background: transparent;
+  font-family: var(--font-main);
+  color: var(--c-text-primary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-border);
+  border-radius: 2px;
+}

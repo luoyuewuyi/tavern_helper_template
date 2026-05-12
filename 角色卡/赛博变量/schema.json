@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "难度": {
+          "type": "string",
+          "enum": [
+            "简单",
+            "普通",
+            "困难",
+            "地狱"
+          ]
+        },
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "所在阶层": {
+          "type": "string",
+          "enum": [
+            "上层区",
+            "中层区",
+            "下层区",
+            "城市外围"
+          ]
+        },
+        "近期事务": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事务名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事务描述"
+          }
+        }
+      },
+      "required": [
+        "难度",
+        "当前时间",
+        "当前地点",
+        "所在阶层",
+        "近期事务"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "type": "string"
+        },
+        "性别": {
+          "type": "string",
+          "enum": [
+            "男",
+            "女"
+          ]
+        },
+        "年龄": {
+          "type": "number"
+        },
+        "身份": {
+          "type": "string"
+        },
+        "阶层": {
+          "type": "string",
+          "enum": [
+            "核心军阀财阀",
+            "核心研发者",
+            "依附上层",
+            "技术管理人员",
+            "中层执法者",
+            "普通劳工",
+            "自愿服务者",
+            "药剂强化者",
+            "独立小团队",
+            "掠夺者首领",
+            "普通掠夺者"
+          ]
+        },
+        "外貌": {
+          "type": "string"
+        },
+        "改造程度": {
+          "type": "string",
+          "enum": [
+            "无",
+            "低",
+            "中",
+            "高",
+            "极高"
+          ]
+        },
+        "抗击打能力": {
+          "type": "string",
+          "enum": [
+            "低",
+            "中",
+            "高",
+            "强",
+            "极强"
+          ]
+        },
+        "生命值": {
+          "type": "number"
+        },
+        "身体状态": {
+          "type": "string"
+        },
+        "腹部状态": {
+          "type": "string"
+        },
+        "心情": {
+          "type": "number"
+        },
+        "当前情况": {
+          "type": "string"
+        },
+        "快感值": {
+          "type": "number"
+        },
+        "货币": {
+          "type": "number"
+        },
+        "物品栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "描述",
+              "数量"
+            ]
+          }
+        },
+        "装备": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "义体",
+              "武器",
+              "防具",
+              "植入物",
+              "药剂"
+            ]
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "type": "string"
+              },
+              "效果": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "名称",
+              "效果"
+            ]
+          },
+          "required": [
+            "义体",
+            "武器",
+            "防具",
+            "植入物",
+            "药剂"
+          ]
+        }
+      },
+      "required": [
+        "姓名",
+        "性别",
+        "年龄",
+        "身份",
+        "阶层",
+        "外貌",
+        "改造程度",
+        "抗击打能力",
+        "生命值",
+        "身体状态",
+        "腹部状态",
+        "心情",
+        "当前情况",
+        "快感值",
+        "货币",
+        "物品栏",
+        "装备"
+      ]
+    },
+    "NPC": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "NPC姓名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "身份": {
+            "type": "string"
+          },
+          "对主角态度": {
+            "type": "string"
+          },
+          "内心OS": {
+            "type": "string"
+          },
+          "当前状态": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "身份",
+          "对主角态度",
+          "内心OS"
+        ]
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "NPC"
+  ]
+}

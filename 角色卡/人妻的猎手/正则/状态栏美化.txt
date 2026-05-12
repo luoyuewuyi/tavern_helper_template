@@ -1,0 +1,245 @@
+```html
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Microsoft YaHei', sans-serif;
+      font-size: 13px;
+      color: #e0e0e0;
+      background: transparent;
+    }
+
+    .container {
+      padding: 6px;
+    }
+
+    .world-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      background: rgba(30, 30, 40, 0.85);
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .tab-btn {
+      padding: 4px 8px;
+      background: rgba(50, 50, 65, 0.8);
+      border: 1px solid rgba(100, 100, 130, 0.3);
+      border-radius: 4px;
+      color: #999;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      background: rgba(70, 70, 90, 0.9);
+      color: #ccc;
+    }
+
+    .tab-btn.active {
+      background: rgba(90, 60, 120, 0.8);
+      border-color: rgba(160, 100, 200, 0.5);
+      color: #e0d0f0;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: rgba(30, 30, 40, 0.85);
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .card-name {
+      font-size: 14px;
+      font-weight: bold;
+      color: #d0c0e8;
+    }
+
+    .card-stage {
+      font-size: 11px;
+      color: #b090d0;
+    }
+
+    .progress-wrap {
+      width: 100%;
+      height: 6px;
+      background: rgba(60, 60, 80, 0.6);
+      border-radius: 3px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7b4daa, #c77dff);
+      border-radius: 3px;
+      transition: width 0.3s;
+    }
+
+    .progress-label {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 3px;
+    }
+
+    .field-row {
+      margin-bottom: 6px;
+    }
+
+    .field-label {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 2px;
+    }
+
+    .field-value {
+      font-size: 12px;
+      color: #ccc;
+      line-height: 1.5;
+      word-break: break-all;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(100, 100, 130, 0.2);
+      margin: 8px 0;
+    }
+  </style>
+  <script type="module">
+    const HEROINES = [
+      { key: '陆沉雪', label: '沉雪' },
+      { key: '陆美玲', label: '美玲' },
+      { key: '柳如玉', label: '如玉' },
+      { key: '何美兰', label: '美兰' },
+      { key: '李淑慧', label: '淑慧' },
+      { key: '张雪', label: '张雪' },
+      { key: '白曼文', label: '曼文' }
+    ];
+
+    function populateData() {
+      const all = getAllVariables();
+      const sd = _.get(all, 'stat_data', {});
+
+      $('#world-time').text(_.get(sd, '世界.当前时间', 'N/A'));
+      $('#world-date').text(_.get(sd, '世界.当前日期', 'N/A'));
+
+      HEROINES.forEach(h => {
+        const d = _.get(sd, h.key, {});
+        const val = _.get(d, '❤️攻略值', 0);
+        const stage = _.get(d, '攻略阶段', 'N/A');
+        const body = _.get(d, '身体状态', {});
+
+        $(`#${h.key}-val`).text(val);
+        $(`#${h.key}-fill`).css('width', val + '%');
+        $(`#${h.key}-stage`).text(stage);
+        $(`#${h.key}-clothes`).text(_.get(body, '👚衣着', 'N/A'));
+        $(`#${h.key}-mouth`).text(_.get(body, '👄口腔', 'N/A'));
+        $(`#${h.key}-breast`).text(_.get(body, '🍈胸乳', 'N/A'));
+        $(`#${h.key}-pussy`).text(_.get(body, '🌸小穴', 'N/A'));
+        $(`#${h.key}-anal`).text(_.get(body, '💮菊穴', 'N/A'));
+        $(`#${h.key}-womb`).text(_.get(body, '🏠子宫', 'N/A'));
+        $(`#${h.key}-pose`).text(_.get(d, '💃体态姿势', 'N/A'));
+        $(`#${h.key}-mind`).text(_.get(d, '💭内心想法', 'N/A'));
+      });
+    }
+
+    function buildTabs() {
+      const $tabs = $('#tabs');
+      const $contents = $('#contents');
+
+      HEROINES.forEach((h, i) => {
+        const $btn = $('<div>')
+          .addClass('tab-btn')
+          .addClass(i === 0 ? 'active' : '')
+          .text(h.label)
+          .attr('data-key', h.key);
+        $tabs.append($btn);
+
+        const html = `
+          <div class="tab-content ${i === 0 ? 'active' : ''}" data-key="${h.key}">
+            <div class="card">
+              <div class="card-header">
+                <span class="card-name">${h.key}</span>
+                <span class="card-stage" id="${h.key}-stage"></span>
+              </div>
+              <div class="progress-label">❤️ 攻略值 <span id="${h.key}-val">0</span>/100</div>
+              <div class="progress-wrap"><div class="progress-fill" id="${h.key}-fill"></div></div>
+              <div class="divider"></div>
+              <div class="field-row"><div class="field-label">👚 衣着</div><div class="field-value" id="${h.key}-clothes"></div></div>
+              <div class="field-row"><div class="field-label">👄 口腔</div><div class="field-value" id="${h.key}-mouth"></div></div>
+              <div class="field-row"><div class="field-label">🍈 胸乳</div><div class="field-value" id="${h.key}-breast"></div></div>
+              <div class="field-row"><div class="field-label">🌸 小穴</div><div class="field-value" id="${h.key}-pussy"></div></div>
+              <div class="field-row"><div class="field-label">💮 菊穴</div><div class="field-value" id="${h.key}-anal"></div></div>
+              <div class="field-row"><div class="field-label">🏠 子宫</div><div class="field-value" id="${h.key}-womb"></div></div>
+              <div class="divider"></div>
+              <div class="field-row"><div class="field-label">💃 体态姿势</div><div class="field-value" id="${h.key}-pose"></div></div>
+              <div class="field-row"><div class="field-label">💭 内心想法</div><div class="field-value" id="${h.key}-mind"></div></div>
+            </div>
+          </div>
+        `;
+        $contents.append(html);
+      });
+
+      $tabs.on('click', '.tab-btn', function () {
+        const key = $(this).attr('data-key');
+        $('.tab-btn').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-content').removeClass('active');
+        $(`.tab-content[data-key="${key}"]`).addClass('active');
+      });
+    }
+
+    async function init() {
+      await waitGlobalInitialized('Mvu');
+      buildTabs();
+      populateData();
+
+      eventOn(Mvu.events.VARIABLE_UPDATE_ENDED, () => {
+        populateData();
+      });
+    }
+
+    $(errorCatched(init));
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="world-bar">
+      <span>📅 <span id="world-date"></span></span>
+      <span>🕐 <span id="world-time"></span></span>
+    </div>
+    <div id="tabs" class="tabs"></div>
+    <div id="contents"></div>
+  </div>
+</body>
+</html>
+```

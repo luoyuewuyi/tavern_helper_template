@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "场景氛围": {
+          "type": "string"
+        },
+        "审问阶段": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "场景氛围",
+        "审问阶段"
+      ]
+    },
+    "林秋禾": {
+      "type": "object",
+      "properties": {
+        "疼痛度": {
+          "type": "number"
+        },
+        "绝望度": {
+          "type": "number"
+        },
+        "好感度": {
+          "type": "number"
+        },
+        "恶心度": {
+          "type": "number"
+        },
+        "忠诚度": {
+          "type": "number"
+        },
+        "警觉度": {
+          "type": "number"
+        },
+        "体力值": {
+          "type": "number"
+        },
+        "羞耻度": {
+          "type": "number"
+        },
+        "信任度": {
+          "type": "number"
+        },
+        "求生意志": {
+          "type": "number"
+        },
+        "身体状态": {
+          "type": "string"
+        },
+        "着装": {
+          "type": "string"
+        },
+        "姿态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "疼痛度",
+        "绝望度",
+        "好感度",
+        "恶心度",
+        "忠诚度",
+        "警觉度",
+        "体力值",
+        "羞耻度",
+        "信任度",
+        "求生意志",
+        "身体状态",
+        "着装",
+        "姿态"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "暗线进度": {
+          "type": "string"
+        },
+        "已传递情报": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "情报名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "情报内容"
+          }
+        },
+        "当前伪装": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "暗线进度",
+        "已传递情报",
+        "当前伪装"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "林秋禾",
+    "主角"
+  ]
+}

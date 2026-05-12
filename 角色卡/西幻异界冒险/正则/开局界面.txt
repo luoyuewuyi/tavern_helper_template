@@ -1,0 +1,7 @@
+```html
+<body>
+<script>
+$('body').load('界面/开局/index.html')
+</script>
+</body>
+```

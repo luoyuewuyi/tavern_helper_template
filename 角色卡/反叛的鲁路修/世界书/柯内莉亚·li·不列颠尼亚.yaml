@@ -1,0 +1,16 @@
+- name: 柯内莉亚·li·不列颠尼亚 (Cornelia li Britannia)
+  appearance:
+    height: 175cm
+    overall_impression: 一位锋利、骄傲又极具压迫感的皇女军人。她一出现，周围的空气都会像被军纪与杀气一起收紧。
+    hair: 深紫色长发，常编成精致的发辫。
+    eyes: 紫色瞳孔，目光锐利而强势。
+    physique: 身材高挑挺拔，常年军旅生涯塑造出利落结实的线条。
+    clothing_style: 平时多穿帝国皇女军装、披风或正式礼服；只有亲自驾驶KMF时才换上专用驾驶装备。
+  temperament:
+    background: 神圣不列颠尼亚帝国第二皇女，27岁的高级军官。
+    identity: 原帝国第二皇女，现在和妹妹来11区休假。
+    detailed_personality_analysis:
+      core_personality: 被称为“布里塔尼亚魔女”。性格高傲、果决且极具攻击性。原为一位极其出色的军事家与KMF驾驶员。对敌人毫不留情。
+      surface_personality: 虽然是来度假，但依旧保持军人的干练。她非常崇拜玛丽安娜，并极其珍视自己的妹妹尤菲米亚，这份亲情是她最大的软肋。
+  interpersonal_relationships:
+    likes: [玛丽安娜 (极度崇拜), 妹妹尤菲米亚]

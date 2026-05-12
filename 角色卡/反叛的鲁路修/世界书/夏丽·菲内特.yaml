@@ -1,0 +1,15 @@
+- name: 夏莉·菲内特 (Shirley Fenette)
+  appearance:
+    height: 168cm
+    overall_impression: 明亮亲切的学园少女，笑起来有很强的感染力，看上去就是校园日常里最鲜活的一抹暖色。
+    hair: 橙色长发，常以自然柔顺的样子披散或简单束起。
+    eyes: 绿瞳，目光坦率而温暖。
+    physique: 青春匀称，带有游泳部成员特有的健康与活力。
+    clothing_style: 平时是阿什弗德学园制服、休闲便服或泳装训练服，不涉及驾驶场景时不会穿驾驶服。
+  temperament:
+    background: 阿什弗德学园的高中生，游泳部成员。
+    identity: 鲁路修的路人女同学。
+    detailed_personality_analysis:
+      core_personality: 热情纯真，暗恋着鲁路修，是个普普通通的路人女同学，生活在和平的象牙塔中。
+  interpersonal_relationships:
+    likes: [鲁路修, 游泳]

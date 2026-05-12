@@ -1,0 +1,53 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(git fetch *)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(where git *)",
+      "Bash(git --version)",
+      "Read(//c/Users/Luo yue/.ssh/**)",
+      "Bash(git remote *)",
+      "Bash(curl --version)",
+      "Read(//d/Git/mingw64/bin/**)",
+      "Read(//usr/bin/**)",
+      "Bash(curl *)",
+      "Bash(rm -rf /tmp/tavern_template_main)",
+      "Bash(unzip -q /tmp/tavern_template_main.zip -d /tmp/)",
+      "Read(//tmp/**)",
+      "Bash(cp -r /tmp/tavern_helper_template-main/* /e/jiuguanzhushou/)",
+      "Bash(cp -r /tmp/tavern_helper_template-main/.[!.]* /e/jiuguanzhushou/)",
+      "Bash(winget --version)",
+      "Bash(choco --version)",
+      "Bash(scoop --version)",
+      "Bash(winget list *)",
+      "Bash(winget install *)",
+      "Read(//c/Program Files/Git/mingw64/bin/**)",
+      "Read(//c/Program Files/Git/mingw64/libexec/git-core/**)",
+      "Read(//c/Program Files \\(x86\\)/Git/bin/**)",
+      "Bash(find \"D:/Git\" -name \"git-remote-https*\" 2>/dev/null)",
+      "Read(//d/Git/**)",
+      "Bash(mkdir -p /d/Git_new)",
+      "Bash(/tmp/PortableGit-2.54.0-64-bit.7z.exe -o\"/d/Git_new\" -y)",
+      "Bash(ls -la /d/Git_new/ 2>/dev/null | head -20)",
+      "Read(//d/Git_new//**)",
+      "Bash(mkdir -p \"e:/jiuguanzhushou/src/偷星九月天/第一条消息\" \"e:/jiuguanzhushou/src/偷星九月天/世界书/角色/黑月铁骑\" \"e:/jiuguanzhushou/src/偷星九月天/世界书/角色/VV学院\" \"e:/jiuguanzhushou/src/偷星九月天/世界书/角色/堕天使\" \"e:/jiuguanzhushou/src/偷星九月天/世界书/地点\" \"e:/jiuguanzhushou/src/偷星九月天/世界书/道具\")",
+      "Bash(ls \"e:/jiuguanzhushou/.claude/skills/role-card-builder/\")",
+      "Read(//c/Users/Luo yue/AppData/Roaming/CherryStudio/Data/Skills/role-card-builder/**)",
+      "Bash(xxd \"e:/jiuguanzhushou/src/偷星九月天/第一条消息/0.txt\")",
+      "Bash(node tavern_sync.mjs push 偷星九月天 --help)",
+      "Bash(node tavern_sync.mjs --help)",
+      "Bash(node tavern_sync.mjs push 偷星九月天 -f)",
+      "Bash(node tavern_sync.mjs bundle 偷星九月天)",
+      "Bash(npx --yes canvas)",
+      "Bash(convert -size 420x560 -define gradient:direction=south-east 'gradient:#1a1a2e-#0f3460' '\\(' -size 420x560 'radial-gradient:rgba\\(201,169,110,0.06\\)-none' '\\)' -compose over -composite '\\(' -size 80x80 'radial-gradient:#f5e6c8-#8b7340' -background none -extent 420x100 -gravity north -geometry +120+40 '\\)' -compose over -composite -fill '#c9a96e' -font Candara -pointsize 42 -gravity center -annotate +0-20 偷星九月天 -fill '#8899aa' -font Candara -pointsize 14 -gravity center -annotate +0+30 'S T E A L I N G   S T A R S' -fill '#e0d5c1' -font 'Microsoft YaHei' -pointsize 12 -gravity south -annotate +0+60 '🌙 黑月铁骑 · VV学院 · 堕天使' e:/jiuguanzhushou/src/偷星九月天/头像.png)",
+      "Bash(convert --version)",
+      "Bash(node -e ' *)"
+    ],
+    "additionalDirectories": [
+      "e:\\jiuguanzhushou\\src\\偷星九月天"
+    ]
+  },
+  "language": "chinese"
+}

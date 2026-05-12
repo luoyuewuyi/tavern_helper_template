@@ -1,0 +1,27 @@
+---
+变量输出格式:
+  rule:
+    - you must output the update analysis and the actual update commands together at the end of the reply
+    - when variables changed, `<StatusPlaceHolderImpl/>` must appear after `</UpdateVariable>`, never before it
+    - the update commands must be a valid JSON array and follow the JSON Patch style used by the MVU system
+    - supported operations are replace, delta, insert, remove and move
+    - do not update field names starts with `_`
+    - keep the update minimal and only touch variables actually changed by the current reply
+  format: |-
+    <UpdateVariable>
+    <Analysis>$(IN ENGLISH, no more than 80 words)
+    - ${time passed and scene transition}
+    - ${whether this is a normal update or a major event}
+    - ${why each touched variable should change}
+    </Analysis>
+    <JSONPatch>
+    [
+      { "op": "replace", "path": "${/path/to/variable}", "value": "${new_value}" },
+      { "op": "delta", "path": "${/path/to/number/variable}", "value": "${positive_or_negative_delta}" },
+      { "op": "insert", "path": "${/path/to/object/new_key}", "value": "${new_value}" },
+      { "op": "remove", "path": "${/path/to/object/key}" },
+      { "op": "move", "from": "${/path/to/variable}", "to": "${/path/to/another/path}" }
+    ]
+    </JSONPatch>
+    </UpdateVariable>
+    <StatusPlaceHolderImpl/>

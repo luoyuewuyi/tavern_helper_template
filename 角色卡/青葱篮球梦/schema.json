@@ -1,0 +1,519 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "剧情阶段": {
+          "type": "string"
+        },
+        "威胁等级": {
+          "type": "string"
+        },
+        "重大事件记录": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事件描述"
+          }
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "剧情阶段",
+        "威胁等级",
+        "重大事件记录"
+      ]
+    },
+    "当前角色": {
+      "type": "object",
+      "properties": {
+        "性别": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        },
+        "服饰": {
+          "type": "string"
+        },
+        "身材": {
+          "type": "string"
+        },
+        "当前事务": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事务名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事务描述"
+          }
+        }
+      },
+      "required": [
+        "性别",
+        "当前状态",
+        "服饰",
+        "身材",
+        "当前事务"
+      ]
+    },
+    "钟致远": {
+      "type": "object",
+      "properties": {
+        "体能状态": {
+          "type": "number"
+        },
+        "心理状态": {
+          "type": "string"
+        },
+        "伤病情况": {
+          "type": "string"
+        },
+        "篮球实力": {
+          "type": "string"
+        },
+        "赛季进度": {
+          "type": "string"
+        },
+        "当前事务": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事务名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事务描述"
+          }
+        },
+        "着装": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "上装",
+              "下装",
+              "鞋子",
+              "配饰"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "着装描述"
+          },
+          "required": [
+            "上装",
+            "下装",
+            "鞋子",
+            "配饰"
+          ]
+        }
+      },
+      "required": [
+        "体能状态",
+        "心理状态",
+        "伤病情况",
+        "篮球实力",
+        "赛季进度",
+        "当前事务",
+        "着装"
+      ]
+    },
+    "林晓雨": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "信赖度": {
+          "type": "number"
+        },
+        "心理创伤值": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        },
+        "着装": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "信赖度",
+        "心理创伤值",
+        "关系阶段",
+        "当前状态",
+        "着装"
+      ]
+    },
+    "张萱": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "信赖度": {
+          "type": "number"
+        },
+        "心理创伤值": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        },
+        "着装": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "信赖度",
+        "心理创伤值",
+        "关系阶段",
+        "当前状态",
+        "着装"
+      ]
+    },
+    "温雪": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "依赖度": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "依赖度",
+        "关系阶段",
+        "当前状态"
+      ]
+    },
+    "孔方颐": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "暗恋强度": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "暗恋强度",
+        "关系阶段",
+        "当前状态"
+      ]
+    },
+    "颜妙旖": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "合作信任": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "合作信任",
+        "关系阶段",
+        "当前状态"
+      ]
+    },
+    "慕容琴": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "亲密度": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "亲密度",
+        "关系阶段",
+        "当前状态"
+      ]
+    },
+    "白露": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "师生好感": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "师生好感",
+        "关系阶段",
+        "当前状态"
+      ]
+    },
+    "邱雯": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "关心指数": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "关心指数",
+        "关系阶段",
+        "当前状态"
+      ]
+    },
+    "小月牙": {
+      "type": "object",
+      "properties": {
+        "亲密度": {
+          "type": "number"
+        },
+        "依赖度": {
+          "type": "number"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "亲密度",
+        "依赖度",
+        "当前状态"
+      ]
+    },
+    "岳彦昕": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "合作度": {
+          "type": "number"
+        },
+        "关系阶段": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "合作度",
+        "关系阶段",
+        "当前状态"
+      ]
+    },
+    "赵舒奕": {
+      "type": "object",
+      "properties": {
+        "信赖度": {
+          "type": "number"
+        },
+        "师徒默契": {
+          "type": "number"
+        },
+        "当前状态": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "信赖度",
+        "师徒默契",
+        "当前状态"
+      ]
+    },
+    "反派势力": {
+      "type": "object",
+      "properties": {
+        "熊安杰": {
+          "type": "object",
+          "properties": {
+            "威胁等级": {
+              "type": "string"
+            },
+            "当前状态": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "威胁等级",
+            "当前状态"
+          ]
+        },
+        "林老": {
+          "type": "object",
+          "properties": {
+            "威胁等级": {
+              "type": "string"
+            },
+            "当前状态": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "威胁等级",
+            "当前状态"
+          ]
+        },
+        "马博飞": {
+          "type": "object",
+          "properties": {
+            "威胁等级": {
+              "type": "string"
+            },
+            "当前状态": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "威胁等级",
+            "当前状态"
+          ]
+        },
+        "周文斌": {
+          "type": "object",
+          "properties": {
+            "威胁等级": {
+              "type": "string"
+            },
+            "当前状态": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "威胁等级",
+            "当前状态"
+          ]
+        },
+        "智运集团": {
+          "type": "object",
+          "properties": {
+            "威胁等级": {
+              "type": "string"
+            },
+            "当前状态": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "威胁等级",
+            "当前状态"
+          ]
+        },
+        "飞沃娱乐": {
+          "type": "object",
+          "properties": {
+            "威胁等级": {
+              "type": "string"
+            },
+            "当前状态": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "威胁等级",
+            "当前状态"
+          ]
+        }
+      },
+      "required": [
+        "熊安杰",
+        "林老",
+        "马博飞",
+        "周文斌",
+        "智运集团",
+        "飞沃娱乐"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "当前角色",
+    "钟致远",
+    "林晓雨",
+    "张萱",
+    "温雪",
+    "孔方颐",
+    "颜妙旖",
+    "慕容琴",
+    "白露",
+    "邱雯",
+    "小月牙",
+    "岳彦昕",
+    "赵舒奕",
+    "反派势力"
+  ]
+}

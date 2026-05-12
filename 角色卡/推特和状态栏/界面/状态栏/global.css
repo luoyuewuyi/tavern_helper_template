@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 赛博朋克暗黑 */
+  --c-bg-deep: #0a0e17;
+  --c-bg-card: #111827;
+  --c-bg-surface: #1a2235;
+  --c-bg-hover: #1f2a3f;
+  --c-border: #2a3550;
+  --c-border-glow: rgba(0, 229, 255, 0.2);
+
+  --c-text-primary: #e2e8f0;
+  --c-text-secondary: #8892a8;
+  --c-text-muted: #566178;
+
+  --c-cyan: #00e5ff;
+  --c-cyan-dim: rgba(0, 229, 255, 0.15);
+  --c-purple: #b388ff;
+  --c-purple-dim: rgba(179, 136, 255, 0.15);
+  --c-pink: #ff6090;
+  --c-pink-dim: rgba(255, 96, 144, 0.15);
+  --c-green: #69f0ae;
+  --c-green-dim: rgba(105, 240, 174, 0.15);
+  --c-amber: #ffd740;
+  --c-red: #ff5252;
+  --c-blue: #448aff;
+
+  /* 字体 */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-sans: 'Inter', 'Microsoft YaHei', sans-serif;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-border);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-cyan);
+}
+
+/* 全局动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

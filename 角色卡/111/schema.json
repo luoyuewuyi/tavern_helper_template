@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "propertyNames": {
+    "type": "string"
+  },
+  "additionalProperties": {
+    "anyOf": [
+      {
+        "type": "object",
+        "properties": {
+          "基础": {
+            "type": "object",
+            "properties": {
+              "当前状态": {
+                "type": "string"
+              },
+              "姿态描述": {
+                "type": "string"
+              },
+              "内心想法": {
+                "type": "string"
+              },
+              "心理活动": {
+                "type": "string"
+              },
+              "最近性行为": {
+                "type": "string"
+              },
+              "灵力修为": {
+                "type": "string"
+              },
+              "修为": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": {}
+          },
+          "生理": {
+            "type": "object",
+            "properties": {
+              "肉棒状态": {
+                "type": "string"
+              },
+              "性欲值": {
+                "type": "number"
+              },
+              "亲密度": {
+                "type": "number"
+              },
+              "受精值": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": {}
+          },
+          "与林美艳的关系": {
+            "type": "object",
+            "properties": {
+              "状态": {
+                "type": "string"
+              },
+              "亲密度": {
+                "default": 0,
+                "type": "number"
+              },
+              "背德值": {
+                "default": 0,
+                "type": "number"
+              },
+              "受精值": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "additionalProperties": {}
+          },
+          "服装": {
+            "type": "object",
+            "properties": {
+              "风格": {
+                "type": "string"
+              },
+              "上装": {
+                "type": "string"
+              },
+              "下装": {
+                "type": "string"
+              },
+              "内衣": {
+                "type": "string"
+              },
+              "袜子": {
+                "type": "string"
+              },
+              "鞋履": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": {}
+          },
+          "身体": {
+            "type": "object",
+            "properties": {
+              "姿态与神情": {
+                "type": "string"
+              },
+              "口腔": {
+                "type": "string"
+              },
+              "胸部": {
+                "type": "string"
+              },
+              "阴道": {
+                "type": "string"
+              },
+              "子宫": {
+                "type": "string"
+              },
+              "子宫精液占比": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              },
+              "后庭": {
+                "type": "string"
+              },
+              "腿部": {
+                "type": "string"
+              },
+              "足部": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": {}
+          },
+          "认知": {
+            "type": "object",
+            "properties": {
+              "警戒值": {
+                "type": "number"
+              },
+              "状态": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": {}
+          },
+          "献祭弧光": {
+            "type": "object",
+            "properties": {
+              "状态": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": {}
+          }
+        },
+        "additionalProperties": {}
+      },
+      {
+        "type": "object",
+        "properties": {
+          "阶段": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "阶段"
+        ]
+      }
+    ]
+  }
+}

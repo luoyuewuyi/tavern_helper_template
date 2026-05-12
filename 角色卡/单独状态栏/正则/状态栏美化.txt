@@ -1,0 +1,7 @@
+```
+<body>
+<script>
+$('body').load('界面/状态栏/index.html')
+</script>
+</body>
+```

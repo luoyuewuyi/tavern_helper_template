@@ -1,0 +1,497 @@
+# yaml-language-server: $schema=https://testingcf.jsdelivr.net/gh/StageDog/tavern_sync/dist/schema/character.zh.json
+头像: 头像
+版本: 1.0.0
+作者: ""
+备注: ""
+
+第一条消息:
+  - 文件: 第一条消息\0
+
+角色描述: ""
+
+锚点: {}
+
+世界书名称: 与角色卡名称相同
+条目:
+  - 名称: 世界观设定
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之后
+      顺序: 1
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\世界观
+
+  - 名称: 化奴教设定
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之后
+      顺序: 2
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\化奴教
+
+  - 名称: 功法体系
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之后
+      顺序: 3
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\功法体系
+
+  - 名称: 玉仙观
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之后
+      顺序: 4
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\玉仙观
+
+  - 名称: 命格体质定义
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之后
+      顺序: 5
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\命格体质
+
+  - 名称: 角色速览
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之后
+      顺序: 5
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\角色速览
+
+  - 名称: 主角设定
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之后
+      顺序: 6
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\主角设定
+
+  - 名称: 核心规则
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\核心规则
+
+  - 名称: 角色分阶段行为指导
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 14721
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\角色阶段
+
+  - 名称: 汖星
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 汖星
+        - 天才剑仙
+        - 玉仙观传人
+        - 绝色天仙
+    插入位置:
+      类型: 角色定义之后
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\汖星
+
+  - 名称: 师尊
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 师尊
+        - 玉壶冰兔
+        - 冰兔
+    插入位置:
+      类型: 角色定义之后
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\师尊
+
+  - 名称: 淫剑媚灵
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 淫剑媚灵
+        - 剑灵
+        - 玉剑
+        - 媚灵
+    插入位置:
+      类型: 角色定义之后
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\淫剑媚灵
+
+  - 名称: 化奴教主人
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 化奴教主
+        - 化奴教男人
+        - 主人
+    插入位置:
+      类型: 角色定义之后
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\化奴教主人
+
+  - 名称: 凤奴
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 凤奴
+        - 初凤
+        - 青鸾枪圣
+    插入位置:
+      类型: 角色定义之后
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\凤奴
+
+  - 名称: 牝奴等级
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 牝奴
+        - 牝兔
+        - 尻豚
+        - 花瓶肉壶
+        - 赐名
+        - 等级
+    插入位置:
+      类型: 角色定义之后
+      顺序: 98
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\牝奴等级
+
+  - 名称: 汖星恶堕
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 性剑牝兔
+    插入位置:
+      类型: 角色定义之后
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\汖星_恶堕
+
+  - 名称: 场景_玉仙观
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 玉仙观
+        - 白兔山
+        - 道观
+    插入位置:
+      类型: 角色定义之后
+      顺序: 80
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\场景_玉仙观
+
+  - 名称: 场景_太华城
+    启用: true
+    激活策略:
+      类型: 绿灯
+      关键字:
+        - 太华城
+        - 王府
+        - 地下密室
+        - 地下空间
+    插入位置:
+      类型: 角色定义之后
+      顺序: 80
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\场景_太华城
+
+  - 名称: ===变量开始===
+    启用: false
+    激活策略:
+      类型: 向量化
+    插入位置:
+      类型: 角色定义之前
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    内容: ""
+
+  - 名称: "[initvar]变量初始化勿开"
+    启用: false
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量\initvar
+
+  - 名称: 变量列表
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量\变量列表
+
+  - 名称: "[mvu_update]变量更新规则"
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量\变量更新规则
+
+  - 名称: "[mvu_update]变量输出格式"
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量\变量输出格式
+
+  - 名称: ===变量结束===
+    启用: false
+    激活策略:
+      类型: 向量化
+    插入位置:
+      类型: 角色定义之前
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    内容: ""
+
+扩展字段:
+  正则:
+    - 正则名称: "[美化]变量更新中-夜空诗意"
+      id: b1b2ef45-577e-443a-ae3b-4405fa40aef1
+      启用: true
+      查找表达式: /<UpdateVariable(?:variable)?>(?!.*<\/UpdateVariable(?:variable)?>)\s*(.*)\s*$/gsi
+      文件: 正则\[美化]变量更新中-夜空诗意
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+    - 正则名称: "[美化]完整变量完成-夜空诗意"
+      id: 36b3cd85-b298-482b-9dfd-4349bd952786
+      启用: true
+      查找表达式: /<UpdateVariable(?:variable)?>\s*(.*)\s*<\/UpdateVariable(?:variable)?>/gsi
+      文件: 正则\[美化]完整变量完成-夜空诗意
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+    - 正则名称: 对 AI 隐藏状态栏
+      id: 3b837493-1945-472a-a487-94c96c0b0125
+      启用: true
+      查找表达式: <StatusPlaceHolderImpl/>
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+
+    - 正则名称: 仅格式思维链
+      id: e6e1a60a-bb24-4ac3-a569-ede16bea3f6c
+      启用: true
+      查找表达式: /<Analysis>[\s\S]+?<\/Analysis>/gm
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+
+    - 正则名称: 只发送最新3楼的变量更新
+      id: c478e67b-3c01-4ec2-8bdb-4b4f5dabdf99
+      启用: true
+      查找表达式: /<UpdateVariable>[\s\S]*?</UpdateVariable>/gm
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+      最小深度: 6
+
+    - 正则名称: 状态栏美化
+      id: 30b9fa87-ab16-4728-b141-0abaa91ab62b
+      启用: true
+      查找表达式: <StatusPlaceHolderImpl/>
+      文件: 正则\状态栏美化
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+    - 正则名称: 开局界面
+      id: 49c9f820-304e-4f79-9043-c8773ec6ecfb
+      启用: true
+      查找表达式: 【开局界面】
+      文件: 正则\开局界面
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+  酒馆助手:
+    脚本库:
+      - 名称: mvu
+        id: 22d70d1f-d0be-4061-911e-d0c57ab55053
+        启用: true
+        类型: 脚本
+        内容: import
+          'https://testingcf.jsdelivr.net/gh/MagicalAstrogy/MagVarUpdate/artifact/bundle.js';
+        按钮:
+          启用: true
+          按钮列表:
+            - 名称: 重新处理变量
+              可见: false
+            - 名称: 重新读取初始变量
+              可见: false
+            - 名称: 快照楼层
+              可见: false
+            - 名称: 重演楼层
+              可见: false
+            - 名称: 重试额外模型解析
+              可见: false
+            - 名称: 清除旧楼层变量
+              可见: false
+
+      - 名称: 变量结构
+        id: f65ab164-4268-4366-8228-16af904c2251
+        启用: true
+        类型: 脚本
+        内容: |-
+          import{registerMvuSchema as r}from'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js';const e=z,t=e.z.object({世界:e.z.object({当前时间:e.z.string().prefault('天元历-1024/03/15-辰时'),当前地点:e.z.string().prefault('玉仙观 清泉练剑场'),游玩阶段:e.z.enum(['修仙','捕获','调教','堕落']).prefault('修仙'),近期事务:e.z.record(e.z.string().describe('事务名'),e.z.string().describe('事务描述')).prefault({})}).prefault({}),主角:e.z.object({姓名:e.z.string().prefault('待设定'),年龄:e.z.coerce.number().prefault(18),宗门:e.z.string().prefault('待设定'),体质:e.z.string().prefault('至阴之体'),功法:e.z.string().prefault('玉女诀'),功法境界:e.z.enum(['入门','小成','大成','成仙']).prefault('小成'),修炼境界:e.z.string().prefault('金丹期'),道心:e.z.string().prefault('玉女道心·无瑕'),道心状态:e.z.enum(['完好','动摇','破损','沉寂','逆转']).prefault('完好'),命格:e.z.string().prefault('天命剑仙'),称号:e.z.record(e.z.string().describe('称号名'),e.z.string().describe('称号来源或效果')).prefault({}),外貌简述:e.z.string().prefault('待描述'),前世:e.z.object({姓名:e.z.string().prefault('待设定'),经历:e.z.string().prefault('来自现代世界的普通人')}).prefault({}),着装:e.z.record(e.z.enum(['上装','下装','内衣','足部','饰品','特殊']),e.z.string().describe('服装描述')).prefault({}),能力面板:e.z.object({武技:e.z.record(e.z.string().describe('武技名称（如剑法/刀法/枪法/扇法等）'),e.z.coerce.number().transform(r=>_.clamp(r,0,100))).prefault({剑法:50}),步法:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(30),灵力:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(40),智慧:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(80),体魄:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(25),意志:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(30),肉欲:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(0)}).prefault({}),物品栏:e.z.record(e.z.string().describe('物品名'),e.z.object({描述:e.z.string().prefault(''),数量:e.z.coerce.number().prefault(1)}).prefault({})).transform(r=>_.pickBy(r,({数量:r})=>r>0)).prefault({})}).prefault({}),身体状态:e.z.object({体质变化:e.z.string().prefault('至阴之体，灵气纯净，身体微带寒意'),灵力属性:e.z.string().prefault('纯白色灵气，质量数倍于常人'),体香:e.z.string().prefault('淡淡幽香，不甚明显'),敏感度:e.z.string().prefault('正常，道心压制下无异常感受'),身材变化:e.z.string().prefault('修行塑造的清丽绝色容貌，身材匀称'),观想形象:e.z.string().prefault('灵台识海中的白兔仙子——清冷脱俗的道袍仙女，手持长剑'),道心内景:e.z.string().prefault('一柄无瑕玉剑，通体洁白剔透')}).prefault({}),改造数值:e.z.object({改造值:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(5),常识更改:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(0),堕落值:e.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(0),_功法真实属性:e.z.string().prefault('奴篇功法变种——修炼越深身心改造越彻底，修行者无法自行察觉')}).prefault({}),关系:e.z.record(e.z.string().describe('角色名'),e.z.object({好感度:e.z.coerce.number().transform(r=>_.clamp(r,-100,100)).prefault(0),关系:e.z.string().prefault('陌生'),印象:e.z.string().prefault('')}).prefault({})).prefault({}),牝奴状态:e.z.object({已激活:e.z.boolean().prefault(!1),赐名:e.z.string().prefault(''),等级:e.z.string().prefault(''),职务:e.z.string().prefault(''),主人评价:e.z.string().prefault(''),调教进度:e.z.string().prefault('')}).prefault({})});$(()=>{r(t)});
+          //# sourceMappingURL=index.js.map
+
+    变量: {}

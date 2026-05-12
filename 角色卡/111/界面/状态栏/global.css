@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 仙侠/玄幻主题配色 - 水墨古风 */
+  --c-ink-black: #1a1a2e; /* 墨黑：主文字、边框 */
+  --c-jade-mist: #4a5568; /* 玉烟：次要文字 */
+  --c-cloud-white: #f7fafc; /* 云白：卡片底色 */
+  --c-spirit-gold: #d4af37; /* 灵金：高亮、进度条 */
+  --c-blood-red: #c53030; /* 血红：生理/危险 */
+  --c-jade-green: #38a169; /* 翠绿：正向状态 */
+  --c-spirit-purple: #805ad5; /* 灵紫：修为相关 */
+  --c-mist-blue: #4299e1; /* 冰蓝：特殊状态 */
+  --c-scroll-beige: #fefcf3; /* 卷轴米黄 */
+  --c-border-brown: #8b7355; /* 边框褐色 */
+
+  /* 字体 */
+  --font-xianxia: 'STKaiti', 'KaiTi', '楷体', 'Microsoft YaHei', serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+/* 古风滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-cloud-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-border-brown);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-ink-black);
+}

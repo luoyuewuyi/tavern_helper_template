@@ -1,0 +1,6 @@
+{
+  "name": "Apocalypse Terminal UI",
+  "description": "A single-interface status bar UI for doomsday text RPGs, rendering plain text into a beautiful terminal dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

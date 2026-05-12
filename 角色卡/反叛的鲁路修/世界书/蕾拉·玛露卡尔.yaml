@@ -1,0 +1,14 @@
+- name: 蕾拉·玛露卡尔 (Leila Malcal) / 蕾拉·冯·布莱斯高
+  appearance:
+    height: 165cm
+    hair: 金发
+    eyes: 蓝瞳 (金发碧眼)
+    physique: 身材匀称修长，兼具外交官的端整与军人训练带来的利落感。
+    clothing_style: 平时以EU外交人员装束、军官制服、过膝靴与正式外套为主；只有执行作战任务或驾驶时才穿功能性战斗装备。
+  temperament:
+    background: 布里塔尼亚流亡贵族布莱斯高家的女儿。在失去父母后，被欧洲大财阀玛露卡尔家收养。目前作为外交人员来到11区。
+    identity: EU外交人员。
+    detailed_personality_analysis:
+      core_personality: 坚强、独立，有著自己的信念，不会轻易向逆境低头。拥有出色的军事素养。
+  interpersonal_relationships:
+    likes: [EU的和平, 保护下属]

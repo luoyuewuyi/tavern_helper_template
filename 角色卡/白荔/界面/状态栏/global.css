@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(214, 232, 240, 0.95), rgba(214, 232, 240, 0.6) 22%, transparent 48%),
+    linear-gradient(180deg, #091017 0%, #101722 36%, #1b2532 100%);
+  font-family: 'Georgia', 'Microsoft YaHei', serif;
+}
+
+:root {
+  --bg-deep: #0e141d;
+  --bg-soft: rgba(188, 213, 224, 0.12);
+  --line-soft: rgba(220, 231, 238, 0.16);
+  --line-strong: rgba(240, 246, 250, 0.28);
+  --ink-main: #f4f7fb;
+  --ink-soft: #bec9d4;
+  --ink-faint: #8594a4;
+  --accent-water: #8dc7d9;
+  --accent-scale: #f1f4f7;
+  --accent-eye: #ee8b9a;
+  --accent-gold: #d8c6a1;
+  --font-title: 'Times New Roman', 'STSong', serif;
+  --font-body: 'Georgia', 'Microsoft YaHei', serif;
+}

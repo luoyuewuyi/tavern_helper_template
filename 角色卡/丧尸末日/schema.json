@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "时间": {
+      "type": "object",
+      "properties": {
+        "当前日期": {
+          "type": "string"
+        },
+        "当前时间": {
+          "type": "string"
+        },
+        "末日天数": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "当前日期",
+        "当前时间",
+        "末日天数"
+      ]
+    },
+    "安全屋": {
+      "type": "object",
+      "properties": {
+        "等级": {
+          "type": "number"
+        },
+        "房间": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "房间名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "处于此处的NPC": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "处于此处的NPC"
+            ]
+          }
+        }
+      },
+      "required": [
+        "等级",
+        "房间"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "年龄": {
+          "type": "number"
+        },
+        "等级": {
+          "type": "number"
+        },
+        "异能": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "异能名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "品级": {
+                "type": "string"
+              },
+              "等级": {
+                "type": "number"
+              },
+              "能量": {
+                "type": "number"
+              },
+              "技能": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "description": "技能名"
+                },
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "等级": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "等级"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "品级",
+              "等级",
+              "能量"
+            ]
+          }
+        },
+        "技能": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "技能名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "等级": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "等级"
+            ]
+          }
+        }
+      },
+      "required": [
+        "年龄",
+        "等级",
+        "异能"
+      ]
+    },
+    "NPC状态": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "NPC名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "年龄": {
+            "type": "number"
+          },
+          "性别": {
+            "type": "string"
+          },
+          "当前位置": {
+            "type": "string"
+          },
+          "当前行为": {
+            "type": "string"
+          },
+          "最后一次互动记录": {
+            "type": "string"
+          },
+          "持有异能": {
+            "type": "string"
+          },
+          "是否已加微信": {
+            "default": false,
+            "type": "boolean"
+          },
+          "是否为住客": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "年龄",
+          "性别",
+          "当前位置",
+          "当前行为",
+          "最后一次互动记录",
+          "持有异能"
+        ]
+      }
+    },
+    "物资仓库": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "物资名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "数量": {
+            "type": "number"
+          },
+          "单位": {
+            "type": "string"
+          },
+          "每自然日消耗量": {
+            "default": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "数量",
+          "单位"
+        ]
+      }
+    },
+    "微信系统": {
+      "type": "object",
+      "properties": {
+        "群聊": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "群名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "群设定": {
+                "type": "string"
+              },
+              "简要消息记录": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "群设定",
+              "简要消息记录"
+            ]
+          }
+        },
+        "私聊记录": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "NPC名"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "发送者": {
+                  "type": "string"
+                },
+                "内容": {
+                  "type": "string"
+                },
+                "时间": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "发送者",
+                "内容",
+                "时间"
+              ]
+            }
+          }
+        },
+        "群聊记录": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "群名"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "发送者": {
+                  "type": "string"
+                },
+                "内容": {
+                  "type": "string"
+                },
+                "时间": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "发送者",
+                "内容",
+                "时间"
+              ]
+            }
+          }
+        }
+      },
+      "required": [
+        "群聊"
+      ]
+    }
+  },
+  "required": [
+    "时间",
+    "安全屋",
+    "主角",
+    "NPC状态",
+    "物资仓库",
+    "微信系统"
+  ]
+}

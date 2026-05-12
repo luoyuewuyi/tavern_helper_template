@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "天气": {
+          "type": "string"
+        },
+        "近期事件": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事件描述"
+          }
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "天气",
+        "近期事件"
+      ]
+    },
+    "白荔": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "绝望值": {
+          "type": "number"
+        },
+        "病娇值": {
+          "type": "number"
+        },
+        "义体完整度": {
+          "type": "number"
+        },
+        "服务芯片状态": {
+          "default": "休眠",
+          "type": "string",
+          "enum": [
+            "活跃",
+            "休眠",
+            "损坏",
+            "已移除"
+          ]
+        },
+        "当前情绪": {
+          "type": "string"
+        },
+        "身体状态": {
+          "type": "string"
+        },
+        "着装": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "绝望值",
+        "病娇值",
+        "义体完整度",
+        "当前情绪",
+        "身体状态",
+        "着装"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "信誉": {
+          "type": "string"
+        },
+        "欧币": {
+          "type": "number"
+        },
+        "物品栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "描述",
+              "数量"
+            ]
+          }
+        }
+      },
+      "required": [
+        "信誉",
+        "欧币",
+        "物品栏"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "白荔",
+    "主角"
+  ]
+}

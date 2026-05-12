@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西幻卡牌世界 - 状态栏预览</title>
+<style>
+body {
+  background: #1a1b26;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+h2 {
+  color: #c0caf5;
+  margin-bottom: 20px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+</style>
+</head>
+<body>
+<h2>▼ 状态栏渲染预览 ▼</h2>
+
+<!-- 这是正则替换后的最终渲染结果 -->
+<div style="font-family:'Segoe UI',Arial,sans-serif;max-width:500px;margin:12px auto;background:linear-gradient(135deg,#0d1117 0%,#161b22 50%,#0d1117 100%);border:1px solid #30363d;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+<div style="background:linear-gradient(90deg,#1a1a2e,#16213e,#0f3460);padding:14px 18px;border-bottom:1px solid #30363d;display:flex;align-items:center;gap:12px;">
+<div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 12px rgba(102,126,234,0.4);">⚔️</div>
+<div>
+<div style="color:#e6edf3;font-size:16px;font-weight:700;letter-spacing:1px;">洛月无忆</div>
+<div style="color:#8b949e;font-size:11px;">男 · 见习制卡师 · 【不入流】</div>
+</div>
+<div style="margin-left:auto;padding:4px 10px;background:rgba(102,126,234,0.15);border:1px solid rgba(102,126,234,0.3);border-radius:20px;color:#667eea;font-size:11px;font-weight:600;">【不入流】</div>
+</div>
+<div style="padding:14px 18px;">
+<div style="display:flex;gap:8px;margin-bottom:12px;">
+<div style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:8px 10px;text-align:center;">
+<div style="color:#ef4444;font-size:10px;font-weight:600;letter-spacing:1px;margin-bottom:2px;">❤️ 血量</div>
+<div style="color:#f87171;font-size:15px;font-weight:700;">4000<span style="color:#6b7280;font-size:11px;">/4000</span></div>
+</div>
+<div style="flex:1;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;padding:8px 10px;text-align:center;">
+<div style="color:#3b82f6;font-size:10px;font-weight:600;letter-spacing:1px;margin-bottom:2px;">💎 法力上限</div>
+<div style="color:#60a5fa;font-size:15px;font-weight:700;">1</div>
+</div>
+<div style="flex:1;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);border-radius:8px;padding:8px 10px;text-align:center;">
+<div style="color:#eab308;font-size:10px;font-weight:600;letter-spacing:1px;margin-bottom:2px;">🪙 金币</div>
+<div style="color:#facc15;font-size:15px;font-weight:700;">50</div>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+<div style="display:flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.2);border-radius:6px;">
+<span style="font-size:12px;">✨</span><span style="color:#c084fc;font-size:11px;font-weight:500;">???(待长老揭示)</span>
+</div>
+<div style="display:flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:6px;">
+<span style="font-size:12px;">🃏</span><span style="color:#4ade80;font-size:11px;font-weight:500;">牌组 0/40</span>
+</div>
+<div style="display:flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(244,114,182,0.08);border:1px solid rgba(244,114,182,0.2);border-radius:6px;">
+<span style="font-size:12px;">🗡️</span><span style="color:#f472b6;font-size:11px;font-weight:500;">训练: 无</span>
+</div>
+</div>
+<div style="background:rgba(255,255,255,0.03);border:1px solid #21262d;border-radius:8px;padding:10px 12px;margin-bottom:10px;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+<span style="font-size:12px;">📍</span><span style="color:#8b949e;font-size:10px;">位置</span>
+<span style="color:#e6edf3;font-size:12px;font-weight:500;">黑石城·觉醒广场</span>
+</div>
+<div style="display:flex;align-items:center;gap:6px;">
+<span style="font-size:12px;">🕐</span><span style="color:#8b949e;font-size:10px;">时间</span>
+<span style="color:#e6edf3;font-size:12px;font-weight:500;">觉醒日 08:30</span>
+</div>
+</div>
+<div style="background:linear-gradient(180deg,rgba(18,21,44,0.94),rgba(11,13,27,0.98));border:1px solid rgba(102,126,234,0.22);border-radius:10px;padding:12px;margin-bottom:10px;">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;">
+<div>
+<div style="color:#6b7280;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Deck Ledger</div>
+<div style="color:#f0d078;font-size:14px;font-weight:700;letter-spacing:1px;">卡牌总览</div>
+</div>
+<div style="padding:4px 8px;border-radius:999px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);color:#93c5fd;font-size:11px;font-weight:700;">3/3</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;">
+<div style="padding:10px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(102,126,234,0.05));border:1px solid rgba(48,54,61,0.95);">
+<div style="color:#e6edf3;font-size:13px;font-weight:700;line-height:1.35;margin-bottom:6px;">【霜甲侍卫】</div>
+<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;">
+<span style="padding:2px 7px;border-radius:999px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fde68a;font-size:10px;">随从</span>
+<span style="padding:2px 7px;border-radius:999px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fde68a;font-size:10px;">费用2</span>
+<span style="padding:2px 7px;border-radius:999px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fde68a;font-size:10px;">攻击600/生命700</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:8px;color:#8b949e;font-size:11px;line-height:1.55;">
+<span style="flex-shrink:0;padding:1px 6px;border-radius:999px;background:rgba(168,85,247,0.12);color:#c4b5fd;font-size:10px;font-weight:700;">效果</span>
+<span>战吼：若你本回合使用过法术牌，则获得【圣盾】。</span>
+</div>
+</div>
+<div style="padding:10px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(102,126,234,0.05));border:1px solid rgba(48,54,61,0.95);">
+<div style="color:#e6edf3;font-size:13px;font-weight:700;line-height:1.35;margin-bottom:6px;">【魔力水晶】</div>
+<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;">
+<span style="padding:2px 7px;border-radius:999px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fde68a;font-size:10px;">法术</span>
+<span style="padding:2px 7px;border-radius:999px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fde68a;font-size:10px;">费用0</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:8px;color:#8b949e;font-size:11px;line-height:1.55;">
+<span style="flex-shrink:0;padding:1px 6px;border-radius:999px;background:rgba(168,85,247,0.12);color:#c4b5fd;font-size:10px;font-weight:700;">效果</span>
+<span>获得一点临时法力，仅本回合有效。</span>
+</div>
+</div>
+<div style="padding:10px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(102,126,234,0.05));border:1px solid rgba(48,54,61,0.95);">
+<div style="color:#e6edf3;font-size:13px;font-weight:700;line-height:1.35;margin-bottom:6px;">【奇闻启示】</div>
+<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;">
+<span style="padding:2px 7px;border-radius:999px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fde68a;font-size:10px;">幻境</span>
+<span style="padding:2px 7px;border-radius:999px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fde68a;font-size:10px;">费用2</span>
+<span style="padding:2px 7px;border-radius:999px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fde68a;font-size:10px;">幻境值400</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:8px;color:#8b949e;font-size:11px;line-height:1.55;">
+<span style="flex-shrink:0;padding:1px 6px;border-radius:999px;background:rgba(168,85,247,0.12);color:#c4b5fd;font-size:10px;font-weight:700;">效果</span>
+<span>每回合你的抽牌改为检视牌库顶3张，选1张加入手牌，其余洗回牌库。</span>
+</div>
+</div>
+</div>
+</div>
+<div style="background:linear-gradient(90deg,rgba(59,130,246,0.08),rgba(168,85,247,0.08));border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:10px 12px;">
+<div style="display:flex;align-items:center;gap:6px;">
+<span style="font-size:12px;">📋</span><span style="color:#8b949e;font-size:10px;">当前任务</span>
+</div>
+<div style="color:#93c5fd;font-size:12px;font-weight:500;margin-top:4px;">放学后前往制卡师协会找长老</div>
+</div>
+</div>
+</div>
+
+<h2 style="margin-top:32px;">▼ 选项按钮预览 ▼</h2>
+
+<!-- 选项按钮渲染 -->
+<div style="max-width:500px;margin:8px auto 12px;display:flex;flex-direction:column;gap:6px;">
+<div style="cursor:pointer;display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(135deg,rgba(59,130,246,0.06),rgba(59,130,246,0.12));border:1px solid rgba(59,130,246,0.2);border-radius:8px;transition:all 0.2s;" onmouseover="this.style.background='linear-gradient(135deg,rgba(59,130,246,0.12),rgba(59,130,246,0.22))';this.style.transform='translateX(4px)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(59,130,246,0.06),rgba(59,130,246,0.12))';this.style.transform='none'">
+<div style="width:28px;height:28px;min-width:28px;border-radius:6px;background:linear-gradient(135deg,#3b82f6,#2563eb);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;box-shadow:0 2px 8px rgba(59,130,246,0.3);">A</div>
+<span style="color:#93c5fd;font-size:13px;font-weight:500;">仔细观察那个暴雪骑士团的女性</span>
+</div>
+<div style="cursor:pointer;display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(135deg,rgba(168,85,247,0.06),rgba(168,85,247,0.12));border:1px solid rgba(168,85,247,0.2);border-radius:8px;transition:all 0.2s;" onmouseover="this.style.background='linear-gradient(135deg,rgba(168,85,247,0.12),rgba(168,85,247,0.22))';this.style.transform='translateX(4px)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(168,85,247,0.06),rgba(168,85,247,0.12))';this.style.transform='none'">
+<div style="width:28px;height:28px;min-width:28px;border-radius:6px;background:linear-gradient(135deg,#a855f7,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;box-shadow:0 2px 8px rgba(168,85,247,0.3);">B</div>
+<span style="color:#c4b5fd;font-size:13px;font-weight:500;">和周围的同学聊聊觉醒的事</span>
+</div>
+<div style="cursor:pointer;display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(135deg,rgba(34,197,94,0.06),rgba(34,197,94,0.12));border:1px solid rgba(34,197,94,0.2);border-radius:8px;transition:all 0.2s;" onmouseover="this.style.background='linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.22))';this.style.transform='translateX(4px)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(34,197,94,0.06),rgba(34,197,94,0.12))';this.style.transform='none'">
+<div style="width:28px;height:28px;min-width:28px;border-radius:6px;background:linear-gradient(135deg,#22c55e,#16a34a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;box-shadow:0 2px 8px rgba(34,197,94,0.3);">C</div>
+<span style="color:#86efac;font-size:13px;font-weight:500;">直接去教室等待上课</span>
+</div>
+<div style="cursor:pointer;display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(135deg,rgba(234,179,8,0.06),rgba(234,179,8,0.12));border:1px solid rgba(234,179,8,0.2);border-radius:8px;transition:all 0.2s;" onmouseover="this.style.background='linear-gradient(135deg,rgba(234,179,8,0.12),rgba(234,179,8,0.22))';this.style.transform='translateX(4px)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(234,179,8,0.06),rgba(234,179,8,0.12))';this.style.transform='none'">
+<div style="width:28px;height:28px;min-width:28px;border-radius:6px;background:linear-gradient(135deg,#eab308,#ca8a04);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;box-shadow:0 2px 8px rgba(234,179,8,0.3);">D</div>
+<span style="color:#fde68a;font-size:13px;font-weight:500;">悄悄跟上长老，想提前了解自己的天赋</span>
+</div>
+</div>
+
+</body>
+</html>

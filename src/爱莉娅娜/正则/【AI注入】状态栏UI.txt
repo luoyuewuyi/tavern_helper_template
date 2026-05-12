@@ -1,0 +1,572 @@
+```
+<head>
+    <style>
+        /* ==========================================
+           爱莉亚娜 · 玻璃态系统监视终端 (MVU-UI 2.0)
+           ========================================== */
+        :root {
+            --bg-glass: rgba(255, 255, 255, 0.07);
+            --bg-glass-heavy: rgba(15, 20, 35, 0.9);
+            --border-glow: rgba(100, 210, 255, 0.3);
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --accent-blue: #00d2ff;
+            --accent-pink: #ff007f;
+            --accent-gold: #ffd700;
+            
+            /* 品质色 */
+            --color-common: #ffffff;
+            --color-rare: #4ade80;
+            --color-epic: #c084fc;
+            --color-legend: #fbbf24;
+            --color-myth: #f87171;
+            --color-relic: #ffb6c1; /* 金粉色 */
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', "Microsoft YaHei", sans-serif;
+            background: transparent;
+            color: var(--text-main);
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        /* 主面板容器 */
+        .system-panel {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(30, 45, 65, 0.5), rgba(10, 15, 25, 0.8));
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6), inset 0 0 25px rgba(0,210,255,0.1);
+            position: relative;
+        }
+
+        /* ======= 顶部标题与时间线 ======= */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+        .header-title { font-size: 1.6rem; font-weight: 700; letter-spacing: 2px; text-shadow: 0 0 15px var(--accent-blue); }
+        .time-group { display: flex; gap: 20px; font-size: 0.85rem; color: var(--text-dim); }
+        .time-item b { color: var(--text-main); font-family: 'Consolas', monospace; }
+
+        /* ======= 核心数据区 ======= */
+        .core-section { display: flex; gap: 30px; margin-bottom: 20px; }
+
+        /* 肖像环区域 */
+        .portrait-wrapper {
+            position: relative;
+            width: 170px; height: 170px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .portrait-img {
+            position: absolute;
+            top: 15px; left: 15px;
+            width: 140px; height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 2;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        .portrait-wrapper:hover .portrait-img { transform: scale(1.05); }
+        
+        .exp-svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 170px; height: 170px;
+            z-index: 1;
+        }
+        .exp-track { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 6; }
+        .exp-bar {
+            fill: none;
+            stroke: var(--accent-blue);
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-dasharray: 440; /* 2 * PI * 70 */
+            stroke-dashoffset: 440;
+            transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 6px var(--accent-blue));
+            transform: rotate(-90deg); /* 12点起点 */
+            transform-origin: center;
+        }
+
+        /* 状态卡片网格 */
+        .stats-grid {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+        .stat-card {
+            background: var(--bg-glass);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 12px 10px;
+            text-align: center;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .stat-label { font-size: 0.7rem; color: var(--text-dim); margin-bottom: 5px; }
+        .stat-value { font-size: 1.1rem; font-weight: bold; font-family: 'Consolas', monospace; }
+        .stat-value.hp { color: #ff6b8b; }
+        .stat-value.mp { color: #4dabf7; }
+
+        /* 欲望条 */
+        .desire-container {
+            grid-column: span 5;
+            margin-top: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            height: 36px;
+            position: relative;
+            border: 1px solid rgba(255,0,127,0.2);
+            overflow: hidden;
+        }
+        .desire-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff007f, #ff7eb3);
+            width: 0%;
+            transition: width 0.6s ease-in-out;
+            box-shadow: 0 0 15px rgba(255,0,127,0.4);
+        }
+        .desire-text {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 20px; font-size: 0.85rem; font-weight: bold;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        /* ======= 标签切换导航 ======= */
+        .nav-tabs {
+            display: flex;
+            gap: 6px;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.2);
+            padding: 6px;
+            border-radius: 14px;
+            overflow-x: auto;
+        }
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+        .tab-btn:hover { background: rgba(255,255,255,0.06); color: #fff; }
+        .tab-btn.active {
+            background: var(--accent-blue);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,210,255,0.4);
+        }
+
+        /* ======= 内容显示区 ======= */
+        .tab-content {
+            background: rgba(0,0,0,0.15);
+            border-radius: 18px;
+            padding: 22px;
+            min-height: 450px;
+            max-height: 600px;
+            overflow-y: auto;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .pane { display: none; }
+        .pane.active { display: block; animation: slideUp 0.4s ease-out; }
+        @keyframes slideUp { from { opacity:0; transform: translateY(15px); } to { opacity:1; transform: translateY(0); } }
+
+        /* 通用布局类 */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .data-card { background: rgba(255,255,255,0.03); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); position: relative;}
+        .label { color: var(--accent-blue); font-size: 0.75rem; font-weight: bold; margin-bottom: 6px; display: block; }
+        .val { font-size: 0.95rem; color: #fff; }
+
+        /* 列表卡片与词条样式 */
+        .list-item {
+            background: rgba(255,255,255,0.05);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: help;
+            transition: 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .list-item:hover { background: rgba(255,255,255,0.12); transform: translateX(5px); border-left-color: var(--accent-blue); }
+
+        /* 品质色彩映射 */
+        .q-white { color: var(--color-white); }
+        .q-green { color: var(--color-rare); }
+        .q-purple { color: var(--color-epic); }
+        .q-yellow { color: var(--color-legend); }
+        .q-red { color: var(--color-myth); }
+        .q-relic { 
+            color: var(--color-relic); 
+            text-shadow: 0 0 8px rgba(255,182,193,0.6); 
+            font-weight: bold;
+            background: linear-gradient(90deg, #ffb6c1, #ffd700, #ffb6c1);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: relicGlow 3s linear infinite;
+        }
+        @keyframes relicGlow { to { background-position: 200% center; } }
+
+        /* 详情浮窗 */
+        .tooltip {
+            position: fixed;
+            background: var(--bg-glass-heavy);
+            border: 1px solid var(--accent-blue);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            z-index: 10000;
+            display: none;
+            pointer-events: none;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.8);
+            max-width: 320px;
+            line-height: 1.6;
+        }
+
+        /* 生理监视区布局 */
+        .bio-section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .bio-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 15px;
+        }
+        .bio-row { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem;}
+        .bio-row .b-label { color: var(--text-dim); }
+        .bio-row .b-val { color: #fff; text-align: right; }
+        .progress-bar-mini {
+            height: 6px; background: rgba(0,0,0,0.3); border-radius: 3px; margin-top: 10px; overflow: hidden;
+        }
+        .progress-bar-fill { height: 100%; background: var(--accent-pink); width: 0%; transition: width 0.5s ease; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+    </style>
+
+    <script type="module">
+        /* 核心驱动与渲染 */
+        async function init() {
+            if (typeof waitGlobalInitialized === 'function') { await waitGlobalInitialized('Mvu'); }
+            renderAll();
+            // 订阅 MVU 变量更新事件，替代固定轮询
+            if (typeof Mvu !== 'undefined' && Mvu.events && Mvu.events.VARIABLE_UPDATE_ENDED) {
+                Mvu.events.VARIABLE_UPDATE_ENDED.on(renderAll);
+            }
+            // 兜底轮询
+            setInterval(renderAll, 3000);
+        }
+
+        function getStatData() {
+            // 从最新楼层反向查找有 MVU 数据的楼层
+            try {
+                if (typeof Mvu !== 'undefined' && Mvu.getMvuData) {
+                    for (let i = -1; i >= -20; i--) {
+                        const mvuData = Mvu.getMvuData({ type: 'message', message_id: i });
+                        const d = _.get(mvuData, 'stat_data');
+                        if (d && !_.isEmpty(d)) return d;
+                    }
+                }
+            } catch(e) {}
+            // 兜底：当前楼层变量
+            const allVars = typeof getAllVariables === 'function' ? getAllVariables() : {};
+            return _.get(allVars, 'stat_data', {});
+        }
+
+        /* 时间格式化转换 (-) -> (:) */
+        function formatClock(str) {
+            return str ? str.replace(/-/g, ':') : '--';
+        }
+
+        function renderAll() {
+            const d = getStatData();
+
+            /* 1. 顶部基础信息面板 */
+            $('#main-time').text(formatClock(_.get(d, '时间系统.主世界时间')));
+            $('#p-time').text(formatClock(_.get(d, '时间系统.个人时间')));
+            $('#weather').text(_.get(d, '世界信息.当前天气', '晴'));
+
+            /* 2. 肖像经验环驱动 */
+            const lvl = _.get(d, '角色概览.等级', 1);
+            const xp = _.get(d, '角色概览.经验值', 0);
+            const maxXp = _.get(d, '角色概览.最大经验值', lvl * 100);
+            const xpPct = Math.min(100, (xp / maxXp) * 100);
+            const offset = 440 - (440 * xpPct / 100);
+            $('.exp-bar').css('stroke-dashoffset', offset);
+            $('#val-lvl').text(lvl);
+
+            /* 3. 五维核心数值卡 */
+            $('#val-hp').text(`${_.get(d, '角色概览.生命值', 100)} / 100`);
+            $('#val-mp').text(`${_.get(d, '角色概览.法力值', 100)} / 100`);
+            $('#val-age').text(_.get(d, '角色概览.年龄', 18));
+            $('#val-life').text(_.get(d, '角色概览.寿命', 29200));
+
+            /* 4. 欲望进度条 */
+            const dLvl = _.get(d, '角色概览.欲望等级', 1);
+            const dVal = _.get(d, '角色概览.欲望值', 0);
+            const dMax = _.get(d, '角色概览.最大欲望值', dLvl * 500);
+            const dPct = Math.floor((dVal / dMax) * 100);
+            $('.desire-fill').css('width', dPct + '%');
+            $('#desire-lvl-txt').text(`欲望等级 LV.${dLvl}`);
+            $('#desire-pct-txt').text(dPct + '%');
+
+            /* 5. 分页子系统渲染 */
+            renderWorld(d);
+            renderSocial(d);
+            renderCombat(d);
+            renderGear(d);
+            renderInventory(d);
+            renderPrivateInfo(d);
+            renderPrivateStats(d);
+        }
+
+        /* --- 子页面渲染逻辑 --- */
+
+        function renderWorld(d) {
+            const w = _.get(d, '世界信息', {});
+            const isDungeon = w.当前世界名称 !== "主世界";
+            $('#pane-world').html(`
+                <div class="grid-2">
+                    <div class="data-card"><span class="label">当前所在维度</span><div class="val">${w.当前世界名称}</div></div>
+                    <div class="data-card"><span class="label">副本探索状态</span><div class="val" style="color:${isDungeon?'var(--accent-pink)':'var(--color-rare)'}">${isDungeon?'副本环境中 - 经历时间暂停同步':'主世界日常 - 时间流通中'}</div></div>
+                </div>
+                <div class="data-card" style="margin-top:15px"><span class="label">当前世界概况</span><div class="val" style="font-size:0.85rem">${w.当前世界简介}</div></div>
+                <div class="grid-2" style="margin-top:15px">
+                    <div class="data-card"><span class="label">任务追踪</span><div id="task-list"></div></div>
+                    <div class="data-card"><span class="label">冒险履历 (最新)</span><div id="history-list"></div></div>
+                </div>
+            `);
+            $('#task-list').html(renderMap(d.任务栏, (v, k) => `<div class="list-item" onmouseover="tip(event, '<b>${k}</b><br>${v.任务描述}<br>成功:${v.成功条件}<br>失败:${v.失败惩罚}')" onmouseout="untip()">${k}</div>`));
+            $('#history-list').html(renderMap(d.履历信息, (v, k) => `<div class="list-item" onmouseover="tip(event, '${v.副本表现}<br>攻略时间:${v.攻略时间}<br>用时:${v.攻略用时}')" onmouseout="untip()">攻略：${k}</div>`));
+        }
+
+        function renderSocial(d) {
+            const s = _.get(d, '社会身份', {});
+            $('#pane-social').html(`
+                <div class="grid-2">
+                    <div class="info-card"><span class="label">主职业 / 隐藏职业</span><div class="val">${s.主职业} / <span class="q-purple">${s.隐藏职业}</span></div></div>
+                    <div class="info-card"><span class="label">主身份 / 隐藏身份</span><div class="val">${s.主身份} / <span class="q-yellow">${s.隐藏身份}</span></div></div>
+                    <div class="info-card"><span class="label">副本内临时身份</span><div class="val">${s.副本临时身份}</div></div>
+                    <div class="info-card"><span class="label">当前获得称号</span><div class="val q-relic">${s.称号}</div></div>
+                </div>
+                <div class="info-card" style="margin-top:15px"><span class="label">外貌 & 着装详细</span><div class="val" style="font-size:0.8rem"><b>外观：</b>${s.外貌描述}<br><br><b>当前：</b>${s.着装描述}</div></div>
+                <div class="info-card" style="margin-top:15px"><span class="label">世界观测社会评价</span><div class="val" style="font-style:italic">"${s.社会评价}"</div></div>
+            `);
+        }
+
+        function renderCombat(d) {
+            const b = _.get(d, '战斗属性', {});
+            $('#pane-combat').html(`
+                <div class="grid-4" style="margin-bottom:15px">
+                    <div class="stat-card"><span class="stat-label">体质</span><span class="stat-value">${b.体质}</span></div>
+                    <div class="stat-card"><span class="stat-label">力量</span><span class="stat-value">${b.力量}</span></div>
+                    <div class="stat-card"><span class="stat-label">精神</span><span class="stat-value">${b.精神}</span></div>
+                    <div class="stat-card"><span class="stat-label">敏捷</span><span class="stat-value">${b.敏捷}</span></div>
+                </div>
+                <div class="grid-4">
+                    <div class="info-card"><span class="label">物理攻击</span><div class="val">${b.物理攻击}</div></div>
+                    <div class="info-card"><span class="label">法术攻击</span><div class="val">${b.法术攻击}</div></div>
+                    <div class="info-card"><span class="label">物理防御</span><div class="val">${b.防御}</div></div>
+                    <div class="info-card" style="border-color:var(--accent-gold)"><span class="label">自由属性点</span><div class="val q-yellow">${b.自由属性点}</div></div>
+                </div>
+                <div class="info-card" style="margin-top:15px"><span class="label">已习得技能模组</span>
+                    <div id="skill-list" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;"></div>
+                </div>
+            `);
+            $('#skill-list').html(renderMap(d.技能栏, (v, k) => `<div class="list-item" style="margin:0" onmouseover="tip(event, '<b>${k}</b> (Lv.${v.技能等级})<br>${v.技能描述}<br>实际效果:${v.技能实际效果}<br>消耗:${v.技能消耗}')" onmouseout="untip()">${k}</div>`));
+        }
+
+        function renderGear(d) {
+            const c = _.get(d, '普通装备槽', {});
+            const t = _.get(d, '调教装备槽', {});
+            const r = _.get(d, '圣器槽位', {});
+            
+            let html = '<div class="grid-2"><div><span class="label">通用装备槽</span>';
+            _.forEach(c, (v, k) => html += renderSlot(k, v));
+            html += '</div><div><span class="label">私密调教装备槽</span>';
+            _.forEach(t, (v, k) => html += renderSlot(k, v));
+            html += '</div></div><div class="data-card" style="margin-top:15px"><span class="label">圣器链接插槽</span><div class="grid-2">';
+            _.forEach(r, (v, k) => html += `<div>${renderSlot(k, v, true)}</div>`);
+            html += '</div></div>';
+            $('#pane-gear').html(html);
+        }
+
+        function renderInventory(d) {
+            const pack = _.get(d, '背包物品栏', {});
+            $('#pane-items').html(`
+                <div class="data-card"><span class="label">常规物品背包</span><div id="pack-list"></div></div>
+                <div class="grid-2" style="margin-top:15px">
+                    <div class="data-card"><span class="label">未穿戴装备库</span><div style="font-size:0.7rem; color:var(--text-dim)">[ 暂无多余武器/防具 ]</div></div>
+                    <div class="data-card"><span class="label">未链接圣器库</span><div style="font-size:0.7rem; color:var(--text-dim)">[ 暂无沉睡圣器 ]</div></div>
+                </div>
+            `);
+            $('#pack-list').html(renderMap(pack, (v, k) => `<div class="list-item"><span>${k} x${v.数量}</span><span style="font-size:0.75rem">${v.简介}</span></div>`));
+        }
+
+        function renderPrivateInfo(d) {
+            const sections = [
+                { id: '子宫区块', data: d.子宫监视, keys: ['状态描述','内有异物','精液量_ml','怀孕状态','胎儿情况','开发等级'] },
+                { id: '乳房区块', data: d.乳房监视, keys: ['状态描述','乳房饰品','乳汁量_ml','开发等级'] },
+                { id: '菊穴区块', data: d.菊穴监视, keys: ['状态描述','内有异物','内容物','开发等级'] },
+                { id: '尿道膀胱区块', data: d.尿道膀胱监视, keys: ['状态描述','内有异物','膀胱内容物','开发等级'] }
+            ];
+            
+            let html = '<div class="bio-section-grid">';
+            sections.forEach(sec => {
+                const v = sec.data || {};
+                const dev = v.开发度 || 0;
+                html += `
+                    <div class="bio-card">
+                        <span class="label">${sec.id}</span>
+                        <div style="margin-top:10px;">
+                            ${sec.keys.map(k => `<div class="bio-row"><span class="b-label">${k.replace(/_/g,' ')}</span><span class="b-val">${v[k]===undefined?'--':v[k]}</span></div>`).join('')}
+                        </div>
+                        <div class="progress-bar-mini"><div class="progress-bar-fill" style="width:${dev}%"></div></div>
+                        <div style="text-align:right; font-size:0.6rem; color:var(--accent-pink); margin-top:4px;">开发度: ${dev}%</div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            $('#pane-private-info').html(html);
+        }
+
+        function renderPrivateStats(d) {
+            const s = _.get(d, '私密统计', {});
+            const m = _.get(d, '肉体改造列表', {});
+            $('#pane-private-stats').html(`
+                <div class="grid-4" style="margin-bottom:20px">
+                    <div class="stat-card"><span class="stat-label">总高潮次数</span><span class="stat-value">${s.总高潮次数}</span></div>
+                    <div class="stat-card"><span class="stat-label">精液转化摩拉/经验</span><span class="stat-value">${s.累积转化精液量_ml}ml</span></div>
+                    <div class="stat-card"><span class="stat-label">累积分娩次数</span><span class="stat-value">${s.累积分娩次数}</span></div>
+                    <div class="stat-card"><span class="stat-label">累积乳汁产出</span><span class="stat-value">${s.累积乳汁产出_ml}ml</span></div>
+                </div>
+                <div class="data-card"><span class="label">已激活肉体改造/异化记录</span>
+                    <div id="mod-list" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;"></div>
+                </div>
+            `);
+            $('#mod-list').html(renderMap(m, (v, k) => `<div class="list-item" style="margin:0" onmouseover="tip(event, '<b>${k}</b><br>${v.描述}<br>来源:${v.来源}')" onmouseout="untip()">${k}</div>`));
+        }
+
+        /* 辅助工具：槽位与品质 */
+        function renderSlot(slot, item, isRelic=false) {
+            if(!item) return `<div class="list-item" style="opacity:0.3"><span>${slot}</span><span>[ Empty ]</span></div>`;
+            const qMap = { '普通': 'white', '稀有': 'green', '史诗': 'purple', '传奇': 'yellow', '神器': 'red' };
+            const qClass = isRelic ? 'q-relic' : `q-${qMap[item.品质] || 'white'}`;
+            const tipTxt = isRelic ? 
+                `<b>${item.名称}</b> (Lv.${item.圣器等级})<br>${item.描述}<br>存储:${item.存储情况 || item.当前存储量}/${item.最大存储量}<br>功能:${item.功能}` :
+                `<b>${item.名称}</b><br>${item.简介}<br>效果:${item.效果}<br>外观:${item.外观}`;
+            
+            return `<div class="list-item" onmouseover="tip(event, '${tipTxt}')" onmouseout="untip()"><span>${slot}</span><span class="${qClass}">${item.名称}</span></div>`;
+        }
+
+        function renderMap(obj, fn) {
+            if(_.isEmpty(obj)) return '<div style="font-size:0.75rem; color:var(--text-dim)">[ 无活动数据 ]</div>';
+            return _.map(obj, fn).join('');
+        }
+
+        /* 鼠标悬浮 */
+        window.tip = (e, txt) => {
+            const $t = $('#tooltip');
+            $t.html(txt).css({ top: e.clientY + 15, left: e.clientX + 15 }).show();
+        };
+        window.untip = () => $('#tooltip').hide();
+
+        /* 更换肖像 */
+        window.changePortrait = () => {
+            const defaultImg = "https://files.catbox.moe/cyhi5w.png"
+            const url = prompt("请输入肖像图片链接 (URL):");
+            if (url) $('.portrait-img').attr('src', url);
+        };
+
+        $(() => {
+            init();
+            $('.tab-btn').on('click', function() {
+                const target = $(this).data('target');
+                $('.tab-btn, .pane').removeClass('active');
+                $(this).addClass('active');
+                $(`#pane-${target}`).addClass('active');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="system-panel" id="main-frame">
+        <div id="tooltip" class="tooltip"></div>
+
+        <div class="header-top">
+            <div class="header-title">爱莉亚娜 · 玻璃态系统监视</div>
+            <div class="time-group">
+                <div class="time-item">主世界时间: <b id="main-time">--</b></div>
+                <div class="time-item">个人时间: <b id="p-time">--</b></div>
+                <div class="time-item">天气: <b id="weather">--</b></div>
+            </div>
+        </div>
+
+        <div class="core-section">
+            <div class="portrait-wrapper" onclick="changePortrait()">
+                <svg class="exp-svg">
+                    <circle class="exp-track" cx="85" cy="85" r="70"></circle>
+                    <circle class="exp-bar" cx="85" cy="85" r="70"></circle>
+                </svg>
+                <img src="https://files.catbox.moe/cyhi5w.png" class="portrait-img">
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card"><span class="stat-label">当前等级</span><span class="stat-value" id="val-lvl">--</span></div>
+                <div class="stat-card"><span class="stat-label">生命值 (HP)</span><span class="stat-value hp" id="val-hp">--</span></div>
+                <div class="stat-card"><span class="stat-label">法力值 (MP)</span><span class="stat-value mp" id="val-mp">--</span></div>
+                <div class="stat-card"><span class="stat-label">实岁年龄</span><span class="stat-value" id="val-age">--</span></div>
+                <div class="stat-card"><span class="stat-label">剩余寿命 (天)</span><span class="stat-value q-green" id="val-life">--</span></div>
+                
+                <div class="desire-container">
+                    <div class="desire-fill"></div>
+                    <div class="desire-text">
+                        <span id="desire-lvl-txt">欲望等级 LV.1</span>
+                        <span id="desire-pct-txt">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-target="world">世界信息</button>
+            <button class="tab-btn" data-target="social">社会信息</button>
+            <button class="tab-btn" data-target="combat">战斗属性</button>
+            <button class="tab-btn" data-target="gear">装备栏</button>
+            <button class="tab-btn" data-target="items">物品栏</button>
+            <button class="tab-btn" data-target="private-info">私密信息</button>
+            <button class="tab-btn" data-target="private-stats">私密统计</button>
+        </nav>
+
+        <div class="tab-content">
+            <div id="pane-world" class="pane active">渲染引擎加载中...</div>
+            <div id="pane-social" class="pane">社会身份解析中...</div>
+            <div id="pane-combat" class="pane">物理/以太属性扫描中...</div>
+            <div id="pane-gear" class="pane">装备法阵自检中...</div>
+            <div id="pane-items" class="pane">空间储物袋开启中...</div>
+            <div id="pane-private-info" class="pane">生理深度监视运行中...</div>
+            <div id="pane-private-stats" class="pane">历史因果统计加载中...</div>
+        </div>
+    </div>
+</body>
+```

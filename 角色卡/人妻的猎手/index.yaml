@@ -1,0 +1,602 @@
+# yaml-language-server: $schema=https://testingcf.jsdelivr.net/gh/StageDog/tavern_sync/dist/schema/character.zh.json
+头像: 头像
+版本: ""
+作者: ""
+备注: ""
+
+第一条消息:
+  - 文件: 第一条消息\0
+
+角色描述: ""
+
+锚点: {}
+
+世界书名称: 熟女猎手世界书
+条目:
+  - 名称: "[initvar]变量初始化勿开"
+    启用: false
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\[initvar]变量初始化勿开
+
+  - 名称: "[mvu_update]变量输出格式强调"
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\[mvu_update]变量输出格式强调
+
+  - 名称: "[mvu_update]变量更新规则"
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 200
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\[mvu_update]变量更新规则
+
+  - 名称: 变量列表
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 200
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量列表
+
+  - 名称: "[mvu_update]变量输出格式"
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 4
+      顺序: 200
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\[mvu_update]变量输出格式
+
+  - 名称: 世界观
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 1
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\世界观
+
+  - 名称: 角色速览
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 4
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\角色速览
+
+  - 名称: "{{user}}"
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\{{user}}
+
+  - 名称: 陆沉雪
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\陆沉雪
+
+  - 名称: 陆美玲
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\陆美玲
+
+  - 名称: 柳如玉
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\柳如玉
+
+  - 名称: 何美兰
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\何美兰
+
+  - 名称: 李淑慧
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\李淑慧
+
+  - 名称: 张雪
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\张雪
+
+  - 名称: 白曼文
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\白曼文
+
+  - 名称: 陆沉雪_多阶段人设
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\陆沉雪_多阶段人设
+
+  - 名称: NPC_1 - 李刚
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\NPC_1_-_李刚
+
+  - 名称: NPC_2 - 陈露
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\NPC_2_-_陈露
+
+  - 名称: NPC_3 - 苏婉
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\NPC_3_-_苏婉
+
+  - 名称: NPC_5 - 张智
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\NPC_5_-_张智
+
+  - 名称: 陆美玲_多阶段人设
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\陆美玲_多阶段人设
+
+  - 名称: 柳如玉_多阶段人设
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\柳如玉_多阶段人设
+
+  - 名称: 何美兰_多阶段人设
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\何美兰_多阶段人设
+
+  - 名称: 李淑慧_多阶段人设
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\李淑慧_多阶段人设
+
+  - 名称: 张雪_多阶段人设
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\张雪_多阶段人设
+
+  - 名称: 白曼文_多阶段人设
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 100
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    文件: 世界书\白曼文_多阶段人设
+
+扩展字段:
+  正则:
+    - 正则名称: "[美化]变量更新中-夜空诗意"
+      id: c1071f44-3402-48a4-981c-794ab321b6f9
+      启用: true
+      查找表达式: /<UpdateVariable(?:variable)?>(?!.*<\/UpdateVariable(?:variable)?>)\s*(.*)\s*$/gsi
+      文件: 正则\[美化]变量更新中-夜空诗意
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+    - 正则名称: "[美化]完整变量完成-夜空诗意"
+      id: d52e861d-8279-4659-ae9d-17df132bd637
+      启用: true
+      查找表达式: /<UpdateVariable(?:variable)?>\s*(.*)\s*<\/UpdateVariable(?:variable)?>/gsi
+      文件: 正则\[美化]完整变量完成-夜空诗意
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+    - 正则名称: 对 AI 隐藏状态栏
+      id: c9953ed7-55a1-4794-8485-2d9f059ad78b
+      启用: true
+      查找表达式: <StatusPlaceHolderImpl/>
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+
+    - 正则名称: 仅格式思维链
+      id: 5f5c39c1-b979-462b-a840-33e2404e75eb
+      启用: true
+      查找表达式: /<Analysis>[\s\S]+?<\/Analysis>/gm
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+
+    - 正则名称: 只发送最新3楼的变量更新
+      id: c1077fae-e274-487b-9304-bd7731a0faa4
+      启用: true
+      查找表达式: /<UpdateVariable>[\s\S]*?</UpdateVariable>/gm
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+      最小深度: 6
+
+    - 正则名称: 状态栏美化
+      id: a4c4758a-6323-4231-80f1-734b08a21867
+      启用: true
+      查找表达式: <StatusPlaceHolderImpl/>
+      文件: 正则\状态栏美化
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+  酒馆助手:
+    脚本库:
+      - 名称: ZOD结构脚本
+        id: b23b11fc-6874-4fd3-959f-bc4cae4561c1
+        启用: true
+        类型: 脚本
+        内容: |
+          import { registerMvuSchema } from 'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js';
+
+          function getStage(value, stages) {
+            if (value >= 80) return stages[4];
+            if (value >= 60) return stages[3];
+            if (value >= 40) return stages[2];
+            if (value >= 20) return stages[1];
+            return stages[0];
+          }
+
+          function createHeroineSchema(stages) {
+            return z.object({
+              ❤️攻略值: z.coerce.number().prefault(0),
+              攻略阶段: z.string().prefault(stages[0]),
+              身体状态: z.object({
+                👚衣着: z.string().prefault('待描述'),
+                👄口腔: z.string().prefault('待描述'),
+                🍈胸乳: z.string().prefault('待描述'),
+                🌸小穴: z.string().prefault('待描述'),
+                💮菊穴: z.string().prefault('待描述'),
+                🏠子宫: z.string().prefault('待描述'),
+              }).prefault({}),
+              💃体态姿势: z.string().prefault('待描述'),
+              💭内心想法: z.string().prefault('待描述'),
+            }).transform(data => ({
+              ...data,
+              ❤️攻略值: _.clamp(data.❤️攻略值, 0, 100),
+              攻略阶段: getStage(_.clamp(data.❤️攻略值, 0, 100), stages),
+            }));
+          }
+
+          const Schema = z.object({
+            世界: z.object({
+              当前时间: z.string().prefault('08:00'),
+              当前日期: z.string().prefault('2026年4月7日 星期一'),
+            }),
+
+            陆沉雪: createHeroineSchema([
+              '🏠慈母之心🏠',
+              '🌙暗夜迷惑🌙',
+              '💧禁忌裂痕💧',
+              '🔥母性沦陷🔥',
+              '💋完全归属💋',
+            ]),
+
+            陆美玲: createHeroineSchema([
+              '🎀亲情纽带🎀',
+              '🍷暧昧试探🍷',
+              '💄欲拒还迎💄',
+              '🌹情欲觉醒🌹',
+              '💝甘愿为奴💝',
+            ]),
+
+            柳如玉: createHeroineSchema([
+              '🛡冰封之心🛡',
+              '🌊赎罪之门🌊',
+              '⛓愧疚枷锁⛓',
+              '🔓防线瓦解🔓',
+              '💠以身赎罪💠',
+            ]),
+
+            何美兰: createHeroineSchema([
+              '👔女王姿态👔',
+              '🗝隐秘渴望🗝',
+              '💊权力让渡💊',
+              '🧎高傲折腰🧎',
+              '👠彻底驯服👠',
+            ]),
+
+            李淑慧: createHeroineSchema([
+              '🌾隐忍求生🌾',
+              '🤲感恩依靠🤲',
+              '💦身心动摇💦',
+              '🎐甘愿付出🎐',
+              '🏷完全所有🏷',
+            ]),
+
+            张雪: createHeroineSchema([
+              '🐚怯懦之壳🐚',
+              '🌱萌芽依赖🌱',
+              '🌸少女绽放🌸',
+              '💕深陷其中💕',
+              '🎀只属于你🎀',
+            ]),
+
+            白曼文: createHeroineSchema([
+              '👑师道尊严👑',
+              '🔥暗流涌动🔥',
+              '⚡防线崩裂⚡',
+              '💔骄傲碎片💔',
+              '🖤完全臣服🖤',
+            ]),
+          });
+
+          $(() => {
+            registerMvuSchema(Schema);
+          });
+
+      - 名称: MVUbeta
+        id: 40ecf88b-a4da-440c-9e8d-a565a0772992
+        启用: true
+        类型: 脚本
+        内容: import
+          'https://testingcf.jsdelivr.net/gh/MagicalAstrogy/MagVarUpdate@beta/artifact/bundle.js'
+        按钮:
+          启用: true
+          按钮列表:
+            - 名称: 重新处理变量
+              可见: true
+            - 名称: 重新读取初始变量
+              可见: true
+            - 名称: 清除旧楼层变量
+              可见: false
+            - 名称: 快照楼层
+              可见: false
+            - 名称: 重演楼层
+              可见: false
+            - 名称: 重试额外模型解析
+              可见: false
+
+      - 名称: 标签补全
+        id: 9a14e581-b556-4ea9-84f4-1fbe9a832384
+        启用: true
+        类型: 脚本
+        内容: $(()=>{toastr.success('思维链标签修复脚本已加载'),eventOn(tavern_events.MESSAGE_RECEIVED,async
+          n=>{try{const e=getChatMessages(n);if(0===e.length)return;const
+          i=e[0];if('assistant'!==i.role)return;let t=i.message;const
+          s=t;t=function(n){if(!n.includes('<content>'))return n;let e=n;const
+          i=(e.match(/<thinking>/g)||[]).length;if(0===i)e='<thinking>\n'+e;else
+          if(1===i){if(!e.trimStart().startsWith('<thinking>')){const
+          n=e.indexOf('<thinking>'),i=e.slice(0,n).trimStart(),t=e.slice(n);e=t+(i?'\n'+i:'')}}else
+          if(e.trimStart().startsWith('<thinking>')){const
+          n=e.indexOf('<thinking>'),i=e.slice(0,n+10),t=e.slice(n+10);e=i+t.replace(/<thinking>/g,'')}else
+          e=e.replace(/<thinking>/g,''),e='<thinking>\n'+e;const
+          t=(e.match(/<\/thinking>/g)||[]).length,s=e.indexOf('<content>');if(0===t)e=e.slice(0,s)+'</thinking>\n'+e.slice(s);else
+          if(1===t){if(e.indexOf('</thinking>')>s){e=e.replace('</thinking>','');const
+          n=e.indexOf('<content>');e=e.slice(0,n)+'</thinking>\n'+e.slice(n)}}else{const
+          n=e.indexOf('</thinking>');if(n<s){const
+          i=e.slice(0,n+11),t=e.slice(n+11);e=i+t.replace(/<\/thinking>/g,'')}else{e=e.replace(/<\/thinking>/g,'');const
+          n=e.indexOf('<content>');e=e.slice(0,n)+'</thinking>\n'+e.slice(n)}}const
+          c=(e.match(/<thinking>/g)||[]).length,g=(e.match(/<\/thinking>/g)||[]).length;if(1!==c||1!==g)return
+          console.warn('[思维链标签修复] 修复后 thinking 标签数量不正确，保持原内容'),n;const
+          l=e.indexOf('<thinking>'),o=e.indexOf('</thinking>'),r=e.indexOf('<content>');if(l>o||o>r)return
+          console.warn('[思维链标签修复] 修复后标签顺序不正确，保持原内容'),n;return
+          e}(t),t=function(n){const
+          e=n.indexOf('<thinking>'),i=n.indexOf('</thinking>');if(-1===e||-1===i)return
+          n;const
+          t=n.slice(0,e+10),s=n.slice(e+10,i),c=n.slice(i),g=s.replace(/<[\\/]*UpdateVariable[\\/]*>/gi,'');return
+          t+g+c}(t),t!==s&&(await
+          setChatMessages([{message_id:n,message:t}],{refresh:'affected'}),console.log(`[思维链标签修复]
+          已修复第 ${n} 楼的标签`))}catch(n){console.error('[思维链标签修复]
+          处理消息时出错:',n)}}),console.log('[思维链标签修复]
+          脚本初始化完成')}),$(window).on('pagehide',()=>{console.log('[思维链标签修复]
+          脚本已卸载')});
+
+    变量: {}
+
+  xiaobaix-tasks:
+    tasks: []

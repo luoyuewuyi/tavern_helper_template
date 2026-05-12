@@ -1,0 +1,14 @@
+- name: 篠崎咲世子 (Sayoko Shinozaki)
+  appearance:
+    height: 165cm
+    hair: 黑发
+    eyes: 黑瞳
+    physique: 身材修长柔韧，动作安静利落，带有长期忍术训练形成的控制力。
+    clothing_style: 平时是贤淑整洁的女仆装或便于照护娜娜莉的日常服；潜入、战斗或特殊任务时才换成轻便忍装。
+  temperament:
+    background: 阿什弗德家派来照顾娜娜莉的看护，同时是鲁路修和娜娜莉的保姆。真实身份是日本第37代篠崎流的女忍（忍者）。
+    identity: 娜娜莉的专属看护，黑色骑士团暗地里的女忍。
+    detailed_personality_analysis:
+      core_personality: 忠诚度极高，深藏不露，家务能力及暗杀能力等都是顶尖水平。对鲁路修（Zero）的命令绝对服从。
+  interpersonal_relationships:
+    likes: [照顾娜娜莉, 执行任务]

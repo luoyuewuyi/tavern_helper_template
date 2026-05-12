@@ -1,0 +1,47 @@
+:root {
+  --ink-bg: linear-gradient(180deg, #f4efe2 0%, #ebe1cd 100%);
+  --ink-panel: rgba(253, 249, 241, 0.92);
+  --ink-border: #4f4639;
+  --ink-soft: #8c7d69;
+  --ink-text: #241d16;
+  --ink-muted: #5a5044;
+  --ink-accent: #355e5c;
+  --ink-accent-soft: #6d8a88;
+  --ink-alert: #8a3b2f;
+  --ink-gold: #b68b46;
+  --shadow-ink: rgba(32, 24, 18, 0.16);
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Noto Serif SC',
+    'Source Han Serif SC',
+    'STSong',
+    serif;
+  background:
+    radial-gradient(circle at top left, rgba(109, 138, 136, 0.14), transparent 38%),
+    radial-gradient(circle at bottom right, rgba(182, 139, 70, 0.15), transparent 34%),
+    linear-gradient(180deg, #e7dcc4 0%, #f6f0e3 100%);
+  color: var(--ink-text);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(79, 70, 57, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 70, 57, 0.03) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.35;
+}
+
+#app {
+  padding: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}

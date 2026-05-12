@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "穿越天数": {
+          "default": 1,
+          "type": "number"
+        },
+        "当前时间": {
+          "default": "08:00",
+          "type": "string"
+        },
+        "当前地点": {
+          "default": "未知",
+          "type": "string"
+        },
+        "近期事务": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "LV": {
+          "default": 1,
+          "type": "number",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "EXP": {
+          "default": 0,
+          "type": "number",
+          "minimum": 0
+        },
+        "EXP上限": {
+          "default": 100,
+          "type": "number",
+          "minimum": 1
+        },
+        "HP": {
+          "default": 100,
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "HP上限": {
+          "default": 100,
+          "type": "number",
+          "minimum": 1
+        },
+        "心情值": {
+          "default": 80,
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "金币": {
+          "default": 100,
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "替身系统": {
+      "type": "object",
+      "properties": {
+        "已拥有替身": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "type": "string"
+              },
+              "类型": {
+                "type": "string",
+                "description": "近战型/远程型/辅助型/特殊型"
+              },
+              "能力": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "名称",
+              "类型",
+              "能力"
+            ]
+          }
+        },
+        "激活替身": {
+          "default": null,
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "替身候选池": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "type": "string"
+              },
+              "类型": {
+                "type": "string"
+              },
+              "能力": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "名称",
+              "类型",
+              "能力"
+            ]
+          }
+        },
+        "待选择": {
+          "default": false,
+          "type": "boolean"
+        }
+      }
+    },
+    "周围人物": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "名称": {
+            "type": "string"
+          },
+          "关系": {
+            "type": "string",
+            "description": "与主角的关系，如同伴/陌生人/敌人"
+          },
+          "好感度": {
+            "default": 0,
+            "type": "number",
+            "minimum": -100,
+            "maximum": 100
+          },
+          "当前状态": {
+            "default": "正常",
+            "type": "string"
+          },
+          "备注": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "名称",
+          "关系"
+        ],
+        "additionalProperties": {}
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "替身系统"
+  ]
+}

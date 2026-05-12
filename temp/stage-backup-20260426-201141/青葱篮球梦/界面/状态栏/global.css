@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 篮球主题配色 */
+  --bb-bg-deep: #0d1117;
+  --bb-bg-panel: #161b22;
+  --bb-bg-card: #1c2333;
+  --bb-border: #30363d;
+  --bb-border-glow: #f9842633;
+  --bb-orange: #f98426; /* 篮球橙 - 主色 */
+  --bb-orange-dim: #f9842644;
+  --bb-gold: #ffd700; /* 金色 - 好感度高分 */
+  --bb-red: #ff4757; /* 红色 - 危险/创伤 */
+  --bb-green: #2ed573; /* 绿色 - 正面/健康 */
+  --bb-cyan: #45aaf2; /* 蓝色 - 信赖/合作 */
+  --bb-purple: #a55eea; /* 紫色 - 神秘/特工 */
+  --bb-pink: #ff6b9d; /* 粉色 - 恋爱 */
+  --bb-text: #c9d1d9;
+  --bb-text-dim: #6a737d;
+  --bb-text-bright: #f0f6fc;
+
+  --font-main: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --font-num: 'Orbitron', 'Courier New', monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Orbitron:wght@400;700&display=swap');

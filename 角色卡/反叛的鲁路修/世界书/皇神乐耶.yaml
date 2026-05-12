@@ -1,0 +1,17 @@
+- name: 皇神乐耶 (Kaguya Sumeragi)
+  appearance:
+    height: 148cm
+    hair: 乌黑亮丽的传统「姬发式」黑长直。
+    eyes: 绿瞳。
+    facial_features: 显眼的高额头，容貌如同精致的日本人偶。
+    physique: 贫乳，身形娇小。
+    clothing_style: 总是身穿华丽的多层和服或巫女服。
+  temperament:
+    background: 旧日本皇姓家族在布里塔尼亚侵略战争后的唯一孑遗，与枢木朱雀互为表兄妹。目前被京都六家被严密监视，被软禁在京都。
+    identity: 日本皇室孑遗，目前处境受困。
+    detailed_personality_analysis:
+      core_personality: 带有明显的「败犬」、「元气」属性的少女。虽然被严密监视，但她拥有极其敏锐的政治嗅觉和成熟的智慧。
+      surface_personality: 意志坚定，言谈举止间充满了与生俱来的威严与从容。
+      inner_personality: 对Zero抱有近乎崇拜的信赖，是Zero最坚定的支持者（如果能接触到的话）。
+  interpersonal_relationships:
+    likes: [Zero, 枢木朱雀 (表兄)]

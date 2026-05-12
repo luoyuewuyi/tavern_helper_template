@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 仙侠水墨配色 */
+  --c-ink: #1a1a2e; /* 墨色：主文字、边框 */
+  --c-jade: #4a8d7e; /* 翡翠：高亮、进度条 */
+  --c-jade-light: #6bb5a3; /* 浅翡翠：悬浮态 */
+  --c-pink: #d4628e; /* 桃粉：堕落/改造相关 */
+  --c-pink-light: #f0a3c4; /* 浅桃粉 */
+  --c-gold: #c9a84c; /* 金色：称号、特殊 */
+  --c-parchment: #f5f0e8; /* 羊皮纸：卡片底色 */
+  --c-cream: #faf7f2; /* 米白：背景 */
+  --c-mist: #9ea8a1; /* 雾灰：次要文字 */
+  --c-shadow: rgba(26, 26, 46, 0.12); /* 阴影 */
+
+  /* 字体 */
+  --font-main: 'STKaiti', 'KaiTi', 'SimSun', 'Microsoft YaHei', serif;
+  --font-mono: 'Courier New', 'Microsoft YaHei', monospace;
+}

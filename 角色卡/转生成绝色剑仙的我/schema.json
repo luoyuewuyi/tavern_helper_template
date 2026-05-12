@@ -1,0 +1,323 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "default": "天元历-1024/03/15-辰时",
+          "type": "string"
+        },
+        "当前地点": {
+          "default": "玉仙观 清泉练剑场",
+          "type": "string"
+        },
+        "游玩阶段": {
+          "default": "修仙",
+          "type": "string",
+          "enum": [
+            "修仙",
+            "捕获",
+            "调教",
+            "堕落"
+          ]
+        },
+        "近期事务": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事务名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事务描述"
+          }
+        }
+      }
+    },
+    "主角": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "待设定",
+          "type": "string"
+        },
+        "年龄": {
+          "default": 18,
+          "type": "number"
+        },
+        "宗门": {
+          "default": "待设定",
+          "type": "string"
+        },
+        "体质": {
+          "default": "至阴之体",
+          "type": "string"
+        },
+        "功法": {
+          "default": "玉女诀",
+          "type": "string"
+        },
+        "功法境界": {
+          "default": "小成",
+          "type": "string",
+          "enum": [
+            "入门",
+            "小成",
+            "大成",
+            "成仙"
+          ]
+        },
+        "修炼境界": {
+          "default": "金丹期",
+          "type": "string"
+        },
+        "道心": {
+          "default": "玉女道心·无瑕",
+          "type": "string"
+        },
+        "道心状态": {
+          "default": "完好",
+          "type": "string",
+          "enum": [
+            "完好",
+            "动摇",
+            "破损",
+            "沉寂",
+            "逆转"
+          ]
+        },
+        "命格": {
+          "default": "天命剑仙",
+          "type": "string"
+        },
+        "称号": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "称号名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "称号来源或效果"
+          }
+        },
+        "外貌简述": {
+          "default": "待描述",
+          "type": "string"
+        },
+        "前世": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "姓名": {
+              "default": "待设定",
+              "type": "string"
+            },
+            "经历": {
+              "default": "来自现代世界的普通人",
+              "type": "string"
+            }
+          }
+        },
+        "着装": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "上装",
+              "下装",
+              "内衣",
+              "足部",
+              "饰品",
+              "特殊"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "服装描述"
+          },
+          "required": [
+            "上装",
+            "下装",
+            "内衣",
+            "足部",
+            "饰品",
+            "特殊"
+          ]
+        },
+        "能力面板": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "武技": {
+              "default": {
+                "剑法": 50
+              },
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "description": "武技名称（如剑法/刀法/枪法/扇法等）"
+              },
+              "additionalProperties": {
+                "type": "number"
+              }
+            },
+            "步法": {
+              "default": 30,
+              "type": "number"
+            },
+            "灵力": {
+              "default": 40,
+              "type": "number"
+            },
+            "智慧": {
+              "default": 80,
+              "type": "number"
+            },
+            "体魄": {
+              "default": 25,
+              "type": "number"
+            },
+            "意志": {
+              "default": 30,
+              "type": "number"
+            },
+            "肉欲": {
+              "type": "number"
+            }
+          }
+        },
+        "物品栏": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "default": {},
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "default": 1,
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "身体状态": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "体质变化": {
+          "default": "至阴之体，灵气纯净，身体微带寒意",
+          "type": "string"
+        },
+        "灵力属性": {
+          "default": "纯白色灵气，质量数倍于常人",
+          "type": "string"
+        },
+        "体香": {
+          "default": "淡淡幽香，不甚明显",
+          "type": "string"
+        },
+        "敏感度": {
+          "default": "正常，道心压制下无异常感受",
+          "type": "string"
+        },
+        "身材变化": {
+          "default": "修行塑造的清丽绝色容貌，身材匀称",
+          "type": "string"
+        },
+        "观想形象": {
+          "default": "灵台识海中的白兔仙子——清冷脱俗的道袍仙女，手持长剑",
+          "type": "string"
+        },
+        "道心内景": {
+          "default": "一柄无瑕玉剑，通体洁白剔透",
+          "type": "string"
+        }
+      }
+    },
+    "改造数值": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "改造值": {
+          "default": 5,
+          "type": "number"
+        },
+        "常识更改": {
+          "type": "number"
+        },
+        "堕落值": {
+          "type": "number"
+        },
+        "_功法真实属性": {
+          "default": "奴篇功法变种——修炼越深身心改造越彻底，修行者无法自行察觉",
+          "type": "string"
+        }
+      }
+    },
+    "关系": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色名"
+      },
+      "additionalProperties": {
+        "default": {},
+        "type": "object",
+        "properties": {
+          "好感度": {
+            "type": "number"
+          },
+          "关系": {
+            "default": "陌生",
+            "type": "string"
+          },
+          "印象": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "牝奴状态": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "已激活": {
+          "type": "boolean"
+        },
+        "赐名": {
+          "type": "string"
+        },
+        "等级": {
+          "type": "string"
+        },
+        "职务": {
+          "type": "string"
+        },
+        "主人评价": {
+          "type": "string"
+        },
+        "调教进度": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

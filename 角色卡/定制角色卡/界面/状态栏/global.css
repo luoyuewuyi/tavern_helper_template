@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 暗夜紫金 */
+  --c-bg-deep: #1a1625;          /* 最深底色 */
+  --c-bg-card: #221e30;          /* 卡片底色 */
+  --c-bg-section: #2a2540;       /* 区块底色 */
+  --c-border: #3d3555;           /* 边框 */
+  --c-border-accent: #6b5b95;    /* 强调边框 */
+  --c-text: #e8e0f0;             /* 主文字 */
+  --c-text-dim: #9b8fb8;         /* 次要文字 */
+  --c-accent-pink: #e8a0bf;      /* 粉紫 - 王影 */
+  --c-accent-gold: #ffd700;      /* 金色 - 付宴 */
+  --c-bar-love: #e8a0bf;         /* 好感度条 */
+  --c-bar-trust: #87ceeb;        /* 信任度条 */
+  --c-bar-alert: #ff6b6b;        /* 警戒值条 */
+  --c-bar-shame: #dda0dd;        /* 羞耻度条 */
+  --c-bar-open: #98d8c8;         /* 开放度条 */
+  --c-bar-ntr: #ff4500;          /* 绿母进度条 */
+
+  /* 字体 */
+  --font-main: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+}

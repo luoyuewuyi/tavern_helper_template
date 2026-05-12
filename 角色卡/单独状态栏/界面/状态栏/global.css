@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+body {
+  display: block;
+  color: #e6edf5;
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+#app {
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

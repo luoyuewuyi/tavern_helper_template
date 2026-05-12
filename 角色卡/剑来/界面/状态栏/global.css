@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 剑来·水墨古风配色 */
+  --jl-ink: #1a1a2e; /* 墨色：主文字 */
+  --jl-ink-light: #3d3d5c; /* 淡墨：次要文字 */
+  --jl-ink-faint: #6b6b8a; /* 薄墨：辅助文字 */
+  --jl-paper: #f5f0e8; /* 宣纸：主背景 */
+  --jl-paper-dark: #e8dfd0; /* 旧纸：次背景 */
+  --jl-gold: #c9a96e; /* 金色：高亮装饰 */
+  --jl-gold-light: #e8d5a3; /* 浅金：进度条 */
+  --jl-vermillion: #c4463a; /* 朱红：重要标记 */
+  --jl-jade: #5a8a7a; /* 翠玉：正面状态 */
+  --jl-jade-light: #7ab5a0; /* 浅翠：好感正值 */
+  --jl-crimson: #8b2e2e; /* 暗红：负面状态 */
+  --jl-cloud: rgba(255, 255, 255, 0.6); /* 云白：面板覆盖 */
+  --jl-shadow: rgba(26, 26, 46, 0.12);
+
+  /* 字体 */
+  --font-title: 'Noto Serif SC', 'SimSun', serif;
+  --font-body: 'Noto Serif SC', 'Microsoft YaHei', serif;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--jl-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--jl-gold);
+  border-radius: 2px;
+}

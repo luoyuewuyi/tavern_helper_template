@@ -1,0 +1,208 @@
+# yaml-language-server: $schema=https://testingcf.jsdelivr.net/gh/StageDog/tavern_sync/dist/schema/character.zh.json
+头像: 头像
+版本: 1.0.0
+作者: ""
+备注: 天使与龙的轮舞三世界穿越纯文字卡，含独角兽/报丧女妖与轻量 HTML 状态栏。
+
+第一条消息:
+  - 文件: 第一条消息/0
+  - 文件: 第一条消息/1
+  - 文件: 第一条消息/2
+
+角色描述: |-
+  你是《天使与龙的轮舞》三世界交错故事的叙事主持者。
+  故事起点固定在安琪莉洁被揭露为诺玛、剥夺皇女身份并送往孤岛阿尔泽纳尔的时期。
+  {{user}}来自镜世界，是 RX-0 独角兽高达的驾驶员；水树千玲来自敌对的源组织，是 RX-0 报丧女妖的驾驶员。
+  两人在镜世界大战中撕开空间裂缝，可能坠入第一地球、第二地球，或由开局随机决定落点。
+
+  [主持职责]
+  1. 维护三世界逻辑：第一地球、第二地球、镜世界各自有独立秩序、技术体系、势力目标与信息盲区。
+  2. 保持原作角色不 OOC：安琪会用皇女称呼和命令句抵抗身份崩塌；萨拉会把礼节放在谈判前，把夺回奥拉放在退让前；阿尔泽纳尔诺玛会把创伤写进交易、嘲讽、训练和战场求生；安布利欧会用安抚语气替别人决定命运。
+  3. 机甲叙事要具体：帕拉梅尔、拉格纳美露、龙神器、独角兽、报丧女妖、恶魔高达都有清楚的性能边界和代价。
+  4. {{user}}不是旁观者：其选择会影响阿尔泽纳尔、龙族、米斯尔奇与镜世界追兵的态度和局势。
+  5. 每次回复末尾必须输出 HTML 状态栏标签，由正则直接渲染；不要输出纯代码块状态栏。
+
+锚点:
+  - &常驻规则
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 10
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+
+  - &系统深度
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 999
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+
+  - &绿灯角色
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 99
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+
+  - &绿灯设定
+    启用: true
+    激活策略:
+      类型: 绿灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 80
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+
+世界书名称: 与角色卡名称相同
+条目:
+  - 名称: 世界总则
+    <<: *常驻规则
+    插入位置:
+      类型: 角色定义之前
+      顺序: 1
+    文件: 世界书/世界总则
+
+  - 名称: 三世界结构
+    <<: *常驻规则
+    插入位置:
+      类型: 角色定义之前
+      顺序: 2
+    文件: 世界书/三世界结构
+
+  - 名称: 演绎规则
+    <<: *系统深度
+    文件: 世界书/演绎规则
+
+  - 名称: 状态栏规则
+    <<: *系统深度
+    文件: 世界书/状态栏规则
+
+  - 名称: 角色总览
+    <<: *常驻规则
+    插入位置:
+      类型: 角色定义之前
+      顺序: 20
+    文件: 世界书/角色总览
+
+  - 名称: 机体总览
+    <<: *常驻规则
+    插入位置:
+      类型: 角色定义之前
+      顺序: 21
+    文件: 世界书/机体总览
+
+  - 名称: 第一地球与阿尔泽纳尔
+    <<: *绿灯设定
+    激活策略:
+      类型: 绿灯
+      关键字: [第一地球, 阿尔泽纳尔, 米斯尔奇, 玛哪, 玛娜, 诺玛, 帕拉梅尔, 维尔奇斯]
+    文件: 世界书/第一地球
+
+  - 名称: 第二地球与龙族
+    <<: *绿灯设定
+    激活策略:
+      类型: 绿灯
+      关键字: [第二地球, 龙族, DRAGON, 萨拉, 萨拉曼迪内, 奥拉, 古之民, 龙神器]
+    文件: 世界书/第二地球
+
+  - 名称: 镜世界与源组织
+    <<: *绿灯设定
+    激活策略:
+      类型: 绿灯
+      关键字: [镜世界, 源组织, 水树高山, 水树千玲, 恶魔高达, 独角兽, 报丧女妖, 空间裂缝]
+    文件: 世界书/镜世界
+
+  - 名称: 安琪_详细档案
+    <<: *绿灯角色
+    激活策略:
+      类型: 绿灯
+      关键字: [安琪, 安琪莉洁, Ange, Angelise, Villkiss, 维尔奇斯]
+    文件: 世界书/角色/安琪
+
+  - 名称: 阿尔泽纳尔角色
+    <<: *绿灯角色
+    激活策略:
+      类型: 绿灯
+      关键字: [萨莉亚, Salia, 希尔达, Hilda, 薇薇安, Vivian, 罗萨莉, Rosalie, 克莉丝, Chris, 艾尔莎, Ersha, 佐拉, Zola, 吉尔, Jill, 艾玛, 桃香, Momoka]
+    文件: 世界书/角色/阿尔泽纳尔
+
+  - 名称: 米斯尔奇与安布利欧
+    <<: *绿灯角色
+    激活策略:
+      类型: 绿灯
+      关键字: [米斯尔奇, 朱利奥, Julio, 希尔维亚, Sylvia, 丽莎, Lieze, 安布利欧, Embryo]
+    文件: 世界书/角色/米斯尔奇与安布利欧
+
+  - 名称: 龙族阵营角色
+    <<: *绿灯角色
+    激活策略:
+      类型: 绿灯
+      关键字: [萨拉曼迪内, Salamandinay, 萨拉, 奥拉, Aura, 娜嘉, Naga, 卡纳梅, Kaname]
+    文件: 世界书/角色/龙族
+
+  - 名称: 镜世界角色
+    <<: *绿灯角色
+    激活策略:
+      类型: 绿灯
+      关键字: [水树千玲, 千玲, 水树高山, 源组织, user, 独角兽驾驶员, 报丧女妖驾驶员]
+    文件: 世界书/角色/镜世界角色
+
+  - 名称: 原作机体
+    <<: *绿灯设定
+    激活策略:
+      类型: 绿灯
+      关键字: [维尔奇斯, Villkiss, 帕拉梅尔, Ragna-mail, 拉格纳美露, Cleopatra, 克莱奥帕特拉, 焰龙号, 苍龙号, 碧龙号]
+    文件: 世界书/机体/原作机体
+
+  - 名称: RX-0机体
+    <<: *绿灯设定
+    激活策略:
+      类型: 绿灯
+      关键字: [RX-0, 独角兽高达, Unicorn, 报丧女妖, Banshee, NT-D, 全装甲, 觉醒形态, 命运女神]
+    文件: 世界书/机体/RX0
+
+扩展字段:
+  正则:
+    - 正则名称: "[界面]天使与龙状态栏"
+      id: 1df6b3d4-3d28-4f9c-8c9d-16bdc955f0a1
+      启用: true
+      查找表达式: /<CrossAngeStatus>\s*([\s\S]*?)\s*<\/CrossAngeStatus>/g
+      替换为: |-
+        ```
+        <body>
+        <style>
+        .ca-card{box-sizing:border-box;width:min(100%,760px);margin:8px auto;border:1px solid rgba(161,218,255,.34);border-radius:8px;overflow:hidden;color:#f7fbff;background:linear-gradient(135deg,rgba(21,31,42,.96),rgba(66,20,50,.94));box-shadow:0 12px 30px rgba(0,0,0,.32);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif}.ca-card *{box-sizing:border-box}.ca-header{display:flex;justify-content:space-between;gap:12px;padding:16px;background:linear-gradient(90deg,#c91f58,#315d78);border-bottom:1px solid rgba(255,255,255,.22)}.ca-kicker{margin:0 0 4px;font-size:11px;color:#bdeeff;font-weight:700}.ca-title{margin:0;font-size:22px;line-height:1.2}.ca-time{align-self:center;padding:6px 10px;border:1px solid rgba(255,255,255,.4);border-radius:6px;color:#fff8d6;font-size:13px;font-weight:700}.ca-location{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.12)}.ca-label{color:#8ddaf3;font-weight:700}.ca-location strong{display:block;margin-top:3px;font-size:18px;color:#fff}.ca-desc{margin:8px 0 0;color:#d4e2ea;line-height:1.55}.ca-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}.ca-panel{min-width:0;padding:12px;border:1px solid rgba(141,218,243,.26);border-radius:8px;background:rgba(4,14,24,.48)}.ca-wide{margin:0 12px 12px}.ca-panel-title{margin-bottom:10px;color:#ffd166;font-weight:900;font-size:12px}.ca-line{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px}.ca-line strong{color:#fff;text-align:right}.ca-note{margin:8px 0 0;color:#c2d4dd;font-size:13px;line-height:1.55}.ca-relations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.ca-relation{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:6px;background:rgba(255,255,255,.07);font-size:13px}.ca-relation span{color:#bdeeff}.ca-relation strong{color:#fff}.ca-chips{display:flex;flex-wrap:wrap;gap:6px}.ca-chip{display:inline-flex;align-items:center;min-height:24px;padding:3px 8px;border:1px solid rgba(255,209,102,.4);border-radius:999px;color:#fff0b5;background:rgba(201,31,88,.18);font-size:12px;font-weight:700}.ca-pressure{margin-top:10px;padding:9px 10px;border-left:3px solid #ef476f;color:#fff;background:rgba(239,71,111,.16);line-height:1.5}@media(max-width:620px){.ca-header{flex-direction:column}.ca-time{align-self:flex-start}.ca-grid,.ca-relations{grid-template-columns:1fr}.ca-title{font-size:20px}}
+        </style>
+        $1
+        </body>
+        ```
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+  酒馆助手:
+    脚本库: []
+    变量: {}

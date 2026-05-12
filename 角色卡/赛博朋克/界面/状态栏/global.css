@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 赛博朋克配色方案 */
+  --cp-bg-deep: #0a0e17; /* 深色背景 */
+  --cp-bg-panel: #111827; /* 面板背景 */
+  --cp-bg-card: #1a2332; /* 卡片背景 */
+  --cp-border: #2a3a4e; /* 边框色 */
+  --cp-border-glow: #00f0ff33; /* 边框发光 */
+  --cp-cyan: #00f0ff; /* 霓虹青 - 好感度 */
+  --cp-magenta: #ff2d78; /* 霓虹品红 - 病娇值 */
+  --cp-red: #ff3333; /* 霓虹红 - 绝望值 */
+  --cp-yellow: #ffd700; /* 霓虹黄 - 欧币/义体 */
+  --cp-green: #39ff14; /* 霓虹绿 - 安全/稳定 */
+  --cp-text: #c8d6e5; /* 正文文字 */
+  --cp-text-dim: #5a6a7e; /* 暗淡文字 */
+  --cp-text-bright: #e8f0fe; /* 高亮文字 */
+
+  /* 字体 */
+  --font-cyber: 'Rajdhani', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');

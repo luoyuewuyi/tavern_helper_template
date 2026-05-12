@@ -1,0 +1,21 @@
+---
+回复格式示例:
+  rule:
+    - follow this order exactly when the turn updates variables
+    - prose first, update block second, status bar placeholder last
+  format: |-
+    ${正文内容}
+
+    <UpdateVariable>
+    <Analysis>
+    - normal update
+    - only touched fields that actually changed
+    </Analysis>
+    <JSONPatch>
+    [
+      { "op": "delta", "path": "/资源/资源点", "value": -10 },
+      { "op": "replace", "path": "/主角/当前命令摘要", "value": "已下达新的外勤命令" }
+    ]
+    </JSONPatch>
+    </UpdateVariable>
+    <StatusPlaceHolderImpl/>

@@ -1,0 +1,7 @@
+interface:
+  display_name: "角色卡制作技能"
+  short_description: "面向酒馆项目的拉取、生成、构建与推送技能"
+  default_prompt: "Use $role-card-builder to pull a Tavern project into src, classify the work, build any required UI, and push the result for user import."
+
+policy:
+  allow_implicit_invocation: true

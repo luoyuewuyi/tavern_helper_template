@@ -1,0 +1,94 @@
+<details class="gs" open>
+<summary class="gs-s">
+  <span class="gs-name">$1</span>
+  <span class="gs-pill">LV.$2</span>
+  <span class="gs-sep"></span>
+  <span class="gs-loc">$20</span>
+  <span class="gs-infamy">恶名 $15</span>
+</summary>
+<div class="gs-body">
+  <div class="gs-grid">
+    <section class="gs-card">
+      <h3>存在刻痕</h3>
+      <div class="gs-row"><span>阶级</span><b>$3</b></div>
+      <div class="gs-row"><span>信仰</span><b>$4</b></div>
+      <div class="gs-row"><span>神恩</span><b>$5</b></div>
+      <div class="gs-row"><span>戒律</span><b>$6</b></div>
+    </section>
+    <section class="gs-card">
+      <h3>起源之血</h3>
+      <div class="gs-attr"><span>力</span><div><i style="width:calc($7 * 5%)"></i></div><b>$7</b></div>
+      <div class="gs-attr"><span>敏</span><div><i style="width:calc($8 * 5%)"></i></div><b>$8</b></div>
+      <div class="gs-attr"><span>魔</span><div><i style="width:calc($9 * 5%)"></i></div><b>$9</b></div>
+      <div class="gs-attr"><span>体</span><div><i style="width:calc($10 * 5%)"></i></div><b>$10</b></div>
+      <div class="gs-attr"><span>知</span><div><i style="width:calc($11 * 5%)"></i></div><b>$11</b></div>
+    </section>
+    <section class="gs-card">
+      <h3>异化进程</h3>
+      <div class="gs-row"><span>形态</span><b>$12</b></div>
+      <div class="gs-row"><span>目标</span><b>$13</b></div>
+      <div class="gs-gene"><span>基因</span><div><i style="width:$14%"></i></div><b>$14%</b></div>
+    </section>
+    <section class="gs-card gs-danger">
+      <h3>世界的恶意</h3>
+      <div class="gs-infobox"><b>阶级 $15</b><span>$16</span></div>
+      <div class="gs-row"><span>$20</span><b>$21</b></div>
+    </section>
+    <section class="gs-card">
+      <h3>深渊结界</h3>
+      <div class="gs-row"><span>等级</span><b>$17</b></div>
+      <div class="gs-row"><span>子民</span><b>$18</b></div>
+      <div class="gs-row"><span>建筑</span><b>$19</b></div>
+      <div class="gs-caps"><span>俘虏 <b>$25</b></span><span>堕落 <b>$26</b></span></div>
+    </section>
+    <section class="gs-card">
+      <h3>混沌残响</h3>
+      <div class="gs-row"><span>刻印</span><b>$22</b></div>
+      <div class="gs-row"><span>突变</span><b>$23</b></div>
+      <div class="gs-row"><span>增益</span><b>$24</b></div>
+    </section>
+  </div>
+  <section class="gs-actions">
+    <h3>命运之轮</h3>
+    <p>$27</p>
+  </section>
+</div>
+</details>
+<style>
+.gs{box-sizing:border-box;margin:12px 0;border:1px solid rgba(184,149,94,.32);background:#0a0f0d;color:#c4bcab;font-family:"Noto Serif SC","Microsoft YaHei",serif;font-size:13px;line-height:1.55;overflow:hidden}
+.gs *{box-sizing:border-box}
+.gs-s{display:flex;align-items:center;gap:8px;min-height:42px;padding:10px 14px;background:linear-gradient(90deg,#050806,#111811);cursor:pointer;list-style:none;user-select:none}
+.gs-s::-webkit-details-marker{display:none}
+.gs-name{color:#d4b872;font-weight:700;border-bottom:1px solid rgba(212,184,114,.45)}
+.gs-pill{color:#f2ead1;font-weight:700;font-family:Consolas,monospace}
+.gs-sep{width:1px;height:13px;background:#2a3527;display:inline-block}
+.gs-loc{color:#9cb38c}
+.gs-infamy{margin-left:auto;color:#caa35a;font-size:12px;font-weight:700}
+.gs-body{padding:12px}
+.gs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gs-card{min-width:0;padding:10px;border:1px solid #1a241a;background:rgba(21,26,29,.72)}
+.gs-card h3,.gs-actions h3{margin:0 0 7px;padding-bottom:5px;border-bottom:1px solid #1a241a;color:#b8975e;font-size:11px;letter-spacing:2px;font-weight:700}
+.gs-row{display:flex;align-items:flex-start;gap:8px;margin:3px 0;color:#ddd3bd}
+.gs-row span{flex:0 0 42px;color:#7f897b;font-size:12px}
+.gs-row b{min-width:0;color:#d7c9ac;font-weight:600;word-break:break-word}
+.gs-attr{display:grid;grid-template-columns:24px minmax(0,1fr)28px;align-items:center;gap:7px;margin:5px 0}
+.gs-attr span{color:#9cb38c;font-weight:700}
+.gs-attr div,.gs-gene div{height:6px;border:1px solid #1a241a;background:#050806;overflow:hidden}
+.gs-attr i,.gs-gene i{display:block;height:100%;max-width:100%;background:linear-gradient(90deg,#6b5a33,#d4b872)}
+.gs-attr b,.gs-gene b{color:#d4b872;font-family:Consolas,monospace;font-size:12px;text-align:right}
+.gs-gene{display:grid;grid-template-columns:42px minmax(0,1fr)42px;align-items:center;gap:8px;margin-top:7px}
+.gs-gene span{color:#a78bfa;font-weight:700}
+.gs-gene i{background:#6b21a8;box-shadow:0 0 5px rgba(168,85,247,.55)}
+.gs-infobox{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px;padding:8px 10px;background:rgba(0,0,0,.34);border:1px solid rgba(184,149,94,.14)}
+.gs-infobox b{color:#caa35a;font-size:16px}
+.gs-infobox span{color:#d7c9ac}
+.gs-caps{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;padding-top:7px;border-top:1px solid #1a241a;color:#8e9a87;font-size:12px}
+.gs-caps b{color:#caa35a}
+.gs-actions{margin-top:10px;padding:10px 12px;border:1px solid #1a241a;background:rgba(21,26,29,.72)}
+.gs-actions p{margin:0;color:#e1d4b8;white-space:normal;word-break:break-word}
+@media(max-width:560px){
+  .gs-grid{grid-template-columns:1fr}
+  .gs-s{align-items:flex-start;gap:6px;flex-wrap:wrap}
+  .gs-infamy{margin-left:0}
+}
+</style>

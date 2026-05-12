@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 权力的游戏·铁与火 */
+  --c-obsidian: #1a1a2e; /* 最深色：卡片背景 */
+  --c-iron: #2d2d44; /* 深色：区块背景 */
+  --c-steel: #4a4a6a; /* 边框、分隔线 */
+  --c-silver: #8e8ea0; /* 次要文字 */
+  --c-parchment: #d4c5a9; /* 主要文字、羊皮纸色 */
+  --c-gold: #c9a84c; /* 高亮：标题、重要元素 */
+  --c-blood: #8b2500; /* 强调：危险、生命 */
+  --c-ice: #6fa8dc; /* 冷色：冰、北境 */
+  --c-fire: #e74c3c; /* 暖色：火、危险 */
+  --c-stark-grey: #708090; /* 史塔克灰 */
+  --c-lannister-gold: #daa520; /* 兰尼斯特金 */
+  --c-targaryen-red: #b22222; /* 坦格利安红 */
+
+  /* 字体 */
+  --font-got: 'Georgia', 'Times New Roman', 'SimSun', serif;
+  --font-label: 'Trebuchet MS', 'Microsoft YaHei', sans-serif;
+}

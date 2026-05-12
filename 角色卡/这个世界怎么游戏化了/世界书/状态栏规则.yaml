@@ -1,0 +1,12 @@
+---
+<status_bar_rule>
+状态栏规则:
+  要求:
+    - 每次回复结尾必须输出 <StatusPlaceHolderImpl/>
+    - 不要同时输出纯文字状态栏；美化界面状态栏与纯文字状态栏互斥
+    - 状态栏内容由前端界面读取变量展示，不要在正文里重复列出状态、技能、任务或日志面板
+
+格式:
+  |-
+    <StatusPlaceHolderImpl/>
+</status_bar_rule>

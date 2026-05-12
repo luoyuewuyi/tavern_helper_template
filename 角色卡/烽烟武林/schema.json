@@ -1,0 +1,660 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {},
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "年号": {
+          "default": "永宁元年",
+          "type": "string"
+        },
+        "日期": {
+          "default": "三月初七",
+          "type": "string"
+        },
+        "时段": {
+          "default": "辰时",
+          "type": "string"
+        },
+        "天气": {
+          "default": "阴，有北风",
+          "type": "string"
+        },
+        "所在区域": {
+          "default": "京畿",
+          "type": "string"
+        },
+        "所在地点": {
+          "default": "京城外郭官道旁的旧茶棚",
+          "type": "string"
+        },
+        "局势摘要": {
+          "default": "新帝初登大位，朝中试探未停，边患与民乱并行。",
+          "type": "string"
+        },
+        "朝局热度": {
+          "default": 72,
+          "type": "number"
+        },
+        "战乱热度": {
+          "default": 68,
+          "type": "number"
+        },
+        "江湖风闻": {
+          "default": {
+            "女帝临朝": "永宁帝即位仅半年，朝中对其能否坐稳龙椅众说纷纭。",
+            "北戎磨刀": "北戎狼卫频现边市，燕地商路风声鹤唳。",
+            "漕运异动": "江南漕帮近日多收过路税，疑似替宁王筹饷。"
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "风闻名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "通缉风险": {
+          "default": 8,
+          "type": "number"
+        }
+      }
+    },
+    "玩家": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "身份自述": {
+          "default": "待玩家声明",
+          "type": "string"
+        },
+        "来历": {
+          "default": "待玩家声明",
+          "type": "string"
+        },
+        "当前阵营倾向": {
+          "default": "中立观望",
+          "type": "string"
+        },
+        "当前目标": {
+          "default": "先在乱世中站稳脚跟",
+          "type": "string"
+        },
+        "境界": {
+          "default": "炼体境",
+          "type": "string",
+          "enum": [
+            "炼体境",
+            "明心境",
+            "通玄境",
+            "归真境",
+            "超凡境",
+            "入圣境"
+          ]
+        },
+        "外伤": {
+          "default": "无明显外伤",
+          "type": "string"
+        },
+        "内伤": {
+          "default": "气血平稳",
+          "type": "string"
+        },
+        "体力": {
+          "default": 82,
+          "type": "number"
+        },
+        "精神": {
+          "default": 76,
+          "type": "number"
+        },
+        "银两": {
+          "default": 18,
+          "type": "number"
+        },
+        "名望": {
+          "type": "number"
+        },
+        "恶名": {
+          "type": "number"
+        },
+        "装备": {
+          "default": {
+            "主武器": {
+              "名称": "旧铁刀",
+              "描述": "刀锋有缺口，但仍能防身。"
+            },
+            "副武器": {
+              "名称": "短匕",
+              "描述": "藏在袖口，适合贴身自保。"
+            },
+            "护具": {
+              "名称": "粗皮护腕",
+              "描述": "磨损严重，只能略挡擦伤。"
+            },
+            "衣着": {
+              "名称": "灰青短打",
+              "描述": "便于赶路，不显来历。"
+            },
+            "随身器具": {
+              "名称": "旧钱袋",
+              "描述": "装着零碎银钱和一张未署名字条。"
+            }
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "主武器",
+              "副武器",
+              "护具",
+              "衣着",
+              "随身器具"
+            ]
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "default": "空置",
+                "type": "string"
+              },
+              "描述": {
+                "default": "暂无",
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "主武器",
+            "副武器",
+            "护具",
+            "衣着",
+            "随身器具"
+          ]
+        },
+        "携带物": {
+          "default": {
+            "干粮": {
+              "描述": "两张压得发硬的炊饼。",
+              "数量": 2
+            },
+            "火折子": {
+              "描述": "潮气不重，还能点火。",
+              "数量": 1
+            },
+            "碎银": {
+              "描述": "出门应急用的散碎银角。",
+              "数量": 3
+            }
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "default": "暂无描述",
+                "type": "string"
+              },
+              "数量": {
+                "default": 1,
+                "type": "number"
+              }
+            }
+          }
+        },
+        "关键标签": {
+          "default": {
+            "初始状态": "身份未明",
+            "生存策略": "谨慎试探"
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "标签名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "关系": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "关键人物": {
+          "default": {
+            "永宁帝萧月华": {
+              "立场": "陌生",
+              "信任": 0,
+              "敌意": 0,
+              "评价": "只闻其名，未见其人。"
+            },
+            "曹忠": {
+              "立场": "警惕",
+              "信任": -10,
+              "敌意": 12,
+              "评价": "阉党魁首，最好离远些。"
+            },
+            "燕王萧景琰": {
+              "立场": "观望",
+              "信任": 0,
+              "敌意": 6,
+              "评价": "拥兵自重，传闻最盛。"
+            },
+            "宁王萧景珩": {
+              "立场": "观望",
+              "信任": 0,
+              "敌意": 4,
+              "评价": "富甲一方，笑里藏刀。"
+            },
+            "端敏长公主萧月容": {
+              "立场": "陌生",
+              "信任": 0,
+              "敌意": 3,
+              "评价": "京城里关于她的传言很多。"
+            }
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "永宁帝萧月华",
+              "曹忠",
+              "燕王萧景琰",
+              "宁王萧景珩",
+              "端敏长公主萧月容"
+            ]
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "立场": {
+                "default": "尚未接触",
+                "type": "string"
+              },
+              "信任": {
+                "type": "number"
+              },
+              "敌意": {
+                "type": "number"
+              },
+              "评价": {
+                "default": "暂无交集",
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "永宁帝萧月华",
+            "曹忠",
+            "燕王萧景琰",
+            "宁王萧景珩",
+            "端敏长公主萧月容"
+          ]
+        },
+        "所在门派或组织": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "名称": {
+              "default": "暂无",
+              "type": "string"
+            },
+            "身份": {
+              "default": "局外人",
+              "type": "string"
+            },
+            "评价": {
+              "default": "尚未正式投入任何门下或势力。",
+              "type": "string"
+            }
+          }
+        },
+        "当前同行者": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "同行者名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "身份": {
+                "default": "未知",
+                "type": "string"
+              },
+              "信任": {
+                "type": "number"
+              },
+              "状态": {
+                "default": "暂同行",
+                "type": "string"
+              },
+              "评价": {
+                "default": "待观察",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "势力": {
+      "default": {
+        "朝廷": {
+          "活跃度": 74,
+          "对玩家态度": "未留意",
+          "动向": "女帝与阉党表面维稳，暗斗渐深。"
+        },
+        "阉党": {
+          "活跃度": 80,
+          "对玩家态度": "未留意",
+          "动向": "东厂耳目扩散，锦衣卫密查京师。"
+        },
+        "清流": {
+          "活跃度": 58,
+          "对玩家态度": "未留意",
+          "动向": "正联络地方声望人物，寻找可用之才。"
+        },
+        "镇武司": {
+          "活跃度": 65,
+          "对玩家态度": "审视",
+          "动向": "加强对江湖人与边地往来的盘查。"
+        },
+        "燕王系": {
+          "活跃度": 69,
+          "对玩家态度": "未留意",
+          "动向": "幽燕军资调动频繁，似在蓄势。"
+        },
+        "宁王系": {
+          "活跃度": 63,
+          "对玩家态度": "未留意",
+          "动向": "江南豪商与门客往来愈发密集。"
+        },
+        "北戎": {
+          "活跃度": 77,
+          "对玩家态度": "敌对潜伏",
+          "动向": "斥候与狼卫频探边境与商道。"
+        },
+        "西羌": {
+          "活跃度": 52,
+          "对玩家态度": "疏远",
+          "动向": "与北戎暗中互通有无，尚未大举东下。"
+        },
+        "漕帮": {
+          "活跃度": 61,
+          "对玩家态度": "可交涉",
+          "动向": "水路消息灵通，但代价不轻。"
+        },
+        "邪道组织": {
+          "活跃度": 56,
+          "对玩家态度": "试探",
+          "动向": "天罡阁与五毒教都在趁乱扩线。"
+        }
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "朝廷",
+          "阉党",
+          "清流",
+          "镇武司",
+          "燕王系",
+          "宁王系",
+          "北戎",
+          "西羌",
+          "漕帮",
+          "邪道组织"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "活跃度": {
+            "default": 50,
+            "type": "number"
+          },
+          "对玩家态度": {
+            "default": "尚未表态",
+            "type": "string"
+          },
+          "动向": {
+            "default": "暂无直接变化",
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "朝廷",
+        "阉党",
+        "清流",
+        "镇武司",
+        "燕王系",
+        "宁王系",
+        "北戎",
+        "西羌",
+        "漕帮",
+        "邪道组织"
+      ]
+    },
+    "任务": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "主线": {
+          "default": {
+            "乱世立足": {
+              "说明": "在朝局、江湖与边患交错的大靖活下去，并找到自己的位置。",
+              "目标": "先明确身份与第一步行动。",
+              "奖励": "获得稳定立场与新的支线入口。",
+              "惩罚": "若长期摇摆，可能错失先机并卷入被动局面。",
+              "状态": "进行中"
+            }
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "任务名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "说明": {
+                "default": "待补充",
+                "type": "string"
+              },
+              "目标": {
+                "default": "待补充",
+                "type": "string"
+              },
+              "奖励": {
+                "default": "未知",
+                "type": "string"
+              },
+              "惩罚": {
+                "default": "未知",
+                "type": "string"
+              },
+              "状态": {
+                "default": "进行中",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "支线": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "任务名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "说明": {
+                "default": "待补充",
+                "type": "string"
+              },
+              "目标": {
+                "default": "待补充",
+                "type": "string"
+              },
+              "奖励": {
+                "default": "未知",
+                "type": "string"
+              },
+              "惩罚": {
+                "default": "未知",
+                "type": "string"
+              },
+              "状态": {
+                "default": "进行中",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "悬赏": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "悬赏名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "说明": {
+                "default": "待补充",
+                "type": "string"
+              },
+              "目标": {
+                "default": "待补充",
+                "type": "string"
+              },
+              "奖励": {
+                "default": "未知",
+                "type": "string"
+              },
+              "惩罚": {
+                "default": "未知",
+                "type": "string"
+              },
+              "状态": {
+                "default": "未接取",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "密令": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "密令名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "说明": {
+                "default": "待补充",
+                "type": "string"
+              },
+              "目标": {
+                "default": "待补充",
+                "type": "string"
+              },
+              "奖励": {
+                "default": "未知",
+                "type": "string"
+              },
+              "惩罚": {
+                "default": "未知",
+                "type": "string"
+              },
+              "状态": {
+                "default": "保密",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "剧情记录": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "最近大事件": {
+          "default": {
+            "帝位新定": "永宁帝登基半年，各方势力仍在试探她的底线。",
+            "边军告急": "北戎南探，幽燕边线不断传来急报。"
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "近期遭遇": {
+          "default": {
+            "初入乱局": "你刚刚踏进这一盘大棋，还未真正落子。"
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "遭遇名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "已触发旗标": {
+          "default": {
+            "已进入世界": true,
+            "身份待声明": true
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "旗标名"
+          },
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "已知情报": {
+          "default": {
+            "曹忠掌权": "司礼监掌印曹忠仍把持东厂与锦衣卫。",
+            "燕王野心": "燕王拥兵三万，与北戎往来不清。"
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "情报名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

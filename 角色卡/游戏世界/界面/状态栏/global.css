@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 暗黑地牢风格 */
+  --c-abyss: #0d0d12; /* 最深背景 */
+  --c-dark-stone: #1a1a24; /* 卡片背景 */
+  --c-stone: #2a2a3a; /* 次级背景/边框 */
+  --c-dim: #4a4a5e; /* 暗色分隔线 */
+  --c-mist: #8888a0; /* 次要文字 */
+  --c-parchment: #c8c0b0; /* 主体文字 */
+  --c-bone: #e8e0d0; /* 亮色文字 */
+
+  /* 功能色 */
+  --c-blood: #c43030; /* 生命值/危险 */
+  --c-blood-dark: #8a1c1c; /* 生命值暗色 */
+  --c-poison: #40a060; /* 毒/治愈 */
+  --c-arcane: #6a5acd; /* 技能/魔法 */
+  --c-arcane-dim: #3d3478; /* 技能暗色 */
+  --c-gold: #c8a84a; /* 经验/等级 */
+  --c-corrupt: #9a3070; /* 堕落度 */
+  --c-corrupt-dim: #5c1d42; /* 堕落度暗色 */
+  --c-frost: #4a90c8; /* 防御/冷却 */
+
+  /* 字体 */
+  --font-dungeon: 'Courier New', 'Microsoft YaHei', monospace;
+}

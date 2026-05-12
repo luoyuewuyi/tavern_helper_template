@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --yuki-paper: #fffaf6;
+  --yuki-paper-soft: #fffdfb;
+  --yuki-blush: #f6d7dd;
+  --yuki-rose: #d48798;
+  --yuki-rose-deep: #b45d73;
+  --yuki-lilac: #c9bfd8;
+  --yuki-ink: #5a4a52;
+  --yuki-ink-soft: #7f6a74;
+  --yuki-line: rgba(164, 126, 138, 0.28);
+  --yuki-shadow: rgba(186, 143, 157, 0.22);
+  --yuki-favor: #ef9aa8;
+  --yuki-trust: #9fbad8;
+  --yuki-good: #8ab69a;
+  --yuki-warn: #d6aa72;
+  --yuki-font: 'Georgia', 'STSong', 'Noto Serif SC', serif;
+}
+
+html,
+body {
+  width: 100%;
+  background: transparent;
+}
+
+body {
+  font-family: var(--yuki-font);
+  color: var(--yuki-ink);
+}

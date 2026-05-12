@@ -1,0 +1,473 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "场景": {
+      "type": "object",
+      "properties": {
+        "标题": {
+          "type": "string"
+        },
+        "副标题": {
+          "type": "string"
+        },
+        "状态徽章": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "候选动作": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        }
+      },
+      "required": [
+        "标题",
+        "副标题",
+        "状态徽章",
+        "候选动作"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "type": "string"
+        },
+        "身份": {
+          "type": "string"
+        },
+        "头像": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "金钱": {
+          "type": "number"
+        },
+        "声望": {
+          "type": "number"
+        },
+        "体力": {
+          "type": "number"
+        },
+        "心情文本": {
+          "type": "string"
+        },
+        "欲望波动": {
+          "type": "number"
+        },
+        "实际接受度": {
+          "type": "number"
+        },
+        "周期": {
+          "type": "object",
+          "properties": {
+            "当前天数": {
+              "type": "number"
+            },
+            "周期长度": {
+              "type": "number"
+            },
+            "状态": {
+              "type": "string",
+              "enum": [
+                "经期",
+                "经后",
+                "排卵前",
+                "排卵期",
+                "黄体期"
+              ]
+            },
+            "身体感受": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "当前天数",
+            "周期长度",
+            "状态",
+            "身体感受"
+          ]
+        },
+        "偏好摘要": {
+          "type": "object",
+          "properties": {
+            "外貌偏好": {
+              "type": "string"
+            },
+            "关系偏好": {
+              "type": "string"
+            },
+            "节奏偏好": {
+              "type": "string"
+            },
+            "禁忌摘要": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "外貌偏好",
+            "关系偏好",
+            "节奏偏好",
+            "禁忌摘要"
+          ]
+        }
+      },
+      "required": [
+        "姓名",
+        "身份",
+        "头像",
+        "金钱",
+        "声望",
+        "体力",
+        "心情文本",
+        "欲望波动",
+        "实际接受度",
+        "周期",
+        "偏好摘要"
+      ]
+    },
+    "地图": {
+      "type": "object",
+      "properties": {
+        "当前区域": {
+          "type": "string"
+        },
+        "当前区域文案": {
+          "type": "string"
+        },
+        "已发现地区": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "type": "string"
+              },
+              "摘要": {
+                "type": "string"
+              },
+              "是否当前": {
+                "type": "boolean"
+              },
+              "目标": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "名称",
+              "摘要",
+              "是否当前",
+              "目标"
+            ]
+          }
+        }
+      },
+      "required": [
+        "当前区域",
+        "当前区域文案",
+        "已发现地区"
+      ]
+    },
+    "地点": {
+      "type": "object",
+      "properties": {
+        "名称": {
+          "type": "string"
+        },
+        "所属城镇": {
+          "type": "string"
+        },
+        "候选动作": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        }
+      },
+      "required": [
+        "名称",
+        "所属城镇",
+        "候选动作"
+      ]
+    },
+    "成员": {
+      "type": "object",
+      "properties": {
+        "列表": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "姓名": {
+                "type": "string"
+              },
+              "种族": {
+                "type": "string"
+              },
+              "职业": {
+                "type": "string"
+              },
+              "外观摘要": {
+                "type": "string"
+              },
+              "好感": {
+                "type": "number"
+              },
+              "信任": {
+                "type": "number"
+              },
+              "吸引": {
+                "type": "number"
+              },
+              "边界尊重度": {
+                "type": "number"
+              },
+              "关系状态": {
+                "type": "string"
+              },
+              "当前评价": {
+                "type": "string"
+              },
+              "是否正式承诺": {
+                "type": "boolean"
+              },
+              "头像": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "目标": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "姓名",
+              "种族",
+              "职业",
+              "外观摘要",
+              "好感",
+              "信任",
+              "吸引",
+              "边界尊重度",
+              "关系状态",
+              "当前评价",
+              "是否正式承诺",
+              "头像",
+              "目标"
+            ]
+          }
+        }
+      },
+      "required": [
+        "列表"
+      ]
+    },
+    "法则": {
+      "type": "object",
+      "properties": {
+        "分组": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "type": "string"
+              },
+              "描述": {
+                "type": "string"
+              },
+              "项目": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "键": {
+                          "type": "string"
+                        },
+                        "标签": {
+                          "type": "string"
+                        },
+                        "描述": {
+                          "type": "string"
+                        },
+                        "类型": {
+                          "type": "string",
+                          "const": "toggle"
+                        },
+                        "值": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "键",
+                        "标签",
+                        "描述",
+                        "类型",
+                        "值"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "键": {
+                          "type": "string"
+                        },
+                        "标签": {
+                          "type": "string"
+                        },
+                        "描述": {
+                          "type": "string"
+                        },
+                        "类型": {
+                          "type": "string",
+                          "const": "select"
+                        },
+                        "值": {
+                          "type": "string"
+                        },
+                        "选项": {
+                          "minItems": 1,
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/$defs/__schema1"
+                          }
+                        }
+                      },
+                      "required": [
+                        "键",
+                        "标签",
+                        "描述",
+                        "类型",
+                        "值",
+                        "选项"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "键": {
+                          "type": "string"
+                        },
+                        "标签": {
+                          "type": "string"
+                        },
+                        "描述": {
+                          "type": "string"
+                        },
+                        "类型": {
+                          "type": "string",
+                          "const": "range"
+                        },
+                        "值": {
+                          "type": "number"
+                        },
+                        "最小值": {
+                          "type": "number"
+                        },
+                        "最大值": {
+                          "type": "number"
+                        },
+                        "步长": {
+                          "type": "number"
+                        },
+                        "单位": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "键",
+                        "标签",
+                        "描述",
+                        "类型",
+                        "值",
+                        "最小值",
+                        "最大值",
+                        "步长",
+                        "单位"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "名称",
+              "描述",
+              "项目"
+            ]
+          }
+        }
+      },
+      "required": [
+        "分组"
+      ]
+    }
+  },
+  "required": [
+    "场景",
+    "主角",
+    "地图",
+    "地点",
+    "成员",
+    "法则"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "标签": {
+          "type": "string"
+        },
+        "描述": {
+          "type": "string"
+        },
+        "类型": {
+          "type": "string"
+        },
+        "目标": {
+          "type": "string"
+        },
+        "需要确认": {
+          "type": "boolean"
+        },
+        "命令类型": {
+          "type": "string",
+          "enum": [
+            "travel-region",
+            "travel-place",
+            "event",
+            "npc"
+          ]
+        }
+      },
+      "required": [
+        "标签",
+        "描述",
+        "类型",
+        "目标",
+        "需要确认",
+        "命令类型"
+      ]
+    },
+    "__schema1": {
+      "type": "string"
+    }
+  }
+}

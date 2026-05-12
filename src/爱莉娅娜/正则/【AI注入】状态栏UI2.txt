@@ -1,0 +1,531 @@
+```
+<head>
+    <style>
+        /* ==========================================
+           爱莉亚娜 · 玻璃态系统监视终端 (UI 2.0)
+           ========================================== */
+        :root {
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            --bg-glass-deep: rgba(15, 20, 30, 0.9);
+            --border-glow: rgba(100, 210, 255, 0.3);
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --accent-blue: #00d2ff;
+            --accent-pink: #ff007f;
+            --accent-gold: #ffd700;
+            
+            /* 品质颜色 */
+            --color-common: #ffffff;
+            --color-rare: #4ade80;
+            --color-epic: #c084fc;
+            --color-legend: #fbbf24;
+            --color-myth: #f87171;
+            --color-relic: #ffb6c1; /* 金粉色 */
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', "Microsoft YaHei", sans-serif;
+            background: transparent;
+            color: var(--text-main);
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        /* 主容器 */
+        .system-panel {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(30, 45, 75, 0.6), rgba(15, 20, 35, 0.85));
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6), inset 0 0 25px rgba(0,210,255,0.1);
+            position: relative;
+        }
+
+        /* ======= 顶部：时间与状态 ======= */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            padding: 0 10px;
+        }
+        .header-top b { color: var(--text-main); font-family: 'Consolas', monospace; }
+        .title-main { font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; color: #fff; text-shadow: 0 0 15px var(--accent-blue); }
+
+        /* ======= 核心数据区 ======= */
+        .core-layout { display: flex; gap: 25px; margin-bottom: 20px; }
+
+        /* 头像区域 */
+        .portrait-container {
+            position: relative;
+            width: 170px; height: 170px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .portrait-img {
+            position: absolute;
+            top: 15px; left: 15px;
+            width: 140px; height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 2;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .exp-svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 170px; height: 170px;
+            transform: rotate(-90deg); /* 12点起点 */
+            z-index: 1;
+        }
+        .exp-bg { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 6; }
+        .exp-fill {
+            fill: none;
+            stroke: var(--accent-blue);
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-dasharray: 440; /* 2 * PI * 70 */
+            stroke-dashoffset: 440;
+            transition: stroke-dashoffset 0.8s ease-out;
+            filter: drop-shadow(0 0 6px var(--accent-blue));
+        }
+
+        /* 核心数值格 */
+        .stats-grid {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+        .stat-card {
+            background: var(--bg-glass);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 10px;
+            text-align: center;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .stat-label { font-size: 0.7rem; color: var(--text-dim); margin-bottom: 3px; }
+        .stat-val { font-size: 1.1rem; font-weight: bold; font-family: 'Consolas', monospace; }
+        .stat-val.hp { color: #ff5e7e; }
+        .stat-val.mp { color: #00d2ff; }
+
+        /* 欲望条 */
+        .desire-box {
+            grid-column: span 5;
+            margin-top: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            height: 34px;
+            position: relative;
+            border: 1px solid rgba(255,0,127,0.2);
+            overflow: hidden;
+        }
+        .desire-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff007f, #ff6b6b);
+            width: 0%;
+            transition: width 0.6s ease;
+            box-shadow: 0 0 15px rgba(255,0,127,0.4);
+        }
+        .desire-info {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 15px; font-size: 0.8rem; font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        /* ======= 标签切换导航 ======= */
+        .nav-tabs {
+            display: flex;
+            gap: 6px;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.2);
+            padding: 5px;
+            border-radius: 14px;
+            overflow-x: auto;
+        }
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+        .tab-btn:hover { background: rgba(255,255,255,0.05); color: #fff; }
+        .tab-btn.active {
+            background: var(--accent-blue);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,210,255,0.3);
+        }
+
+        /* ======= 下半部分：详情内容 ======= */
+        .content-body {
+            background: rgba(0,0,0,0.15);
+            border-radius: 18px;
+            padding: 20px;
+            min-height: 400px;
+            max-height: 550px;
+            overflow-y: auto;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .pane { display: none; }
+        .pane.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
+
+        /* 内容组件布局 */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .data-card { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .tag-label { color: var(--accent-blue); font-size: 0.75rem; font-weight: bold; margin-bottom: 4px; display: block; }
+        .tag-val { font-size: 0.9rem; }
+
+        /* 列表项样式 (用于技能、装备、物品) */
+        .list-item {
+            background: rgba(255,255,255,0.04);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: help;
+            transition: 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .list-item:hover { background: rgba(255,255,255,0.08); border-left-color: var(--accent-blue); transform: translateX(5px); }
+
+        /* 品质色 */
+        .q-1 { color: var(--color-common); }
+        .q-2 { color: var(--color-rare); }
+        .q-3 { color: var(--color-epic); }
+        .q-4 { color: var(--color-legend); }
+        .q-5 { color: var(--color-myth); }
+        .q-relic { color: var(--color-relic); text-shadow: 0 0 5px rgba(255,182,193,0.4); }
+
+        /* 浮窗提示 */
+        .tooltip {
+            position: fixed;
+            background: var(--bg-glass-deep);
+            border: 1px solid var(--accent-blue);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            z-index: 10000;
+            display: none;
+            pointer-events: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            max-width: 300px;
+            line-height: 1.6;
+        }
+
+        /* 生理状态特有卡片 */
+        .body-stat-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .progress-mini {
+            height: 6px; background: rgba(0,0,0,0.3); border-radius: 3px; margin-top: 10px; overflow: hidden;
+        }
+        .progress-mini-fill { height: 100%; background: var(--accent-pink); transition: width 0.5s ease; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+    </style>
+
+    <script type="module">
+        /* 数据同步逻辑 */
+        async function init() {
+            if (typeof waitGlobalInitialized === 'function') { await waitGlobalInitialized('Mvu'); }
+            renderUI();
+            setInterval(renderUI, 1500); 
+        }
+
+        function renderUI() {
+            const all = typeof getAllVariables === 'function' ? getAllVariables() : {};
+            const d = _.get(all, 'stat_data', {});
+
+            /* 1. 顶部基础数据 */
+            $('#main-time').text(_.get(d, '时间系统.主世界时间', '--'));
+            $('#pers-time').text(_.get(d, '时间系统.个人时间', '--'));
+            $('#weather').text(_.get(d, '世界信息.当前天气', '晴'));
+
+            /* 2. 环形经验槽 */
+            const lvl = _.get(d, '角色概览.等级', 1);
+            const xp = _.get(d, '角色概览.经验值', 0);
+            const max_xp = lvl * 100;
+            const xp_pct = Math.min(100, (xp / max_xp) * 100);
+            const offset = 440 - (440 * xp_pct / 100);
+            $('.exp-fill').css('stroke-dashoffset', offset);
+            $('#val-lvl').text(lvl);
+
+            /* 3. 核心卡片 */
+            $('#val-hp').text(`${_.get(d, '角色概览.生命值', 100)} / 100`);
+            $('#val-mp').text(`${_.get(d, '角色概览.法力值', 100)} / 100`);
+            $('#val-age').text(_.get(d, '角色概览.年龄', 18));
+            $('#val-life').text(_.get(d, '角色概览.寿命', 29200));
+
+            /* 4. 欲望进度 */
+            const dLvl = _.get(d, '角色概览.欲望等级', 1);
+            const dVal = _.get(d, '角色概览.欲望值', 0);
+            const dMax = dLvl * 500;
+            const dPct = Math.floor((dVal / dMax) * 100);
+            $('.desire-bar').css('width', dPct + '%');
+            $('#desire-lvl-txt').text(`欲望等级 LV.${dLvl}`);
+            $('#desire-pct-txt').text(dPct + '%');
+
+            /* 5. 标签页内容 */
+            renderWorld(d);
+            renderSocial(d);
+            renderCombat(d);
+            renderGear(d);
+            renderItems(d);
+            renderPrivateInfo(d);
+            renderPrivateStats(d);
+        }
+
+        /* 渲染函数组 */
+        function renderWorld(d) {
+            const w = _.get(d, '世界信息', {});
+            const isDungeon = w.当前世界名称 !== "主世界";
+            $('#pane-world').html(`
+                <div class="info-grid">
+                    <div class="data-card"><span class="tag-label">当前位置</span><div class="tag-val">${w.当前世界名称}</div></div>
+                    <div class="data-card"><span class="tag-label">探索状态</span><div class="tag-val" style="color:${isDungeon?'var(--accent-pink)':'var(--color-rare)'}">${isDungeon?'副本攻略中':'主世界休息'}</div></div>
+                </div>
+                <div class="data-card" style="margin-top:12px"><span class="tag-label">世界简介</span><div class="tag-val" style="font-size:0.8rem">${w.当前世界简介}</div></div>
+                <div class="info-grid" style="margin-top:12px">
+                    <div class="data-card"><span class="tag-label">任务日志</span><div id="task-list"></div></div>
+                    <div class="data-card"><span class="tag-label">副本履历</span><div id="hist-list"></div></div>
+                </div>
+            `);
+            /* 填充动态列表 */
+            $('#task-list').html(renderMap(d.任务栏, (v, k) => `<div class="list-item" onmouseover="tip(event, '${v.任务描述}<br>成功:${v.成功条件}')" onmouseout="untip()"><span>${k}</span></div>`));
+            $('#hist-list').html(renderMap(d.履历信息, (v, k) => `<div class="list-item" onmouseover="tip(event, '${v.副本表现}')" onmouseout="untip()"><span>${k}</span></div>`));
+        }
+
+        function renderSocial(d) {
+            const s = _.get(d, '社会身份', {});
+            $('#pane-social').html(`
+                <div class="info-grid">
+                    <div class="data-card"><span class="tag-label">主职业 / 隐藏职业</span><div class="tag-val">${s.主职业} / <span class="q-3">${s.隐藏职业}</span></div></div>
+                    <div class="data-card"><span class="tag-label">主身份 / 隐藏身份</span><div class="tag-val">${s.主身份} / <span class="q-4">${s.隐藏身份}</span></div></div>
+                    <div class="data-card"><span class="tag-label">称号</span><div class="tag-val q-relic">${s.称号}</div></div>
+                    <div class="data-card"><span class="tag-label">副本临时身份</span><div class="tag-val">${s.副本临时身份}</div></div>
+                </div>
+                <div class="data-card" style="margin-top:12px"><span class="tag-label">外貌 & 着装</span><div class="tag-val" style="font-size:0.8rem">${s.外貌描述}<br><br>${s.着装描述}</div></div>
+                <div class="data-card" style="margin-top:12px"><span class="tag-label">社会评价</span><div class="tag-val" style="font-style:italic">"${s.社会评价}"</div></div>
+            `);
+        }
+
+        function renderCombat(d) {
+            const b = _.get(d, '战斗属性', {});
+            $('#pane-combat').html(`
+                <div class="stats-grid" style="margin-bottom:15px">
+                    <div class="stat-card"><span class="stat-label">体质</span><span class="stat-val">${b.体质}</span></div>
+                    <div class="stat-card"><span class="stat-label">力量</span><span class="stat-val">${b.力量}</span></div>
+                    <div class="stat-card"><span class="stat-label">精神</span><span class="stat-val">${b.精神}</span></div>
+                    <div class="stat-card"><span class="stat-label">敏捷</span><span class="stat-val">${b.敏捷}</span></div>
+                    <div class="stat-card" style="border-color:var(--accent-gold)"><span class="stat-label">潜能点</span><span class="stat-val" style="color:var(--accent-gold)">${b.自由属性点}</span></div>
+                </div>
+                <div class="info-grid">
+                    <div class="data-card"><span class="tag-label">物理攻击 / 防御</span><div class="tag-val">${b.物理攻击} / ${b.防御}</div></div>
+                    <div class="data-card"><span class="tag-label">法术攻击</span><div class="tag-val">${b.法术攻击}</div></div>
+                </div>
+                <div class="data-card" style="margin-top:12px"><span class="tag-label">技能栏 (习得项目)</span>
+                    <div id="skill-list" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;"></div>
+                </div>
+            `);
+            $('#skill-list').html(renderMap(d.技能栏, (v, k) => `<div class="list-item" style="margin:0" onmouseover="tip(event, '<b>${k}</b> Lv.${v.技能等级}<br>${v.技能描述}<br>实际效果:${v.技能实际效果}')" onmouseout="untip()">${k}</div>`));
+        }
+
+        function renderGear(d) {
+            const common = _.get(d, '普通装备槽', {});
+            const train = _.get(d, '调教装备槽', {});
+            const relic = _.get(d, '圣器槽位', {});
+            
+            let html = '<div class="info-grid"><div><span class="tag-label">通用装备槽</span>';
+            _.forEach(common, (v, k) => { html += renderSlot(k, v); });
+            html += '</div><div><span class="tag-label">调教装备槽</span>';
+            _.forEach(train, (v, k) => { html += renderSlot(k, v); });
+            html += '</div></div><div class="data-card" style="margin-top:15px"><span class="tag-label">圣器穿戴槽</span><div class="info-grid">';
+            _.forEach(relic, (v, k) => { html += `<div>${renderSlot(k, v, true)}</div>`; });
+            html += '</div></div>';
+            $('#pane-gear').html(html);
+        }
+
+        function renderItems(d) {
+            const pack = _.get(d, '背包物品栏', {});
+            $('#pane-items').html(`
+                <div class="data-card"><span class="tag-label">背包物品</span><div id="pack-list"></div></div>
+                <div class="info-grid" style="margin-top:15px">
+                    <div class="data-card"><span class="tag-label">离线装备库</span><div style="font-size:0.7rem; color:var(--text-dim)">追踪非穿戴状态装备...</div></div>
+                    <div class="data-card"><span class="tag-label">离线圣器库</span><div style="font-size:0.7rem; color:var(--text-dim)">追踪非穿戴状态圣器...</div></div>
+                </div>
+            `);
+            $('#pack-list').html(renderMap(pack, (v, k) => `<div class="list-item"><span>${k} x${v.数量}</span><span style="font-size:0.7rem">${v.简介}</span></div>`));
+        }
+
+        function renderPrivateInfo(d) {
+            const parts = [
+                { id: '子宫', data: d.子宫监视 },
+                { id: '乳房', data: d.乳房监视 },
+                { id: '菊穴', data: d.菊穴监视 },
+                { id: '尿道膀胱', data: d.尿道膀胱监视 }
+            ];
+            let html = '<div class="info-grid">';
+            parts.forEach(p => {
+                const v = p.data || {};
+                const pct = v.开发度 || 0;
+                const contents = v.精液量_ml || v.内容物总量_ml || v.乳汁量_ml || 0;
+                const max = v.当前容量_ml || 200;
+                html += `
+                    <div class="body-stat-card">
+                        <span class="tag-label">${p.id} <span style="float:right">LV.${v.开发等级 || 0}</span></span>
+                        <div class="tag-val" style="font-size:0.8rem">状态: ${v.状态描述 || v.状态态 || '待机'}</div>
+                        <div class="tag-val" style="font-size:0.7rem; color:var(--text-dim); margin-top:5px;">内容物: ${contents}ml / ${max}ml</div>
+                        <div class="tag-val" style="font-size:0.7rem; color:var(--accent-pink); margin-top:3px;">异物: ${v.内有异物 || '无'}</div>
+                        <div class="progress-mini"><div class="progress-mini-fill" style="width:${pct}%"></div></div>
+                        <div style="text-align:right; font-size:0.6rem; color:var(--accent-pink); margin-top:4px;">开发进度: ${pct}%</div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            $('#pane-private-info').html(html);
+        }
+
+        function renderPrivateStats(d) {
+            const st = _.get(d, '私密统计', {});
+            const mods = _.get(d, '肉体改造列表', {});
+            $('#pane-private-stats').html(`
+                <div class="stats-grid">
+                    <div class="stat-card"><span class="stat-label">总高潮</span><span class="stat-val">${st.总高潮次数}</span></div>
+                    <div class="stat-card"><span class="stat-label">累积转化精液</span><span class="stat-val">${st.累积转化精液量_ml}ml</span></div>
+                    <div class="stat-card"><span class="stat-label">累积分娩</span><span class="stat-val">${st.累积分娩次数}</span></div>
+                    <div class="stat-card"><span class="stat-label">累积乳汁</span><span class="stat-val">${st.累积乳汁产出_ml}ml</span></div>
+                </div>
+                <div class="data-card" style="margin-top:15px"><span class="tag-label">肉体异化改造列表</span>
+                    <div id="mod-list" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;"></div>
+                </div>
+            `);
+            $('#mod-list').html(renderMap(mods, (v, k) => `<div class="list-item" style="margin:0" onmouseover="tip(event, '<b>${k}</b><br>${v.描述}<br>来源:${v.来源}')" onmouseout="untip()">${k}</div>`));
+        }
+
+        /* 辅助工具：装备槽渲染 */
+        function renderSlot(name, item, isRelic=false) {
+            if(!item) return `<div class="list-item" style="opacity:0.3"><span>${name}</span><span>[ Empty ]</span></div>`;
+            const q = isRelic ? 'relic' : getQNum(item.品质);
+            const tipTxt = isRelic ? 
+                `<b>${item.名称}</b> (Lv.${item.圣器等级})<br>${item.描述}<br>功能:${item.功能}<br>内部存储:${item.当前存储量}/${item.最大存储量}` :
+                `<b>${item.名称}</b> [${item.品质}]<br>${item.简介}<br>效果:${item.效果}<br>外观:${item.外观}`;
+            return `<div class="list-item" onmouseover="tip(event, '${tipTxt}')" onmouseout="untip()"><span>${name}</span><span class="q-${q}">${item.名称}</span></div>`;
+        }
+
+        function getQNum(quality) {
+            const m = {'普通':1,'稀有':2,'史诗':3,'传奇':4,'神器':5};
+            return m[quality] || 1;
+        }
+
+        function renderMap(obj, fn) {
+            if(_.isEmpty(obj)) return '<div style="font-size:0.7rem; color:var(--text-dim)">无数据</div>';
+            return _.map(obj, fn).join('');
+        }
+
+        /* 浮窗逻辑 */
+        window.tip = (e, txt) => {
+            const $t = $('#tooltip');
+            $t.html(txt).css({ top: e.clientY + 15, left: e.clientX + 15 }).show();
+        };
+        window.untip = () => $('#tooltip').hide();
+
+        window.changeImg = () => {
+            const url = prompt("请输入肖像图片 URL:");
+            if (url) $('.portrait-img').attr('src', url);
+        };
+
+        $(() => {
+            init();
+            $('.tab-btn').on('click', function() {
+                const target = $(this).data('target');
+                $('.tab-btn, .pane').removeClass('active');
+                $(this).addClass('active');
+                $(`#pane-${target}`).addClass('active');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="system-panel" id="ariana-ui">
+        <div id="tooltip" class="tooltip"></div>
+
+        <div class="header-top">
+            <div class="title-main">爱莉亚娜 · 玻璃态系统监视</div>
+            <div class="time-group">
+                <div class="time-item">主世界时间: <b id="main-time">--</b></div>
+                <div class="time-item">个人时间: <b id="pers-time">--</b></div>
+                <div class="time-item">天气: <b id="weather">--</b></div>
+            </div>
+        </div>
+
+        <div class="core-layout">
+            <div class="portrait-container" onclick="changeImg()">
+                <svg class="exp-svg">
+                    <circle class="exp-bg" cx="85" cy="85" r="70"></circle>
+                    <circle class="exp-fill" cx="85" cy="85" r="70"></circle>
+                </svg>
+                <img src="https://files.catbox.moe/p8s95a.png" class="portrait-img" alt="Ariana">
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card"><span class="stat-label">当前等级</span><span class="stat-val" id="val-lvl">--</span></div>
+                <div class="stat-card"><span class="stat-label">生命值 (HP)</span><span class="stat-val hp" id="val-hp">--</span></div>
+                <div class="stat-card"><span class="stat-label">法力值 (MP)</span><span class="stat-val mp" id="val-mp">--</span></div>
+                <div class="stat-card"><span class="stat-label">实岁年龄</span><span class="stat-val" id="val-age">--</span></div>
+                <div class="stat-card"><span class="stat-label">剩余寿命 (天)</span><span class="stat-val" id="val-life" style="color:var(--color-rare)">--</span></div>
+                
+                <div class="desire-box">
+                    <div class="desire-bar"></div>
+                    <div class="desire-info">
+                        <span id="desire-lvl-txt">欲望等级 LV.--</span>
+                        <span id="desire-pct-txt">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-target="world">世界信息</button>
+            <button class="tab-btn" data-target="social">社会信息</button>
+            <button class="tab-btn" data-target="combat">战斗属性</button>
+            <button class="tab-btn" data-target="gear">装备栏</button>
+            <button class="tab-btn" data-target="items">物品栏</button>
+            <button class="tab-btn" data-target="private-info">私密信息</button>
+            <button class="tab-btn" data-target="private-stats">私密统计</button>
+        </nav>
+
+        <div class="content-body">
+            <div id="pane-world" class="pane active">加载中...</div>
+            <div id="pane-social" class="pane">加载中...</div>
+            <div id="pane-combat" class="pane">加载中...</div>
+            <div id="pane-gear" class="pane">加载中...</div>
+            <div id="pane-items" class="pane">加载中...</div>
+            <div id="pane-private-info" class="pane">加载中...</div>
+            <div id="pane-private-stats" class="pane">加载中...</div>
+        </div>
+    </div>
+</body>
+```

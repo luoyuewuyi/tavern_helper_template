@@ -1,0 +1,49 @@
+/* 丧尸末日手机UI - 全局样式 */
+:root {
+  /* 末日色调 */
+  --phone-bg: #0a0e14;
+  --phone-surface: #131920;
+  --phone-card: #1a2230;
+  --phone-border: #2a3545;
+  --phone-accent: #00d4aa;
+  --phone-accent-dim: #00a88650;
+  --phone-danger: #ff4757;
+  --phone-warning: #ffa502;
+  --phone-text: #e6edf3;
+  --phone-text-dim: #7a8a9e;
+  --phone-text-muted: #4a5568;
+  --phone-energy: #7c3aed;
+  --phone-health: #10b981;
+  --phone-food: #f59e0b;
+  --phone-water: #3b82f6;
+  --phone-glow: 0 0 12px rgba(0, 212, 170, 0.3);
+  --phone-radius: 6px;
+  --font-mono: 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: transparent;
+  color: var(--phone-text);
+  font-size: 12px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--phone-border);
+  border-radius: 3px;
+}

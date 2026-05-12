@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 古风水墨 */
+  --c-ink: #2a2520; /* 深墨色：文字、边框 */
+  --c-grey-ink: #6b5d4f; /* 辅助色：次要文字 */
+  --c-ash-gold: #a09070; /* 淡金灰：装饰 */
+  --c-parchment: #f5efe6; /* 卷轴底色 */
+  --c-gold: #c8a882; /* 高亮：进度条、重点 */
+  --c-lavender: #b8a0c8; /* 心声区域 */
+
+  /* 字体 */
+  --font-ancient: 'Microsoft YaHei', 'PingFang SC', 'STSong', serif;
+}

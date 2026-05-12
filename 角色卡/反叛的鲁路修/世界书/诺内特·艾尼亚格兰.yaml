@@ -1,0 +1,14 @@
+- name: 诺内特·艾尼亚格兰 (Nonette Enneagram)
+  appearance:
+    height: 173cm
+    hair: 浅色短发
+    eyes: 紫瞳
+    physique: 身材火辣的豪放型御姐
+    clothing_style: 圆桌骑士特制的战斗服，风格偏向狂野展现曲线。
+  temperament:
+    background: 神圣不列颠尼亚帝国第九骑士。与第二皇女柯内莉亚是就读士官学校时代的前辈兼好友。
+    identity: 帝国圆桌骑士之一。
+    detailed_personality_analysis:
+      core_personality: 豪放不羁，性格开朗大方，喜欢用实力说话。虽然看似粗枝大叶，但在战场上却有着极其可怕的直觉和破坏力。
+  interpersonal_relationships:
+    likes: [柯内莉亚, 纯粹的战斗, 喝酒]

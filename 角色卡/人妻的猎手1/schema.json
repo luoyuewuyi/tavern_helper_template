@@ -1,0 +1,650 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前日期": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前日期"
+      ]
+    },
+    "建议选项": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "陆沉雪": {
+      "type": "object",
+      "properties": {
+        "❤️攻略值": {
+          "type": "number"
+        },
+        "登场状态": {
+          "default": "登场中",
+          "type": "string",
+          "enum": [
+            "登场中",
+            "未登场",
+            "离场"
+          ]
+        },
+        "突破事件": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "🔑破冰试探": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔥禁忌之吻": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "⛓身心交融": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔒烙印宣誓": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "👑认主仪式": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            }
+          }
+        },
+        "身体状态": {
+          "type": "object",
+          "properties": {
+            "👚衣着": {
+              "type": "string"
+            },
+            "👄口腔": {
+              "type": "string"
+            },
+            "🍈胸乳": {
+              "type": "string"
+            },
+            "🌸小穴": {
+              "type": "string"
+            },
+            "💮菊穴": {
+              "type": "string"
+            },
+            "🏠子宫": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "👚衣着",
+            "👄口腔",
+            "🍈胸乳",
+            "🌸小穴",
+            "💮菊穴",
+            "🏠子宫"
+          ]
+        },
+        "💃体态姿势": {
+          "type": "string"
+        },
+        "💭内心想法": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "❤️攻略值",
+        "身体状态",
+        "💃体态姿势",
+        "💭内心想法"
+      ]
+    },
+    "陆美玲": {
+      "type": "object",
+      "properties": {
+        "❤️攻略值": {
+          "type": "number"
+        },
+        "登场状态": {
+          "default": "未登场",
+          "type": "string",
+          "enum": [
+            "登场中",
+            "未登场",
+            "离场"
+          ]
+        },
+        "突破事件": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "🔑破冰试探": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔥禁忌之吻": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "⛓身心交融": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔒烙印宣誓": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "👑认主仪式": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            }
+          }
+        },
+        "身体状态": {
+          "type": "object",
+          "properties": {
+            "👚衣着": {
+              "type": "string"
+            },
+            "👄口腔": {
+              "type": "string"
+            },
+            "🍈胸乳": {
+              "type": "string"
+            },
+            "🌸小穴": {
+              "type": "string"
+            },
+            "💮菊穴": {
+              "type": "string"
+            },
+            "🏠子宫": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "👚衣着",
+            "👄口腔",
+            "🍈胸乳",
+            "🌸小穴",
+            "💮菊穴",
+            "🏠子宫"
+          ]
+        },
+        "💃体态姿势": {
+          "type": "string"
+        },
+        "💭内心想法": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "❤️攻略值",
+        "身体状态",
+        "💃体态姿势",
+        "💭内心想法"
+      ]
+    },
+    "柳如玉": {
+      "type": "object",
+      "properties": {
+        "❤️攻略值": {
+          "type": "number"
+        },
+        "登场状态": {
+          "default": "未登场",
+          "type": "string",
+          "enum": [
+            "登场中",
+            "未登场",
+            "离场"
+          ]
+        },
+        "突破事件": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "🔑破冰试探": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔥禁忌之吻": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "⛓身心交融": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔒烙印宣誓": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "👑认主仪式": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            }
+          }
+        },
+        "身体状态": {
+          "type": "object",
+          "properties": {
+            "👚衣着": {
+              "type": "string"
+            },
+            "👄口腔": {
+              "type": "string"
+            },
+            "🍈胸乳": {
+              "type": "string"
+            },
+            "🌸小穴": {
+              "type": "string"
+            },
+            "💮菊穴": {
+              "type": "string"
+            },
+            "🏠子宫": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "👚衣着",
+            "👄口腔",
+            "🍈胸乳",
+            "🌸小穴",
+            "💮菊穴",
+            "🏠子宫"
+          ]
+        },
+        "💃体态姿势": {
+          "type": "string"
+        },
+        "💭内心想法": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "❤️攻略值",
+        "身体状态",
+        "💃体态姿势",
+        "💭内心想法"
+      ]
+    },
+    "何美兰": {
+      "type": "object",
+      "properties": {
+        "❤️攻略值": {
+          "type": "number"
+        },
+        "登场状态": {
+          "default": "未登场",
+          "type": "string",
+          "enum": [
+            "登场中",
+            "未登场",
+            "离场"
+          ]
+        },
+        "突破事件": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "🔑破冰试探": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔥禁忌之吻": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "⛓身心交融": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔒烙印宣誓": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "👑认主仪式": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            }
+          }
+        },
+        "身体状态": {
+          "type": "object",
+          "properties": {
+            "👚衣着": {
+              "type": "string"
+            },
+            "👄口腔": {
+              "type": "string"
+            },
+            "🍈胸乳": {
+              "type": "string"
+            },
+            "🌸小穴": {
+              "type": "string"
+            },
+            "💮菊穴": {
+              "type": "string"
+            },
+            "🏠子宫": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "👚衣着",
+            "👄口腔",
+            "🍈胸乳",
+            "🌸小穴",
+            "💮菊穴",
+            "🏠子宫"
+          ]
+        },
+        "💃体态姿势": {
+          "type": "string"
+        },
+        "💭内心想法": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "❤️攻略值",
+        "身体状态",
+        "💃体态姿势",
+        "💭内心想法"
+      ]
+    },
+    "李淑慧": {
+      "type": "object",
+      "properties": {
+        "❤️攻略值": {
+          "type": "number"
+        },
+        "登场状态": {
+          "default": "未登场",
+          "type": "string",
+          "enum": [
+            "登场中",
+            "未登场",
+            "离场"
+          ]
+        },
+        "突破事件": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "🔑破冰试探": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔥禁忌之吻": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "⛓身心交融": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔒烙印宣誓": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "👑认主仪式": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            }
+          }
+        },
+        "身体状态": {
+          "type": "object",
+          "properties": {
+            "👚衣着": {
+              "type": "string"
+            },
+            "👄口腔": {
+              "type": "string"
+            },
+            "🍈胸乳": {
+              "type": "string"
+            },
+            "🌸小穴": {
+              "type": "string"
+            },
+            "💮菊穴": {
+              "type": "string"
+            },
+            "🏠子宫": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "👚衣着",
+            "👄口腔",
+            "🍈胸乳",
+            "🌸小穴",
+            "💮菊穴",
+            "🏠子宫"
+          ]
+        },
+        "💃体态姿势": {
+          "type": "string"
+        },
+        "💭内心想法": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "❤️攻略值",
+        "身体状态",
+        "💃体态姿势",
+        "💭内心想法"
+      ]
+    },
+    "张雪": {
+      "type": "object",
+      "properties": {
+        "❤️攻略值": {
+          "type": "number"
+        },
+        "登场状态": {
+          "default": "未登场",
+          "type": "string",
+          "enum": [
+            "登场中",
+            "未登场",
+            "离场"
+          ]
+        },
+        "突破事件": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "🔑破冰试探": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔥禁忌之吻": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "⛓身心交融": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔒烙印宣誓": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "👑认主仪式": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            }
+          }
+        },
+        "身体状态": {
+          "type": "object",
+          "properties": {
+            "👚衣着": {
+              "type": "string"
+            },
+            "👄口腔": {
+              "type": "string"
+            },
+            "🍈胸乳": {
+              "type": "string"
+            },
+            "🌸小穴": {
+              "type": "string"
+            },
+            "💮菊穴": {
+              "type": "string"
+            },
+            "🏠子宫": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "👚衣着",
+            "👄口腔",
+            "🍈胸乳",
+            "🌸小穴",
+            "💮菊穴",
+            "🏠子宫"
+          ]
+        },
+        "💃体态姿势": {
+          "type": "string"
+        },
+        "💭内心想法": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "❤️攻略值",
+        "身体状态",
+        "💃体态姿势",
+        "💭内心想法"
+      ]
+    },
+    "白曼文": {
+      "type": "object",
+      "properties": {
+        "❤️攻略值": {
+          "type": "number"
+        },
+        "登场状态": {
+          "default": "未登场",
+          "type": "string",
+          "enum": [
+            "登场中",
+            "未登场",
+            "离场"
+          ]
+        },
+        "突破事件": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "🔑破冰试探": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔥禁忌之吻": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "⛓身心交融": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "🔒烙印宣誓": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            },
+            "👑认主仪式": {
+              "default": "未触发",
+              "$ref": "#/$defs/__schema0"
+            }
+          }
+        },
+        "身体状态": {
+          "type": "object",
+          "properties": {
+            "👚衣着": {
+              "type": "string"
+            },
+            "👄口腔": {
+              "type": "string"
+            },
+            "🍈胸乳": {
+              "type": "string"
+            },
+            "🌸小穴": {
+              "type": "string"
+            },
+            "💮菊穴": {
+              "type": "string"
+            },
+            "🏠子宫": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "👚衣着",
+            "👄口腔",
+            "🍈胸乳",
+            "🌸小穴",
+            "💮菊穴",
+            "🏠子宫"
+          ]
+        },
+        "💃体态姿势": {
+          "type": "string"
+        },
+        "💭内心想法": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "❤️攻略值",
+        "身体状态",
+        "💃体态姿势",
+        "💭内心想法"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "陆沉雪",
+    "陆美玲",
+    "柳如玉",
+    "何美兰",
+    "李淑慧",
+    "张雪",
+    "白曼文"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "string",
+      "enum": [
+        "未触发",
+        "进行中",
+        "已完成"
+      ]
+    }
+  }
+}

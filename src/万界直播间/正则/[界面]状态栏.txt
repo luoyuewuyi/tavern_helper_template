@@ -1,0 +1,7 @@
+```html
+<body>
+<script>
+$('body').load('https://testingcf.jsdelivr.net/gh/luoyuewuyi/tavern-ui/万界直播间/界面/状态栏/index.html?v=10')
+</script>
+</body>
+```

@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 仙侠古风竹简卷轴 */
+  --c-ink: #2a1f1a; /* 墨色：主文字、边框 */
+  --c-umber: #5c473a; /* 赭褐色：次要文字、标签 */
+  --c-parchment: #f5edd6; /* 卷轴底色：卡片背景 */
+  --c-bamboo: #e8dcc6; /* 竹简浅色：辅助背景 */
+  --c-jade: #4a9e7a; /* 翡翠绿：高亮、进度条、重点装饰 */
+  --c-jade-light: #7cc9a5; /* 浅翡翠：悬停态 */
+  --c-gold: #c9a85c; /* 金色：边框装饰 */
+  --c-cloud: #fff8ef; /* 云白色：卡片内嵌块背景 */
+
+  /* 字体 */
+  --font-xianxia: 'KaiTi', 'STKaiti', 'Microsoft YaHei', serif;
+}

@@ -1,0 +1,14 @@
+- name: 奥尔德林·吉冯 (Oldrin Zevon)
+  appearance:
+    height: 163cm
+    hair: 棕色短发
+    eyes: 红瞳
+    physique: 极度丰满的胸部(与短发男孩子气形成反差)。
+    clothing_style: 格林达骑士团的纯白色贴身骑士服。
+  temperament:
+    background: 纯血不列颠尼亚贵族，格林达骑士团笔头骑士。与玛丽贝尔皇女是自幼相识的挚友。
+    identity: 格林达骑士团王牌驾驶员。
+    detailed_personality_analysis:
+      core_personality: 极为正直，充满骑士道精神。性格有些男孩子气，但对玛丽贝尔有着绝对的忠诚。在感情方面较为迟钝。
+  interpersonal_relationships:
+    likes: [玛丽贝尔, 履行骑士道]

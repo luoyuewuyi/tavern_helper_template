@@ -1,0 +1,13 @@
+- name: 塞西尔·柯尔米 (Cécile Croomy)
+  appearance:
+    height: 168cm
+    hair: 蓝发
+    eyes: 蓝瞳
+    physique: 苗条，大姐姐气质。
+  temperament:
+    background: 神圣布里塔尼亚帝国军队，特别派遣向导技术部成员。
+    identity: 军属科学家、负责KMF的调试，以及罗伊德的助手。
+    detailed_personality_analysis:
+      core_personality: 温柔体贴的大姐姐，富有同情心，擅长做一些外表可怕、味道奇葩的黑暗料理。
+  interpersonal_relationships:
+    likes: [研发和调试武器, 制作奇特的料理]

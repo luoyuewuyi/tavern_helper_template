@@ -1,0 +1,2 @@
+import{registerMvuSchema as t}from'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js';const r=z,e=r.z.object({世界:r.z.object({当前时间:r.z.string(),当前地点:r.z.string(),在场人物:r.z.array(r.z.string())}),解雨臣:r.z.object({好感度:r.z.coerce.number().transform(t=>_.clamp(t,0,100)),好感阶段:r.z.string(),心理活动:r.z.string()}).transform(t=>{const r=t.好感度<10?'初识':t.好感度<20?'点头之交':t.好感度<30?'试探':t.好感度<40?'相熟':t.好感度<50?'信任':t.好感度<60?'欣赏':t.好感度<70?'亲近':t.好感度<80?'心动':t.好感度<90?'情根深种':t.好感度<100?'锲而不舍':'此生唯你';return{...t,好感阶段:r}})});$(()=>{t(e)});
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "时间与天气": {
+      "type": "object",
+      "properties": {
+        "日期": {
+          "type": "string"
+        },
+        "季节": {
+          "type": "string",
+          "enum": [
+            "春季",
+            "夏季",
+            "秋季",
+            "冬季"
+          ]
+        },
+        "时刻": {
+          "type": "string"
+        },
+        "天气": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "日期",
+        "季节",
+        "时刻",
+        "天气"
+      ]
+    },
+    "议会事务": {
+      "type": "object",
+      "properties": {
+        "待办事务": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "事项": {
+                "type": "string"
+              },
+              "物资消耗": {
+                "type": "number"
+              },
+              "用油消耗": {
+                "type": "number"
+              },
+              "是否完成": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "事项",
+              "物资消耗",
+              "用油消耗",
+              "是否完成"
+            ]
+          }
+        },
+        "下次中央议会天数": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "待办事务",
+        "下次中央议会天数"
+      ]
+    },
+    "常务委员会": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema0"
+      }
+    },
+    "秘书舰": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema0"
+      }
+    },
+    "油矿区": {
+      "type": "object",
+      "properties": {
+        "等级": {
+          "type": "number"
+        },
+        "_最高等级": {
+          "default": 6,
+          "type": "number",
+          "const": 6
+        },
+        "_升级消耗物资": {
+          "default": 600,
+          "type": "number",
+          "const": 600
+        }
+      },
+      "required": [
+        "等级"
+      ]
+    },
+    "产业区": {
+      "type": "object",
+      "properties": {
+        "等级": {
+          "type": "number"
+        },
+        "_最高等级": {
+          "default": 6,
+          "type": "number",
+          "const": 6
+        },
+        "_升级消耗物资": {
+          "default": 600,
+          "type": "number",
+          "const": 600
+        }
+      },
+      "required": [
+        "等级"
+      ]
+    },
+    "船坞": {
+      "type": "object",
+      "properties": {
+        "等级": {
+          "type": "number"
+        },
+        "_最高等级": {
+          "default": 5,
+          "type": "number",
+          "const": 5
+        },
+        "_升级消耗物资": {
+          "default": 600,
+          "type": "number",
+          "const": 600
+        }
+      },
+      "required": [
+        "等级"
+      ]
+    },
+    "舰队": {
+      "type": "object",
+      "properties": {
+        "水面舰队": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema1"
+          }
+        },
+        "水下舰队": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema1"
+          }
+        }
+      },
+      "required": [
+        "水面舰队",
+        "水下舰队"
+      ]
+    },
+    "研究中心": {
+      "type": "object",
+      "properties": {
+        "等级": {
+          "type": "number"
+        },
+        "_最高等级": {
+          "default": 8,
+          "type": "number",
+          "const": 8
+        },
+        "_升级消耗物资": {
+          "default": 600,
+          "type": "number",
+          "const": 600
+        }
+      },
+      "required": [
+        "等级"
+      ]
+    },
+    "科研": {
+      "type": "object",
+      "properties": {
+        "研发中": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "姓名": {
+                "type": "string"
+              },
+              "舰种": {
+                "type": "string"
+              },
+              "总研发时间": {
+                "type": "number"
+              },
+              "剩余研发时间": {
+                "type": "number"
+              },
+              "研发消耗物资": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "姓名",
+              "舰种",
+              "总研发时间",
+              "剩余研发时间",
+              "研发消耗物资"
+            ]
+          }
+        },
+        "已研发": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "姓名": {
+                "type": "string"
+              },
+              "舰种": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "姓名",
+              "舰种"
+            ]
+          }
+        }
+      },
+      "required": [
+        "研发中",
+        "已研发"
+      ]
+    },
+    "仓储中心": {
+      "type": "object",
+      "properties": {
+        "特殊用油": {
+          "type": "number"
+        },
+        "物资": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "特殊用油",
+        "物资"
+      ]
+    },
+    "预警": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "时间与天气",
+    "议会事务",
+    "常务委员会",
+    "秘书舰",
+    "油矿区",
+    "产业区",
+    "船坞",
+    "舰队",
+    "研究中心",
+    "科研",
+    "仓储中心",
+    "预警"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "type": "string"
+        },
+        "阵营": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "姓名",
+        "阵营"
+      ]
+    },
+    "__schema1": {
+      "type": "object",
+      "properties": {
+        "舰队名称": {
+          "type": "string"
+        },
+        "成员": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "姓名": {
+                "type": "string"
+              },
+              "舰种": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "姓名",
+              "舰种"
+            ]
+          }
+        }
+      },
+      "required": [
+        "舰队名称",
+        "成员"
+      ]
+    }
+  }
+}

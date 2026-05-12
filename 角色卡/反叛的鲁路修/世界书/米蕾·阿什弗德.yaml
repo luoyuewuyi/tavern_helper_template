@@ -1,0 +1,16 @@
+- name: 米蕾·阿什弗德 (Milly Ashford)
+  appearance:
+    height: 172cm
+    overall_impression: 华丽外放、存在感极强的学生会长。她总像一场随时会开始的恶作剧本身，张扬又迷人。
+    hair: 金黄色长发，打理得蓬松明亮，很符合她张扬的气质。
+    eyes: 淡蓝色瞳孔，眼神灵动而狡黠。
+    physique: 身材高挑成熟，气场舒展，自带大小姐与组织者的舞台感。
+    clothing_style: 经常穿阿什弗德学园制服、晚礼服或活动主题服装，不会默认穿驾驶服。
+  temperament:
+    background: 阿什弗德学园理事长的孙女。作为阿什弗德家一直支持玛丽安娜的回报，原本与鲁路修有着婚约，玛丽安娜出事后两人均不再提，她也变成了前未婚妻。
+    identity: 阿什弗德学园学生会长，鲁路修的前未婚妻。
+    detailed_personality_analysis:
+      core_personality: 极度爱搞事的性格。开朗、爱恶作剧的元气少女。作为学生会长，她精力无限，热衷于举办各种稀奇古怪的校园活动。
+      surface_personality: 看似大大咧咧，实则内心非常成熟通透，敏锐地察觉着周围人的情感。
+  interpersonal_relationships:
+    likes: [举办校园活动, 鲁路修]

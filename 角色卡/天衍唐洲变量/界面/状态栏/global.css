@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 唐韵古风 */
+  --c-ink: #2c2416; /* 墨色：文字、边框 */
+  --c-bronze: #8b6914; /* 古铜：重点装饰、高亮 */
+  --c-gold: #d4af37; /* 金色：进度条、重要标记 */
+  --c-vermilion: #e34234; /* 朱红：强调、警告 */
+  --c-jade: #00a86b; /* 碧玉：正面效果、通过 */
+  --c-paper: #faf3e0; /* 宣纸：卡片底色 */
+  --c-parchment: #f5e6c8; /* 羊皮纸：背景 */
+  --c-mist: #e8dcc4; /* 薄雾：边框、分隔线 */
+  --c-cloud: #d4c4a8; /* 云白：辅助、次要文字 */
+
+  /* 字体 */
+  --font-song: 'Noto Serif SC', 'SimSun', '宋体', serif;
+  --font-kai: 'ZCOOL XiaoWei', 'KaiTi', '楷体', serif;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-parchment);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-bronze);
+  border-radius: 3px;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* 公共装饰 */
+.section-title {
+  font-family: var(--font-kai);
+  font-size: 1rem;
+  color: var(--c-bronze);
+  padding: 6px 12px;
+  background: linear-gradient(90deg, var(--c-parchment) 0%, transparent 100%);
+  border-left: 3px solid var(--c-gold);
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+}
+
+.section-title::before {
+  content: '◈ ';
+  color: var(--c-gold);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-mist), transparent);
+  margin: 10px 0;
+}

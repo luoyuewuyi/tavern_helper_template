@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "时间线": {
+      "default": "49岁陪诊师",
+      "type": "string",
+      "enum": [
+        "47岁销售员",
+        "49岁陪诊师"
+      ]
+    },
+    "当前日期": {
+      "default": "待初始化",
+      "type": "string"
+    },
+    "当前时间": {
+      "default": "待初始化",
+      "type": "string"
+    },
+    "当前场景": {
+      "default": "家中",
+      "type": "string"
+    },
+    "王影": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 50,
+          "type": "number"
+        },
+        "信任度": {
+          "default": 60,
+          "type": "number"
+        },
+        "警戒值": {
+          "default": 70,
+          "type": "number"
+        },
+        "羞耻度": {
+          "default": 90,
+          "type": "number"
+        },
+        "心理状态": {
+          "default": "平静",
+          "type": "string"
+        },
+        "当前想法": {
+          "default": "无",
+          "type": "string"
+        },
+        "当前穿着": {
+          "default": "灰色宽松卫衣，深蓝运动裤，棉拖鞋",
+          "type": "string"
+        },
+        "身体状态": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "面部": {
+              "default": "素颜，表情自然放松",
+              "type": "string"
+            },
+            "胸部": {
+              "default": "宽松卫衣下轮廓不显",
+              "type": "string"
+            },
+            "腰腹": {
+              "default": "卫衣宽松垂落，腰线隐藏",
+              "type": "string"
+            },
+            "臀部": {
+              "default": "运动裤下弧线自然",
+              "type": "string"
+            },
+            "大腿": {
+              "default": "运动裤宽松包裹，自然并拢",
+              "type": "string"
+            },
+            "小腿": {
+              "default": "裤脚微堆叠在脚踝处",
+              "type": "string"
+            },
+            "双脚": {
+              "default": "棉拖鞋，脚趾自然舒展",
+              "type": "string"
+            },
+            "双手": {
+              "default": "手指纤细，自然搭放",
+              "type": "string"
+            },
+            "私处": {
+              "default": "正常保守状态",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "付宴": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 45,
+          "type": "number"
+        },
+        "信任度": {
+          "default": 50,
+          "type": "number"
+        },
+        "开放度": {
+          "default": 30,
+          "type": "number"
+        },
+        "心理状态": {
+          "default": "随意",
+          "type": "string"
+        },
+        "当前想法": {
+          "default": "待出场",
+          "type": "string"
+        },
+        "当前穿着": {
+          "default": "待出场",
+          "type": "string"
+        },
+        "身体状态": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "面部": {
+              "default": "待出场",
+              "type": "string"
+            },
+            "胸部": {
+              "default": "待出场",
+              "type": "string"
+            },
+            "腰腹": {
+              "default": "待出场",
+              "type": "string"
+            },
+            "臀部": {
+              "default": "待出场",
+              "type": "string"
+            },
+            "大腿": {
+              "default": "待出场",
+              "type": "string"
+            },
+            "小腿": {
+              "default": "待出场",
+              "type": "string"
+            },
+            "双脚": {
+              "default": "待出场",
+              "type": "string"
+            },
+            "双手": {
+              "default": "待出场",
+              "type": "string"
+            },
+            "私处": {
+              "default": "待出场",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "路线": {
+      "default": "纯爱",
+      "type": "string",
+      "enum": [
+        "纯爱",
+        "绿母"
+      ]
+    },
+    "绿母进度": {
+      "type": "number"
+    }
+  }
+}

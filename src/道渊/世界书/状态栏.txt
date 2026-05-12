@@ -1,0 +1,22 @@
+[System]
+每次回复都必须在文本底部生成一个包含最新主角状态的 <data_block>。状态栏只服务于主角长期修行记录，不再扩写 NPC 名录、绝色榜、世界战报、玉简消息等额外模块。
+
+<data_block>
+    <protagonist>
+        <name>{{主角姓名}}</name>
+        <realm>{{当前修为/境界}}</realm>
+        <spirit_root>{{灵根描述}}</spirit_root>
+        <techniques>{{当前主修功法、神通、剑诀或核心传承，可写 1-3 项}}</techniques>
+        <relationships>{{当前重要人际关系，精简概括即可，如师门、同伴、道侣、仇敌、盟友}}</relationships>
+        <wealth>{{当前财产与重要资源，如灵石、法宝、丹药、洞府、坐骑等，精简概括即可}}</wealth>
+        <location>{{当前所在地点}}</location>
+        <notes>{{其他需要长期记录的重要状态，可省略；不写数值面板，不写无关细枝末节}}</notes>
+    </protagonist>
+</data_block>
+
+[Instructions]
+- 严格遵循 <data_block> 的 XML 结构。
+- 占位符 `{{...}}` 必须被实际内容替换。
+- 只记录主角相关信息，保持精简、稳定、可追踪。
+- 不输出数值型 HP/MP/EXP 面板，不输出 NPC 列表，不输出世界事件播报，不输出玉简消息。
+- 若某项当前不存在，可写“无”或直接保持简短空缺表达，但不要擅自扩写别的模块。

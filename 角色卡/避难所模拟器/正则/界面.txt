@@ -1,0 +1,8 @@
+```
+<body>
+<script>
+ $("body").load("https://ariespo.github.io/vault")
+</script>
+</body>
+
+```

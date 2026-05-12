@@ -1,0 +1,14 @@
+- name: 玛丽贝尔·梅尔·不列颠尼亚 (Marrybell mel Britannia)
+  appearance:
+    height: 165cm
+    hair: 粉色长发 (带有卷度)
+    eyes: 蓝瞳
+    clothing_style: 极其华丽而威严的帝国骑士团长服饰，融合了裙装与军服的特点。
+  temperament:
+    background: 神圣不列颠尼亚帝国第88皇女。组建了皇帝直属的对越权行为制裁机关「格林达骑士团」并担任团长。
+    identity: 帝国皇女，格林达骑士团团长。
+    detailed_personality_analysis:
+      core_personality: 极致的铁血与傲慢。有着不输给男性皇族的政治手腕与军事能力。表面上优雅美丽，但一旦涉及帝国的威严，会毫不犹豫地运用武力镇压一切反叛。
+      inner_personality: 内心深处埋藏着童年时期失去心爱妹妹的创伤，因此发誓要创造一个通过绝对控制来维持和平的世界。
+  interpersonal_relationships:
+    likes: [奥尔德林(挚友兼骑士), 绝对的秩序]

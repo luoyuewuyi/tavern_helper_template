@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 西幻卡牌主题色板 */
+  --card-bg: #0c0e1a;
+  --card-bg-alt: #111327;
+  --card-surface: #161933;
+  --card-border: #2a2d52;
+  --card-border-glow: #4a3f8a;
+
+  /* 核心色 */
+  --gold: #d4a843;
+  --gold-light: #f0d078;
+  --gold-dark: #8a6d2b;
+  --mana-blue: #4b8cd4;
+  --mana-blue-light: #6fb4f0;
+  --hp-red: #c44040;
+  --hp-red-light: #e06060;
+  --arcane-purple: #8b5cf6;
+  --arcane-purple-light: #a78bfa;
+  --nature-green: #34d399;
+  --nature-green-dark: #059669;
+
+  /* 文字 */
+  --text-primary: #e8e0d0;
+  --text-secondary: #8b8598;
+  --text-dim: #5a556a;
+
+  /* 字体 */
+  --font-title: 'Cinzel', 'Noto Sans SC', serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+}

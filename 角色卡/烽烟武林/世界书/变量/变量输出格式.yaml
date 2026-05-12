@@ -1,0 +1,28 @@
+---
+变量输出格式:
+  rule:
+    - you must output the update analysis and the actual update commands at once in the end of the next reply
+    - the update commands works like the JSON Patch (RFC 6902) standard, must be a valid JSON array containing operation objects, but supports the following operations instead
+    - replace updates existing paths
+    - delta updates existing number paths by a delta value
+    - insert inserts new items into an object or array
+    - remove deletes keys or indices
+    - move moves a value between valid paths
+    - don't update field names starts with `_`
+  format: |-
+    <UpdateVariable>
+    <Analysis>$(IN ENGLISH, no more than 80 words)
+    - calculate time passed and whether the scene has materially advanced
+    - judge whether large updates are justified by battle, travel, rest, revelation, transaction, or political shock
+    - check every touched variable against the update rules before writing commands
+    </Analysis>
+    <JSONPatch>
+    [
+      { "op": "replace", "path": "${/path/to/variable}", "value": "${new_value}" },
+      { "op": "delta", "path": "${/path/to/number/variable}", "value": "${positive_or_negative_delta}" },
+      { "op": "insert", "path": "${/path/to/object/new_key}", "value": "${new_value}" },
+      { "op": "remove", "path": "${/path/to/object/key}" },
+      { "op": "move", "from": "${/path/to/variable}", "to": "${/path/to/another/path}" }
+    ]
+    </JSONPatch>
+    </UpdateVariable>

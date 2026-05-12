@@ -1,0 +1,39 @@
+---
+变量输出格式:
+  rule:
+    - you must output the update analysis and the actual update commands together at the end of the reply
+    - the update commands must be a valid JSON array and follow the custom JSON Patch subset used by MVU
+    - supported operations are replace, delta, insert, remove and move
+    - never update readonly fields that start with `_` or `$`
+    - always update real paths under `/世界`, `/主角`, `/开局设置`, `/当前焦点角色`, `/张建珍`, `/张素菲`, `/张宇`, `/王群荣`, `/张哲恺`, `/诺姆`, `/外围`, `/事件池`
+    - female character states are at `/张建珍/...`, `/张素菲/...`, `/张宇/...` (NOT under /角色池)
+    - affection uses path like `/张建珍/好感度/{{user}}`, `/张哲恺/好感度/张宇` etc
+    - route progress uses path like `/张建珍/路线/纯爱进度`, `/张宇/路线/NTR_张哲恺进度` etc
+    - body state uses path like `/张素菲/身体状态/敏感度/胸部`, `/张宇/身体状态/经验次数/性交` etc
+    - mental state uses path like `/张建珍/心理状态/理智值`, `/张宇/心理状态/堕落度` etc
+    - do not manually write derived fields like `$关系阶段`, `$纯爱阶段`, `$精神状态`, `$堕落阶段`, `$主导路线`, `$风险标签`, `$觊觎阶段`, `$渗透阶段` etc
+    - affection delta must be tiny (±1~3 normally, ±5~8 max for critical events)
+    - route progress delta must be tiny (±1~2 normally)
+  format: |-
+    <UpdateVariable>
+    <Analysis>$(IN ENGLISH, no more than 100 words)
+    - ${whether time, place, and focus event changed}
+    - ${which protagonist fields changed, if any}
+    - ${which female character affection/route/body/mental states changed and why}
+    - ${which male character states changed and why}
+    - ${which event-pool entries changed}
+    </Analysis>
+    <JSONPatch>
+    [
+      { "op": "replace", "path": "/世界/当前地点", "value": "王氏庄园偏厅" },
+      { "op": "delta", "path": "/世界/外交热度", "value": 6 },
+      { "op": "replace", "path": "/当前焦点角色", "value": "诺姆" },
+      { "op": "delta", "path": "/张建珍/好感度/{{user}}", "value": 2 },
+      { "op": "delta", "path": "/张宇/路线/纯爱进度", "value": 1 },
+      { "op": "delta", "path": "/张宇/心理状态/抗拒力", "value": -1 },
+      { "op": "delta", "path": "/诺姆/渗透度/张建珍", "value": 1 },
+      { "op": "replace", "path": "/张宇/当前行动", "value": "跟随主角一起进入偏厅观察诺姆反应" },
+      { "op": "replace", "path": "/事件池/诺姆渗透/当前状态", "value": "借机试探" }
+    ]
+    </JSONPatch>
+    </UpdateVariable>

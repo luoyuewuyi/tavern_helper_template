@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "default": "199X年04月08日 08:30",
+          "type": "string"
+        },
+        "当前地点": {
+          "default": "岐阜县神山市 千反田家本宅",
+          "type": "string"
+        },
+        "当前季节": {
+          "default": "春",
+          "type": "string",
+          "enum": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ]
+        },
+        "近期事务": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事务名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事务描述"
+          }
+        }
+      }
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "千反田神奈",
+          "type": "string"
+        },
+        "性别": {
+          "default": "女",
+          "type": "string"
+        },
+        "身份": {
+          "default": "千反田家长女·神山高中学生",
+          "type": "string"
+        },
+        "资金": {
+          "default": 500,
+          "type": "number"
+        },
+        "声望": {
+          "default": 15,
+          "type": "number"
+        },
+        "体力": {
+          "default": 70,
+          "type": "number"
+        },
+        "资产清单": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "资产名"
+          },
+          "additionalProperties": {
+            "default": {},
+            "type": "object",
+            "properties": {
+              "类型": {
+                "default": "未分类",
+                "type": "string"
+              },
+              "估值": {
+                "default": "未估值",
+                "type": "string"
+              },
+              "状态": {
+                "default": "正常",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "人脉网络": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "人物名"
+          },
+          "additionalProperties": {
+            "default": {},
+            "type": "object",
+            "properties": {
+              "关系等级": {
+                "default": "中立",
+                "type": "string",
+                "enum": [
+                  "亲密",
+                  "信任",
+                  "友好",
+                  "中立",
+                  "警惕",
+                  "敌对"
+                ]
+              },
+              "备注": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "物品栏": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "default": 1,
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "家族": {
+      "type": "object",
+      "properties": {
+        "千反田商事状态": {
+          "default": "传统农产品贸易为主",
+          "type": "string"
+        },
+        "千家良品状态": {
+          "default": "尚未创立",
+          "type": "string"
+        },
+        "总资产估值": {
+          "default": 50,
+          "type": "number"
+        }
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "家族"
+  ]
+}

@@ -1,0 +1,11 @@
+---
+变量输出格式强调:
+  rule:
+    - the update block cannot be omitted when variables changed
+    - `<StatusPlaceHolderImpl/>` must always be placed after `</UpdateVariable>`
+    - never output `<StatusPlaceHolderImpl/>` before `<UpdateVariable>` in the same reply
+  format: |-
+    <UpdateVariable>
+    ...
+    </UpdateVariable>
+    <StatusPlaceHolderImpl/>

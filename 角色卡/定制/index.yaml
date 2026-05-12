@@ -1,0 +1,319 @@
+# yaml-language-server: $schema=https://testingcf.jsdelivr.net/gh/StageDog/tavern_sync/dist/schema/character.zh.json
+头像: 头像
+版本: 1.0.0
+作者: ""
+备注: 克苏鲁世界5V5竞技角色扮演
+
+第一条消息:
+  - 内容: 自定义开局
+
+角色描述: ""
+
+锚点: {}
+
+世界书名称: 与角色卡名称相同
+条目:
+  - 名称: 世界观设定
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 1
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\世界观设定
+
+  - 名称: 怪物设定
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 2
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\怪物设定
+
+  - 名称: 堕女设定
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 3
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\堕女设定
+
+  - 名称: 职业与经济体系
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 4
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\职业与经济体系
+
+  - 名称: 核心创作规则
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 999
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\核心创作规则
+
+  - 名称: 角色卡生成系统
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 998
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\角色卡生成系统
+
+  - 名称: 禁止事项
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 1
+      顺序: 996
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\禁止事项
+
+  - 名称: 性爱规则
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 2
+      顺序: 995
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\性爱规则
+
+  - 名称: ===变量开始===
+    启用: false
+    激活策略:
+      类型: 向量化
+    插入位置:
+      类型: 角色定义之前
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    内容: ""
+
+  - 名称: "[initvar]变量初始化勿开"
+    启用: false
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 角色定义之前
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量\initvar
+
+  - 名称: 变量列表
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量\变量列表
+
+  - 名称: "[mvu_update]变量更新规则"
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量\变量更新规则
+
+  - 名称: "[mvu_update]变量输出格式"
+    启用: true
+    激活策略:
+      类型: 蓝灯
+    插入位置:
+      类型: 指定深度
+      角色: 系统
+      深度: 0
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: true
+      不可激活其他条目: true
+    文件: 世界书\变量\变量输出格式
+
+  - 名称: ===变量结束===
+    启用: false
+    激活策略:
+      类型: 向量化
+    插入位置:
+      类型: 角色定义之前
+      顺序: 14720
+    激活概率: 100
+    递归:
+      不可被其他条目激活: false
+      不可激活其他条目: false
+    内容: ""
+
+扩展字段:
+  正则:
+    - 正则名称: "[美化]变量更新中-夜空诗意"
+      id: bf00a83a-e402-4371-8bf0-5acc28544e10
+      启用: true
+      查找表达式: /<UpdateVariable(?:variable)?>(?!.*<\/UpdateVariable(?:variable)?>)\s*(.*)\s*$/gsi
+      文件: 正则\[美化]变量更新中-夜空诗意
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+    - 正则名称: "[美化]完整变量完成-夜空诗意"
+      id: 4a5c642e-828c-475e-9502-e04e1cd20a5a
+      启用: true
+      查找表达式: /<UpdateVariable(?:variable)?>\s*(.*)\s*<\/UpdateVariable(?:variable)?>/gsi
+      文件: 正则\[美化]完整变量完成-夜空诗意
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+    - 正则名称: 对 AI 隐藏状态栏
+      id: d507bb81-ed92-4086-b409-56a96f81d332
+      启用: true
+      查找表达式: <StatusPlaceHolderImpl/>
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+
+    - 正则名称: 仅格式思维链
+      id: ec123e4d-3ee9-40dd-85cf-6d5ade342ff2
+      启用: true
+      查找表达式: /<Analysis>[\s\S]+?<\/Analysis>/gm
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+
+    - 正则名称: 只发送最新3楼的变量更新
+      id: 4530abc5-deda-4f93-ba43-93c501c8afe3
+      启用: true
+      查找表达式: /<UpdateVariable>[\s\S]*?</UpdateVariable>/gm
+      内容: ""
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+      最小深度: 6
+
+    - 正则名称: 状态栏美化
+      id: f17102df-c33d-4fdb-9f6f-e17bc18bc9c2
+      启用: true
+      查找表达式: <StatusPlaceHolderImpl/>
+      文件: 正则\状态栏美化
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
+  酒馆助手:
+    脚本库:
+      - 名称: mvu
+        id: 22d70d1f-d0be-4061-911e-d0c57ab55053
+        启用: true
+        类型: 脚本
+        内容: import
+          'https://testingcf.jsdelivr.net/gh/MagicalAstrogy/MagVarUpdate/artifact/bundle.js';
+        按钮:
+          启用: true
+          按钮列表:
+            - 名称: 重新处理变量
+              可见: false
+            - 名称: 重新读取初始变量
+              可见: false
+            - 名称: 快照楼层
+              可见: false
+            - 名称: 重演楼层
+              可见: false
+            - 名称: 重试额外模型解析
+              可见: false
+            - 名称: 清除旧楼层变量
+              可见: false
+
+      - 名称: 变量结构
+        id: f65ab164-4268-4366-8228-16af904c2251
+        启用: true
+        类型: 脚本
+        内容: |-
+          import{registerMvuSchema as r}from'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js';const t=z,e=t.z.object({姓名:t.z.string().prefault('无'),性别:t.z.string().prefault('无'),年龄:t.z.string().prefault('无'),外表年龄:t.z.string().prefault('无'),身高:t.z.string().prefault('无'),种族:t.z.string().prefault('人类'),表面身份:t.z.string().prefault('无'),隐藏身份:t.z.string().prefault('无'),处女:t.z.string().prefault('无'),纹身:t.z.string().prefault('无'),颜值:t.z.string().prefault('无'),瞳孔颜色:t.z.string().prefault('无'),肤色:t.z.string().prefault('无'),怀孕:t.z.string().prefault('否'),对性知识认知:t.z.string().prefault('无'),伪装性格:t.z.string().prefault('无'),真实性格:t.z.string().prefault('无'),伪装言语风格:t.z.string().prefault('无'),真实言语风格:t.z.string().prefault('无'),性癖:t.z.string().prefault('无'),私下自称:t.z.string().prefault('无'),对我称呼:t.z.object({私下:t.z.string().prefault('无'),公共:t.z.string().prefault('无')}).prefault({}),关系:t.z.string().prefault('无'),对卡尔德印象:t.z.string().prefault('无'),子嗣:t.z.string().prefault('无'),肉体改造:t.z.string().prefault('无'),生物特性:t.z.string().prefault('无'),嘴承受鸡巴:t.z.string().prefault('无'),逼承受鸡巴:t.z.string().prefault('无'),屁眼承受鸡巴:t.z.string().prefault('无'),玉精:t.z.string().prefault('未吸收'),发型衣着:t.z.string().prefault('无'),三围与身材:t.z.string().prefault('无'),身体数据:t.z.string().prefault('无'),高潮记录:t.z.coerce.number().prefault(0),性爱时间:t.z.string().prefault('无'),性爱后负面状态:t.z.string().prefault('无'),体内精液:t.z.object({胃:t.z.coerce.number().prefault(0),子宫:t.z.coerce.number().prefault(0),肠道:t.z.coerce.number().prefault(0)}).prefault({}),肚子:t.z.string().prefault('平坦'),体位:t.z.string().prefault('无'),具体位置:t.z.string().prefault('无')}),u=t.z.object({世界:t.z.object({天气:t.z.string().prefault('☀️ 晴朗'),当前时间:t.z.string().prefault('新历1年/01/01-08:00'),序号:t.z.coerce.number().prefault(1),大地图:t.z.string().prefault('朗姆镇'),小地图:t.z.string().prefault('安定区'),建筑结构:t.z.record(t.z.string().describe('房间/区域名'),t.z.string().describe('描述或🛑标注用户位置')).prefault({})}),卡尔德:t.z.object({等级:t.z.coerce.number().transform(r=>_.clamp(r,1,999)).prefault(1),圣之力:t.z.coerce.number().transform(r=>_.clamp(r,0,100)).prefault(1),魔力当前:t.z.coerce.number().prefault(100),魔力上限:t.z.coerce.number().prefault(100),魔力颜色:t.z.string().prefault('银白'),身高:t.z.string().prefault('180cm'),穿戴:t.z.string().prefault('黑色皮甲套装'),武器:t.z.string().prefault('无'),鸡巴状态:t.z.string().prefault('自然垂下'),财富:t.z.object({紫金币:t.z.coerce.number().prefault(0),金币:t.z.coerce.number().prefault(5),银币:t.z.coerce.number().prefault(50),铜币:t.z.coerce.number().prefault(200)}).prefault({}),物品栏:t.z.record(t.z.string().describe('物品名'),t.z.object({描述:t.z.string(),数量:t.z.coerce.number()})).prefault({}),房产:t.z.string().prefault('无'),体位:t.z.string().prefault('站立'),具体位置:t.z.string().prefault('朗姆镇中央广场')}),当前NPC:e.prefault({}),角色库:t.z.record(t.z.string().describe('角色姓名'),e).prefault({})});$(()=>{r(u)});
+          //# sourceMappingURL=index.js.map
+
+    变量: {}

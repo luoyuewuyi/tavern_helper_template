@@ -1,0 +1,67 @@
+---
+<status_bar_rule>
+状态栏硬规则:
+  - 每次回复结尾必须输出一个 <CrossAngeStatus>...</CrossAngeStatus> 标签。
+  - 标签内部必须是 HTML 状态栏主体，从 <article class="ca-card"> 开始，到 </article> 结束。
+  - 不要使用 Markdown 代码块包裹状态栏，不要输出 JSON 状态栏，不要输出纯文字代码块状态栏。
+  - CSS 由正则替换自动注入；标签内部只写结构化 HTML，不写 style、script 或外链。
+  - 每轮都要根据剧情更新字段，不允许长期照抄上一轮。
+  - 若某项未知，填入“未知”或合理短句，不要省略区域。
+
+HTML格式:
+  |-
+    <CrossAngeStatus>
+    <article class="ca-card">
+      <header class="ca-header">
+        <div>
+          <p class="ca-kicker">CROSS ANGE / MIRROR WORLD</p>
+          <h1 class="ca-title">第一地球</h1>
+        </div>
+        <div class="ca-time">春日 / 16:30 / 晴朗</div>
+      </header>
+
+      <section class="ca-location">
+        <span class="ca-label">地点</span>
+        <strong>阿尔泽纳尔近海</strong>
+        <p class="ca-desc">空间裂缝余波尚未消散。</p>
+      </section>
+
+      <div class="ca-grid">
+        <section class="ca-panel">
+          <div class="ca-panel-title">UNICORN</div>
+          <div class="ca-line"><span class="ca-label">角色</span><strong>{{user}}</strong></div>
+          <div class="ca-line"><span class="ca-label">机体</span><strong>RX-0 独角兽高达</strong></div>
+          <div class="ca-line"><span class="ca-label">形态</span><strong>独角兽模式</strong></div>
+          <p class="ca-note">镜世界反抗者；精神负荷偏高；机体轻度损伤。</p>
+        </section>
+
+        <section class="ca-panel">
+          <div class="ca-panel-title">BANSHEE</div>
+          <div class="ca-line"><span class="ca-label">角色</span><strong>水树千玲</strong></div>
+          <div class="ca-line"><span class="ca-label">机体</span><strong>RX-0 报丧女妖</strong></div>
+          <div class="ca-line"><span class="ca-label">形态</span><strong>独角兽模式</strong></div>
+          <p class="ca-note">敌对追击者；距离不明。</p>
+        </section>
+      </div>
+
+      <section class="ca-panel ca-wide">
+        <div class="ca-panel-title">阵营关系</div>
+        <div class="ca-relations">
+          <div class="ca-relation"><span>安琪</span><strong>未接触</strong></div>
+          <div class="ca-relation"><span>阿尔泽纳尔</span><strong>警戒</strong></div>
+          <div class="ca-relation"><span>龙族</span><strong>未知</strong></div>
+          <div class="ca-relation"><span>源组织</span><strong>追踪中</strong></div>
+        </div>
+      </section>
+
+      <section class="ca-panel ca-wide">
+        <div class="ca-panel-title">事件标记</div>
+        <div class="ca-chips">
+          <span class="ca-chip">三世界裂缝</span>
+          <span class="ca-chip">安琪流放节点</span>
+        </div>
+        <div class="ca-pressure">未知势力雷达正在接近。</div>
+      </section>
+    </article>
+    </CrossAngeStatus>
+</status_bar_rule>

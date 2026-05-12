@@ -1,0 +1,533 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前日期": {
+          "type": "string"
+        },
+        "当前时段": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "灵气复苏阶段": {
+          "type": "string",
+          "enum": [
+            "隐秘萌芽",
+            "局部异常",
+            "暗面扩张",
+            "全球警觉",
+            "超凡震荡",
+            "秩序改写"
+          ]
+        },
+        "世界改变进度": {
+          "type": "number"
+        },
+        "全球关注度": {
+          "type": "number"
+        },
+        "最近异象": {
+          "type": "string"
+        },
+        "当前局势摘要": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前日期",
+        "当前时段",
+        "当前地点",
+        "灵气复苏阶段",
+        "世界改变进度",
+        "全球关注度",
+        "最近异象",
+        "当前局势摘要"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "公开身份": {
+          "type": "string"
+        },
+        "年龄": {
+          "type": "number"
+        },
+        "职业学业": {
+          "type": "string"
+        },
+        "健康状态": {
+          "type": "number"
+        },
+        "情绪状态": {
+          "type": "string"
+        },
+        "隐蔽度": {
+          "type": "number"
+        },
+        "梦境状态": {
+          "type": "string",
+          "enum": [
+            "未入梦",
+            "浅眠",
+            "入梦中",
+            "神树共鸣"
+          ]
+        },
+        "当前目标": {
+          "type": "string"
+        },
+        "自我认知": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "公开身份",
+        "年龄",
+        "职业学业",
+        "健康状态",
+        "情绪状态",
+        "隐蔽度",
+        "梦境状态",
+        "当前目标",
+        "自我认知"
+      ]
+    },
+    "系统": {
+      "type": "object",
+      "properties": {
+        "当前积分": {
+          "type": "number"
+        },
+        "累计抽卡次数": {
+          "type": "number"
+        },
+        "距离保底还需次数": {
+          "type": "number"
+        },
+        "最近抽卡结果": {
+          "type": "string"
+        },
+        "抽奖池摘要": {
+          "type": "string"
+        },
+        "本周自动积分是否已结算": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "当前积分",
+        "累计抽卡次数",
+        "距离保底还需次数",
+        "最近抽卡结果",
+        "抽奖池摘要",
+        "本周自动积分是否已结算"
+      ]
+    },
+    "神树": {
+      "type": "object",
+      "properties": {
+        "当前等级": {
+          "type": "string",
+          "enum": [
+            "E级",
+            "D级",
+            "C级",
+            "B级",
+            "A级",
+            "S级"
+          ]
+        },
+        "成长百分比": {
+          "type": "number"
+        },
+        "下一级目标": {
+          "type": "string"
+        },
+        "每周自然成长": {
+          "type": "number"
+        },
+        "最近喂养记录": {
+          "type": "string"
+        },
+        "结果状态": {
+          "type": "string"
+        },
+        "神树摘要": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前等级",
+        "成长百分比",
+        "下一级目标",
+        "每周自然成长",
+        "最近喂养记录",
+        "结果状态",
+        "神树摘要"
+      ]
+    },
+    "保留能力": {
+      "type": "object",
+      "properties": {
+        "槽位上限": {
+          "type": "number"
+        },
+        "当前保留数": {
+          "type": "number"
+        },
+        "当前主保留能力": {
+          "type": "string"
+        },
+        "来源作品": {
+          "type": "string"
+        },
+        "评级": {
+          "type": "string",
+          "enum": [
+            "S",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        "效果摘要": {
+          "type": "string"
+        },
+        "已保留列表": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "type": "string"
+              },
+              "来源作品": {
+                "type": "string"
+              },
+              "评级": {
+                "type": "string",
+                "enum": [
+                  "S",
+                  "A",
+                  "B",
+                  "C",
+                  "D",
+                  "E"
+                ]
+              },
+              "效果摘要": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "名称",
+              "来源作品",
+              "评级",
+              "效果摘要"
+            ]
+          }
+        }
+      },
+      "required": [
+        "槽位上限",
+        "当前保留数",
+        "当前主保留能力",
+        "来源作品",
+        "评级",
+        "效果摘要",
+        "已保留列表"
+      ]
+    },
+    "能力库存": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "名称": {
+            "type": "string"
+          },
+          "来源作品": {
+            "type": "string"
+          },
+          "评级": {
+            "type": "string",
+            "enum": [
+              "S",
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          },
+          "类型": {
+            "type": "string",
+            "enum": [
+              "灵魂碎片",
+              "提取能力"
+            ]
+          },
+          "形态": {
+            "type": "string"
+          },
+          "核心效果": {
+            "type": "string"
+          },
+          "适配对象": {
+            "type": "string"
+          },
+          "风险提示": {
+            "type": "string"
+          },
+          "当前状态": {
+            "type": "string",
+            "enum": [
+              "未使用",
+              "已保留",
+              "已赐予",
+              "已献祭"
+            ]
+          },
+          "备注": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "名称",
+          "来源作品",
+          "评级",
+          "类型",
+          "形态",
+          "核心效果",
+          "适配对象",
+          "风险提示",
+          "当前状态",
+          "备注"
+        ]
+      }
+    },
+    "焦点人物": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "名称": {
+            "type": "string"
+          },
+          "类型": {
+            "type": "string",
+            "enum": [
+              "个人",
+              "团体",
+              "组织"
+            ]
+          },
+          "身份": {
+            "type": "string"
+          },
+          "当前地区": {
+            "type": "string"
+          },
+          "获得内容": {
+            "type": "string"
+          },
+          "获得形式": {
+            "type": "string"
+          },
+          "评级": {
+            "type": "string",
+            "enum": [
+              "S",
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          },
+          "变化趋势": {
+            "type": "string"
+          },
+          "认知距离": {
+            "type": "number"
+          },
+          "暴露风险": {
+            "type": "number"
+          },
+          "对世界影响": {
+            "type": "string"
+          },
+          "当前状态": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "名称",
+          "类型",
+          "身份",
+          "当前地区",
+          "获得内容",
+          "获得形式",
+          "评级",
+          "变化趋势",
+          "认知距离",
+          "暴露风险",
+          "对世界影响",
+          "当前状态"
+        ]
+      }
+    },
+    "势力": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "名称": {
+            "type": "string"
+          },
+          "类型": {
+            "type": "string"
+          },
+          "态度": {
+            "type": "string",
+            "enum": [
+              "无察觉",
+              "零散关注",
+              "谨慎调查",
+              "高度警惕",
+              "暗中争夺",
+              "公开介入"
+            ]
+          },
+          "关注焦点": {
+            "type": "string"
+          },
+          "当前动作": {
+            "type": "string"
+          },
+          "风险评级": {
+            "type": "number"
+          },
+          "渗透程度": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "名称",
+          "类型",
+          "态度",
+          "关注焦点",
+          "当前动作",
+          "风险评级",
+          "渗透程度"
+        ]
+      }
+    },
+    "世界事件": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "标题": {
+            "type": "string"
+          },
+          "等级": {
+            "type": "string",
+            "enum": [
+              "地方级",
+              "城市级",
+              "区域级",
+              "国家级",
+              "全球级"
+            ]
+          },
+          "地区": {
+            "type": "string"
+          },
+          "摘要": {
+            "type": "string"
+          },
+          "公开影响": {
+            "type": "string"
+          },
+          "幕后关联": {
+            "type": "string"
+          },
+          "状态": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "标题",
+          "等级",
+          "地区",
+          "摘要",
+          "公开影响",
+          "幕后关联",
+          "状态"
+        ]
+      }
+    },
+    "编年史": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "时间标记": {
+            "type": "string"
+          },
+          "标题": {
+            "type": "string"
+          },
+          "摘要": {
+            "type": "string"
+          },
+          "影响层级": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "时间标记",
+          "标题",
+          "摘要",
+          "影响层级"
+        ]
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "系统",
+    "神树",
+    "保留能力",
+    "能力库存",
+    "焦点人物",
+    "势力",
+    "世界事件",
+    "编年史"
+  ]
+}

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 起灵星 · 暗紫金修仙主题 */
+  --c-bg-deep: #1a1030;
+  --c-bg-card: #241a3a;
+  --c-bg-panel: #2d1f4e;
+  --c-border: #3d2d5e;
+  --c-border-glow: rgba(180, 140, 255, 0.3);
+  --c-primary: #b48cff;
+  --c-primary-dim: rgba(180, 140, 255, 0.6);
+  --c-accent: #ffd866;
+  --c-accent-dim: rgba(255, 216, 102, 0.6);
+  --c-text: #e8e0f0;
+  --c-text-dim: #a89cc0;
+  --c-text-muted: #7a6e8e;
+  --c-success: #66ffb2;
+  --c-danger: #ff6688;
+  --c-info: #66ccff;
+
+  /* 字体 */
+  --font-main: 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif;
+  --font-mono: 'Courier New', monospace;
+}

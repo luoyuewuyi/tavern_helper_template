@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "在场人物": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "在场人物"
+      ]
+    },
+    "解雨臣": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "好感阶段": {
+          "type": "string"
+        },
+        "心理活动": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "好感度",
+        "好感阶段",
+        "心理活动"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "解雨臣"
+  ]
+}

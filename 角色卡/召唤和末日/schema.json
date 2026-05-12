@@ -1,0 +1,629 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前日期": {
+          "type": "string"
+        },
+        "当前时间": {
+          "type": "string"
+        },
+        "当前时段": {
+          "type": "string"
+        },
+        "当前天气": {
+          "type": "string"
+        },
+        "灾变阶段": {
+          "type": "string"
+        },
+        "区域态势": {
+          "type": "string"
+        },
+        "感染压力": {
+          "type": "number"
+        },
+        "通讯状态": {
+          "type": "string"
+        },
+        "通用语言规则": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前日期",
+        "当前时间",
+        "当前时段",
+        "当前天气",
+        "灾变阶段",
+        "区域态势",
+        "感染压力",
+        "通讯状态",
+        "通用语言规则"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "代号": {
+          "type": "string"
+        },
+        "身份": {
+          "type": "string"
+        },
+        "当前位置": {
+          "type": "string"
+        },
+        "当前状态": {
+          "type": "string"
+        },
+        "指挥等级": {
+          "type": "string"
+        },
+        "声望": {
+          "type": "number"
+        },
+        "威信": {
+          "type": "number"
+        },
+        "统率倾向": {
+          "type": "string"
+        },
+        "当前命令摘要": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "代号",
+        "身份",
+        "当前位置",
+        "当前状态",
+        "指挥等级",
+        "声望",
+        "威信",
+        "统率倾向",
+        "当前命令摘要"
+      ]
+    },
+    "基地": {
+      "type": "object",
+      "properties": {
+        "名称": {
+          "type": "string"
+        },
+        "等级": {
+          "type": "number"
+        },
+        "位置": {
+          "type": "string"
+        },
+        "耐久": {
+          "type": "number"
+        },
+        "供电": {
+          "type": "number"
+        },
+        "防御": {
+          "type": "number"
+        },
+        "居住容量": {
+          "type": "number"
+        },
+        "当前人口": {
+          "type": "number"
+        },
+        "风险等级": {
+          "type": "string"
+        },
+        "设施": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "设施名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "等级": {
+                "type": "number"
+              },
+              "状态": {
+                "type": "string"
+              },
+              "说明": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "等级",
+              "状态",
+              "说明"
+            ]
+          }
+        }
+      },
+      "required": [
+        "名称",
+        "等级",
+        "位置",
+        "耐久",
+        "供电",
+        "防御",
+        "居住容量",
+        "当前人口",
+        "风险等级",
+        "设施"
+      ]
+    },
+    "资源": {
+      "type": "object",
+      "properties": {
+        "资源点": {
+          "type": "number"
+        },
+        "弹药": {
+          "type": "number"
+        },
+        "燃料": {
+          "type": "number"
+        },
+        "食物": {
+          "type": "number"
+        },
+        "药品": {
+          "type": "number"
+        },
+        "建材": {
+          "type": "number"
+        },
+        "零件": {
+          "type": "number"
+        },
+        "电子元件": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "资源点",
+        "弹药",
+        "燃料",
+        "食物",
+        "药品",
+        "建材",
+        "零件",
+        "电子元件"
+      ]
+    },
+    "召唤系统": {
+      "type": "object",
+      "properties": {
+        "当前时代": {
+          "type": "string"
+        },
+        "解锁阶段": {
+          "type": "string"
+        },
+        "解锁点数": {
+          "type": "number"
+        },
+        "当前召唤上限": {
+          "type": "number"
+        },
+        "已出动单位数": {
+          "type": "number"
+        },
+        "可召唤池": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "单位名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "类型": {
+                "type": "string"
+              },
+              "时代": {
+                "type": "string"
+              },
+              "解锁状态": {
+                "type": "string"
+              },
+              "默认编入": {
+                "type": "string"
+              },
+              "单次召唤数量": {
+                "type": "number"
+              },
+              "资源点消耗": {
+                "type": "number"
+              },
+              "弹药消耗": {
+                "type": "number"
+              },
+              "燃料消耗": {
+                "type": "number"
+              },
+              "建材消耗": {
+                "type": "number"
+              },
+              "解锁前置": {
+                "type": "string"
+              },
+              "描述": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "类型",
+              "时代",
+              "解锁状态",
+              "默认编入",
+              "单次召唤数量",
+              "资源点消耗",
+              "弹药消耗",
+              "燃料消耗",
+              "建材消耗",
+              "解锁前置",
+              "描述"
+            ]
+          }
+        },
+        "科技树": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "科技名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "阶段": {
+                "type": "string"
+              },
+              "状态": {
+                "type": "string"
+              },
+              "解锁点消耗": {
+                "type": "number"
+              },
+              "前置": {
+                "type": "string"
+              },
+              "效果": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "阶段",
+              "状态",
+              "解锁点消耗",
+              "前置",
+              "效果"
+            ]
+          }
+        }
+      },
+      "required": [
+        "当前时代",
+        "解锁阶段",
+        "解锁点数",
+        "当前召唤上限",
+        "已出动单位数",
+        "可召唤池",
+        "科技树"
+      ]
+    },
+    "部队": {
+      "type": "object",
+      "properties": {
+        "当前主力编队": {
+          "type": "string"
+        },
+        "编队": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "编队名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "任务": {
+                "type": "string"
+              },
+              "状态": {
+                "type": "string"
+              },
+              "士气": {
+                "type": "number"
+              },
+              "补给": {
+                "type": "number"
+              },
+              "人数上限": {
+                "type": "number"
+              },
+              "单位": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "description": "单位名"
+                },
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "数量": {
+                      "type": "number"
+                    },
+                    "类型": {
+                      "type": "string"
+                    },
+                    "状态": {
+                      "type": "string"
+                    },
+                    "火力评级": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "数量",
+                    "类型",
+                    "状态",
+                    "火力评级"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "任务",
+              "状态",
+              "士气",
+              "补给",
+              "人数上限",
+              "单位"
+            ]
+          }
+        }
+      },
+      "required": [
+        "当前主力编队",
+        "编队"
+      ]
+    },
+    "势力": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "势力名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "关系": {
+            "type": "string"
+          },
+          "威胁度": {
+            "type": "number"
+          },
+          "活跃区域": {
+            "type": "string"
+          },
+          "情报摘要": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "关系",
+          "威胁度",
+          "活跃区域",
+          "情报摘要"
+        ]
+      }
+    },
+    "角色档案": {
+      "type": "object",
+      "properties": {
+        "焦点人物": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "人物名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "身份": {
+                "type": "string"
+              },
+              "忠诚": {
+                "type": "number"
+              },
+              "评价": {
+                "type": "string"
+              },
+              "位置": {
+                "type": "string"
+              },
+              "职责": {
+                "type": "string"
+              },
+              "状态": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "身份",
+              "忠诚",
+              "评价",
+              "位置",
+              "职责",
+              "状态"
+            ]
+          }
+        },
+        "长期档案": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "人物名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "身份": {
+                "type": "string"
+              },
+              "关系备注": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "身份",
+              "关系备注"
+            ]
+          }
+        }
+      },
+      "required": [
+        "焦点人物",
+        "长期档案"
+      ]
+    },
+    "任务与事件": {
+      "type": "object",
+      "properties": {
+        "当前任务": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "任务名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "类型": {
+                "type": "string"
+              },
+              "状态": {
+                "type": "string"
+              },
+              "目标": {
+                "type": "string"
+              },
+              "奖励": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "类型",
+              "状态",
+              "目标",
+              "奖励"
+            ]
+          }
+        },
+        "警报": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "警报名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "等级": {
+                "type": "string"
+              },
+              "内容": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "等级",
+              "内容"
+            ]
+          }
+        },
+        "历史记录": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "记录名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "时间": {
+                "type": "string"
+              },
+              "内容": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "时间",
+              "内容"
+            ]
+          }
+        }
+      },
+      "required": [
+        "当前任务",
+        "警报",
+        "历史记录"
+      ]
+    },
+    "隐藏派生": {
+      "type": "object",
+      "properties": {
+        "区域威胁等级": {
+          "type": "number"
+        },
+        "感染波动值": {
+          "type": "number"
+        },
+        "空中支援许可": {
+          "type": "boolean"
+        },
+        "机场已取得": {
+          "type": "boolean"
+        },
+        "冷战阶段已解锁": {
+          "type": "boolean"
+        },
+        "现代阶段已解锁": {
+          "type": "boolean"
+        },
+        "关键前置完成度": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "区域威胁等级",
+        "感染波动值",
+        "空中支援许可",
+        "机场已取得",
+        "冷战阶段已解锁",
+        "现代阶段已解锁",
+        "关键前置完成度"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "基地",
+    "资源",
+    "召唤系统",
+    "部队",
+    "势力",
+    "角色档案",
+    "任务与事件",
+    "隐藏派生"
+  ]
+}

@@ -1,0 +1,307 @@
+---
+变量更新规则:
+  世界:
+    当前日期:
+      check:
+        - 只有在剧情明确推进时间、休整、旅行、昼夜变化后才更新
+    当前时间:
+      check:
+        - 与行动时长保持一致，避免无理由大跳时钟
+    当前时段:
+      check:
+        - 清晨、白天、傍晚、深夜等标签需与当前时间同步
+    当前天气:
+      check:
+        - 只有环境变化、天气系统推进或场景切换后更新
+    灾变阶段:
+      check:
+        - 这是宏观阶段，不因一次小冲突频繁改变
+    区域态势:
+      check:
+        - 战区控制权、尸群规模、周边局势有明显变化时更新
+    感染压力:
+      type: number
+      range: 0~100
+      check:
+        - 受尸群密度、变种活动、污染扩散、清剿成果影响
+        - 单次常规变化不超过 ±12，除非触发大事件
+    通讯状态:
+      check:
+        - 仅在通信塔恢复、设备损坏、频段受扰时更新
+    通用语言规则:
+      check:
+        - 固定保持“世界范围默认语言共通，所有势力与单位交流无障碍”
+
+  主角:
+    声望:
+      type: number
+      range: 0~100
+      check:
+        - 完成任务、救援幸存者、扩大战果、失误决策都会影响
+    威信:
+      type: number
+      range: 0~100
+      check:
+        - 胜利、果断指挥、镇压混乱可提升；失控、怯战、资源断供可下降
+    当前状态:
+      check:
+        - 战斗、休整、指挥、受伤、谈判后更新
+    当前命令摘要:
+      check:
+        - 当 user 的战略意图出现明显调整时更新
+
+  基地:
+    等级:
+      type: number
+      range: 1~10
+      check:
+        - 只有明确完成扩建、升级、整编后才提升
+    耐久:
+      type: number
+      range: 0~100
+      check:
+        - 受袭击、维修、尸潮冲击、爆炸等影响
+    供电:
+      type: number
+      range: 0~100
+      check:
+        - 发电设备、燃料消耗、线路修复会改变
+    防御:
+      type: number
+      range: 0~100
+      check:
+        - 防线建设、火力部署、围墙损伤会改变
+    当前人口:
+      type: number
+      check:
+        - 仅在收容新幸存者、死亡、驱逐、失踪时更新
+    风险等级:
+      check:
+        - 根据感染压力、势力威胁、物资紧张度综合变化
+    设施:
+      type: |-
+        {
+          [设施名: string]: {
+            等级: number;
+            状态: string;
+            说明: string;
+          }
+        }
+      check:
+        - 设施升级、修复、损坏、取得新设施时更新
+
+  资源:
+    资源点:
+      type: number
+      check:
+        - 击杀感染者、完成任务、交易、回收战利品可增加
+        - 召唤单位、购买情报、关键维修会消耗
+    弹药:
+      type: number
+      check:
+        - 战斗与训练消耗，搜刮与交易补充
+    燃料:
+      type: number
+      check:
+        - 车辆、发电、后勤运输消耗
+    食物:
+      type: number
+      check:
+        - 随时间和人口持续消耗，搜刮或畜牧改善可恢复
+    药品:
+      type: number
+      check:
+        - 治疗、感染抑制、手术后减少
+    建材:
+      type: number
+      check:
+        - 维修和扩建会消耗
+    零件:
+      type: number
+      check:
+        - 修理车辆、设施、重武器时消耗
+    电子元件:
+      type: number
+      check:
+        - 解锁高阶通讯、雷达、空中链路时重点消耗
+
+  召唤系统:
+    解锁点数:
+      type: number
+      check:
+        - 重大任务、科技突破、控制节点时增加
+        - 解锁科技时减少
+    当前召唤上限:
+      type: number
+      check:
+        - 基地等级、设施条件、指挥等级提升时增加
+    已出动单位数:
+      type: number
+      check:
+        - 与编队中实际单位数量同步
+    可召唤池:
+      type: |-
+        {
+          [单位名: string]: {
+            类型: string;
+            时代: string;
+            解锁状态: string;
+            默认编入: string;
+            单次召唤数量: number;
+            资源点消耗: number;
+            弹药消耗: number;
+            燃料消耗: number;
+            建材消耗: number;
+            解锁前置: string;
+            描述: string;
+          }
+        }
+      check:
+        - 科技、设施或剧情前置达成后再把条目改成已解锁
+    科技树:
+      type: |-
+        {
+          [科技名: string]: {
+            阶段: string;
+            状态: string;
+            解锁点消耗: number;
+            前置: string;
+            效果: string;
+          }
+        }
+      check:
+        - 状态只在前置满足、主动解锁、剧情失败或被摧毁时改变
+
+  部队:
+    当前主力编队:
+      check:
+        - 在 user 调整主攻方向或重新编组时更新
+    编队:
+      type: |-
+        {
+          [编队名: string]: {
+            任务: string;
+            状态: string;
+            士气: number;
+            补给: number;
+            人数上限: number;
+            单位: {
+              [单位名: string]: {
+                数量: number;
+                类型: string;
+                状态: string;
+                火力评级: string;
+              }
+            }
+          }
+        }
+      check:
+        - 召唤、战损、补员、改编、转移防区时更新
+        - 士气与补给应随战斗结果和后勤情况合理波动
+
+  势力:
+    type: |-
+      {
+        [势力名: string]: {
+          关系: string;
+          威胁度: number;
+          活跃区域: string;
+          情报摘要: string;
+        }
+      }
+    check:
+      - 谈判、交易、冲突、渗透、共同作战后更新
+
+  角色档案:
+    焦点人物:
+      type: |-
+        {
+          [人物名: string]: {
+            身份: string;
+            忠诚: number;
+            评价: string;
+            位置: string;
+            职责: string;
+            状态: string;
+          }
+        }
+      check:
+        - 忠诚受生死救援、信任建立、权力分配、压迫或背叛影响
+        - 评价应紧贴人物视角，但不要写成机器人式吹捧
+    长期档案:
+      type: |-
+        {
+          [人物名: string]: {
+            身份: string;
+            关系备注: string;
+          }
+        }
+      check:
+        - 重要角色进入长期线后补录
+
+  任务与事件:
+    当前任务:
+      type: |-
+        {
+          [任务名: string]: {
+            类型: string;
+            状态: string;
+            目标: string;
+            奖励: string;
+          }
+        }
+      check:
+        - 主线保持聚焦，避免一次性塞入太多同级目标
+    警报:
+      type: |-
+        {
+          [警报名: string]: {
+            等级: string;
+            内容: string;
+          }
+        }
+      check:
+        - 仅保留当前仍有参考价值的警报
+    历史记录:
+      type: |-
+        {
+          [记录名: string]: {
+            时间: string;
+            内容: string;
+          }
+        }
+      check:
+        - 记录阶段性关键事件，不要把每句对白都写进去
+
+  隐藏派生:
+    区域威胁等级:
+      type: number
+      range: 0~100
+      check:
+        - 根据尸群规模、势力火力、基地外环境动态调整
+    感染波动值:
+      type: number
+      range: 0~100
+      check:
+        - 受生化污染、变种活动、尸潮聚集影响
+    空中支援许可:
+      type: boolean
+      check:
+        - 只有机场前置和空中链路完成后才可变为 true
+    机场已取得:
+      type: boolean
+      check:
+        - 明确找到并控制可用机场/起降带后才改为 true
+    冷战阶段已解锁:
+      type: boolean
+      check:
+        - 冷战补给链成功解锁后改为 true
+    现代阶段已解锁:
+      type: boolean
+      check:
+        - 高阶设施与高阶科技明确完成后改为 true
+    关键前置完成度:
+      type: number
+      range: 0~100
+      check:
+        - 随据点升级、关键地标控制、任务推进逐步提升

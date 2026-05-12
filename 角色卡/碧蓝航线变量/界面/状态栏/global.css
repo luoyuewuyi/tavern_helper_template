@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 碧蓝航线深海蓝色系 */
+  --al-bg-deep: #0a1f44;
+  --al-bg-card: rgba(20, 50, 100, 0.7);
+  --al-bg-item: rgba(30, 70, 140, 0.5);
+  --al-bg-hover: rgba(40, 90, 180, 0.7);
+  --al-border: rgba(139, 185, 254, 0.2);
+  --al-border-active: rgba(74, 158, 255, 0.5);
+  --al-accent: #4a9eff;
+  --al-accent-gradient: linear-gradient(90deg, #4a9eff, #26d0ce);
+  --al-text-primary: #ffffff;
+  --al-text-secondary: #8bb9fe;
+  --al-text-muted: #a0c4ff;
+  --al-text-body: #e6f0ff;
+  --al-warn: #ffaa4a;
+  --al-danger: #ff4a4a;
+  --al-success: #26d0ce;
+
+  /* 字体 */
+  --al-font: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(139, 185, 254, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 158, 255, 0.4);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 158, 255, 0.7);
+}

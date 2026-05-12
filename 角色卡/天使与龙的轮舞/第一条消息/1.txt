@@ -1,0 +1,71 @@
+【开局二：坠入第二地球】
+
+独角兽高达穿过裂缝时，{{user}}听见了歌声。
+
+那不是镜世界的军用频道，也不是报丧女妖的锁定警报。它从精神感应框架深处渗出，古老、辽阔，像某个巨大生命在梦中呼吸。
+
+白色机体坠入一片陌生山谷，推进器在最后一刻点火，冲击波掀开成片草木。远方的天空没有源组织的监控塔，也没有米斯尔奇的洁白都市，只有巨大的飞影掠过云层，鳞片在阳光下反射出冷光。
+
+第二地球。
+
+龙族巡逻队比你更快反应。数道武装影子从山脊上方压低高度，陌生语言和战术信号交错。很快，一台华丽而危险的机体停在正前方，驾驶者的声音通过扩音传来，礼貌，却没有任何松懈。
+
+“未知机体，停止动作。说明你与安布利欧、第一地球的关系。”
+
+萨拉曼迪内的焰龙号悬停在风中，娜嘉与卡纳梅分别从两翼封住退路。
+
+与此同时，独角兽的感应框架捕捉到远处一瞬金光。
+
+报丧女妖也来了，只是不在你的视野里。
+
+<CrossAngeStatus>
+<article class="ca-card">
+  <header class="ca-header">
+    <div>
+      <p class="ca-kicker">CROSS ANGE / MIRROR WORLD</p>
+      <h1 class="ca-title">第二地球</h1>
+    </div>
+    <div class="ca-time">春日 / 黄昏前 / 风强</div>
+  </header>
+  <section class="ca-location">
+    <span class="ca-label">地点</span>
+    <strong>龙族巡逻山谷</strong>
+    <p class="ca-desc">独角兽坠入龙族领地，被萨拉曼迪内小队包围盘问。</p>
+  </section>
+  <div class="ca-grid">
+    <section class="ca-panel">
+      <div class="ca-panel-title">UNICORN</div>
+      <div class="ca-line"><span class="ca-label">角色</span><strong>{{user}}</strong></div>
+      <div class="ca-line"><span class="ca-label">机体</span><strong>RX-0 独角兽高达</strong></div>
+      <div class="ca-line"><span class="ca-label">形态</span><strong>独角兽模式</strong></div>
+      <p class="ca-note">镜世界反抗者 / 独角兽高达驾驶员；听见疑似奥拉波动的歌声，精神感应框架轻微共鸣；腿部缓冲机构过热，主武装可用，外部通信失效。</p>
+    </section>
+    <section class="ca-panel">
+      <div class="ca-panel-title">BANSHEE</div>
+      <div class="ca-line"><span class="ca-label">角色</span><strong>水树千玲</strong></div>
+      <div class="ca-line"><span class="ca-label">机体</span><strong>RX-0 报丧女妖</strong></div>
+      <div class="ca-line"><span class="ca-label">形态</span><strong>不明</strong></div>
+      <p class="ca-note">敌对且失联；远处捕捉到短暂金色精神感应波。</p>
+    </section>
+  </div>
+  <section class="ca-panel ca-wide">
+    <div class="ca-panel-title">阵营关系</div>
+    <div class="ca-relations">
+      <div class="ca-relation"><span>萨拉曼迪内</span><strong>审慎戒备</strong></div>
+      <div class="ca-relation"><span>娜嘉</span><strong>准备压制</strong></div>
+      <div class="ca-relation"><span>卡纳梅</span><strong>观察中</strong></div>
+      <div class="ca-relation"><span>安琪</span><strong>未接触</strong></div>
+    </div>
+  </section>
+  <section class="ca-panel ca-wide">
+    <div class="ca-panel-title">事件标记</div>
+    <div class="ca-chips">
+      <span class="ca-chip">第二地球开局</span>
+      <span class="ca-chip">龙族包围</span>
+      <span class="ca-chip">奥拉共鸣</span>
+      <span class="ca-chip">报丧女妖信号远离</span>
+    </div>
+    <div class="ca-pressure">萨拉曼迪内要求你解释身份，任何武器动作都可能引发交火。</div>
+  </section>
+</article>
+</CrossAngeStatus>

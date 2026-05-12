@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界状态": {
+      "type": "object",
+      "properties": {
+        "当前场景": {
+          "type": "string"
+        },
+        "当前时间": {
+          "type": "string"
+        },
+        "事件摘要": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前场景",
+        "当前时间",
+        "事件摘要"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "力量体系": {
+          "type": "string"
+        },
+        "力量等级": {
+          "type": "string"
+        },
+        "状态": {
+          "type": "string"
+        },
+        "生命状况": {
+          "type": "string"
+        },
+        "物品栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "描述",
+              "数量"
+            ]
+          }
+        }
+      },
+      "required": [
+        "力量体系",
+        "力量等级",
+        "状态",
+        "生命状况",
+        "物品栏"
+      ]
+    },
+    "酒馆": {
+      "type": "object",
+      "properties": {
+        "在场人员": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "当前气氛": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "在场人员",
+        "当前气氛"
+      ]
+    },
+    "关系": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "好感度": {
+            "type": "number"
+          },
+          "信任度": {
+            "type": "number"
+          },
+          "当前态度": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "好感度",
+          "信任度",
+          "当前态度"
+        ]
+      }
+    }
+  },
+  "required": [
+    "世界状态",
+    "主角",
+    "酒馆",
+    "关系"
+  ]
+}

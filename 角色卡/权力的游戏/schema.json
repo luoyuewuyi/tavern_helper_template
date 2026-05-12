@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "default": "AC298年-夏季-第1日",
+          "type": "string"
+        },
+        "当前季节": {
+          "default": "夏季",
+          "type": "string"
+        },
+        "当前地点": {
+          "default": "君临城·红堡",
+          "type": "string"
+        },
+        "当前局势": {
+          "default": "劳勃·拜拉席恩坐拥铁王座，七大王国表面和平",
+          "type": "string"
+        },
+        "铁王座": {
+          "default": "劳勃·拜拉席恩",
+          "type": "string"
+        },
+        "近期事件": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事件描述"
+          }
+        }
+      },
+      "required": [
+        "近期事件"
+      ]
+    },
+    "主角": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "身份": {
+          "default": "流浪骑士",
+          "type": "string"
+        },
+        "家族": {
+          "default": "无",
+          "type": "string"
+        },
+        "头衔": {
+          "default": "无",
+          "type": "string"
+        },
+        "生命状态": {
+          "default": "健康",
+          "type": "string"
+        },
+        "声望": {
+          "default": 10,
+          "type": "number"
+        },
+        "金龙": {
+          "default": 50,
+          "type": "number"
+        },
+        "技能": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "剑术",
+              "骑术",
+              "弓箭",
+              "政治",
+              "谋略",
+              "口才"
+            ]
+          },
+          "additionalProperties": {
+            "default": 10,
+            "type": "number"
+          },
+          "required": [
+            "剑术",
+            "骑术",
+            "弓箭",
+            "政治",
+            "谋略",
+            "口才"
+          ]
+        },
+        "物品栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "default": {},
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "default": 1,
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "物品栏"
+      ]
+    },
+    "人物": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色名"
+      },
+      "additionalProperties": {
+        "default": {},
+        "type": "object",
+        "properties": {
+          "家族": {
+            "default": "未知",
+            "type": "string"
+          },
+          "头衔": {
+            "default": "未知",
+            "type": "string"
+          },
+          "所在地": {
+            "default": "未知",
+            "type": "string"
+          },
+          "好感度": {
+            "type": "number"
+          },
+          "关系": {
+            "default": "陌生",
+            "type": "string"
+          },
+          "态度": {
+            "default": "中立",
+            "type": "string"
+          },
+          "状态": {
+            "default": "存活",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "剧情选项": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "选项A": {
+          "type": "string"
+        },
+        "选项B": {
+          "type": "string"
+        },
+        "选项C": {
+          "type": "string"
+        },
+        "选项D": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "人物"
+  ]
+}

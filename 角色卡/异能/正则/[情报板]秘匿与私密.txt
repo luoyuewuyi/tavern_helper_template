@@ -1,0 +1,27 @@
+```
+<head>
+<style>
+body{margin:0;background:transparent}
+.wrap{margin:10px 0;font-family:'Noto Sans SC','Microsoft YaHei UI',sans-serif;color:#ffeef5}
+.shell{border-radius:18px;overflow:hidden;background:linear-gradient(160deg,rgba(25,15,23,.96),rgba(36,20,39,.94));border:1px solid rgba(255,120,160,.18);box-shadow:0 16px 36px rgba(20,9,16,.24)}
+.toggle{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 15px;cursor:pointer;list-style:none;background:linear-gradient(135deg,rgba(255,159,191,.14),rgba(255,255,255,.03))}
+.toggle::-webkit-details-marker{display:none}
+.title{font-size:15px;font-weight:700;letter-spacing:.08em;color:#ff9fbf}
+.meta{font-size:12px;color:#d2a8ba}
+.mark{font-size:11px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.08);color:#ffe5ef}
+.body{padding:14px 16px 16px;border-top:1px solid rgba(255,255,255,.08);white-space:pre-wrap;line-height:1.66;font-size:13px;color:#ffe1ec}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <details class="shell">
+    <summary class="toggle">
+      <span class="title">秘匿与私密</span>
+      <span class="meta">末尾分区</span>
+      <span class="mark">展开</span>
+    </summary>
+    <div class="body">$1</div>
+  </details>
+</div>
+</body>
+```

@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 魔法少女配色方案 — 暗夜星空 × 魔法光辉 */
+  --mg-bg-dark: #1a1028; /* 深紫底色 */
+  --mg-bg-card: #231538; /* 卡片背景 */
+  --mg-bg-panel: #2d1b4e; /* 内嵌面板 */
+  --mg-border: #6b3fa0; /* 边框紫 */
+  --mg-border-glow: #9b6dd7; /* 发光边框 */
+  --mg-text: #e8dff5; /* 主文字色 */
+  --mg-text-dim: #9a8cb5; /* 次要文字 */
+  --mg-accent-pink: #ff6b9d; /* 强调粉 */
+  --mg-accent-gold: #ffd700; /* 金色高亮 */
+  --mg-magic-blue: #7baaff; /* 魔力蓝 */
+  --mg-spirit-green: #6ee7b7; /* 精神绿 */
+  --mg-fame-gold: #f5c542; /* 人气金 */
+  --mg-corrupt-red: #e74c6f; /* 堕落红 */
+  --mg-trust-cyan: #5eead4; /* 信赖青 */
+  --mg-love-pink: #f472b6; /* 好感粉 */
+
+  /* 字体 */
+  --font-mg: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+}

@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cormorant Garamond", "Noto Serif SC", "Source Han Serif SC", serif;
+  --font-display: "Cinzel", "Noto Serif SC", serif;
+  --font-body: "Cormorant Garamond", "Noto Serif SC", serif;
+}
+
+:root {
+  --west-ink: #f4ede1;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(155, 90, 46, 0.18), transparent 32%),
+    radial-gradient(circle at 85% 20%, rgba(214, 185, 111, 0.1), transparent 28%),
+    linear-gradient(180deg, #1a130f 0%, #0b0908 50%, #050505 100%);
+  background-attachment: fixed;
+  color: var(--west-ink);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, rgba(255, 230, 192, 0.025), transparent 20%, transparent 80%, rgba(255, 230, 192, 0.02)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.012) 0,
+      rgba(255, 255, 255, 0.012) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  mix-blend-mode: screen;
+  opacity: 0.32;
+}
+
+.west-root {
+  background:
+    linear-gradient(90deg, rgba(10, 8, 7, 0.84), rgba(18, 12, 9, 0.58) 14%, rgba(14, 11, 9, 0.32) 34%, rgba(8, 7, 7, 0.56) 100%);
+}
+
+.west-shell {
+  background:
+    linear-gradient(180deg, rgba(14, 10, 9, 0.96), rgba(9, 7, 6, 0.94)),
+    linear-gradient(90deg, rgba(189, 136, 72, 0.08), transparent 22%, transparent 78%, rgba(189, 136, 72, 0.06));
+  backdrop-filter: blur(18px);
+}
+
+.west-sidebar {
+  background:
+    linear-gradient(180deg, rgba(14, 10, 9, 0.96), rgba(10, 8, 7, 0.92)),
+    linear-gradient(180deg, rgba(181, 134, 74, 0.1), transparent 36%);
+}
+
+.west-modal,
+.west-input-shell {
+  backdrop-filter: blur(22px);
+}
+
+.west-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(110px);
+}
+
+.west-glow-left {
+  top: -14%;
+  left: -12%;
+  height: 38rem;
+  width: 38rem;
+  background: rgba(133, 71, 34, 0.22);
+}
+
+.west-glow-right {
+  right: -14%;
+  bottom: -18%;
+  height: 34rem;
+  width: 34rem;
+  background: rgba(213, 179, 101, 0.08);
+}
+
+.west-noise {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.038) 0.65px, transparent 0.65px),
+    radial-gradient(rgba(255, 255, 255, 0.02) 0.5px, transparent 0.5px);
+  background-position:
+    0 0,
+    12px 14px;
+  background-size:
+    24px 24px,
+    32px 32px;
+  opacity: 0.12;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(10, 8, 7, 0.7);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(199, 148, 83, 0.8), rgba(95, 57, 31, 0.94));
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(230, 183, 112, 0.92), rgba(120, 73, 41, 0.96));
+}
+
+.west-chat-scroll {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+textarea,
+input,
+select,
+button {
+  font: inherit;
+}

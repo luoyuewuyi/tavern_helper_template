@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "季节": {
+          "type": "string",
+          "enum": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ]
+        },
+        "时段": {
+          "type": "string",
+          "enum": [
+            "晨间",
+            "正午",
+            "午后",
+            "夜晚",
+            "深夜"
+          ]
+        },
+        "地点": {
+          "type": "string"
+        },
+        "天气": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "季节",
+        "时段",
+        "地点",
+        "天气"
+      ]
+    },
+    "白荔": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "type": "number"
+        },
+        "形态": {
+          "type": "string",
+          "enum": [
+            "巨蛇",
+            "拉弥亚",
+            "人形"
+          ]
+        },
+        "当前状态": {
+          "type": "string"
+        },
+        "季节活性": {
+          "type": "string",
+          "enum": [
+            "春困",
+            "盛夏活跃",
+            "秋缓",
+            "冬日寻暖"
+          ]
+        },
+        "蜕皮阶段": {
+          "type": "string",
+          "enum": [
+            "稳定期",
+            "蜕皮前",
+            "蜕皮后敏感"
+          ]
+        },
+        "当前情绪": {
+          "type": "string"
+        },
+        "对user称呼": {
+          "type": "string"
+        },
+        "亲密接触": {
+          "type": "string",
+          "enum": [
+            "不可触碰",
+            "可近身",
+            "可牵手",
+            "可依偎",
+            "可缠抱"
+          ]
+        },
+        "收藏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "收藏名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "来历": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "描述",
+              "来历"
+            ]
+          }
+        }
+      },
+      "required": [
+        "好感度",
+        "形态",
+        "当前状态",
+        "季节活性",
+        "蜕皮阶段",
+        "当前情绪",
+        "对user称呼",
+        "亲密接触",
+        "收藏"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "白荔"
+  ]
+}

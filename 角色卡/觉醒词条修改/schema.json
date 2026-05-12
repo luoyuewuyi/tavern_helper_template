@@ -1,0 +1,515 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "default": "现代大学开学周的上午",
+          "type": "string"
+        },
+        "当前地点": {
+          "default": "待设定校园场景",
+          "type": "string"
+        },
+        "当前阶段": {
+          "default": "开局建档",
+          "type": "string",
+          "enum": [
+            "开局建档",
+            "能力觉醒",
+            "校园探索",
+            "异类接触",
+            "现实改写"
+          ]
+        },
+        "校园公开事件": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "热度": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "异类暴露风险": {
+          "default": 8,
+          "type": "number"
+        },
+        "政府管控氛围": {
+          "default": "异类与政府维持脆弱合作，公共场合必须严格伪装成人类。",
+          "type": "string"
+        },
+        "近期事务": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事务名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "优先级": {
+                "default": "中",
+                "type": "string",
+                "enum": [
+                  "高",
+                  "中",
+                  "低"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "主角": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "待设定",
+          "type": "string"
+        },
+        "性别": {
+          "default": "男",
+          "type": "string",
+          "enum": [
+            "男",
+            "女",
+            "其他"
+          ]
+        },
+        "年龄": {
+          "default": 18,
+          "type": "number"
+        },
+        "身高": {
+          "default": 175,
+          "type": "number"
+        },
+        "学校名称": {
+          "default": "待设定",
+          "type": "string"
+        },
+        "专业": {
+          "default": "待设定",
+          "type": "string"
+        },
+        "学院": {
+          "default": "待设定",
+          "type": "string"
+        },
+        "宿舍": {
+          "default": "待设定",
+          "type": "string"
+        },
+        "外形特点": {
+          "default": "待设定",
+          "type": "string"
+        },
+        "能力等级": {
+          "default": "E",
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "E",
+                "D",
+                "C",
+                "B",
+                "A",
+                "S"
+              ]
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "暴露值": {
+          "default": 3,
+          "type": "number"
+        },
+        "已接触目标": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "人物名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "接触方式": {
+                "type": "string"
+              },
+              "最近接触时间": {
+                "type": "string"
+              },
+              "已建立词条视野": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "当前目标": {
+          "default": "先确认词条系统能看到什么、能改什么、会如何回弹或兑现。",
+          "type": "string"
+        },
+        "成功修改次数": {
+          "type": "number"
+        },
+        "当前等级进度": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "成功修改": {
+              "type": "number"
+            },
+            "异类修改": {
+              "type": "number"
+            }
+          }
+        },
+        "各等级升级门槛": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "D": {
+              "default": {
+                "成功修改": 3,
+                "异类修改": 0
+              },
+              "$ref": "#/$defs/__schema0"
+            },
+            "C": {
+              "default": {
+                "成功修改": 5,
+                "异类修改": 1
+              },
+              "$ref": "#/$defs/__schema0"
+            },
+            "B": {
+              "default": {
+                "成功修改": 5,
+                "异类修改": 3
+              },
+              "$ref": "#/$defs/__schema0"
+            },
+            "A": {
+              "default": {
+                "成功修改": 7,
+                "异类修改": 5
+              },
+              "$ref": "#/$defs/__schema0"
+            },
+            "S": {
+              "default": {
+                "成功修改": 0,
+                "异类修改": 10
+              },
+              "$ref": "#/$defs/__schema0"
+            }
+          }
+        },
+        "修改统计": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "普通人": {
+              "type": "number"
+            },
+            "异类": {
+              "type": "number"
+            },
+            "异种": {
+              "type": "number"
+            },
+            "现实修正": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "能力系统": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前等级限制": {
+          "default": "E级：只能接触后修改情绪或心情词条，单次最多3字，只能做轻微偏转，不能触及思想与现实。",
+          "type": "string"
+        },
+        "单次最大改字数": {
+          "default": 3,
+          "type": "number"
+        },
+        "最大作用距离": {
+          "default": "接触",
+          "type": "string"
+        },
+        "必须身体接触": {
+          "default": true,
+          "type": "boolean"
+        },
+        "允许短距观察修改": {
+          "type": "boolean"
+        },
+        "允许修改思想": {
+          "type": "boolean"
+        },
+        "允许新增词条": {
+          "type": "boolean"
+        },
+        "允许删除词条": {
+          "type": "boolean"
+        },
+        "允许现实改写": {
+          "type": "boolean"
+        },
+        "现实小范围即时生效": {
+          "type": "boolean"
+        },
+        "允许修改无机物": {
+          "type": "boolean"
+        },
+        "可见异类等级": {
+          "default": true,
+          "type": "boolean"
+        },
+        "修改逻辑约束": {
+          "default": "E级只能轻微拨动情绪心情，不能改思想和现实；D级起才可偏转思想；B级起改现实也必须通过世界逻辑自发演化兑现；S级前都不能把结果硬写成凭空出现的奇迹。",
+          "type": "string"
+        },
+        "高危禁令": {
+          "default": [
+            "禁止把明显现实属性直接改成会立刻违反常识的结果",
+            "禁止用词条修改直接暴露异类与自身能力",
+            "禁止对军政力量做高调试验"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "即时生效阈值": {
+          "default": "S",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      }
+    },
+    "人物档案": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "人物名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "基础信息": {
+            "default": {},
+            "type": "object",
+            "properties": {
+              "身份": {
+                "type": "string"
+              },
+              "年龄": {
+                "default": 18,
+                "type": "number"
+              },
+              "种族": {
+                "default": "人类",
+                "type": "string"
+              },
+              "等级": {
+                "default": "无",
+                "type": "string"
+              },
+              "外形": {
+                "type": "string"
+              },
+              "初始关系": {
+                "type": "string"
+              }
+            }
+          },
+          "当前可见词条": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "显性词条": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "隐性词条": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "词条文本"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "内容": {
+                  "type": "string"
+                },
+                "已识别": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "当前状态": {
+            "default": "尚未深入接触",
+            "type": "string"
+          },
+          "正在做什么": {
+            "default": "未知",
+            "type": "string"
+          },
+          "怀孕状态": {
+            "default": "否",
+            "type": "string",
+            "enum": [
+              "否",
+              "可能",
+              "确认"
+            ]
+          },
+          "与主角关系": {
+            "default": "普通同学",
+            "type": "string"
+          },
+          "后宫录可见": {
+            "type": "boolean"
+          },
+          "人类形态特征": {
+            "type": "string"
+          },
+          "异种形态特征": {
+            "type": "string"
+          },
+          "最近变化摘要": {
+            "default": "暂无显著变化",
+            "type": "string"
+          },
+          "词条变化记录": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "记录时间"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "变更": {
+                  "type": "string"
+                },
+                "原因": {
+                  "type": "string"
+                },
+                "世界修正结果": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "现实修正队列": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "修正编号"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "目标人物": {
+            "type": "string"
+          },
+          "被修改词条": {
+            "type": "string"
+          },
+          "目标结果": {
+            "type": "string"
+          },
+          "修正方式": {
+            "default": "事件链兑现",
+            "type": "string",
+            "enum": [
+              "事件链兑现",
+              "小范围即时生效"
+            ]
+          },
+          "当前阶段": {
+            "default": "待观察",
+            "type": "string",
+            "enum": [
+              "待观察",
+              "酝酿中",
+              "兑现中",
+              "已完成",
+              "失败回弹"
+            ]
+          },
+          "是否允许即时兑现": {
+            "type": "boolean"
+          },
+          "剧情说明": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "成功修改": {
+          "type": "number"
+        },
+        "异类修改": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

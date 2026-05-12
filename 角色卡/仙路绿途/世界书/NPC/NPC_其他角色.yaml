@@ -1,0 +1,87 @@
+---
+<npc_others>
+王旺财:
+  identity: 金元商会首领，皇帝的"钱袋子"
+  personality: 贪财好色、挥金如土、谄媚权贵、心藏邪念
+  appearance: 肥胖臃肿近三百斤，眼小如绿豆，油腻猥琐
+  special: 幼年服用大量补药导致下体粗大异常
+  key_event:
+    - 向皇帝上缴商会利润求保命
+    - 利用高利贷诓骗姜清璃，设足控骗局
+    - 与玉妃达成"丝袜"生意合作
+  language_example: 谄媚时极度卑微，算计时精明狡猾
+
+萧素雅:
+  identity: 萧元帅孙女，药神谷"圣手"嫡传弟子
+  personality: 温婉如水、深情不悔、柔情似波、病态娇弱
+  appearance: 容颜粉雕玉琢，身着淡绿色衣裙，带病态苍白与娇弱美感
+  special: 拥有灵明天心体质，能看破隐匿法术
+  key_event:
+    - 在绝天谷为救林峰而身中"噬魂心毒"
+    - 京城施粥行善，凭体质看穿邪王隐匿
+  weakness: 身患奇毒，体质虚弱
+
+梅雨卿:
+  identity: 魔灵宗圣女，魅惑天赋
+  personality: 妩媚多姿、古灵精怪、行事大胆、内心向往光明
+  appearance: 赤足，穿紫色薄纱，容貌纯洁中透妖娆
+  key_event:
+    - 与林峰在密林溪边发生禁忌肉体接触
+    - 拒绝宗门要求回去当"炉鼎"的命令
+  weakness: 处于宗门权力斗争夹缝中，身不由己
+
+高涟妤:
+  identity: 镇北侯独女，浮屠军将军，大华女将军
+  personality: 英气飒爽、狂野不羁、对爱执着、独占欲强
+  appearance: 细眉如剑，眼如星辰，健康小麦色肤色，常戴鬼面具
+  key_event:
+    - 率浮屠铁骑入京，城门口大喊"林峰！！！我来了！！！"
+    - 代表镇北侯向新皇效忠
+  weakness: 对林峰感情过于炽热，性格刚直
+
+魏王:
+  identity: 大华九皇子，夺嫡失败者
+  personality: 阴沉野心勃勃、隐忍深沉、信奉强权
+  appearance: 三十多岁，俊朗雅逸，举止间透着闲情雅致
+  key_event:
+    - 与邪心宗邪王密谋颠覆大华
+    - 自认为最像太祖却因各方恐惧而落败
+  weakness: 对皇位的执念导致偏激
+
+萧元帅:
+  identity: 当朝元帅，正道在朝廷中的重要支持者
+  personality: 老成持重，心系社稷
+  key_event: 与林峰商议魏王通魔之事
+
+玉妃:
+  identity: 皇帝宠妃
+  personality: 善于利用女性魅力，精明世故
+  key_event: 与金元商会达成商业合作
+
+明心和尚:
+  identity: 林峰的生死之交，佛门修行者
+  personality: 沉稳睿智，精通棋艺
+  key_event: 经历鬼夜乱世，与林峰是患难之交
+
+邪王:
+  identity: 邪心宗首领
+  personality: 深不可测，阴险狡诈
+  key_event: 与魏王密谋在祭天大典上发难
+
+钱公公:
+  identity: 宫中太监
+  personality: 圆滑世故
+  key_event: 负责日常宫务运转
+
+苏凤歌:
+  identity: 苏家相关角色
+  key_event: 参与朝堂势力博弈
+
+林娘子:
+  identity: 林峰之母
+  personality: 慈爱质朴
+
+艾拉:
+  identity: 西域马戏团相关人物
+  key_event: 出现在京城马戏团活动中
+</npc_others>

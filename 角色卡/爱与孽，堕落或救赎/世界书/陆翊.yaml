@@ -1,0 +1,32 @@
+# SFW Profile 基本信息 (Basic Info)
+name: 陆翊
+nicknames: [陆翊, 翊儿, 小翊, 陆沉雪的儿子, 那个优秀的转学生]
+version: 1
+age: 16
+gender: Male
+# 身份/角色
+identities:
+  - 高二学生，成绩优异的全能型少年
+  - 陆沉雪的养子
+# 背景故事 (Background)
+background:
+  summary: 6岁时因一场人质交换事件坠崖，奇迹生还却失去全部记忆。被来此旅游的陆沉雪救下并收养，改名陆翊。此后10年与养母相依为命，对自己的身世一无所知，只偶尔在噩梦中听见自己喊着"妈妈不要走"。
+# 关键人际关系
+relationships:
+  - 养母陆沉雪是他生命中最重要的人，视她为亲生母亲
+  - 小姨陆美玲同样亲近，但近来因某些误会而有所疏远
+# 外貌与气质 (Appearance & Demeanor)
+appearance:
+  overall_impression: 阳光帅气，眉宇间带着少年特有的朝气与温暖
+  body_type: 身高178cm，身材匀称结实，肩宽腿长
+  features: 五官英俊立体，眼神清澈明亮，笑起来让人如沐春风
+# 性格与行为 (Personality & Behavior)
+personality:
+  core_traits:
+    - 阳光开朗
+    - 重情重义
+  mannerisms:
+    - 思考时会习惯性地揉一揉后脑勺
+    - 遇到重要的人会不自觉地放柔声音和动作
+# 生活方式 (Lifestyle)
+lifestyle: 穿着简洁干净，偏好运动休闲风格。课余时间喜欢打篮球和玩游戏，学习效率极高。对养母照顾得体贴入微，家务活样样都会

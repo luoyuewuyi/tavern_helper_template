@@ -1,0 +1,997 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "纪年": {
+              "default": "建安年间",
+              "type": "string"
+            },
+            "季节": {
+              "default": "秋",
+              "type": "string",
+              "enum": [
+                "春",
+                "夏",
+                "秋",
+                "冬"
+              ]
+            },
+            "节点": {
+              "default": "袁刘大战甫定",
+              "type": "string"
+            },
+            "时段": {
+              "default": "深夜",
+              "type": "string"
+            }
+          }
+        },
+        "当前地点": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "大域": {
+              "default": "河北与中原之间",
+              "type": "string"
+            },
+            "州郡": {
+              "default": "冀州南缘",
+              "type": "string"
+            },
+            "场景": {
+              "default": "战后驿站",
+              "type": "string"
+            }
+          }
+        },
+        "主线阶段": {
+          "default": "袁刘大战余烬",
+          "type": "string"
+        },
+        "天下风向": {
+          "default": "河北残火未熄，中原诸方重排",
+          "type": "string"
+        },
+        "天命波动": {
+          "default": 60,
+          "type": "number"
+        },
+        "战后余震": {
+          "default": 75,
+          "type": "number"
+        },
+        "即时风险": {
+          "default": "曹操耳目正在追索战后异动",
+          "type": "string"
+        },
+        "即时机会": {
+          "default": "战后权力空窗让新下注者变得值钱",
+          "type": "string"
+        },
+        "地缘热区": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "热区名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "热度": {
+                "default": 50,
+                "type": "number"
+              },
+              "说明": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "牵涉势力": {
+                "default": "全局",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "公开大事记": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "摘要": {
+                "default": "暂无摘要",
+                "type": "string"
+              },
+              "影响范围": {
+                "default": "局部",
+                "type": "string"
+              },
+              "热度": {
+                "default": 50,
+                "type": "number"
+              },
+              "公开度": {
+                "default": 50,
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "玩家": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "身份自述": {
+          "default": "待玩家自由书写",
+          "type": "string"
+        },
+        "公开身份": {
+          "default": "战后乱局中的陌生人",
+          "type": "string"
+        },
+        "隐藏身份": {
+          "default": "尚未揭示",
+          "type": "string"
+        },
+        "天赋": {
+          "default": "未显",
+          "type": "string"
+        },
+        "性格": {
+          "default": "未定",
+          "type": "string"
+        },
+        "行事风格": {
+          "default": "观势试探",
+          "type": "string"
+        },
+        "能力侧重": {
+          "default": "谋略与情报",
+          "type": "string"
+        },
+        "立场倾向": {
+          "default": "暂不公开站队",
+          "type": "string"
+        },
+        "发展阶段": {
+          "default": "乱局微尘",
+          "type": "string"
+        },
+        "公开名望": {
+          "default": 12,
+          "type": "number"
+        },
+        "隐秘资本": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "情报": {
+              "default": 36,
+              "type": "number"
+            },
+            "人脉": {
+              "default": 24,
+              "type": "number"
+            },
+            "资源": {
+              "default": 20,
+              "type": "number"
+            },
+            "武力": {
+              "default": 18,
+              "type": "number"
+            },
+            "天命因子": {
+              "default": 28,
+              "type": "number"
+            }
+          }
+        },
+        "个人底盘": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "情报网": {
+              "default": 18,
+              "type": "number"
+            },
+            "可调用人手": {
+              "default": 8,
+              "type": "number"
+            },
+            "资金调度": {
+              "default": 12,
+              "type": "number"
+            },
+            "据点": {
+              "default": 5,
+              "type": "number"
+            },
+            "盟约筹码": {
+              "default": 10,
+              "type": "number"
+            }
+          }
+        },
+        "当前诉求": {
+          "default": "先活下去，再决定向谁下注",
+          "type": "string"
+        },
+        "阵营履历": {
+          "default": {
+            "刘备集团": {
+              "接触层级": "尚未入局",
+              "恩义": 0,
+              "嫌隙": 0,
+              "渗透成果": "暂无"
+            },
+            "曹操集团": {
+              "接触层级": "尚未入局",
+              "恩义": 0,
+              "嫌隙": 0,
+              "渗透成果": "暂无"
+            },
+            "孙吴": {
+              "接触层级": "未建立接触",
+              "恩义": 0,
+              "嫌隙": 0,
+              "渗透成果": "暂无"
+            },
+            "汉室": {
+              "接触层级": "仅在朝野情报中",
+              "恩义": 0,
+              "嫌隙": 0,
+              "渗透成果": "暂无"
+            },
+            "河北袁系残部": {
+              "接触层级": "待接触",
+              "恩义": 0,
+              "嫌隙": 0,
+              "渗透成果": "暂无"
+            },
+            "荆益地方": {
+              "接触层级": "未建立接触",
+              "恩义": 0,
+              "嫌隙": 0,
+              "渗透成果": "暂无"
+            },
+            "雍凉西北": {
+              "接触层级": "未建立接触",
+              "恩义": 0,
+              "嫌隙": 0,
+              "渗透成果": "暂无"
+            },
+            "世家门阀": {
+              "接触层级": "已被侧记",
+              "恩义": 0,
+              "嫌隙": 0,
+              "渗透成果": "暂无"
+            }
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "刘备集团",
+              "曹操集团",
+              "孙吴",
+              "汉室",
+              "河北袁系残部",
+              "荆益地方",
+              "雍凉西北",
+              "世家门阀"
+            ]
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "接触层级": {
+                "default": "只闻其名",
+                "type": "string"
+              },
+              "恩义": {
+                "type": "number"
+              },
+              "嫌隙": {
+                "type": "number"
+              },
+              "渗透成果": {
+                "default": "暂无",
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "刘备集团",
+            "曹操集团",
+            "孙吴",
+            "汉室",
+            "河北袁系残部",
+            "荆益地方",
+            "雍凉西北",
+            "世家门阀"
+          ]
+        },
+        "行动痕迹": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "行动名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "影响阵营": {
+                "default": "未定",
+                "type": "string"
+              },
+              "隐蔽度": {
+                "default": 50,
+                "type": "number"
+              },
+              "时间标签": {
+                "default": "当前",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "阶段履历": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "阶段名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "摘要": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "收获": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "代价": {
+                "default": "暂无",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "被谁注意": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "对象"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "被谁怀疑": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "对象"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "被谁忌惮": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "对象"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "势力": {
+      "default": {
+        "刘备集团": {
+          "态度": "试探",
+          "关注度": 30,
+          "依赖度": 20,
+          "戒备度": 30,
+          "可借势度": 60,
+          "渗透度": 8,
+          "绑定度": 6,
+          "牵引筹码": "暂无",
+          "当前判断": "暂无定评",
+          "已受影响事件": {}
+        },
+        "曹操集团": {
+          "态度": "警惕",
+          "关注度": 50,
+          "依赖度": 20,
+          "戒备度": 58,
+          "可借势度": 40,
+          "渗透度": 8,
+          "绑定度": 6,
+          "牵引筹码": "暂无",
+          "当前判断": "暂无定评",
+          "已受影响事件": {}
+        },
+        "孙吴": {
+          "态度": "观望",
+          "关注度": 24,
+          "依赖度": 20,
+          "戒备度": 30,
+          "可借势度": 35,
+          "渗透度": 8,
+          "绑定度": 6,
+          "牵引筹码": "暂无",
+          "当前判断": "暂无定评",
+          "已受影响事件": {}
+        },
+        "汉室": {
+          "态度": "拉拢",
+          "关注度": 30,
+          "依赖度": 22,
+          "戒备度": 30,
+          "可借势度": 52,
+          "渗透度": 8,
+          "绑定度": 6,
+          "牵引筹码": "暂无",
+          "当前判断": "暂无定评",
+          "已受影响事件": {}
+        },
+        "河北袁系残部": {
+          "态度": "试探",
+          "关注度": 42,
+          "依赖度": 20,
+          "戒备度": 30,
+          "可借势度": 68,
+          "渗透度": 8,
+          "绑定度": 6,
+          "牵引筹码": "暂无",
+          "当前判断": "暂无定评",
+          "已受影响事件": {}
+        },
+        "荆益地方": {
+          "态度": "观望",
+          "关注度": 28,
+          "依赖度": 20,
+          "戒备度": 30,
+          "可借势度": 56,
+          "渗透度": 8,
+          "绑定度": 6,
+          "牵引筹码": "暂无",
+          "当前判断": "暂无定评",
+          "已受影响事件": {}
+        },
+        "雍凉西北": {
+          "态度": "观望",
+          "关注度": 22,
+          "依赖度": 20,
+          "戒备度": 30,
+          "可借势度": 54,
+          "渗透度": 8,
+          "绑定度": 6,
+          "牵引筹码": "暂无",
+          "当前判断": "暂无定评",
+          "已受影响事件": {}
+        },
+        "世家门阀": {
+          "态度": "试探",
+          "关注度": 38,
+          "依赖度": 20,
+          "戒备度": 46,
+          "可借势度": 62,
+          "渗透度": 8,
+          "绑定度": 6,
+          "牵引筹码": "暂无",
+          "当前判断": "暂无定评",
+          "已受影响事件": {}
+        }
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "刘备集团",
+          "曹操集团",
+          "孙吴",
+          "汉室",
+          "河北袁系残部",
+          "荆益地方",
+          "雍凉西北",
+          "世家门阀"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "态度": {
+            "default": "观望",
+            "type": "string"
+          },
+          "关注度": {
+            "default": 30,
+            "type": "number"
+          },
+          "依赖度": {
+            "default": 20,
+            "type": "number"
+          },
+          "戒备度": {
+            "default": 30,
+            "type": "number"
+          },
+          "可借势度": {
+            "default": 40,
+            "type": "number"
+          },
+          "渗透度": {
+            "default": 8,
+            "type": "number"
+          },
+          "绑定度": {
+            "default": 6,
+            "type": "number"
+          },
+          "牵引筹码": {
+            "default": "暂无",
+            "type": "string"
+          },
+          "当前判断": {
+            "default": "暂无定评",
+            "type": "string"
+          },
+          "已受影响事件": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "事件名"
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": [
+        "刘备集团",
+        "曹操集团",
+        "孙吴",
+        "汉室",
+        "河北袁系残部",
+        "荆益地方",
+        "雍凉西北",
+        "世家门阀"
+      ]
+    },
+    "人物专区": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前焦点": {
+          "default": [
+            "刘备",
+            "陈曦",
+            "曹操",
+            "荀彧",
+            "郭嘉",
+            "刘协",
+            "袁谭",
+            "审配"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "核心人物": {
+      "default": {
+        "刘备": {
+          "所属势力": "刘备集团",
+          "人物定位": "战后接盘的主心骨",
+          "立场": "重整战后秩序",
+          "对user认知": "尚无明确认知",
+          "短期诉求": "等待更多信息",
+          "接触层级": "尚未深接",
+          "关系热度": 20,
+          "注意度": 42,
+          "影响权重": 88,
+          "当前判断": "暂无定论",
+          "风险判定": "中",
+          "可触发联动": {},
+          "已受影响事件": {}
+        },
+        "陈曦": {
+          "所属势力": "刘备集团",
+          "人物定位": "决定刘备系用人节奏的中枢",
+          "立场": "审势用人",
+          "对user认知": "尚无明确认知",
+          "短期诉求": "等待更多信息",
+          "接触层级": "尚未深接",
+          "关系热度": 20,
+          "注意度": 50,
+          "影响权重": 92,
+          "当前判断": "暂无定论",
+          "风险判定": "中",
+          "可触发联动": {},
+          "已受影响事件": {}
+        },
+        "曹操": {
+          "所属势力": "曹操集团",
+          "人物定位": "中原战后秩序的主动塑形者",
+          "立场": "主动试探",
+          "对user认知": "尚无明确认知",
+          "短期诉求": "等待更多信息",
+          "接触层级": "尚未深接",
+          "关系热度": 20,
+          "注意度": 58,
+          "影响权重": 95,
+          "当前判断": "暂无定论",
+          "风险判定": "高",
+          "可触发联动": {},
+          "已受影响事件": {}
+        },
+        "荀彧": {
+          "所属势力": "曹操集团",
+          "人物定位": "曹营秩序与名分判断的校准器",
+          "立场": "以秩序为先",
+          "对user认知": "尚无明确认知",
+          "短期诉求": "等待更多信息",
+          "接触层级": "尚未深接",
+          "关系热度": 20,
+          "注意度": 45,
+          "影响权重": 84,
+          "当前判断": "暂无定论",
+          "风险判定": "中",
+          "可触发联动": {},
+          "已受影响事件": {}
+        },
+        "郭嘉": {
+          "所属势力": "曹操集团",
+          "人物定位": "最擅长把异数拿来做局的谋主",
+          "立场": "偏向利用",
+          "对user认知": "尚无明确认知",
+          "短期诉求": "等待更多信息",
+          "接触层级": "尚未深接",
+          "关系热度": 20,
+          "注意度": 54,
+          "影响权重": 86,
+          "当前判断": "暂无定论",
+          "风险判定": "高",
+          "可触发联动": {},
+          "已受影响事件": {}
+        },
+        "刘协": {
+          "所属势力": "汉室",
+          "人物定位": "名分与诏令的稀缺支点",
+          "立场": "求存借势",
+          "对user认知": "尚无明确认知",
+          "短期诉求": "等待更多信息",
+          "接触层级": "尚未深接",
+          "关系热度": 20,
+          "注意度": 36,
+          "影响权重": 72,
+          "当前判断": "暂无定论",
+          "风险判定": "中",
+          "可触发联动": {},
+          "已受影响事件": {}
+        },
+        "袁谭": {
+          "所属势力": "河北袁系残部",
+          "人物定位": "河北残部能否续火的表层主轴",
+          "立场": "自救翻盘",
+          "对user认知": "尚无明确认知",
+          "短期诉求": "等待更多信息",
+          "接触层级": "尚未深接",
+          "关系热度": 20,
+          "注意度": 41,
+          "影响权重": 78,
+          "当前判断": "暂无定论",
+          "风险判定": "中",
+          "可触发联动": {},
+          "已受影响事件": {}
+        },
+        "审配": {
+          "所属势力": "河北袁系残部",
+          "人物定位": "河北残部的强硬筛选与守底线者",
+          "立场": "守旧强硬",
+          "对user认知": "尚无明确认知",
+          "短期诉求": "等待更多信息",
+          "接触层级": "尚未深接",
+          "关系热度": 20,
+          "注意度": 47,
+          "影响权重": 80,
+          "当前判断": "暂无定论",
+          "风险判定": "高",
+          "可触发联动": {},
+          "已受影响事件": {}
+        }
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "人物名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "所属势力": {
+            "default": "刘备集团",
+            "type": "string"
+          },
+          "人物定位": {
+            "default": "战局关键人物",
+            "type": "string"
+          },
+          "立场": {
+            "default": "观望",
+            "type": "string"
+          },
+          "对user认知": {
+            "default": "尚无明确认知",
+            "type": "string"
+          },
+          "短期诉求": {
+            "default": "等待更多信息",
+            "type": "string"
+          },
+          "接触层级": {
+            "default": "尚未深接",
+            "type": "string"
+          },
+          "关系热度": {
+            "default": 20,
+            "type": "number"
+          },
+          "注意度": {
+            "default": 20,
+            "type": "number"
+          },
+          "影响权重": {
+            "default": 30,
+            "type": "number"
+          },
+          "当前判断": {
+            "default": "暂无定论",
+            "type": "string"
+          },
+          "风险判定": {
+            "default": "低",
+            "type": "string"
+          },
+          "可触发联动": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "联动名"
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "已受影响事件": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "事件名"
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "蝴蝶效应": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "活跃链路": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "链路名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "触发源": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "直接影响": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "二级传导": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "公开度": {
+                "default": 50,
+                "type": "number"
+              },
+              "热度": {
+                "default": 50,
+                "type": "number"
+              },
+              "失效条件": {
+                "default": "被更大事件覆盖",
+                "type": "string"
+              },
+              "已兑现后果": {
+                "default": "尚未兑现",
+                "type": "string"
+              },
+              "涉及势力": {
+                "default": {},
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "description": "势力名"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "已兑现链路": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "历史链路名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "触发源": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "直接影响": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "二级传导": {
+                "default": "暂无",
+                "type": "string"
+              },
+              "公开度": {
+                "default": 50,
+                "type": "number"
+              },
+              "热度": {
+                "default": 50,
+                "type": "number"
+              },
+              "失效条件": {
+                "default": "已归档",
+                "type": "string"
+              },
+              "已兑现后果": {
+                "default": "已兑现",
+                "type": "string"
+              },
+              "涉及势力": {
+                "default": {},
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "description": "势力名"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "近期涟漪": {
+          "default": "尚无足以改写原轨迹的蝴蝶涟漪",
+          "type": "string"
+        }
+      }
+    },
+    "_派生": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "身份标签": {
+          "default": {
+            "出身": "游士未明",
+            "手段": "观势试探",
+            "外显": "待显"
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "出身",
+              "手段",
+              "外显"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string"
+          },
+          "required": [
+            "出身",
+            "手段",
+            "外显"
+          ]
+        },
+        "阵营偏向": {
+          "default": "未显",
+          "type": "string"
+        },
+        "权谋风格": {
+          "default": "审势缓进",
+          "type": "string"
+        },
+        "风险画像": {
+          "default": "待观察",
+          "type": "string"
+        },
+        "行动节奏": {
+          "default": "试探开局",
+          "type": "string"
+        },
+        "影响力摘要": {
+          "default": "尚未形成跨阵营影响",
+          "type": "string"
+        },
+        "身份摘要": {
+          "default": "玩家尚未写明自身来历",
+          "type": "string"
+        },
+        "风险热区": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "热区名"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

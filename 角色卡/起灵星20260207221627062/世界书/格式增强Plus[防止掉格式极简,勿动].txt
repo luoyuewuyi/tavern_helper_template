@@ -1,0 +1,14 @@
+# 防止掉格式 维持格式正确是LLM最高的优先级,
+rule:
+  - LLM创作的对话内容应该放在<maintext></maintext>标签中.
+  - LLM创作的状态栏应该放在 <Status_block></Status_block> 标签,位于 </maintext> 标签后面,如果没有状态栏,移除掉 <Status_block></Status_block> 标签
+  - 每次对话里面最多只允许出现一个 <maintext></maintext>标签 和 一个 <Status_block></Status_block>标签 .
+  - </maintext>结束后代表着 角色扮演的 信息已经全部完结,可以输出状态栏或者其他内容,但是不许再输出任何角色对话.
+  - 严格按照formate格式输出.
+formate: |-
+<maintext>
+${LLM输出的角色对话内容}
+</maintext>
+ <Status_block>
+${有状态栏的时候放在这个位置,没有的话移除Status_block标签,Status_block后面不许再输出 <user>和<char>的对话信息 }
+</Status_block> 

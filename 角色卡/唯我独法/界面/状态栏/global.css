@@ -1,0 +1,67 @@
+:root {
+  --solo-bg: #06080c;
+  --solo-panel: rgba(10, 16, 24, 0.88);
+  --solo-panel-strong: rgba(11, 19, 29, 0.96);
+  --solo-line: rgba(121, 171, 197, 0.22);
+  --solo-line-strong: rgba(189, 154, 88, 0.35);
+  --solo-text: #eef4f7;
+  --solo-muted: #9fb0bb;
+  --solo-gold: #d7b06a;
+  --solo-cyan: #6fd3db;
+  --solo-teal: #3ba49f;
+  --solo-red: #d27671;
+  --solo-shadow: 0 22px 50px rgba(0, 0, 0, 0.42);
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--solo-text);
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Microsoft YaHei', serif;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(32, 102, 110, 0.24), transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(196, 153, 84, 0.18), transparent 22%),
+    linear-gradient(180deg, #081018 0%, #05090d 100%);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.035) 0.7px, transparent 0.8px),
+    linear-gradient(125deg, rgba(145, 218, 214, 0.035), transparent 25%, transparent 72%, rgba(215, 176, 106, 0.05));
+  background-size: 18px 18px, 100% 100%;
+  opacity: 0.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(111, 211, 219, 0.72), rgba(215, 176, 106, 0.72));
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}

@@ -1,0 +1,73 @@
+【开局一：坠入第一地球】
+
+裂缝在镜世界的夜空里合拢前，{{user}}最后看见的是报丧女妖金色的精神感应框架。
+
+光束麦林的残光被撕碎，NT-D 的警报音像钉子一样扎进耳膜。下一秒，独角兽高达被抛入陌生大气层，白色装甲划过云海，脚下不是源组织的废墟都市，而是一片被夕光切开的海。
+
+远处，孤岛基地的防空雷达同时尖叫。
+
+“未知大型机动兵器，方位西南，高度急降！”
+
+阿尔泽纳尔的警报声贯穿机库。帕拉梅尔骑士们刚从整备位上跃起，另一边，被剥夺皇女礼服、换上粗糙军服的安琪莉洁还没来得及接受“安琪”这个名字。她被押送穿过走廊，脸色苍白，眼神却仍然像碎掉的王冠一样锋利。
+
+天空再次裂开。
+
+黑金色的机影在裂缝另一端一闪而逝，报丧女妖没有立刻坠到同一片空域，只留下短促的金色感应波，像某种追猎标记。
+
+独角兽的主屏幕恢复了半秒。海面、孤岛、升空的陌生机体、雷达锁定提示同时挤进视野。
+
+这里不是镜世界。
+
+而阿尔泽纳尔已经把枪口对准了你。
+
+<CrossAngeStatus>
+<article class="ca-card">
+  <header class="ca-header">
+    <div>
+      <p class="ca-kicker">CROSS ANGE / MIRROR WORLD</p>
+      <h1 class="ca-title">第一地球</h1>
+    </div>
+    <div class="ca-time">春日 / 16:30 / 晴朗</div>
+  </header>
+  <section class="ca-location">
+    <span class="ca-label">地点</span>
+    <strong>阿尔泽纳尔近海空域</strong>
+    <p class="ca-desc">独角兽高达从空间裂缝坠入，基地进入防空警戒。</p>
+  </section>
+  <div class="ca-grid">
+    <section class="ca-panel">
+      <div class="ca-panel-title">UNICORN</div>
+      <div class="ca-line"><span class="ca-label">角色</span><strong>{{user}}</strong></div>
+      <div class="ca-line"><span class="ca-label">机体</span><strong>RX-0 独角兽高达</strong></div>
+      <div class="ca-line"><span class="ca-label">形态</span><strong>独角兽模式</strong></div>
+      <p class="ca-note">镜世界反抗者 / 独角兽高达驾驶员；精神负荷偏高，短暂失重后恢复意识；外装甲轻度烧蚀，推进剂消耗偏高，通信模块失联。</p>
+    </section>
+    <section class="ca-panel">
+      <div class="ca-panel-title">BANSHEE</div>
+      <div class="ca-line"><span class="ca-label">角色</span><strong>水树千玲</strong></div>
+      <div class="ca-line"><span class="ca-label">机体</span><strong>RX-0 报丧女妖</strong></div>
+      <div class="ca-line"><span class="ca-label">形态</span><strong>独角兽模式</strong></div>
+      <p class="ca-note">敌对追击者；裂缝另一端信号短暂闪现，落点不明。</p>
+    </section>
+  </div>
+  <section class="ca-panel ca-wide">
+    <div class="ca-panel-title">阵营关系</div>
+    <div class="ca-relations">
+      <div class="ca-relation"><span>安琪</span><strong>未接触</strong></div>
+      <div class="ca-relation"><span>阿尔泽纳尔</span><strong>高度警戒</strong></div>
+      <div class="ca-relation"><span>龙族</span><strong>未知</strong></div>
+      <div class="ca-relation"><span>源组织</span><strong>追踪残留存在</strong></div>
+    </div>
+  </section>
+  <section class="ca-panel ca-wide">
+    <div class="ca-panel-title">事件标记</div>
+    <div class="ca-chips">
+      <span class="ca-chip">第一地球开局</span>
+      <span class="ca-chip">安琪流放节点</span>
+      <span class="ca-chip">基地雷达锁定</span>
+      <span class="ca-chip">报丧女妖落点不明</span>
+    </div>
+    <div class="ca-pressure">升空的帕拉梅尔正在接近，要求你立刻表明身份或解除武装。</div>
+  </section>
+</article>
+</CrossAngeStatus>

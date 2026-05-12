@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm *)",
+      "Bash(node *)",
+      "Bash(npx *)",
+      "Bash(uvx *)",
+      "Bash(npm *)",
+      "Bash(pip *)",
+      "Bash(mkdir *)",
+      "Bash(curl *)",
+      "Bash(cp *)",
+      "Bash(winget *)",
+      "Bash(choco *)",
+      "Bash(scoop *)",
+      "WebSearch",
+      "WebFetch",
+      "Skill",
+      "Agent",
+      "TaskOutput",
+      "Read(.mcp.json)",
+      "Edit(.mcp.json)",
+      "Edit(.claude)",
+      "Edit(CLAUDE.md)"
+    ],
+    "additionalDirectories": [
+      "e:\\jiuguanzhushou"
+    ],
+    "defaultMode": "acceptEdits"
+  }
+}

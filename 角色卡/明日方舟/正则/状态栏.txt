@@ -1,0 +1,172 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+    :root {
+        --rhodes-cyan: #00C8FF;      /* 罗德岛蓝 */
+        --rhodes-yellow: #FFCD00;    /* 警示黄 */
+        --rhodes-dark: #121212;      /* 深色底 */
+        --glass-bg: rgba(20, 20, 20, 0.95);
+        --hover-bg: rgba(0, 200, 255, 0.15);
+        --text-main: #FFFFFF;
+    }
+
+    .prts-container {
+        font-family: 'Noto Sans SC', sans-serif;
+        width: 98%;
+        max-width: 1000px; /* 限制最大宽度，防止太散 */
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2x2 布局 */
+        gap: 15px;
+        box-sizing: border-box;
+    }
+
+    /* 选项卡片样式 */
+    .option-card {
+        background: var(--glass-bg);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-left: 4px solid var(--rhodes-cyan); /* 左侧彩色指示条 */
+        padding: 20px 25px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.2s ease-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 80px; /* 保证足够的高度，方便点击 */
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 15px),
+            calc(100% - 15px) 100%,
+            0 100%
+        ); /* 右下角切角设计 */
+    }
+
+    /* 背景装饰网格 */
+    .option-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 100% 20px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* 序号装饰 */
+    .option-index {
+        font-family: 'Impact', sans-serif;
+        font-size: 36px;
+        color: rgba(255, 255, 255, 0.05);
+        position: absolute;
+        top: -5px;
+        right: 10px;
+        z-index: 0;
+        font-style: italic;
+    }
+
+    /* 文本内容 */
+    .option-text {
+        color: var(--text-main);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.4;
+        z-index: 1;
+        position: relative;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    /* 悬停效果 */
+    .option-card:hover {
+        background: var(--hover-bg);
+        border-color: var(--rhodes-cyan);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 200, 255, 0.2);
+    }
+
+    .option-card:hover .option-text {
+        color: var(--rhodes-cyan);
+    }
+
+    .option-card:active {
+        transform: translateY(1px);
+        background: rgba(0, 200, 255, 0.3);
+    }
+
+    /* 颜色变种：为了不单调，给第2/4个选项换个强调色 */
+    .option-card:nth-child(2) { border-left-color: var(--rhodes-yellow); }
+    .option-card:nth-child(2):hover { border-color: var(--rhodes-yellow); background: rgba(255, 205, 0, 0.15); }
+    .option-card:nth-child(2):hover .option-text { color: var(--rhodes-yellow); }
+
+    .option-card:nth-child(4) { border-left-color: var(--rhodes-yellow); }
+    .option-card:nth-child(4):hover { border-color: var(--rhodes-yellow); background: rgba(255, 205, 0, 0.15); }
+    .option-card:nth-child(4):hover .option-text { color: var(--rhodes-yellow); }
+
+    /* 手机端适配 */
+    @media (max-width: 600px) {
+        .prts-container {
+            grid-template-columns: 1fr; /* 手机上一列显示 */
+            gap: 10px;
+        }
+        .option-card {
+            min-height: 60px;
+            padding: 15px 20px;
+        }
+    }
+</style>
+
+<div class="prts-container">
+    <!-- 选项 1 -->
+    <div class="option-card" onclick="sendOption(this)" data-content="$1">
+        <div class="option-index">01</div>
+        <div class="option-text">▶ $1</div>
+    </div>
+
+    <!-- 选项 2 -->
+    <div class="option-card" onclick="sendOption(this)" data-content="$2">
+        <div class="option-index">02</div>
+        <div class="option-text">▶ $2</div>
+    </div>
+
+    <!-- 选项 3 -->
+    <div class="option-card" onclick="sendOption(this)" data-content="$3">
+        <div class="option-index">03</div>
+        <div class="option-text">▶ $3</div>
+    </div>
+
+    <!-- 选项 4 -->
+    <div class="option-card" onclick="sendOption(this)" data-content="$4">
+        <div class="option-index">04</div>
+        <div class="option-text">▶ $4</div>
+    </div>
+</div>
+
+<script>
+    function sendOption(element) {
+        // 获取选项内容
+        const content = element.getAttribute('data-content');
+        if (!content) return;
+
+        // 构建指令：/send [内容] | /trigger
+        // 这里的 /trigger 会让AI立即回复
+        const command = `/send ${content} | /trigger`;
+
+        // 调用酒馆助手的执行函数
+        if (typeof triggerSlash === 'function') {
+            triggerSlash(command);
+        } else {
+            console.warn('酒馆助手未加载，无法执行指令');
+        }
+    }
+</script>
+</body>
+</html>
+```

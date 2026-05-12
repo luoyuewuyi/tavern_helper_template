@@ -1,0 +1,6 @@
+{
+  "name": "游戏化现实状态栏",
+  "description": "现实被游戏系统覆盖后的技能面板，支持读取 MVU 变量，输出风格为红黑白街机任务终端 UI。",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

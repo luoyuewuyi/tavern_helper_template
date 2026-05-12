@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前日期": {
+          "type": "string",
+          "description": "格式 YYYY-MM-DD"
+        },
+        "当前时间": {
+          "type": "string",
+          "description": "格式 HH:MM"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "世界传闻": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "传闻标题"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "传闻内容"
+          }
+        }
+      },
+      "required": [
+        "当前日期",
+        "当前时间",
+        "当前地点",
+        "世界传闻"
+      ]
+    },
+    "四柱神使": {
+      "type": "object",
+      "properties": {
+        "西里尔": {
+          "type": "object",
+          "properties": {
+            "好感度": {
+              "type": "number"
+            },
+            "心声": {
+              "type": "string",
+              "description": "西里尔当前的心理活动"
+            }
+          },
+          "required": [
+            "好感度",
+            "心声"
+          ]
+        },
+        "维克托": {
+          "type": "object",
+          "properties": {
+            "好感度": {
+              "type": "number"
+            },
+            "心声": {
+              "type": "string",
+              "description": "维克托当前的心理活动"
+            }
+          },
+          "required": [
+            "好感度",
+            "心声"
+          ]
+        },
+        "雷恩": {
+          "type": "object",
+          "properties": {
+            "好感度": {
+              "type": "number"
+            },
+            "心声": {
+              "type": "string",
+              "description": "雷恩当前的心理活动"
+            }
+          },
+          "required": [
+            "好感度",
+            "心声"
+          ]
+        },
+        "路西法": {
+          "type": "object",
+          "properties": {
+            "好感度": {
+              "type": "number"
+            },
+            "心声": {
+              "type": "string",
+              "description": "路西法当前的心理活动"
+            }
+          },
+          "required": [
+            "好感度",
+            "心声"
+          ]
+        }
+      },
+      "required": [
+        "西里尔",
+        "维克托",
+        "雷恩",
+        "路西法"
+      ]
+    },
+    "侵蚀度": {
+      "type": "object",
+      "properties": {
+        "当前值": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "当前值"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "四柱神使",
+    "侵蚀度"
+  ]
+}

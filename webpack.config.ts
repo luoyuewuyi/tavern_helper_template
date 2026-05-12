@@ -560,10 +560,10 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
       const cdn = {
         sass: 'https://jspm.dev/sass',
       };
-      return callback(
-        null,
-        'module-import ' + (cdn[request as keyof typeof cdn] ?? `https://testingcf.jsdelivr.net/npm/${request}/+esm`),
-      );
+      if (request in cdn) {
+        return callback(null, 'module-import ' + cdn[request as keyof typeof cdn]);
+      }
+      return callback();
     },
   });
 }

@@ -1,0 +1,26 @@
+---
+变量输出格式:
+  rule:
+    - you must output the update analysis and the actual update commands together at the end of the reply
+    - keep all updates logically grounded in current scene, current ability level, and visible consequences only
+    - do not update readonly fields that start with `_`
+    - if a keyword edit should fail because of level or logic, record the failure in analysis instead of forcing
+      impossible updates
+  format: |-
+    <UpdateVariable>
+    <Analysis>$(IN ENGLISH, no more than 80 words)
+    - ${calculate time passed and scene change}
+    - ${check whether current ability level allows the attempted keyword edit}
+    - ${check whether character keyword evolution should happen due to concrete plot events}
+    - ${check whether any world correction event should be queued or progressed}
+    </Analysis>
+    <JSONPatch>
+    [
+      { "op": "replace", "path": "${/path/to/variable}", "value": "${new_value}" },
+      { "op": "delta", "path": "${/path/to/number/variable}", "value": "${positive_or_negative_delta}" },
+      { "op": "insert", "path": "${/path/to/object/new_key}", "value": "${new_value}" },
+      { "op": "remove", "path": "${/path/to/object/key}" },
+      { "op": "move", "from": "${/path/to/variable}", "to": "${/path/to/another/path}" }
+    ]
+    </JSONPatch>
+    </UpdateVariable>

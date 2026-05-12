@@ -1,0 +1,350 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "天气": {
+          "default": "☀️ 晴朗",
+          "type": "string"
+        },
+        "当前时间": {
+          "default": "新历1年/01/01-08:00",
+          "type": "string"
+        },
+        "序号": {
+          "default": 1,
+          "type": "number"
+        },
+        "大地图": {
+          "default": "朗姆镇",
+          "type": "string"
+        },
+        "小地图": {
+          "default": "安定区",
+          "type": "string"
+        },
+        "建筑结构": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "房间/区域名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "描述或🛑标注用户位置"
+          }
+        }
+      }
+    },
+    "卡尔德": {
+      "type": "object",
+      "properties": {
+        "等级": {
+          "default": 1,
+          "type": "number"
+        },
+        "圣之力": {
+          "default": 1,
+          "type": "number"
+        },
+        "魔力当前": {
+          "default": 100,
+          "type": "number"
+        },
+        "魔力上限": {
+          "default": 100,
+          "type": "number"
+        },
+        "魔力颜色": {
+          "default": "银白",
+          "type": "string"
+        },
+        "身高": {
+          "default": "180cm",
+          "type": "string"
+        },
+        "穿戴": {
+          "default": "黑色皮甲套装",
+          "type": "string"
+        },
+        "武器": {
+          "default": "无",
+          "type": "string"
+        },
+        "鸡巴状态": {
+          "default": "自然垂下",
+          "type": "string"
+        },
+        "财富": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "紫金币": {
+              "type": "number"
+            },
+            "金币": {
+              "default": 5,
+              "type": "number"
+            },
+            "银币": {
+              "default": 50,
+              "type": "number"
+            },
+            "铜币": {
+              "default": 200,
+              "type": "number"
+            }
+          }
+        },
+        "物品栏": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "描述",
+              "数量"
+            ]
+          }
+        },
+        "房产": {
+          "default": "无",
+          "type": "string"
+        },
+        "体位": {
+          "default": "站立",
+          "type": "string"
+        },
+        "具体位置": {
+          "default": "朗姆镇中央广场",
+          "type": "string"
+        }
+      }
+    },
+    "当前NPC": {
+      "default": {},
+      "$ref": "#/$defs/__schema0"
+    },
+    "角色库": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色姓名"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/__schema0"
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "卡尔德"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "无",
+          "type": "string"
+        },
+        "性别": {
+          "default": "无",
+          "type": "string"
+        },
+        "年龄": {
+          "default": "无",
+          "type": "string"
+        },
+        "外表年龄": {
+          "default": "无",
+          "type": "string"
+        },
+        "身高": {
+          "default": "无",
+          "type": "string"
+        },
+        "种族": {
+          "default": "人类",
+          "type": "string"
+        },
+        "表面身份": {
+          "default": "无",
+          "type": "string"
+        },
+        "隐藏身份": {
+          "default": "无",
+          "type": "string"
+        },
+        "处女": {
+          "default": "无",
+          "type": "string"
+        },
+        "纹身": {
+          "default": "无",
+          "type": "string"
+        },
+        "颜值": {
+          "default": "无",
+          "type": "string"
+        },
+        "瞳孔颜色": {
+          "default": "无",
+          "type": "string"
+        },
+        "肤色": {
+          "default": "无",
+          "type": "string"
+        },
+        "怀孕": {
+          "default": "否",
+          "type": "string"
+        },
+        "对性知识认知": {
+          "default": "无",
+          "type": "string"
+        },
+        "伪装性格": {
+          "default": "无",
+          "type": "string"
+        },
+        "真实性格": {
+          "default": "无",
+          "type": "string"
+        },
+        "伪装言语风格": {
+          "default": "无",
+          "type": "string"
+        },
+        "真实言语风格": {
+          "default": "无",
+          "type": "string"
+        },
+        "性癖": {
+          "default": "无",
+          "type": "string"
+        },
+        "私下自称": {
+          "default": "无",
+          "type": "string"
+        },
+        "对我称呼": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "私下": {
+              "default": "无",
+              "type": "string"
+            },
+            "公共": {
+              "default": "无",
+              "type": "string"
+            }
+          }
+        },
+        "关系": {
+          "default": "无",
+          "type": "string"
+        },
+        "对卡尔德印象": {
+          "default": "无",
+          "type": "string"
+        },
+        "子嗣": {
+          "default": "无",
+          "type": "string"
+        },
+        "肉体改造": {
+          "default": "无",
+          "type": "string"
+        },
+        "生物特性": {
+          "default": "无",
+          "type": "string"
+        },
+        "嘴承受鸡巴": {
+          "default": "无",
+          "type": "string"
+        },
+        "逼承受鸡巴": {
+          "default": "无",
+          "type": "string"
+        },
+        "屁眼承受鸡巴": {
+          "default": "无",
+          "type": "string"
+        },
+        "玉精": {
+          "default": "未吸收",
+          "type": "string"
+        },
+        "发型衣着": {
+          "default": "无",
+          "type": "string"
+        },
+        "三围与身材": {
+          "default": "无",
+          "type": "string"
+        },
+        "身体数据": {
+          "default": "无",
+          "type": "string"
+        },
+        "高潮记录": {
+          "type": "number"
+        },
+        "性爱时间": {
+          "default": "无",
+          "type": "string"
+        },
+        "性爱后负面状态": {
+          "default": "无",
+          "type": "string"
+        },
+        "体内精液": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "胃": {
+              "type": "number"
+            },
+            "子宫": {
+              "type": "number"
+            },
+            "肠道": {
+              "type": "number"
+            }
+          }
+        },
+        "肚子": {
+          "default": "平坦",
+          "type": "string"
+        },
+        "体位": {
+          "default": "无",
+          "type": "string"
+        },
+        "具体位置": {
+          "default": "无",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

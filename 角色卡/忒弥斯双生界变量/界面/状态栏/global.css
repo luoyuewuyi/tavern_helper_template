@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 深渊配色 - 黑暗病娇主题 */
+  --c-void: #0a0a0f; /* 最深：背景底色 */
+  --c-abyss: #1a1a24; /* 深色：卡片背景 */
+  --c-shadow: #2d2d3d; /* 中暗：边框、分隔 */
+  --c-corrupt: #6b3a6b; /* 浊厄紫：侵蚀相关 */
+  --c-blood: #8b2942; /* 暗红：危险、警告 */
+  --c-obsession: #c94a7a; /* 病态粉：好感度高亮 */
+  --c-pale: #b8a8c8; /* 苍白：次要文字 */
+  --c-ghost: #e8dff0; /* 幽灵白：主文字 */
+  --c-gold: #d4a857; /* 圣光金：特殊强调 */
+
+  /* 字体 */
+  --font-gothic: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}

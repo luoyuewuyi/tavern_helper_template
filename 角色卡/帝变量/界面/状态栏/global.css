@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap');
+
+:root {
+  /* 古风配色系统 - 宫廷风格 */
+  --ink-black: hsl(0, 0%, 8%);
+  --paper-ivory: hsl(45, 35%, 96%);
+  --paper-aged: hsl(42, 30%, 90%);
+  --vermilion: hsl(5, 75%, 45%);
+  --vermilion-dark: hsl(5, 70%, 35%);
+  --vermilion-glow: hsla(5, 75%, 45%, 0.4);
+  --gold-leaf: hsl(45, 80%, 50%);
+  --gold-dark: hsl(45, 70%, 40%);
+  --gold-glow: hsla(45, 80%, 50%, 0.3);
+  --jade-green: hsl(160, 45%, 35%);
+  --jade-light: hsl(160, 40%, 50%);
+  --azure-blue: hsl(210, 50%, 30%);
+  --purple-royal: hsl(280, 40%, 35%);
+
+  /* 状态条颜色 */
+  --bar-grain: linear-gradient(90deg, #c9a227, #e8c453);
+  --bar-silver: linear-gradient(90deg, #607d8b, #90a4ae);
+  --bar-army: linear-gradient(90deg, #5d4037, #795548);
+  --bar-morale: linear-gradient(90deg, #b71c1c, #e53935);
+  --bar-people: linear-gradient(90deg, #1565c0, #42a5f5);
+  --bar-corrupt: linear-gradient(90deg, #4a148c, #7b1fa2);
+  --bar-tech: linear-gradient(90deg, #00695c, #26a69a);
+  --bar-prestige: linear-gradient(90deg, #bf360c, #ff5722);
+
+  /* 危险/安全状态 */
+  --danger-red: hsl(0, 70%, 50%);
+  --warning-orange: hsl(30, 80%, 50%);
+  --safe-green: hsl(120, 45%, 45%);
+
+  --shadow-silk: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --shadow-deep: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
+  background-color: transparent;
+  color: var(--ink-black);
+  user-select: none;
+}
+
+#app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+/* 主容器 - 竹简/卷轴风格 */
+.imperial-scroll {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(135deg, var(--paper-ivory) 0%, var(--paper-aged) 100%);
+  border: 3px solid var(--vermilion-dark);
+  box-shadow:
+    var(--shadow-deep),
+    inset 0 0 60px rgba(139, 90, 43, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: scroll-unfurl 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 卷轴展开动画 */
+@keyframes scroll-unfurl {
+  from {
+    clip-path: inset(0 50% 0 50%);
+    opacity: 0;
+    transform: scaleX(0.8);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* 装饰性纹理 */
+.imperial-scroll::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><path d="M30 0L60 30L30 60L0 30Z" fill="none" stroke="%23d4c5a9" stroke-width="0.5" opacity="0.3"/></svg>');
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 顶部装饰边框 */
+.scroll-top-border {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold-dark) 15%,
+    var(--gold-leaf) 50%,
+    var(--gold-dark) 85%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+/* 底部装饰边框 */
+.scroll-bottom-border {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--vermilion-dark) 15%,
+    var(--vermilion) 50%,
+    var(--vermilion-dark) 85%,
+    transparent 100%
+  );
+}
+
+/* 标题区域 */
+.header-section {
+  padding: 16px 20px 12px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  border-bottom: 1px solid rgba(139, 90, 43, 0.2);
+}
+
+.era-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--vermilion);
+  letter-spacing: 8px;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.time-location-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: var(--azure-blue);
+}
+
+.time-info,
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-info::before {
+  content: '⏳';
+}
+
+.location-info::before {
+  content: '📍';
+}
+
+/* 主内容区 */
+.main-content {
+  padding: 16px 20px;
+  position: relative;
+  z-index: 5;
+}
+
+/* 分区标题 */
+.section-title {
+  font-size: 1rem;
+  color: var(--vermilion-dark);
+  font-weight: 600;
+  margin: 16px 0 12px;
+  padding-left: 12px;
+  border-left: 3px solid var(--vermilion);
+  letter-spacing: 2px;
+}
+
+.section-title:first-child {
+  margin-top: 0;
+}
+
+/* 变量网格 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* 单个变量卡片 */
+.stat-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(139, 90, 43, 0.2);
+  border-radius: 6px;
+  padding: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stat-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-black);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--vermilion);
+}
+
+.stat-subvalue {
+  font-size: 0.75rem;
+  color: var(--jade-green);
+}
+
+.stat-subvalue.negative {
+  color: var(--danger-red);
+}
+
+/* 进度条 */
+.stat-bar {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+/* 各变量条颜色 */
+.stat-bar-fill.grain {
+  background: var(--bar-grain);
+}
+.stat-bar-fill.silver {
+  background: var(--bar-silver);
+}
+.stat-bar-fill.army {
+  background: var(--bar-army);
+}
+.stat-bar-fill.morale {
+  background: var(--bar-morale);
+}
+.stat-bar-fill.people {
+  background: var(--bar-people);
+}
+.stat-bar-fill.corrupt {
+  background: var(--bar-corrupt);
+}
+.stat-bar-fill.tech {
+  background: var(--bar-tech);
+}
+.stat-bar-fill.prestige {
+  background: var(--bar-prestige);
+}
+
+/* 危险状态发光效果 */
+.stat-bar-fill.danger {
+  animation: pulse-danger 1.5s infinite;
+}
+
+@keyframes pulse-danger {
+  0%,
+  100% {
+    box-shadow: 0 0 8px var(--danger-red);
+  }
+  50% {
+    box-shadow: 0 0 16px var(--danger-red);
+  }
+}
+
+/* 良好状态发光效果 */
+.stat-bar-fill.excellent {
+  animation: pulse-excellent 2s infinite;
+}
+
+@keyframes pulse-excellent {
+  0%,
+  100% {
+    box-shadow: 0 0 8px var(--gold-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--gold-leaf);
+  }
+}
+
+/* 状态阶段标签 */
+.stat-stage {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.stat-stage.excellent {
+  background: rgba(76, 175, 80, 0.2);
+  color: var(--safe-green);
+}
+.stat-stage.good {
+  background: rgba(33, 150, 243, 0.2);
+  color: var(--azure-blue);
+}
+.stat-stage.normal {
+  background: rgba(158, 158, 158, 0.2);
+  color: #666;
+}
+.stat-stage.warning {
+  background: rgba(255, 152, 0, 0.2);
+  color: var(--warning-orange);
+}
+.stat-stage.danger {
+  background: rgba(244, 67, 54, 0.2);
+  color: var(--danger-red);
+}
+
+/* 资源卡片（粮草、库银）特殊样式 */
+.resource-card {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 248, 225, 0.8));
+  border: 1px solid var(--gold-dark);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.resource-item {
+  text-align: center;
+}
+
+.resource-icon {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.resource-name {
+  font-size: 0.8rem;
+  color: var(--azure-blue);
+  margin-bottom: 4px;
+}
+
+.resource-main {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink-black);
+}
+
+.resource-flow {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.resource-flow.positive {
+  color: var(--safe-green);
+}
+.resource-flow.negative {
+  color: var(--danger-red);
+}
+
+/* 当前事件区域 */
+.event-section {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(178, 34, 34, 0.05);
+  border: 1px dashed var(--vermilion);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.event-label {
+  font-size: 0.8rem;
+  color: var(--vermilion-dark);
+  margin-bottom: 4px;
+}
+
+.event-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--vermilion);
+}
+
+/* 政策列表 */
+.policy-section {
+  margin-top: 16px;
+}
+
+.policy-item {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.policy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.policy-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--azure-blue);
+}
+
+.policy-time {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.policy-bar {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.policy-bar-fill {
+  height: 100%;
+  background: var(--jade-green);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* 印章装饰 */
+.seal-decoration {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  opacity: 0.15;
+  background: var(--vermilion);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--paper-ivory);
+  font-family: 'ZCOOL XiaoWei', serif;
+  transform: rotate(-15deg);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 流云背景动画 */
+.cloud-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(255, 248, 225, 0.4) 0%, transparent 40%);
+  animation: cloud-drift 20s infinite linear;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes cloud-drift {
+  from {
+    transform: translate(-25%, -25%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+/* 淡入动画 */
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式调整 */
+@media (max-width: 400px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-card {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  .era-title {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+  }
+}

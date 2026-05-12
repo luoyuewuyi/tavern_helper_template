@@ -1,0 +1,25 @@
+---
+变量输出格式:
+  rule:
+    - you must output the update analysis and the actual update commands at once in the end of the next reply
+    - the update commands works like the JSON Patch standard, must be a valid JSON array containing operation objects, but supports replace, delta, insert, remove and move
+    - don't update field names starts with `_` as they are readonly
+    - write variable paths in Chinese exactly as shown in the current variable block
+    - when a task rewards skill experience, first add it to 系统.待分配技能经验 unless the player already named the target skill
+  format: |-
+    <UpdateVariable>
+    <Analysis>$(IN ENGLISH, no more than 80 words)
+    - ${calculate time passed: ...}
+    - ${decide whether task/skill/person/world updates are needed: ...}
+    - ${analyze each changed variable according only to current reply: ...}
+    </Analysis>
+    <JSONPatch>
+    [
+      { "op": "replace", "path": "${/path/to/variable}", "value": "${new_value}" },
+      { "op": "delta", "path": "${/path/to/number/variable}", "value": ${positive_or_negative_number} },
+      { "op": "insert", "path": "${/path/to/object/new_key}", "value": ${new_value_object_or_string} },
+      { "op": "remove", "path": "${/path/to/object/key}" },
+      { "op": "move", "from": "${/path/to/variable}", "to": "${/path/to/another/path}" }
+    ]
+    </JSONPatch>
+    </UpdateVariable>

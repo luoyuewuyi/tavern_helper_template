@@ -1,0 +1,123 @@
+
+> @ build E:\jiuguanzhushou
+> webpack --mode production
+
+[36m[schema_dump][0m 宸插皢鎵€鏈?schema.ts 杞崲涓?schema.json
+[36m[tavern_sync][0m > @ sync E:\jiuguanzhushou
+[36m[tavern_sync][0m > node tavern_sync.mjs "bundle" "瑗垮够寮傜晫鍐掗櫓"
+
+[36m[tavern_sync][0m 鎴愬姛灏嗚鑹插崱 '瑗垮够寮傜晫鍐掗櫓' 鎵撳寘鍒?'E:\jiuguanzhushou\src\瑗垮够寮傜晫鍐掗櫓\瑗垮够寮傜晫鍐掗櫓.png' 涓?[36m[tavern_sync][0m > @ sync E:\jiuguanzhushou
+[36m[tavern_sync][0m > node tavern_sync.mjs "bundle" "绁炵伒淇′话"
+
+[36m[tavern_sync][0m 鎴愬姛灏嗚鑹插崱 '绁炵伒淇′话' 鎵撳寘鍒?'E:\jiuguanzhushou\src\绁炵伒淇′话\绁炵伒淇′话.png' 涓?[36m[tavern_sync][0m > @ sync E:\jiuguanzhushou
+[36m[tavern_sync][0m > node tavern_sync.mjs "bundle" "鎴橀緳鍥涢┍"
+
+[36m[tavern_sync][0m 鎴愬姛灏嗚鑹插崱 '鎴橀緳鍥涢┍' 鎵撳寘鍒?'E:\jiuguanzhushou\src\鎴橀緳鍥涢┍\鎴橀緳鍥涢┍.png' 涓?[36m[tavern_sync][0m > @ sync E:\jiuguanzhushou
+[36m[tavern_sync][0m > node tavern_sync.mjs "bundle" "寮傝兘"
+
+[36m[tavern_sync][0m 鎴愬姛灏嗚鑹插崱 '寮傝兘' 鎵撳寘鍒?'E:\jiuguanzhushou\src\寮傝兘\寮傝兘.png' 涓?[36m[tavern_sync][0m > @ sync E:\jiuguanzhushou
+[36m[tavern_sync][0m > node tavern_sync.mjs "bundle" "澶у灏忓"
+
+[36m[tavern_sync][0m 鎴愬姛灏嗚鑹插崱 '澶у灏忓' 鎵撳寘鍒?'E:\jiuguanzhushou\src\澶у灏忓\澶у灏忓.png' 涓?[36m[tavern_sync][0m > @ sync E:\jiuguanzhushou
+[36m[tavern_sync][0m > node tavern_sync.mjs "bundle" "鍞垜鐙硶"
+
+[36m[tavern_sync][0m 鎴愬姛灏嗚鑹插崱 '鍞垜鐙硶' 鎵撳寘鍒?'E:\jiuguanzhushou\src\鍞垜鐙硶\鍞垜鐙硶.png' 涓?[36m[tavern_sync][0m 宸叉墦鍖?src 涓殑椤圭洰: 瑗垮够寮傜晫鍐掗櫓, 绁炵伒淇′话, 鎴橀緳鍥涢┍, 寮傝兘, 澶у灏忓, 鍞垜鐙硶
+asset [1m[32mindex.js[39m[22m 6.07 KiB [1m[33m[compared for emit][39m[22m [javascript module] [1m[32m[minimized][39m[22m (name: main) 1 related asset
+orphan modules 7.33 KiB [1m[33m[orphan][39m[22m 3 modules
+[1m./src/瑗垮够寮傜晫鍐掗櫓/鑴氭湰/鍙橀噺缁撴瀯/index.ts + 3 modules[39m[22m 7.52 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 1266 ms
+
+asset [1m[32mindex.js[39m[22m 89 bytes [1m[33m[compared for emit][39m[22m [javascript module] [1m[32m[minimized][39m[22m (name: main)
+orphan modules 42 bytes [1m[33m[orphan][39m[22m 1 module
+[1m./src/瑗垮够寮傜晫鍐掗櫓/鑴氭湰/MVU/index.ts + 1 modules[39m[22m 133 bytes [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 1078 ms
+
+asset [1m[32mindex.js.map[39m[22m 112 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+asset [1m[32mindex.html[39m[22m 29.8 KiB [1m[33m[compared for emit][39m[22m
+asset [1m[32mmain.css.map[39m[22m 5.27 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+Entrypoint [1mmain[39m[22m 0 bytes (117 KiB) = [1m[32mmain.css[39m[22m 0 bytes [1m[32mindex.js[39m[22m 0 bytes 2 auxiliary assets
+orphan modules 342 KiB (javascript) 1.83 KiB (runtime) [1m[33m[orphan][39m[22m 27 modules
+built modules 87.7 KiB (javascript) 5.79 KiB (css/mini-extract) [1m[33m[built][39m[22m
+  javascript modules 87.7 KiB
+    [1m./src/瑗垮够寮傜晫鍐掗櫓/鐣岄潰/鐘舵€佹爮/index.ts + 11 modules[39m[22m 87.4 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfea...(truncated)[39m[22m 328 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  css modules 5.79 KiB
+    css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-88.use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js![1m./src/瑗垮够寮傜晫鍐掗櫓/鐣岄潰/鐘舵€佹爮/global.css[39m[22m 62 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-87.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.105.4/node_modules/sass-loader/dist/cjs.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[6].use[0]![1m./src/瑗垮够寮傜晫鍐掗櫓/鐣岄潰/鐘舵€佹爮/App.vue?vue&type=style&index=0&id=3270284d&scoped=...(truncated)[39m[22m 5.73 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 3308 ms
+
+asset [1m[32mindex.js.map[39m[22m 77.4 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+asset [1m[32mindex.html[39m[22m 15.6 KiB [1m[33m[compared for emit][39m[22m
+asset [1m[32mmain.css.map[39m[22m 3.01 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+Entrypoint [1mmain[39m[22m 0 bytes (80.4 KiB) = [1m[32mmain.css[39m[22m 0 bytes [1m[32mindex.js[39m[22m 0 bytes 2 auxiliary assets
+orphan modules 312 KiB (javascript) 937 bytes (runtime) [1m[33m[orphan][39m[22m 21 modules
+built modules 63.5 KiB (javascript) 2.92 KiB (css/mini-extract) [1m[33m[built][39m[22m
+  [1m./src/瑗垮够寮傜晫鍐掗櫓/鐣岄潰/寮€灞€/index.ts + 11 modules[39m[22m 63.1 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfea...(truncated)[39m[22m 328 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-119.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.105.4/node_modules/sass-loader/dist/cjs.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[6].use[0]![1m./src/瑗垮够寮傜晫鍐掗櫓/鐣岄潰/寮€灞€/App.vue?vue&type=style&index=0&id=788be352&scoped=...(truncated)[39m[22m 2.92 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 3425 ms
+
+asset [1m[32mindex.js[39m[22m 13 KiB [1m[33m[compared for emit][39m[22m [javascript module] [1m[32m[minimized][39m[22m (name: main) 1 related asset
+orphan modules 18.4 KiB [1m[33m[orphan][39m[22m 3 modules
+[1m./src/绁炵伒淇′话/鑴氭湰/鍙橀噺缁撴瀯/index.ts + 3 modules[39m[22m 18.6 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 1604 ms
+
+asset [1m[32mindex.js[39m[22m 89 bytes [1m[33m[compared for emit][39m[22m [javascript module] [1m[32m[minimized][39m[22m (name: main)
+orphan modules 42 bytes [1m[33m[orphan][39m[22m 1 module
+[1m./src/绁炵伒淇′话/鑴氭湰/MVU/index.ts + 1 modules[39m[22m 133 bytes [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 1069 ms
+
+asset [1m[32mindex.js.map[39m[22m 114 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+asset [1m[32mindex.html[39m[22m 32.2 KiB [1m[33m[compared for emit][39m[22m
+asset [1m[32mmain.css.map[39m[22m 5.68 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+Entrypoint [1mmain[39m[22m 0 bytes (120 KiB) = [1m[32mmain.css[39m[22m 0 bytes [1m[32mindex.js[39m[22m 0 bytes 2 auxiliary assets
+orphan modules 344 KiB (javascript) 1.83 KiB (runtime) [1m[33m[orphan][39m[22m 27 modules
+built modules 90.8 KiB (javascript) 4.97 KiB (css/mini-extract) [1m[33m[built][39m[22m
+  javascript modules 90.8 KiB
+    [1m./src/绁炵伒淇′话/鐣岄潰/鐘舵€佹爮/index.ts + 11 modules[39m[22m 90.5 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfea...(truncated)[39m[22m 328 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  css modules 4.97 KiB
+    css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-224.use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js![1m./src/绁炵伒淇′话/鐣岄潰/鐘舵€佹爮/global.css[39m[22m 74 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-223.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.105.4/node_modules/sass-loader/dist/cjs.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[6].use[0]![1m./src/绁炵伒淇′话/鐣岄潰/鐘舵€佹爮/App.vue?vue&type=style&index=0&id=ef667642&lang=sc...(truncated)[39m[22m 4.9 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 3325 ms
+
+asset [1m[32mindex.js.map[39m[22m 101 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+asset [1m[32mindex.html[39m[22m 24.3 KiB [1m[33m[compared for emit][39m[22m
+asset [1m[32mmain.css.map[39m[22m 3.15 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+Entrypoint [1mmain[39m[22m 0 bytes (104 KiB) = [1m[32mmain.css[39m[22m 0 bytes [1m[32mindex.js[39m[22m 0 bytes 2 auxiliary assets
+orphan modules 329 KiB (javascript) 937 bytes (runtime) [1m[33m[orphan][39m[22m 21 modules
+built modules 81.9 KiB (javascript) 2.37 KiB (css/mini-extract) [1m[33m[built][39m[22m
+  [1m./src/绁炵伒淇′话/鐣岄潰/寮€灞€/index.ts + 11 modules[39m[22m 81.6 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfea...(truncated)[39m[22m 328 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-255.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.105.4/node_modules/sass-loader/dist/cjs.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[6].use[0]![1m./src/绁炵伒淇′话/鐣岄潰/寮€灞€/App.vue?vue&type=style&index=0&id=04b0a814&scoped=...(truncated)[39m[22m 2.37 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 3525 ms
+
+asset [1m[32mindex.js.map[39m[22m 26 KiB [1m[32m[emitted][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+asset [1m[32mindex.html[39m[22m 12.1 KiB [1m[32m[emitted][39m[22m
+asset [1m[32mmain.css.map[39m[22m 5.28 KiB [1m[32m[emitted][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+Entrypoint [1mmain[39m[22m 0 bytes (31.3 KiB) = [1m[32mmain.css[39m[22m 0 bytes [1m[32mindex.js[39m[22m 0 bytes 2 auxiliary assets
+orphan modules 32.8 KiB (javascript) 937 bytes (runtime) [1m[33m[orphan][39m[22m 14 modules
+built modules 19.1 KiB (javascript) 3.87 KiB (css/mini-extract) [1m[33m[built][39m[22m
+  [1m./src/鎴橀緳鍥涢┍/鐣岄潰/寮€灞€/index.ts + 5 modules[39m[22m 18.8 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfea...(truncated)[39m[22m 328 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-287.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.105.4/node_modules/sass-loader/dist/cjs.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[6].use[0]![1m./src/鎴橀緳鍥涢┍/鐣岄潰/寮€灞€/App.vue?vue&type=style&index=0&id=fcaac194&scoped=...(truncated)[39m[22m 3.87 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 3336 ms
+
+asset [1m[32mindex.js[39m[22m 3.61 KiB [1m[33m[compared for emit][39m[22m [javascript module] [1m[32m[minimized][39m[22m (name: main) 1 related asset
+orphan modules 4.97 KiB [1m[33m[orphan][39m[22m 3 modules
+[1m./src/鍞垜鐙硶/鑴氭湰/鍙橀噺缁撴瀯/index.ts + 3 modules[39m[22m 5.17 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 1260 ms
+
+asset [1m[32mindex.js.map[39m[22m 169 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+asset [1m[32mindex.html[39m[22m 57.4 KiB [1m[33m[compared for emit][39m[22m
+asset [1m[32mmain.css.map[39m[22m 17.5 KiB [1m[33m[compared for emit][39m[22m [1m[32m[dev][39m[22m (auxiliary name: main)
+Entrypoint [1mmain[39m[22m 0 bytes (186 KiB) = [1m[32mmain.css[39m[22m 0 bytes [1m[32mindex.js[39m[22m 0 bytes 2 auxiliary assets
+orphan modules 403 KiB (javascript) 1.83 KiB (runtime) [1m[33m[orphan][39m[22m 27 modules
+built modules 127 KiB (javascript) 14.8 KiB (css/mini-extract) [1m[33m[built][39m[22m
+  javascript modules 127 KiB
+    [1m./src/鍞垜鐙硶/鐣岄潰/鐘舵€佹爮/index.ts + 11 modules[39m[22m 127 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfea...(truncated)[39m[22m 328 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  css modules 14.8 KiB
+    css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-356.use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js![1m./src/鍞垜鐙硶/鐣岄潰/鐘舵€佹爮/global.css[39m[22m 1.27 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    css ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.105.4/node_modules/css-loader/dist/cjs.js??clonedRuleSet-355.use[1]!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/.pnpm/postcss-loader@8.2.1_postcs_573c693b26ed8a63fa04ed4bde0c41f8/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@16.0.7_sass@1.97.3_webpack@5.105.4/node_modules/sass-loader/dist/cjs.js!./node_modules/.pnpm/vue-loader@17.4.2_vue@3.5.2_820702ed2b0749ac28597c0a117dfead/node_modules/vue-loader/dist/index.js??ruleSet[1].rules[6].use[0]![1m./src/鍞垜鐙硶/鐣岄潰/鐘舵€佹爮/App.vue?vue&type=style&index=0&id=803989de&scoped=...(truncated)[39m[22m 13.5 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.105.4 compiled [1m[32msuccessfully[39m[22m in 3507 ms

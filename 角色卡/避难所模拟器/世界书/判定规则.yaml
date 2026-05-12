@@ -1,0 +1,331 @@
+{
+  "systemName": "核心判定系统 (Core Judgment System)",
+  "version": "1.0",
+  "coreFormula": {
+    "description": "所有不确定结果的事件判定公式",
+    "formula": "Result = 1d100 + AttributeBonus + LuckBonus",
+    "judgmentRules": {
+      "success": {
+        "condition": "Result >= DC",
+        "description": "成功 (Success)"
+      },
+      "failure": {
+        "condition": "Result < DC",
+        "description": "失败 (Failure)"
+      },
+      "criticalSuccess": {
+        "conditions": [
+          {
+            "type": "naturalRoll",
+            "range": [96, 100],
+            "description": "自然投掷为 96-100"
+          },
+          {
+            "type": "exceedThreshold",
+            "threshold": 50,
+            "description": "总结果超过 DC 50点以上"
+          }
+        ],
+        "description": "大成功 (Critical Success)"
+      },
+      "criticalFailure": {
+        "condition": {
+          "type": "naturalRoll",
+          "range": [1, 5],
+          "description": "自然投掷为 1-5"
+        },
+        "exemption": {
+          "condition": "属性值 >= 11",
+          "effect": "豁免大失败，视为普通失败或根据数值强制成功"
+        },
+        "description": "大失败 (Critical Failure)"
+      }
+    }
+  },
+  "attributeBonusTable": {
+    "description": "S型平滑增长曲线设计，解决 6-7（优秀）与 8（专家）之间的断层",
+    "designPurpose": "7点属性足以应对大部分常规挑战，而 8点属性则是挑战高难度事件的分水岭",
+    "bonuses": [
+      {
+        "value": [1, 2],
+        "tier": "残障/缺陷",
+        "tierEn": "Disabled",
+        "bonus": -30,
+        "analysis": "累赘。不仅无法提供帮助，还会因为笨拙导致大概率失败。"
+      },
+      {
+        "value": [3, 4],
+        "tier": "弱势",
+        "tierEn": "Weak",
+        "bonus": -10,
+        "analysis": "短板。需要极好的运气才能勉强完成普通任务。"
+      },
+      {
+        "value": 5,
+        "tier": "凡人",
+        "tierEn": "Base",
+        "bonus": 5,
+        "analysis": "基准。面对 DC 50 的简单任务有 55% 胜率。",
+        "isBaseline": true
+      },
+      {
+        "value": 6,
+        "tier": "熟练",
+        "tierEn": "Skilled",
+        "bonus": 20,
+        "analysis": "合格。面对 DC 70 的常规任务有 50% 胜率。"
+      },
+      {
+        "value": 7,
+        "tier": "精英",
+        "tierEn": "Elite",
+        "bonus": 38,
+        "analysis": "中坚。面对 DC 70 的常规任务有 68% 胜率（非常稳）。面对 DC 100 只有 38% 胜率（需赌运气）。",
+        "isKeyTier": true
+      },
+      {
+        "value": 8,
+        "tier": "专家",
+        "tierEn": "Expert",
+        "bonus": 58,
+        "analysis": "质变点。面对 DC 100 的困难任务有 58% 胜率（优势在我）。",
+        "isKeyTier": true
+      },
+      {
+        "value": 9,
+        "tier": "传奇/领袖",
+        "tierEn": "Legendary",
+        "bonus": 80,
+        "analysis": "统治力。常规任务几乎不会失败，困难任务胜率极高。"
+      },
+      {
+        "value": 10,
+        "tier": "巅峰",
+        "tierEn": "Peak",
+        "bonus": 105,
+        "analysis": "极限。只有极难任务才构成挑战。"
+      },
+      {
+        "value": 11,
+        "tier": "半神",
+        "tierEn": "Demigod",
+        "bonus": 140,
+        "analysis": "规则外。豁免大失败，碾压一切物理规则。",
+        "specialAbility": "exemptCriticalFailure"
+      },
+      {
+        "value": 12,
+        "tier": "因果律",
+        "tierEn": "God",
+        "bonus": 200,
+        "analysis": "剧本杀。结果已定，检定只是为了看你有多帅。",
+        "isMaxTier": true
+      }
+    ]
+  },
+  "luckSystem": {
+    "description": "幸运是全域修正值，用于微调胜率，或者在绝境中创造奇迹",
+    "formula": "LuckBonus = (Luck - 5) × 7",
+    "logic": "以 5 为零点，每增减 1 点，修正 7 值",
+    "zeroPoint": 5,
+    "multiplier": 7,
+    "luckBonuses": [
+      {
+        "value": 1,
+        "bonus": -28,
+        "description": "霉运当头。喝凉水塞牙，能把 70% 的胜率拉低到 42%。"
+      },
+      {
+        "value": 3,
+        "bonus": -14,
+        "description": "水逆。总会遇到一些小麻烦。"
+      },
+      {
+        "value": 5,
+        "bonus": 0,
+        "description": "普通。命运的天平是公平的。",
+        "isBaseline": true
+      },
+      {
+        "value": 8,
+        "bonus": 21,
+        "description": "强运。相当于给属性凭空升了 1 级（如 Stat 6 变 Stat 7 效果）。"
+      },
+      {
+        "value": 10,
+        "bonus": 35,
+        "description": "位面之子。能把 50% 的胜率强行拉升到 85%。"
+      },
+      {
+        "value": 12,
+        "bonus": 49,
+        "description": "奇迹。即便你是属性 5 的凡人，也能通过运气达成专家的成就。"
+      }
+    ]
+  },
+  "difficultyClasses": {
+    "description": "该表适用于所有属性（S.P.E.C.I.A.L）的判定",
+    "applicableAttributes": ["Strength", "Perception", "Endurance", "Charisma", "Intelligence", "Agility", "Luck"],
+    "levels": [
+      {
+        "level": "琐事",
+        "levelEn": "Trivial",
+        "dc": 30,
+        "description": "几乎不需要思考",
+        "examples": [
+          {
+            "attribute": "S",
+            "example": "搬起一箱罐头"
+          },
+          {
+            "attribute": "I",
+            "example": "算出 1+1"
+          }
+        ],
+        "recommendedAttribute": {
+          "range": [1, 2],
+          "successRate": "50%"
+        }
+      },
+      {
+        "level": "简单",
+        "levelEn": "Easy",
+        "dc": 50,
+        "description": "受过基础教育或训练即可完成",
+        "examples": [
+          {
+            "attribute": "I",
+            "example": "修理漏水的水管"
+          },
+          {
+            "attribute": "C",
+            "example": "和邻居打个招呼"
+          }
+        ],
+        "recommendedAttribute": {
+          "value": 5,
+          "tier": "凡人 (Base)",
+          "successRate": "50%"
+        }
+      },
+      {
+        "level": "常规",
+        "levelEn": "Normal",
+        "dc": 75,
+        "description": "需要一定专业能力。失败是常态。",
+        "examples": [
+          {
+            "attribute": "A",
+            "example": "射中百米外的移动靶"
+          },
+          {
+            "attribute": "P",
+            "example": "察觉商人在卖假货"
+          }
+        ],
+        "recommendedAttribute": {
+          "range": [6, 7],
+          "tier": "精英区",
+          "note": "Stat 7 在此非常稳健",
+          "successRate": "50%"
+        }
+      },
+      {
+        "level": "困难",
+        "levelEn": "Hard",
+        "dc": 100,
+        "description": "专家的领域。普通人几乎无法完成。",
+        "examples": [
+          {
+            "attribute": "C",
+            "example": "威慑一名军阀"
+          },
+          {
+            "attribute": "I",
+            "example": "破解战前军用终端"
+          }
+        ],
+        "recommendedAttribute": {
+          "value": 8,
+          "tier": "专家区",
+          "note": "Stat 7 需配合高运气",
+          "successRate": "50%"
+        }
+      },
+      {
+        "level": "极难",
+        "levelEn": "Extreme",
+        "dc": 135,
+        "description": "人类极限的挑战",
+        "examples": [
+          {
+            "attribute": "E",
+            "example": "赤身裸体在辐射废土生存一周"
+          },
+          {
+            "attribute": "S",
+            "example": "徒手掰弯监狱铁栏"
+          }
+        ],
+        "recommendedAttribute": {
+          "range": [9, 10],
+          "tier": "传奇区",
+          "successRate": "50%"
+        }
+      },
+      {
+        "level": "史诗",
+        "levelEn": "Heroic",
+        "dc": 170,
+        "description": "凡人眼中的神迹，只有传说能做到",
+        "examples": [
+          {
+            "attribute": "L",
+            "example": "俄罗斯轮盘赌连赢6把"
+          },
+          {
+            "attribute": "I",
+            "example": "手搓核聚变反应堆"
+          },
+          {
+            "attribute": "A",
+            "example": "用剑挡住子弹"
+          }
+        ],
+        "recommendedAttribute": {
+          "value": 11,
+          "tier": "半神区",
+          "successRate": "50%"
+        }
+      },
+      {
+        "level": "神话",
+        "levelEn": "Mythic",
+        "dc": 220,
+        "description": "违背物理法则或因果律",
+        "examples": [
+          {
+            "attribute": "C",
+            "example": "一个眼神吓死千军万马"
+          }
+        ],
+        "recommendedAttribute": {
+          "value": 12,
+          "tier": "因果律",
+          "successRate": "50%"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "createdDate": "2026-01-21",
+    "gameSystem": "SPECIAL-based",
+    "curveType": "S-curve (Smooth Growth)",
+    "keyDesignPrinciples": [
+      "7点属性足以应对大部分常规挑战",
+      "8点属性是挑战高难度事件的分水岭",
+      "幸运作为全域修正值微调胜率",
+      "11点属性豁免大失败"
+    ]
+  }
+}

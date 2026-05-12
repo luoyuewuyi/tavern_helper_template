@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: #0a0c0b;
+  --color-bg-card: #121614;
+  --color-border-dim: #1e2621;
+  --color-text-primary: #e0e6e2;
+  --color-text-dim: #8a968f;
+  --color-accent-green: #00ff66;
+  --color-accent-amber: #ffb347;
+  --color-accent-blue: #00e5ff;
+  --color-hazard-low: #00ff66;
+  --color-hazard-mid: #ffcc00;
+  --color-hazard-high: #ff4444;
+
+  --font-sans: "Helvetica Neue", Arial, "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Courier New', Courier, "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+}

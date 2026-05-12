@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 暗夜猎手风格（调亮版） */
+  --c-deep: #1a1218;
+  --c-dark: #251a22;
+  --c-dark-alt: #2e2028;
+  --c-surface: #3a2830;
+  --c-wine: #6e3545;
+  --c-wine-bright: #a04a5e;
+  --c-crimson: #d45570;
+  --c-gold: #e0b878;
+  --c-gold-bright: #f5d898;
+  --c-gold-dim: #a08a65;
+  --c-text: #f0e6da;
+  --c-text-dim: #b8a898;
+  --c-text-faint: #8a7868;
+  --c-bar-start: #9e4545;
+  --c-bar-mid: #d45570;
+  --c-bar-end: #f07080;
+  --c-border: rgba(200, 140, 110, 0.2);
+  --c-border-bright: rgba(225, 185, 130, 0.35);
+  --c-glow: rgba(212, 85, 112, 0.45);
+  --c-glow-gold: rgba(224, 184, 120, 0.3);
+
+  /* 字体 */
+  --font-main: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  --font-title: 'Georgia', 'Noto Serif SC', 'Microsoft YaHei', serif;
+}
+
+/* 全局滚动条美化 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-wine);
+  border-radius: 2px;
+}

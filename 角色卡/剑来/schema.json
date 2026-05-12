@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "天下": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "当前事件": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "当前事件"
+      ]
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "type": "string"
+        },
+        "年龄": {
+          "type": "number"
+        },
+        "性别": {
+          "type": "string"
+        },
+        "境界": {
+          "type": "string"
+        },
+        "修炼流派": {
+          "type": "string"
+        },
+        "气运": {
+          "type": "number"
+        },
+        "物品栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "描述",
+              "数量"
+            ]
+          }
+        }
+      },
+      "required": [
+        "姓名",
+        "年龄",
+        "性别",
+        "境界",
+        "修炼流派",
+        "气运",
+        "物品栏"
+      ]
+    },
+    "人物关系": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "人物名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "境界": {
+            "type": "string"
+          },
+          "好感度": {
+            "type": "number"
+          },
+          "当前状态": {
+            "type": "string"
+          },
+          "内心活动": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "境界",
+          "好感度",
+          "当前状态",
+          "内心活动"
+        ]
+      }
+    }
+  },
+  "required": [
+    "天下",
+    "user",
+    "人物关系"
+  ]
+}

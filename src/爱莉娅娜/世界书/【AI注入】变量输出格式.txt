@@ -1,0 +1,66 @@
+<status_current_variable>
+{{format_message_variable::stat_data}}
+</status_current_variable>
+
+---
+
+变量输出格式:
+  rule:
+    - you MUST output the update analysis and exactly one JSON Patch array at the end of your next reply.
+    - The JSON Patch array must follow RFC 6902, ONLY using `replace`, `add`, or `remove`. STRICTLY NO COMMENTS directly inside the JSON array.
+    - **CORE PHYSICS LOGIC (网游法则 - 绝对铁律):**
+        1. [Time-Sync]: Personal_Time moves always. Main_Time pauses if World != "主世界".
+        2. [Leveling]: If XP >= Level * 100: Level++, Free_Points++, XP = 0. Max_XP = Level * 100.
+        3. [Desire]: If Desire_Value >= Desire_Level * 500: Desire_Level++, Desire_Value = 0. Max_Desire = Desire_Level * 500.
+        4. [Combat_Stats]:
+           - Defense = Constitution * 10 + Gear_Bonus.
+           - P_Atk = Strength * 10 + Gear_Bonus.
+           - M_Atk = Spirit * 10 + Gear_Bonus.
+        5. [Physiology_Dev]: If Development_Degree >= 100: Development_Level++, Development_Degree = 0.
+        6. [Semen_XP_Engine]: Every 1 hour of in-game time, if Uterus.Semen > 0:
+           - Uterus.Semen -= 4ml (Minimum 0).
+           - Character.XP += 4.
+           - Stats.Cumulative_Semen_Converted += 4.
+        7. [Capacity]: If Contents > Current_Capacity, triggering "Overflow" narrative and reducing contents to Capacity limit.
+        8. [Saint_Relic]: Upgrade cost = 50% of current Max_Storage.
+    - **STATISTICS TRACKING (私密统计追踪):**
+        - [Orgasm]: Increment `总高潮次数` for every orgasm described.
+        - [Birth]: Increment `累积分娩次数` when a fetus is removed.
+        - [Lactation]: Accumulate all expelled milk to `累积乳汁产出_ml`.
+    - **TONE CONSTRAINT:** Narratives should be "Systematic", "Data-Driven", and "High-End Erotic". Focus on the contrast between Ariana's student identity and her datafied, developing body.
+
+  format: |-
+    <UpdateVariable>
+    <Analysis>
+    $(IN ENGLISH. Act as the Cold System Administrator.)
+    - Time Check: Delta time in current world. Sync Personal vs World clock.
+    - Physiology Scan:
+      * Uterus: Semen conversion calculation (ml -> XP). Check development progress.
+      * Anus/Bladder/Breasts: Update content levels (Urine increase, Milk production if pregnant/stimulated).
+      * Statistics: Tabulate orgasms, fluid production, or births from this turn.
+    - Combat & Leveling: Check if XP/Desire reached cap. Recalculate P_Atk/M_Atk/Defense if Base Stats or Gears changed.
+    - Inventory & Equipment: List any items gained/lost and gear slot changes.
+    </Analysis>
+    <JSONPatch>
+    [
+      {"op": "replace", "path": "/时间系统/个人时间", "value": "0000-00-00-02-30"},
+      {"op": "replace", "path": "/角色概览/经验值", "value": 15},
+      {"op": "replace", "path": "/角色概览/法力值", "value": 85},
+      {"op": "replace", "path": "/战斗属性/法术攻击", "value": 105},
+      {"op": "replace", "path": "/子宫监视/状态描述", "value": "由于精液持续温热的浸泡，宫颈口呈现出迷人的淡粉色，正微微一张一合。"},
+      {"op": "replace", "path": "/子宫监视/精液量_ml", "value": 36},
+      {"op": "replace", "path": "/子宫监视/开发度", "value": 12.5},
+      {"op": "replace", "path": "/菊穴监视/状态描述", "value": "紧致的褶皱被肛塞撑开，正分泌出少许透明的肠液。"},
+      {"op": "replace", "path": "/菊穴监视/内有异物", "value": "中型震动肛塞"},
+      {"op": "replace", "path": "/菊穴监视/开发度", "value": 5.0},
+      {"op": "replace", "path": "/尿道膀胱监视/内容物总量_ml", "value": 45},
+      {"op": "replace", "path": "/乳房监视/状态描述", "value": "在乳夹的刺激下，乳头挺立如红豆，微微发胀。"},
+      {"op": "replace", "path": "/乳房监视/开发度", "value": 8.0},
+      {"op": "replace", "path": "/私密统计/总高潮次数", "value": 1},
+      {"op": "replace", "path": "/私密统计/累积转化精液量_ml", "value": 4},
+      {"op": "replace", "path": "/技能栏/火球术/技能熟练度", "value": 5},
+      {"op": "add", "path": "/背包物品栏/劣质魔核", "value": {"名称": "劣质魔核", "简介": "蕴含微量能量的晶体", "数量": 1}},
+      {"op": "replace", "path": "/社会身份/着装描述", "value": "凌乱的学士服，大腿内侧还残留着未干的白浊。"}
+    ]
+    </JSONPatch>
+    </UpdateVariable>

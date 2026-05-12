@@ -1,0 +1,483 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {},
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前日期": {
+          "default": "华夏穿越第3年·初春",
+          "type": "string"
+        },
+        "当前时段": {
+          "default": "上午",
+          "type": "string"
+        },
+        "当前地点": {
+          "default": "边锋镇·冒险者管理局",
+          "type": "string"
+        },
+        "天气": {
+          "default": "晴",
+          "type": "string"
+        },
+        "世界局势摘要": {
+          "default": "华夏结界持续衰退，缓冲区冒险者活动日益增多，各方势力开始渗透。",
+          "type": "string"
+        }
+      }
+    },
+    "主角": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "{{user}}",
+          "type": "string"
+        },
+        "年龄": {
+          "default": 22,
+          "type": "number"
+        },
+        "性别": {
+          "default": "男",
+          "type": "string",
+          "enum": [
+            "男",
+            "女"
+          ]
+        },
+        "身份": {
+          "default": "新注册冒险者",
+          "type": "string"
+        },
+        "修炼体系": {
+          "default": "古武",
+          "type": "string",
+          "enum": [
+            "古武",
+            "修仙",
+            "魔法",
+            "斗气",
+            "神术",
+            "妖修",
+            "鬼修",
+            "混合"
+          ]
+        },
+        "境界": {
+          "default": "高阶（3级）",
+          "type": "string"
+        },
+        "天赋": {
+          "default": "优秀",
+          "type": "string",
+          "enum": [
+            "废材",
+            "普通",
+            "良好",
+            "优秀",
+            "卓越",
+            "天纵之才",
+            "绝世天才"
+          ]
+        },
+        "属性": {
+          "default": "待觉醒",
+          "type": "string"
+        },
+        "生命值": {
+          "default": "健康",
+          "type": "string"
+        },
+        "信物": {
+          "default": "龙凤玉佩（刻有名字，来历不明）",
+          "type": "string"
+        },
+        "当前目标": {
+          "default": "在边锋镇注册冒险者，开始冒险生涯",
+          "type": "string"
+        }
+      }
+    },
+    "经济": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "铜币": {
+          "default": 500,
+          "type": "number"
+        },
+        "银币": {
+          "default": 30,
+          "type": "number"
+        },
+        "金币": {
+          "type": "number"
+        },
+        "灵石": {
+          "type": "number"
+        },
+        "华夏信用币": {
+          "default": 200,
+          "type": "number"
+        },
+        "收支摘要": {
+          "default": "积攒多年的盘缠，够维持半个月基本开销。",
+          "type": "string"
+        }
+      }
+    },
+    "物品栏": {
+      "default": {
+        "铁背刀": {
+          "数量": 1,
+          "描述": "普通铁刀，刃口锋利"
+        },
+        "低阶回复药剂": {
+          "数量": 3,
+          "描述": "恢复轻伤"
+        },
+        "干粮": {
+          "数量": 5,
+          "描述": "几天的口粮"
+        },
+        "龙凤玉佩": {
+          "数量": 1,
+          "描述": "信物，翠绿温润，一面雕龙一面刻凤"
+        }
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "物品名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "数量": {
+            "default": 1,
+            "type": "number"
+          },
+          "描述": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "装备栏": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "武器": {
+          "default": "铁背刀",
+          "type": "string"
+        },
+        "上装": {
+          "default": "华夏制式外套",
+          "type": "string"
+        },
+        "下装": {
+          "default": "耐磨长裤",
+          "type": "string"
+        },
+        "鞋子": {
+          "default": "军用作战鞋",
+          "type": "string"
+        },
+        "饰品": {
+          "default": "龙凤玉佩（贴身佩戴）",
+          "type": "string"
+        }
+      }
+    },
+    "好感度": {
+      "default": {
+        "韩霄": {
+          "对主角": {
+            "数值": 75,
+            "类型": "友情"
+          },
+          "主角对其": {
+            "数值": 75,
+            "类型": "友情"
+          }
+        },
+        "万峰": {
+          "对主角": {
+            "数值": 65,
+            "类型": "友情"
+          },
+          "主角对其": {
+            "数值": 65,
+            "类型": "友情"
+          }
+        },
+        "顾承安": {
+          "对主角": {
+            "数值": 30,
+            "类型": "友情"
+          },
+          "主角对其": {
+            "数值": 55,
+            "类型": "友情"
+          }
+        },
+        "叶青鸾": {
+          "对主角": {
+            "数值": 20,
+            "类型": "友情"
+          },
+          "主角对其": {
+            "数值": 15,
+            "类型": "友情"
+          }
+        },
+        "苏挽晴": {
+          "对主角": {
+            "数值": 15,
+            "类型": "友情"
+          },
+          "主角对其": {
+            "数值": 10,
+            "类型": "友情"
+          }
+        },
+        "主角母亲": {
+          "对主角": {
+            "数值": 0,
+            "类型": "友情"
+          },
+          "主角对其": {
+            "数值": 0,
+            "类型": "友情"
+          }
+        }
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色名"
+      },
+      "additionalProperties": {
+        "default": {},
+        "type": "object",
+        "properties": {
+          "对主角": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "主角对其": {
+            "$ref": "#/$defs/__schema0"
+          }
+        }
+      }
+    },
+    "后宫": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "后宫成员名"
+      },
+      "additionalProperties": {
+        "default": {},
+        "type": "object",
+        "properties": {
+          "身份": {
+            "type": "string"
+          },
+          "好感度等级": {
+            "default": 1,
+            "type": "number"
+          },
+          "当前状态": {
+            "type": "string"
+          },
+          "被黄毛觊觎程度": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "系统": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "系统名称": {
+          "default": "天命轮盘",
+          "type": "string"
+        },
+        "积分": {
+          "default": 100,
+          "type": "number"
+        },
+        "当前称号": {
+          "default": "初出茅庐",
+          "type": "string"
+        },
+        "称号效果": {
+          "default": "无特殊效果",
+          "type": "string"
+        },
+        "已解锁技能": {
+          "default": {
+            "源力感知": {
+              "等级": "初级",
+              "描述": "感知周围源力波动，探测10米内的源力生物"
+            },
+            "基础话术": {
+              "等级": "初级",
+              "描述": "社交时对方好感度增幅+1"
+            }
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "技能名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "等级": {
+                "default": "初级",
+                "type": "string"
+              },
+              "描述": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "当前任务": {
+          "default": {
+            "冒险者注册": {
+              "类型": "主线",
+              "目标": "前往边锋镇冒险者管理局完成登记",
+              "奖励": "50积分、F级冒险者证",
+              "状态": "进行中"
+            }
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "任务名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "类型": {
+                "default": "支线",
+                "type": "string"
+              },
+              "目标": {
+                "type": "string"
+              },
+              "奖励": {
+                "type": "string"
+              },
+              "状态": {
+                "default": "进行中",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "商城摘要": {
+          "default": "可兑换：低阶回复药剂(10积分)、源力感知升级(50积分)、初级魅力光环称号(100积分)",
+          "type": "string"
+        },
+        "最近系统消息": {
+          "default": "【天命轮盘】绑定成功！欢迎宿主，你的精彩人生从此刻开始~",
+          "type": "string"
+        }
+      }
+    },
+    "NPC动态": {
+      "default": {
+        "韩霄": {
+          "当前位置": "边锋镇·流火酒馆",
+          "当前行动": "喝酒搭讪酒馆女侍",
+          "对主角态度": "兄弟，无条件支持"
+        },
+        "万峰": {
+          "当前位置": "边锋镇·训练场",
+          "当前行动": "练拳",
+          "对主角态度": "如同亲弟弟"
+        },
+        "顾承安": {
+          "当前位置": "边锋镇·客栈",
+          "当前行动": "独自研究地图",
+          "对主角态度": "表面亲近，暗中观察"
+        }
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "NPC名"
+      },
+      "additionalProperties": {
+        "default": {},
+        "type": "object",
+        "properties": {
+          "当前位置": {
+            "type": "string"
+          },
+          "当前行动": {
+            "type": "string"
+          },
+          "对主角态度": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "日志": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "最近事件": {
+          "default": [
+            "抵达边锋镇",
+            "系统「天命轮盘」绑定激活"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "最近系统提示": {
+          "default": [
+            "初始积分100已到账",
+            "主线任务「冒险者注册」已开启"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "__schema0": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "数值": {
+          "type": "number"
+        },
+        "类型": {
+          "default": "友情",
+          "type": "string",
+          "enum": [
+            "友情",
+            "爱情",
+            "亲情"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+:root {
+  color-scheme: dark;
+  --terminal-bg: radial-gradient(circle at top, rgba(32, 71, 61, 0.24), transparent 42%), #08110f;
+  --terminal-surface: rgba(8, 20, 18, 0.92);
+  --terminal-panel: rgba(13, 31, 27, 0.9);
+  --terminal-panel-strong: rgba(17, 41, 35, 0.96);
+  --terminal-line: rgba(127, 255, 214, 0.18);
+  --terminal-line-strong: rgba(127, 255, 214, 0.36);
+  --terminal-text: #e9fff7;
+  --terminal-muted: #98b8ad;
+  --terminal-accent: #8effca;
+  --terminal-warn: #ffd166;
+  --terminal-danger: #ff7d7d;
+  --terminal-cyan: #82d8ff;
+  --terminal-shadow: 0 22px 48px rgba(0, 0, 0, 0.42);
+  --font-sans: 'IBM Plex Sans SC', 'Noto Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(142, 255, 202, 0.05), transparent 26%),
+    linear-gradient(135deg, rgba(130, 216, 255, 0.06), transparent 42%),
+    var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

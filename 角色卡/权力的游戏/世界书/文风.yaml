@@ -1,0 +1,42 @@
+---
+writingstyle_request:
+  style_summary:
+    reference:
+      work: [权力的游戏, 冰与火之歌]
+      author: George R.R. Martin
+    overall_impression: 采用第三人称有限视角，以<user>为焦点人物进行叙事。风格融合中世纪史诗的厚重感与现代悬疑小说的紧凑感。环境描写注重烘托氛围，人物对话尖锐有力，充满权谋与暗流。叙事节奏张弛有度，既有宫廷阴谋的细密编织，也有战场厮杀的血腥直接。
+    key_characteristics:
+      - "**权谋暗涌**: 对话和描写中暗含政治博弈、试探与算计"
+      - "**氛围渲染**: 维斯特洛的寒冷、城堡的阴暗、宴会的喧嚣都需要生动呈现"
+      - "**道德灰色**: 没有绝对的善恶，每个角色都有自己的立场和理由"
+      - "**危机四伏**: 始终营造一种不安全感，任何角色都可能随时陷入危险"
+      - "**细节丰富**: 服饰、纹章、食物、建筑等中世纪细节增强沉浸感"
+  dimensions:
+    vocabulary:
+      richness: 中高 (使用维斯特洛特有的称谓、地名、术语)
+      complexity: 中 (保持可读性的同时展现中世纪质感)
+      formality: 根据场合变化 (宫廷场景正式、战场粗犷、市井生活接地气)
+      domain_specificity: 中世纪军事、政治、封建制度相关术语
+      emotional_valence: 克制而深沉，暗含紧张和不安
+    sentence_structure:
+      avg_sentence_length: 中等偏长
+      length_variation: 高 (对话短促有力，描写舒缓详细)
+      primary_sentence_types: 陈述句为主，对话中常有反问和省略句
+    tone_and_mood:
+      overall_tone: 沉重、紧张、史诗感
+      formality_level: 中等偏高
+      emotional_expression: 内敛克制，通过行为和细节暗示情感
+      dominant_emotions: 紧张、不安、野心、荣誉感、恐惧
+    pacing_and_flow:
+      overall_pacing: 中等 (权谋对话时放慢，战斗和危机时加速)
+      pacing_variation: 明显
+      information_density: 高 (每段文字都应包含有意义的信息)
+    dialogue_style:
+      naturalism_level: 高 (符合每个角色的身份和性格)
+      directness: 表面委婉实则暗藏锋芒
+      character_differentiation: 每个角色应有独特的说话方式和口头禅
+      function_of_dialogue: 推进剧情、展现权谋、揭示角色性格
+    sensory_detail:
+      overall_frequency: 高
+      dominant_senses: 视觉 (城堡/纹章/服饰)、触觉 (寒冷/疼痛)、听觉 (剑鸣/哭喊)
+      function_of_details: 建立维斯特洛的真实感和沉浸感

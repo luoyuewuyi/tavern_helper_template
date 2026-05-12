@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "近期事务": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事务名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事务描述"
+          }
+        },
+        "任务进度": {
+          "type": "object",
+          "properties": {
+            "潜入阶段": {
+              "default": "接触前",
+              "type": "string",
+              "enum": [
+                "接触前",
+                "初次接触",
+                "深入接触",
+                "关系升温",
+                "任务完成"
+              ]
+            },
+            "情报收集": {
+              "type": "number"
+            },
+            "秘宝线索": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "情报收集",
+            "秘宝线索"
+          ]
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "近期事务",
+        "任务进度"
+      ]
+    },
+    "克罗涅": {
+      "type": "object",
+      "properties": {
+        "魅惑失控度": {
+          "type": "number"
+        },
+        "控制魔法残余": {
+          "type": "number"
+        },
+        "内心空虚值": {
+          "type": "number"
+        },
+        "着装": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "上装",
+              "下装",
+              "内衣",
+              "袜子",
+              "鞋子",
+              "饰品",
+              "帽子"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "服装描述"
+          },
+          "required": [
+            "上装",
+            "下装",
+            "内衣",
+            "袜子",
+            "鞋子",
+            "饰品",
+            "帽子"
+          ]
+        },
+        "魔法状态": {
+          "type": "object",
+          "properties": {
+            "魅惑魔法效果": {
+              "default": "完全生效",
+              "type": "string",
+              "enum": [
+                "完全生效",
+                "部分生效",
+                "几乎失效",
+                "反噬中"
+              ]
+            },
+            "魔力充盈度": {
+              "type": "number"
+            },
+            "身体敏感度": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "魔力充盈度",
+            "身体敏感度"
+          ]
+        },
+        "称号": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "称号名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "效果": {
+                "type": "string"
+              },
+              "自嘲评价": {
+                "default": "待评价",
+                "type": "string"
+              }
+            },
+            "required": [
+              "效果"
+            ]
+          }
+        },
+        "秘密日记": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "日期"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "内心独白"
+          }
+        }
+      },
+      "required": [
+        "魅惑失控度",
+        "控制魔法残余",
+        "内心空虚值",
+        "着装",
+        "魔法状态",
+        "称号",
+        "秘密日记"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "物品栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "描述",
+              "数量"
+            ]
+          }
+        }
+      },
+      "required": [
+        "物品栏"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "克罗涅",
+    "主角"
+  ]
+}

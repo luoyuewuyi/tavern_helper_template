@@ -1,0 +1,14 @@
+- name: 皇咲夜 (Sakuya Sumeragi)
+  appearance:
+    height: 160cm
+    hair: 黑色长发 (黑长直)
+    eyes: 深色眼瞳，视线沉静而坚决。
+    physique: 身材纤细而发育成熟，动作轻盈，带有受过训练后的稳定感。
+    clothing_style: 日常多穿优雅的大小姐礼服、和风正装或领地军方礼装；只有实战、潜入或驾驶时才换成轻便战斗装备。
+  temperament:
+    background: 北海道领主的女儿，母亲是布里塔尼亚前代的公主。按辈分算是鲁路修的侄女。
+    identity: 北海道领主之女，鲁路修侄女。
+    detailed_personality_analysis:
+      core_personality: 气质高贵，坚定、勇敢。为了拯救被占领的故乡，不惜承担沉重的使命。
+  interpersonal_relationships:
+    likes: [拯救故乡, 夺回属于自身的东西]

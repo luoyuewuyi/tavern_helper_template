@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 配色方案 - 战争审问档案风 */
+  --c-bg-dark: #1a1612; /* 深褐底色：审问室的昏暗 */
+  --c-bg-card: #2a231d; /* 卡片底色：旧纸张深色 */
+  --c-bg-section: #342c24; /* 区块底色 */
+  --c-border: #5a4a3a; /* 边框：陈旧感 */
+  --c-border-light: #4a3d30; /* 浅边框 */
+  --c-text: #d4c5a9; /* 主文字：泛黄纸张色 */
+  --c-text-dim: #8a7d6b; /* 次要文字 */
+  --c-text-bright: #f0e6d0; /* 高亮文字 */
+  --c-accent-red: #8b3a3a; /* 红色强调：危险/革命 */
+  --c-accent-red-bright: #c45050; /* 亮红 */
+  --c-accent-amber: #b8934a; /* 琥珀色：警告/中性 */
+  --c-accent-green: #4a7a4a; /* 暗绿：安全/正面 */
+  --c-accent-green-bright: #6aaa6a; /* 亮绿 */
+  --c-accent-blue: #4a6a8b; /* 暗蓝：冷静/信息 */
+  --c-stamp-red: #9b2020; /* 印章红 */
+  --c-ink: #2a1a0a; /* 墨水色 */
+
+  /* 字体 */
+  --font-main: 'Courier New', 'SimSun', 'FangSong', monospace;
+  --font-title: 'SimHei', 'Microsoft YaHei', sans-serif;
+}

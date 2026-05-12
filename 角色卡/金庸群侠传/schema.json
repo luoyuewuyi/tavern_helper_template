@@ -1,0 +1,434 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "基础信息": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "未知",
+          "type": "string"
+        },
+        "性别": {
+          "default": "未知",
+          "type": "string",
+          "enum": [
+            "男",
+            "女",
+            "未知"
+          ]
+        },
+        "年龄": {
+          "default": 18,
+          "type": "number"
+        },
+        "门派": {
+          "default": "无",
+          "type": "string"
+        },
+        "称号": {
+          "default": "江湖草莽",
+          "type": "string"
+        }
+      }
+    },
+    "世界状态": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "年份": {
+              "default": 1265,
+              "type": "number"
+            },
+            "月份": {
+              "default": 1,
+              "type": "number"
+            },
+            "日期": {
+              "default": 1,
+              "type": "number"
+            },
+            "季节": {
+              "default": "春",
+              "type": "string",
+              "enum": [
+                "春",
+                "夏",
+                "秋",
+                "冬"
+              ]
+            },
+            "时辰": {
+              "default": "子时",
+              "type": "string"
+            }
+          }
+        },
+        "当前地点": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "区域": {
+              "default": "襄阳",
+              "type": "string"
+            },
+            "场所": {
+              "default": "悦来客栈",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "核心属性": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "境界": {
+          "default": "初窥门径",
+          "type": "string"
+        },
+        "等级": {
+          "default": 1,
+          "type": "number"
+        },
+        "属性": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "臂力": {
+              "default": 10,
+              "type": "number"
+            },
+            "根骨": {
+              "default": 10,
+              "type": "number"
+            },
+            "身法": {
+              "default": 10,
+              "type": "number"
+            },
+            "悟性": {
+              "default": 10,
+              "type": "number"
+            },
+            "内息": {
+              "default": 10,
+              "type": "number"
+            },
+            "福源": {
+              "default": 5,
+              "type": "number"
+            }
+          }
+        },
+        "状态": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "气血": {
+              "default": 100,
+              "type": "number"
+            },
+            "内力": {
+              "default": 50,
+              "type": "number"
+            },
+            "体力": {
+              "default": 100,
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "资源资产": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "银两": {
+          "default": 100,
+          "type": "number"
+        },
+        "声望": {
+          "type": "number"
+        },
+        "背包": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              },
+              "品级": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "描述",
+              "数量",
+              "品级"
+            ]
+          }
+        }
+      }
+    },
+    "武学装备": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前运行内功": {
+          "description": "当前只能激活并运行一种内功",
+          "default": "无",
+          "$ref": "#/$defs/__schema0"
+        },
+        "装备外功列表": {
+          "description": "可同时装备最多4个外功招式",
+          "default": {
+            "招式1": "空",
+            "招式2": "空",
+            "招式3": "空",
+            "招式4": "空"
+          },
+          "$ref": "#/$defs/__schema1"
+        },
+        "当前装备物品": {
+          "default": {
+            "兵器": "无",
+            "防具": "无",
+            "饰品": "无"
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "兵器",
+              "防具",
+              "饰品"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string"
+          },
+          "required": [
+            "兵器",
+            "防具",
+            "饰品"
+          ]
+        },
+        "已习得武学": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "武学名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "类型": {
+                "type": "string",
+                "enum": [
+                  "内功",
+                  "外功"
+                ]
+              },
+              "等级": {
+                "type": "number"
+              },
+              "熟练度": {
+                "type": "number"
+              },
+              "品级": {
+                "type": "string"
+              },
+              "内力贡献": {
+                "description": "学习该内功累计提升的内力上限",
+                "$ref": "#/$defs/__schema2"
+              }
+            },
+            "required": [
+              "类型",
+              "等级",
+              "熟练度",
+              "品级"
+            ]
+          }
+        }
+      }
+    },
+    "社交关系": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "NPC名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "数值": {
+                "type": "number"
+              },
+              "关系描述": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "数值",
+              "关系描述"
+            ]
+          }
+        },
+        "队伍成员": {
+          "description": "当前随行队友",
+          "default": [],
+          "$ref": "#/$defs/__schema3"
+        },
+        "后宫备用": {
+          "description": "可替换的队友/好友",
+          "default": [],
+          "$ref": "#/$defs/__schema5"
+        },
+        "势力关系": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "势力名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "友好度": {
+                "type": "number"
+              },
+              "评价": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "友好度",
+              "评价"
+            ]
+          }
+        }
+      }
+    },
+    "江湖经历": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "经历概况": {
+          "description": "发生过接触的角色/势力的关系和经历概况",
+          "default": "初入江湖，默默无闻。",
+          "$ref": "#/$defs/__schema6"
+        },
+        "重要事件录": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "当前检定": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "描述": {
+          "default": "无",
+          "type": "string"
+        },
+        "数值": {
+          "type": "number"
+        },
+        "加成": {
+          "type": "number"
+        },
+        "难度": {
+          "default": 10,
+          "type": "number"
+        },
+        "结果": {
+          "default": "无",
+          "type": "string",
+          "enum": [
+            "大成功",
+            "成功",
+            "失败",
+            "大失败",
+            "无"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "__schema0": {
+      "type": "string"
+    },
+    "__schema1": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "招式1",
+          "招式2",
+          "招式3",
+          "招式4"
+        ]
+      },
+      "additionalProperties": {
+        "type": "string"
+      },
+      "required": [
+        "招式1",
+        "招式2",
+        "招式3",
+        "招式4"
+      ]
+    },
+    "__schema2": {
+      "type": "number"
+    },
+    "__schema3": {
+      "maxItems": 2,
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema4"
+      }
+    },
+    "__schema4": {
+      "type": "string"
+    },
+    "__schema5": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "__schema6": {
+      "type": "string"
+    }
+  }
+}

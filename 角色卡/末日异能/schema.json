@@ -1,0 +1,502 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "default": "2077年1月1日 00:00",
+          "type": "string"
+        },
+        "当前地点": {
+          "default": "家中卧室",
+          "type": "string"
+        },
+        "世界危险等级": {
+          "default": "末日爆发",
+          "type": "string"
+        },
+        "全球动态": {
+          "default": "全球电子设备同步停滞，来自未知维度的\"深渊\"孢子渗透生态圈，全球生物开始异变",
+          "type": "string"
+        },
+        "主要灾害": {
+          "default": "丧尸群、孢子污染",
+          "type": "string"
+        },
+        "天气": {
+          "default": "阴云密布",
+          "type": "string"
+        },
+        "昼夜": {
+          "default": "白天",
+          "type": "string",
+          "enum": [
+            "白天",
+            "夜晚"
+          ]
+        },
+        "近期事务": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事务名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事务描述"
+          }
+        },
+        "周期性事件": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事件描述"
+          }
+        }
+      }
+    },
+    "主角": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "基本信息": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "姓名": {
+              "default": "待设定",
+              "type": "string"
+            },
+            "年龄": {
+              "type": "number"
+            },
+            "性别": {
+              "default": "待设定",
+              "type": "string"
+            },
+            "人种和语言": {
+              "default": "待设定",
+              "type": "string"
+            },
+            "性格": {
+              "default": "待设定",
+              "type": "string"
+            },
+            "贡献点": {
+              "type": "number"
+            }
+          }
+        },
+        "核心属性": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "力量": {
+              "default": 50,
+              "type": "number"
+            },
+            "敏捷": {
+              "default": 50,
+              "type": "number"
+            },
+            "体质": {
+              "default": 50,
+              "type": "number"
+            },
+            "精神": {
+              "default": 50,
+              "type": "number"
+            },
+            "感知": {
+              "default": 50,
+              "type": "number"
+            },
+            "魅力": {
+              "default": 50,
+              "type": "number"
+            }
+          }
+        },
+        "状态面板": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "生命值": {
+              "default": 100,
+              "type": "number"
+            },
+            "精神力": {
+              "default": 100,
+              "type": "number"
+            },
+            "饱食度": {
+              "default": 80,
+              "type": "number"
+            },
+            "清洁度": {
+              "default": 80,
+              "type": "number"
+            },
+            "情绪": {
+              "default": "平静",
+              "type": "string"
+            }
+          }
+        },
+        "异能": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "名称": {
+              "default": "亚空间储物",
+              "type": "string"
+            },
+            "等级": {
+              "default": 1,
+              "type": "number"
+            },
+            "经验值": {
+              "type": "number"
+            },
+            "当前容量": {
+              "default": 1000,
+              "type": "number"
+            },
+            "特性": {
+              "default": {
+                "绝对静止": {
+                  "效果": "空间内时间流速为零，所有物品保持放入时的状态",
+                  "已解锁": true
+                },
+                "活体储存": {
+                  "效果": "可将活物存入空间（待解锁）",
+                  "已解锁": false
+                },
+                "空间切割": {
+                  "效果": "可切割小范围空间进行攻击（待解锁）",
+                  "已解锁": false
+                },
+                "短距传送": {
+                  "效果": "可在视野范围内进行瞬间移动（待解锁）",
+                  "已解锁": false
+                }
+              },
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "description": "特性名"
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "效果": {
+                    "type": "string"
+                  },
+                  "已解锁": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "技能": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "战斗": {
+              "default": {},
+              "type": "object",
+              "properties": {
+                "枪械": {
+                  "default": {},
+                  "type": "object",
+                  "properties": {
+                    "等级": {
+                      "type": "number"
+                    },
+                    "经验": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "冷兵器": {
+                  "default": {},
+                  "type": "object",
+                  "properties": {
+                    "等级": {
+                      "default": 1,
+                      "type": "number"
+                    },
+                    "经验": {
+                      "default": 50,
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "生存": {
+              "default": {},
+              "type": "object",
+              "properties": {
+                "烹饪": {
+                  "default": {},
+                  "type": "object",
+                  "properties": {
+                    "等级": {
+                      "type": "number"
+                    },
+                    "经验": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "医疗": {
+                  "default": {},
+                  "type": "object",
+                  "properties": {
+                    "等级": {
+                      "default": 1,
+                      "type": "number"
+                    },
+                    "经验": {
+                      "default": 10,
+                      "type": "number"
+                    }
+                  }
+                },
+                "潜行": {
+                  "default": {},
+                  "type": "object",
+                  "properties": {
+                    "等级": {
+                      "default": 2,
+                      "type": "number"
+                    },
+                    "经验": {
+                      "default": 120,
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "技术": {
+              "default": {},
+              "type": "object",
+              "properties": {
+                "维修": {
+                  "default": {},
+                  "type": "object",
+                  "properties": {
+                    "等级": {
+                      "type": "number"
+                    },
+                    "经验": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "驾驶": {
+                  "default": {},
+                  "type": "object",
+                  "properties": {
+                    "等级": {
+                      "default": 1,
+                      "type": "number"
+                    },
+                    "经验": {
+                      "default": 80,
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "物品栏": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "default": 1,
+                "type": "number"
+              },
+              "品质": {
+                "default": "B",
+                "type": "string",
+                "enum": [
+                  "S",
+                  "A",
+                  "B"
+                ]
+              }
+            }
+          }
+        },
+        "所在基地": {
+          "default": "无（末日初期，尚未加入基地）",
+          "type": "string"
+        },
+        "队伍成员": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "成员名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "成员简介"
+          }
+        }
+      }
+    },
+    "基地总览": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "天空之城",
+          "地下之城",
+          "移动之城",
+          "陆地之城"
+        ],
+        "description": "基地名称"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "阵营": {
+            "type": "string"
+          },
+          "状态": {
+            "default": {},
+            "type": "object",
+            "properties": {
+              "防御": {
+                "default": 50,
+                "type": "number"
+              },
+              "物资": {
+                "default": 50,
+                "type": "number"
+              }
+            }
+          },
+          "人口": {
+            "default": {},
+            "type": "object",
+            "properties": {
+              "异能者": {
+                "type": "number"
+              },
+              "普通人": {
+                "type": "number"
+              }
+            }
+          },
+          "每月预警": {
+            "default": "暂无",
+            "type": "string"
+          },
+          "声望": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "天空之城",
+        "地下之城",
+        "移动之城",
+        "陆地之城"
+      ]
+    },
+    "NPC关系": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "NPC姓名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "好感度": {
+            "type": "number"
+          },
+          "关系": {
+            "default": "陌生人",
+            "type": "string"
+          },
+          "所属基地": {
+            "default": "未知",
+            "type": "string"
+          },
+          "简介": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "每月行动": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前月份": {
+          "default": 1,
+          "type": "number"
+        },
+        "剩余行动点": {
+          "default": 4,
+          "type": "number"
+        },
+        "行动记录": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "行动编号"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "行动执行结果"
+          }
+        }
+      }
+    },
+    "待处理事件": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "事件名"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "description": "事件描述"
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --hyp-bg: #0d1016;
+  --hyp-panel: rgba(22, 19, 29, 0.92);
+  --hyp-line: rgba(231, 198, 145, 0.22);
+  --hyp-text: #f4ead6;
+  --hyp-soft: #d9c2a0;
+  --hyp-faint: #978977;
+  --hyp-gold: #e7c691;
+  --hyp-shadow: 0 26px 60px rgba(0, 0, 0, 0.38);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: 'IBM Plex Sans', 'Noto Serif SC', sans-serif;
+}
+
+body {
+  color: var(--hyp-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app,
+.hypno-status-shell,
+.hypno-status-app {
+  width: 100%;
+}
+
+.hypno-status-shell {
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(231, 198, 145, 0.32);
+}

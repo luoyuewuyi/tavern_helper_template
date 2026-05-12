@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer utilities {
+  .hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hidden-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .glow-text { animation: glow 2s infinite ease-in-out; }
+  .blink { animation: blink 1s step-end infinite; }
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px #00ff9d, 0 0 10px #00ff9d; }
+  50% { text-shadow: 0 0 15px #00ff9d, 0 0 20px #00ff9d; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@layer components {
+  .prose-terminal {
+    --tw-prose-body: #d1d5db;
+    --tw-prose-headings: #00ff9d;
+    --tw-prose-links: #00ff9d;
+    --tw-prose-bold: #ffffff;
+    --tw-prose-counters: #00ff9d;
+    --tw-prose-bullets: #00ff9d;
+    --tw-prose-hr: rgba(0, 255, 157, 0.2);
+    --tw-prose-quotes: #00ff9d;
+    --tw-prose-quote-borders: #00ff9d;
+    --tw-prose-captions: #6b7280;
+    --tw-prose-code: #00ff9d;
+    --tw-prose-pre-code: #ffffff;
+    --tw-prose-pre-bg: #1a1c23;
+  }
+}

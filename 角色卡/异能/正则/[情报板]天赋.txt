@@ -1,0 +1,27 @@
+```
+<head>
+<style>
+body{margin:0;background:transparent}
+.wrap{margin:10px 0;font-family:'Noto Sans SC','Microsoft YaHei UI',sans-serif;color:#f2efff}
+.shell{border-radius:18px;overflow:hidden;background:linear-gradient(160deg,rgba(28,19,45,.96),rgba(28,40,68,.94));border:1px solid rgba(203,165,255,.18);box-shadow:0 16px 36px rgba(13,11,24,.24)}
+.toggle{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 15px;cursor:pointer;list-style:none;background:linear-gradient(135deg,rgba(203,176,255,.16),rgba(255,255,255,.03))}
+.toggle::-webkit-details-marker{display:none}
+.title{font-size:15px;font-weight:700;letter-spacing:.08em;color:#ccb0ff}
+.meta{font-size:12px;color:#beb1da}
+.mark{font-size:11px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.08);color:#efe6ff}
+.body{padding:14px 16px 16px;border-top:1px solid rgba(255,255,255,.08);white-space:pre-wrap;line-height:1.66;font-size:13px;color:#ece8ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <details class="shell">
+    <summary class="toggle">
+      <span class="title">天赋面板</span>
+      <span class="meta">成长轨迹</span>
+      <span class="mark">展开</span>
+    </summary>
+    <div class="body">$1</div>
+  </details>
+</div>
+</body>
+```

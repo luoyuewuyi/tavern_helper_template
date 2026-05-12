@@ -1,0 +1,481 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转生成绝色剑仙的我</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #2c3e50; /* 墨色 */
+            --accent-color: #c0392b; /* 丹红 */
+            --highlight-color: #d4af37; /* 鎏金 */
+            --bg-color: #fdfbf7; /* 宣纸白 */
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: #dcd9d4;
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+            background-blend-mode: overlay;
+            color: var(--primary-color);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--card-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 装饰纹样 */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: repeating-linear-gradient(45deg, var(--primary-color), var(--primary-color) 10px, transparent 10px, transparent 20px);
+            opacity: 0.1;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: "✦";
+            display: block;
+            font-size: 0.5em;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        /* 表单区域 */
+        .section {
+            margin-bottom: 35px;
+            padding: 20px;
+            border: 1px solid rgba(0,0,0,0.05);
+            background: rgba(255,255,255,0.5);
+            border-radius: var(--border-radius);
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.8);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1em;
+            transition: var(--transition);
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 5px rgba(192, 57, 43, 0.2);
+            background: #fff;
+        }
+
+        /* 年龄选择卡片 */
+        .age-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .age-card {
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: #fff;
+            position: relative;
+        }
+
+        .age-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .age-card.active {
+            border-color: var(--accent-color);
+            background: #fff9f9;
+            box-shadow: 0 0 0 2px var(--accent-color) inset;
+        }
+
+        .age-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .age-card p {
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        /* 属性网格 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .input-with-btn {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-icon {
+            padding: 0 15px;
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .btn-icon:hover {
+            background: #ddd;
+        }
+
+        /* 底部按钮 */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--accent-color), #a93226);
+            color: #fff;
+            border: none;
+            padding: 15px 50px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Noto Serif SC', serif;
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.4);
+            transition: var(--transition);
+            letter-spacing: 2px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(192, 57, 43, 0.6);
+        }
+
+        /* 范围滑块 */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #ddd;
+            border-radius: 2px;
+        }
+
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>转生成绝色剑仙的我</h1>
+    <p class="subtitle">“前尘往事成云烟，今朝再踏长生路。”</p>
+
+    <form id="creation-form">
+        <!-- 模块A：前尘旧梦 -->
+        <div class="section">
+            <h2 class="section-title">壹 · 前尘旧梦</h2>
+            <div class="form-group">
+                <label>前世名讳</label>
+                <input type="text" id="past-name" placeholder="请输入你在那个蓝色星球的名字..." autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label>前世经历</label>
+                <textarea id="past-story" rows="3" placeholder="你是何人？因何而终？心中又有何未了的执念？..."></textarea>
+            </div>
+        </div>
+
+        <!-- 模块B：岁月流转 -->
+        <div class="section">
+            <h2 class="section-title">贰 · 岁月流转</h2>
+            <label style="margin-bottom: 15px;">选择转生骨龄</label>
+            <div class="age-options">
+                <div class="age-card" onclick="selectAge('child', this)">
+                    <h3>幼年期</h3>
+                    <p>4-6岁</p>
+                    <p style="font-size:0.75em; margin-top:5px; color:#999;">稚子蒙昧，潜力无穷</p>
+                </div>
+                <div class="age-card active" onclick="selectAge('teen', this)">
+                    <h3>少年期</h3>
+                    <p>7-12岁</p>
+                    <p style="font-size:0.75em; margin-top:5px; color:#999;">豆蔻枝头，心性单纯</p>
+                </div>
+                <div class="age-card" onclick="selectAge('youth', this)">
+                    <h3>青年期</h3>
+                    <p>13-18岁</p>
+                    <p style="font-size:0.75em; margin-top:5px; color:#999;">风华正茂，道心初成</p>
+                </div>
+            </div>
+            <input type="hidden" id="selected-age" value="少年期">
+        </div>
+
+        <!-- 模块C：今生仙缘 -->
+        <div class="section">
+            <h2 class="section-title">叁 · 今生仙缘</h2>
+            <div class="stats-grid">
+                <div class="form-group">
+                    <label>今生名讳</label>
+                    <div class="input-with-btn">
+                        <input type="text" id="current-name" value="汖星" placeholder="输入名字">
+                        <div class="btn-icon" onclick="randomName()" title="天道赐名">🎲</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>所属宗门</label>
+                    <select id="sect">
+                        <option value="玉仙观">玉仙观 (东州正道)</option>
+                        <option value="天剑宗">天剑宗 (剑修圣地)</option>
+                        <option value="丹霞阁">丹霞阁 (炼丹大宗)</option>
+                        <option value="散修">一介散修 (逍遥自在)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>先天体质</label>
+                    <input type="text" id="constitution" value="至阴之体" placeholder="如：至阴之体、天生媚骨">
+                </div>
+
+                <div class="form-group">
+                    <label>修行功法</label>
+                    <input type="text" id="cultivation-method" value="玉女诀" placeholder="如：玉女诀">
+                </div>
+
+                <div class="form-group" style="grid-column: 1 / -1;">
+                    <label>当前修为: <span id="cultivation-val" style="color:var(--accent-color)">炼气·五层</span></label>
+                    <input type="range" id="cultivation-range" min="0" max="10" value="5" oninput="updateCultivation(this.value)">
+                    <div class="range-labels">
+                        <span>凡人</span>
+                        <span>炼气圆满</span>
+                        <span>筑基初期</span>
+                    </div>
+                </div>
+
+                 <div class="form-group" style="grid-column: 1 / -1;">
+                    <label>天命命格</label>
+                     <div class="input-with-btn">
+                        <input type="text" id="fate" value="[绝色天仙] [天生剑胎]" placeholder="如：[天煞孤星]">
+                        <div class="btn-icon" onclick="randomFate()" title="逆天改命">🔮</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <button type="button" class="btn-submit" onclick="submitCreation()">开始修行</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // 基础数据库
+    const lastNames = ['苏', '叶', '林', '萧', '顾', '沈', '陆', '云', '柳', '白'];
+    const firstNames = ['清寒', '红鱼', '浅雪', '琉璃', '如烟', '灵儿', '初见', '晚晴', '轻舞', '凝霜'];
+    const fates = ['[绝色天仙]', '[天生剑胎]', '[桃花泛滥]', '[天煞孤星]', '[绝世炉鼎]', '[气运之子]', '[九阴绝脉]', '[红鸾星动]'];
+
+    // 修为映射
+    const cultivationLevels = [
+        "凡人", "炼气·一层", "炼气·二层", "炼气·三层", "炼气·四层",
+        "炼气·五层", "炼气·六层", "炼气·七层", "炼气·八层", "炼气·九层", "筑基·初期"
+    ];
+
+    // 年龄选择逻辑
+    function selectAge(type, element) {
+        document.querySelectorAll('.age-card').forEach(c => c.classList.remove('active'));
+        element.classList.add('active');
+
+        const slider = document.getElementById('cultivation-range');
+        const desc = document.getElementById('past-story');
+        const ageInput = document.getElementById('selected-age');
+
+        if (type === 'child') {
+            slider.max = 3;
+            slider.value = 1;
+            desc.placeholder = "虽带宿慧，然身躯稚嫩，前世记忆如同迷梦...";
+            ageInput.value = "幼年期 (4-6岁)";
+        } else if (type === 'teen') {
+            slider.max = 8;
+            slider.value = 4;
+            desc.placeholder = "豆蔻年华，初识仙途，前世的执念让你显得早熟...";
+            ageInput.value = "少年期 (7-12岁)";
+        } else {
+            slider.max = 10;
+            slider.value = 6;
+            desc.placeholder = "你是何人？因何而终？保留了何种执念？...";
+            ageInput.value = "青年期 (13-18岁)";
+        }
+        updateCultivation(slider.value);
+    }
+
+    // 随机名字
+    function randomName() {
+        const ln = lastNames[Math.floor(Math.random() * lastNames.length)];
+        const fn = firstNames[Math.floor(Math.random() * firstNames.length)];
+        document.getElementById('current-name').value = ln + fn;
+    }
+
+    // 随机命格
+    function randomFate() {
+        // 随机取2个命格
+        const shuffled = fates.sort(() => 0.5 - Math.random());
+        document.getElementById('fate').value = shuffled.slice(0, 2).join(' ');
+    }
+
+    // 更新修为显示
+    function updateCultivation(val) {
+        const text = cultivationLevels[val] || "未知";
+        document.getElementById('cultivation-val').innerText = text;
+    }
+
+    // 提交逻辑
+    function submitCreation() {
+        const data = {
+            pastName: document.getElementById('past-name').value || "未知",
+            pastStory: document.getElementById('past-story').value || "无",
+            age: document.getElementById('selected-age').value,
+            curName: document.getElementById('current-name').value || "汖星",
+            sect: document.getElementById('sect').value,
+            body: document.getElementById('constitution').value,
+            art: document.getElementById('cultivation-method').value,
+            cultivation: document.getElementById('cultivation-val').innerText,
+            fate: document.getElementById('fate').value
+        };
+
+        // 构建发送给AI的文本
+        const message = `[系统指令：用户角色已创建]
+姓名：${data.curName}
+骨龄：${data.age}
+宗门：${data.sect}
+修为：${data.cultivation}
+体质：${data.body}
+功法：${data.art}
+命格：${data.fate}
+---
+前世名讳：${data.pastName}
+前世经历：${data.pastStory}`;
+
+        // 使用SillyTavern的命令发送
+        // 1. 发送设定文本给AI (不触发回复，或者是让AI根据这个设定开始剧情)
+        // 这里选择直接触发AI回复，让AI根据设定开始第一段剧情
+        const command = `/send ${message} | /trigger`;
+
+        if (window.triggerSlash) {
+            window.triggerSlash(command);
+        } else {
+            alert("请在SillyTavern中运行此界面。\n\n模拟发送内容：\n" + message);
+        }
+    }
+</script>
+
+</body>
+</html>
+```

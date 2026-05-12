@@ -1,0 +1,569 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "当前副本": {
+          "type": "string"
+        },
+        "副本难度": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "副本规则": {
+          "type": "string"
+        },
+        "副本进度": {
+          "type": "string"
+        },
+        "存活参与者": {
+          "type": "number"
+        },
+        "近期事件": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "事件名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "事件描述"
+          }
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "当前副本",
+        "副本难度",
+        "副本规则",
+        "副本进度",
+        "存活参与者",
+        "近期事件"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "等级": {
+          "type": "number"
+        },
+        "经验值": {
+          "type": "number"
+        },
+        "经验上限": {
+          "type": "number"
+        },
+        "可用属性点": {
+          "type": "number"
+        },
+        "空间积分": {
+          "type": "number"
+        },
+        "HP": {
+          "type": "number"
+        },
+        "HP上限": {
+          "type": "number"
+        },
+        "精神值": {
+          "type": "number"
+        },
+        "法力值": {
+          "type": "number"
+        },
+        "法力上限": {
+          "type": "number"
+        },
+        "状态异常": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "异常名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "异常描述"
+          }
+        },
+        "六维属性": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "力量",
+              "敏捷",
+              "体质",
+              "智力",
+              "感知",
+              "魅力"
+            ]
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "数值": {
+                "type": "number"
+              },
+              "加成": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "数值"
+            ]
+          },
+          "required": [
+            "力量",
+            "敏捷",
+            "体质",
+            "智力",
+            "感知",
+            "魅力"
+          ]
+        },
+        "技能": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "技能名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "类型": {
+                "type": "string",
+                "enum": [
+                  "主动",
+                  "被动"
+                ]
+              },
+              "等级": {
+                "$ref": "#/$defs/__schema0"
+              },
+              "描述": {
+                "type": "string"
+              },
+              "冷却": {
+                "default": "无",
+                "type": "string"
+              }
+            },
+            "required": [
+              "类型",
+              "等级",
+              "描述"
+            ]
+          }
+        },
+        "天赋": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "天赋名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "稀有度": {
+                "$ref": "#/$defs/__schema0"
+              },
+              "效果": {
+                "type": "string"
+              },
+              "来源": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "稀有度",
+              "效果",
+              "来源"
+            ]
+          }
+        },
+        "装备栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "武器",
+              "头部",
+              "上身",
+              "下身",
+              "鞋子",
+              "饰品"
+            ]
+          },
+          "additionalProperties": {
+            "default": {
+              "名称": "空置",
+              "品质": "G",
+              "效果": "无",
+              "主角评价": ""
+            },
+            "type": "object",
+            "properties": {
+              "名称": {
+                "default": "空置",
+                "type": "string"
+              },
+              "品质": {
+                "default": "G",
+                "$ref": "#/$defs/__schema0"
+              },
+              "效果": {
+                "default": "无",
+                "type": "string"
+              },
+              "主角评价": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "武器",
+            "头部",
+            "上身",
+            "下身",
+            "鞋子",
+            "饰品"
+          ]
+        },
+        "背包": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "物品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              },
+              "品质": {
+                "$ref": "#/$defs/__schema0"
+              }
+            },
+            "required": [
+              "描述",
+              "数量",
+              "品质"
+            ]
+          }
+        }
+      },
+      "required": [
+        "等级",
+        "经验值",
+        "经验上限",
+        "可用属性点",
+        "空间积分",
+        "HP",
+        "HP上限",
+        "精神值",
+        "法力值",
+        "法力上限",
+        "状态异常",
+        "六维属性",
+        "技能",
+        "天赋",
+        "装备栏",
+        "背包"
+      ]
+    },
+    "商店": {
+      "type": "object",
+      "properties": {
+        "_刷新说明": {
+          "default": "每次进入新副本时商店刷新商品",
+          "type": "string"
+        },
+        "商品列表": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "商品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "价格": {
+                "type": "number"
+              },
+              "描述": {
+                "type": "string"
+              },
+              "库存": {
+                "type": "number"
+              },
+              "品质": {
+                "$ref": "#/$defs/__schema0"
+              }
+            },
+            "required": [
+              "价格",
+              "描述",
+              "库存",
+              "品质"
+            ]
+          }
+        }
+      },
+      "required": [
+        "商品列表"
+      ]
+    },
+    "队友": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "队友名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "好感度": {
+            "type": "number"
+          },
+          "状态": {
+            "type": "string"
+          },
+          "职业": {
+            "type": "string"
+          },
+          "等级": {
+            "type": "number"
+          },
+          "HP": {
+            "type": "number"
+          },
+          "HP上限": {
+            "type": "number"
+          },
+          "六维属性": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "enum": [
+                "力量",
+                "敏捷",
+                "体质",
+                "智力",
+                "感知",
+                "魅力"
+              ]
+            },
+            "additionalProperties": {
+              "type": "number"
+            },
+            "required": [
+              "力量",
+              "敏捷",
+              "体质",
+              "智力",
+              "感知",
+              "魅力"
+            ]
+          },
+          "技能": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "技能名"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "类型": {
+                  "type": "string",
+                  "enum": [
+                    "主动",
+                    "被动"
+                  ]
+                },
+                "等级": {
+                  "$ref": "#/$defs/__schema0"
+                },
+                "描述": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "类型",
+                "等级",
+                "描述"
+              ]
+            }
+          },
+          "装备": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "enum": [
+                "武器",
+                "头部",
+                "上身",
+                "下身",
+                "鞋子",
+                "饰品"
+              ]
+            },
+            "additionalProperties": {
+              "default": {
+                "名称": "空置",
+                "品质": "G",
+                "效果": "无"
+              },
+              "type": "object",
+              "properties": {
+                "名称": {
+                  "default": "空置",
+                  "type": "string"
+                },
+                "品质": {
+                  "default": "G",
+                  "$ref": "#/$defs/__schema0"
+                },
+                "效果": {
+                  "default": "无",
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "武器",
+              "头部",
+              "上身",
+              "下身",
+              "鞋子",
+              "饰品"
+            ]
+          },
+          "主角评价": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "好感度",
+          "状态",
+          "职业",
+          "等级",
+          "HP",
+          "HP上限",
+          "六维属性",
+          "技能",
+          "装备",
+          "主角评价"
+        ]
+      }
+    },
+    "任务列表": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "任务名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "类型": {
+            "type": "string",
+            "enum": [
+              "主线",
+              "支线",
+              "隐藏",
+              "紧急"
+            ]
+          },
+          "说明": {
+            "type": "string"
+          },
+          "目标": {
+            "type": "string"
+          },
+          "奖励": {
+            "type": "string"
+          },
+          "状态": {
+            "type": "string",
+            "enum": [
+              "进行中",
+              "已完成",
+              "失败"
+            ]
+          }
+        },
+        "required": [
+          "类型",
+          "说明",
+          "目标",
+          "奖励",
+          "状态"
+        ]
+      }
+    },
+    "副本日志": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "副本名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "难度": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "结果": {
+            "type": "string"
+          },
+          "收获": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "难度",
+          "结果",
+          "收获"
+        ]
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "商店",
+    "队友",
+    "任务列表",
+    "副本日志"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "string",
+      "enum": [
+        "G",
+        "F",
+        "E",
+        "D",
+        "C",
+        "B",
+        "A",
+        "S",
+        "SS",
+        "SSS"
+      ]
+    }
+  }
+}

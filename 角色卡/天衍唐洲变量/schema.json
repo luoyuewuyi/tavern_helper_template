@@ -1,0 +1,1030 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "时间": {
+          "type": "object",
+          "properties": {
+            "纪年": {
+              "type": "number"
+            },
+            "月份": {
+              "type": "number"
+            },
+            "日期": {
+              "type": "number"
+            },
+            "时辰": {
+              "type": "string",
+              "enum": [
+                "子",
+                "丑",
+                "寅",
+                "卯",
+                "辰",
+                "巳",
+                "午",
+                "未",
+                "申",
+                "酉",
+                "戌",
+                "亥"
+              ]
+            },
+            "季节": {
+              "type": "string",
+              "enum": [
+                "春",
+                "夏",
+                "秋",
+                "冬"
+              ]
+            }
+          },
+          "required": [
+            "纪年",
+            "月份",
+            "日期",
+            "时辰",
+            "季节"
+          ]
+        },
+        "地点": {
+          "type": "object",
+          "properties": {
+            "当前区域": {
+              "type": "string"
+            },
+            "当前场所": {
+              "type": "string"
+            },
+            "场所属性": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "当前区域",
+            "当前场所",
+            "场所属性"
+          ]
+        },
+        "回合": {
+          "type": "object",
+          "properties": {
+            "当前回合": {
+              "type": "number"
+            },
+            "人生阶段": {
+              "type": "string",
+              "enum": [
+                "幼年",
+                "少年",
+                "成年",
+                "壮年",
+                "暮年"
+              ]
+            },
+            "阶段描述": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "当前回合",
+            "人生阶段",
+            "阶段描述"
+          ]
+        },
+        "事务": {
+          "type": "object",
+          "properties": {
+            "近期事务": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "世事传闻": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "天气": {
+              "type": "string",
+              "enum": [
+                "晴",
+                "阴",
+                "雨",
+                "雪",
+                "大风",
+                "雾"
+              ]
+            },
+            "节日": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "节日效果": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "近期事务",
+            "世事传闻",
+            "天气",
+            "节日",
+            "节日效果"
+          ]
+        }
+      },
+      "required": [
+        "时间",
+        "地点",
+        "回合",
+        "事务"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "基础信息": {
+          "type": "object",
+          "properties": {
+            "姓名": {
+              "type": "string"
+            },
+            "字": {
+              "default": null,
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "号": {
+              "default": null,
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "性别": {
+              "type": "string",
+              "enum": [
+                "男",
+                "女"
+              ]
+            },
+            "年龄": {
+              "type": "number"
+            },
+            "出身": {
+              "type": "string",
+              "enum": [
+                "皇室子弟",
+                "士族子弟",
+                "平民子弟",
+                "流民子弟"
+              ]
+            },
+            "出身加成": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "number"
+              }
+            },
+            "当前身份": {
+              "type": "string"
+            },
+            "阶层": {
+              "type": "string",
+              "enum": [
+                "皇室",
+                "士族",
+                "官员",
+                "文人",
+                "匠人",
+                "商人",
+                "平民",
+                "流民"
+              ]
+            }
+          },
+          "required": [
+            "姓名",
+            "性别",
+            "年龄",
+            "出身",
+            "出身加成",
+            "当前身份",
+            "阶层"
+          ]
+        },
+        "属性": {
+          "type": "object",
+          "properties": {
+            "韬略": {
+              "type": "object",
+              "properties": {
+                "值": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "值"
+              ]
+            },
+            "勇武": {
+              "type": "object",
+              "properties": {
+                "值": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "值"
+              ]
+            },
+            "智力": {
+              "type": "object",
+              "properties": {
+                "值": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "值"
+              ]
+            },
+            "政才": {
+              "type": "object",
+              "properties": {
+                "值": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "值"
+              ]
+            },
+            "人望": {
+              "type": "object",
+              "properties": {
+                "值": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "值"
+              ]
+            },
+            "艺趣": {
+              "type": "object",
+              "properties": {
+                "值": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "值"
+              ]
+            }
+          },
+          "required": [
+            "韬略",
+            "勇武",
+            "智力",
+            "政才",
+            "人望",
+            "艺趣"
+          ]
+        },
+        "天赋": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "名称": {
+                "type": "string"
+              },
+              "品级": {
+                "type": "string",
+                "enum": [
+                  "普通",
+                  "稀有",
+                  "精锐",
+                  "史诗",
+                  "传奇",
+                  "神话"
+                ]
+              },
+              "类别": {
+                "type": "string"
+              },
+              "效果": {
+                "type": "string"
+              },
+              "属性加成": {
+                "default": {},
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "number"
+                }
+              }
+            },
+            "required": [
+              "名称",
+              "品级",
+              "类别",
+              "效果"
+            ]
+          }
+        },
+        "官职": {
+          "type": "object",
+          "properties": {
+            "官职名": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "官职品级": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "所属体系": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "管辖范围": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "官职名",
+            "官职品级",
+            "所属体系",
+            "管辖范围"
+          ]
+        },
+        "财货": {
+          "type": "object",
+          "properties": {
+            "金币": {
+              "type": "number"
+            },
+            "银币": {
+              "type": "number"
+            },
+            "铜钱": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "金币",
+            "银币",
+            "铜钱"
+          ]
+        },
+        "物品栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "描述": {
+                "type": "string"
+              },
+              "数量": {
+                "default": 1,
+                "type": "number"
+              },
+              "品质": {
+                "default": "普通",
+                "type": "string",
+                "enum": [
+                  "普通",
+                  "精良",
+                  "稀有",
+                  "传说",
+                  "神话"
+                ]
+              },
+              "效果": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "描述"
+            ]
+          }
+        },
+        "技能": {
+          "type": "object",
+          "properties": {
+            "武艺": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "$ref": "#/$defs/__schema0"
+              }
+            },
+            "文艺": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "$ref": "#/$defs/__schema0"
+              }
+            },
+            "杂学": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "$ref": "#/$defs/__schema0"
+              }
+            }
+          }
+        },
+        "声望": {
+          "type": "object",
+          "properties": {
+            "朝堂声望": {
+              "type": "number"
+            },
+            "江湖声望": {
+              "type": "number"
+            },
+            "文坛声望": {
+              "type": "number"
+            },
+            "民间声望": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "朝堂声望",
+            "江湖声望",
+            "文坛声望",
+            "民间声望"
+          ]
+        },
+        "重要人脉": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "身份": {
+                "type": "string"
+              },
+              "关系": {
+                "type": "string"
+              },
+              "好感度": {
+                "type": "number"
+              },
+              "备注": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "身份",
+              "关系",
+              "好感度"
+            ]
+          }
+        },
+        "称号": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "来源": {
+                "type": "string"
+              },
+              "效果": {
+                "type": "string"
+              },
+              "获得时间": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "来源",
+              "效果",
+              "获得时间"
+            ]
+          }
+        },
+        "当前佩戴称号": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "基础信息",
+        "属性",
+        "天赋",
+        "官职",
+        "财货",
+        "物品栏",
+        "技能",
+        "声望",
+        "重要人脉",
+        "称号",
+        "当前佩戴称号"
+      ]
+    },
+    "着装": {
+      "type": "object",
+      "properties": {
+        "外装": {
+          "type": "object",
+          "properties": {
+            "类型": {
+              "type": "string"
+            },
+            "描述": {
+              "type": "string"
+            },
+            "品质": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "类型",
+            "描述",
+            "品质"
+          ]
+        },
+        "内衣": {
+          "type": "object",
+          "properties": {
+            "类型": {
+              "type": "string"
+            },
+            "描述": {
+              "type": "string"
+            },
+            "品质": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "类型",
+            "描述",
+            "品质"
+          ]
+        },
+        "下装": {
+          "type": "object",
+          "properties": {
+            "类型": {
+              "type": "string"
+            },
+            "描述": {
+              "type": "string"
+            },
+            "品质": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "类型",
+            "描述",
+            "品质"
+          ]
+        },
+        "鞋履": {
+          "type": "object",
+          "properties": {
+            "类型": {
+              "type": "string"
+            },
+            "描述": {
+              "type": "string"
+            },
+            "品质": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "类型",
+            "描述",
+            "品质"
+          ]
+        },
+        "饰品": {
+          "type": "object",
+          "properties": {
+            "头饰": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "耳饰": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "项饰": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "腕饰": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "其他饰品": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "头饰",
+            "耳饰",
+            "项饰",
+            "腕饰",
+            "其他饰品"
+          ]
+        }
+      },
+      "required": [
+        "外装",
+        "内衣",
+        "下装",
+        "鞋履",
+        "饰品"
+      ]
+    },
+    "家园": {
+      "type": "object",
+      "properties": {
+        "基础信息": {
+          "type": "object",
+          "properties": {
+            "名称": {
+              "type": "string"
+            },
+            "所在": {
+              "type": "string"
+            },
+            "当前居所": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "名称",
+            "所在",
+            "当前居所"
+          ]
+        },
+        "主人居所": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "已解锁": {
+                "default": false,
+                "type": "boolean"
+              },
+              "居住者": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "装饰等级": {
+                "type": "number"
+              },
+              "风格": {
+                "type": "string"
+              },
+              "适配属性": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "特殊效果": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "功能房屋": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "已解锁": {
+                "default": false,
+                "type": "boolean"
+              },
+              "等级": {
+                "type": "number"
+              },
+              "适配属性": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "特殊效果": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": {}
+          }
+        }
+      },
+      "required": [
+        "基础信息",
+        "主人居所",
+        "功能房屋"
+      ]
+    },
+    "社交": {
+      "type": "object",
+      "properties": {
+        "NPC列表": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "身份": {
+                "type": "string"
+              },
+              "描述": {
+                "type": "string"
+              },
+              "关系": {
+                "type": "string"
+              },
+              "好感度": {
+                "type": "number"
+              },
+              "互动记录": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "当前状态": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "身份",
+              "描述",
+              "关系",
+              "好感度",
+              "当前状态"
+            ]
+          }
+        },
+        "派系关系": {
+          "type": "object",
+          "properties": {
+            "朝堂派系": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "number"
+              }
+            },
+            "地方士族": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "number"
+              }
+            },
+            "边境部族": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "number"
+              }
+            }
+          },
+          "required": [
+            "朝堂派系",
+            "地方士族",
+            "边境部族"
+          ]
+        }
+      },
+      "required": [
+        "NPC列表",
+        "派系关系"
+      ]
+    },
+    "隐藏": {
+      "type": "object",
+      "properties": {
+        "结局进度": {
+          "type": "object",
+          "properties": {
+            "封王进度": {
+              "type": "number"
+            },
+            "战神进度": {
+              "type": "number"
+            },
+            "文宗进度": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "封王进度",
+            "战神进度",
+            "文宗进度"
+          ]
+        },
+        "灵脉": {
+          "type": "object",
+          "properties": {
+            "灵脉感应": {
+              "type": "number"
+            },
+            "灵脉加成": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "number"
+              }
+            }
+          },
+          "required": [
+            "灵脉感应",
+            "灵脉加成"
+          ]
+        }
+      },
+      "required": [
+        "结局进度",
+        "灵脉"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "着装",
+    "家园",
+    "社交",
+    "隐藏"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "熟练度": {
+          "type": "number"
+        },
+        "描述": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "熟练度",
+        "描述"
+      ]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
+
+:root {
+  /* 暗色科幻配色 */
+  --bg-primary: #080c14;
+  --bg-card: rgba(15, 23, 42, 0.85);
+  --bg-card-hover: rgba(30, 41, 59, 0.9);
+  --bg-panel: rgba(10, 17, 30, 0.7);
+  --border: rgba(30, 58, 95, 0.6);
+  --border-glow: rgba(6, 182, 212, 0.3);
+
+  /* 文字 */
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-dim: #64748b;
+
+  /* 高亮色 */
+  --accent-cyan: #06b6d4;
+  --accent-blue: #3b82f6;
+  --accent-red: #ef4444;
+  --accent-green: #22c55e;
+  --accent-amber: #f59e0b;
+  --accent-purple: #a855f7;
+  --accent-gold: #fbbf24;
+  --accent-pink: #ec4899;
+
+  /* 品质色 */
+  --quality-g: #6b7280;
+  --quality-f: #9ca3af;
+  --quality-e: #22c55e;
+  --quality-d: #3b82f6;
+  --quality-c: #6366f1;
+  --quality-b: #8b5cf6;
+  --quality-a: #a855f7;
+  --quality-s: #f59e0b;
+  --quality-ss: #f97316;
+  --quality-sss: #ef4444;
+
+  /* 辉光 */
+  --glow-cyan: 0 0 10px rgba(6, 182, 212, 0.25);
+  --glow-red: 0 0 10px rgba(239, 68, 68, 0.25);
+  --glow-green: 0 0 10px rgba(34, 197, 94, 0.25);
+  --glow-gold: 0 0 10px rgba(251, 191, 36, 0.25);
+
+  /* 字体 */
+  --font-hud: 'Rajdhani', 'Microsoft YaHei', sans-serif;
+  --font-data: 'Orbitron', 'Microsoft YaHei', monospace;
+}
+
+body {
+  font-family: var(--font-hud);
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}

@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "stat_data": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "object",
+          "properties": {
+            "年号": {
+              "type": "string",
+              "description": "当前年号"
+            },
+            "年": {
+              "type": "number",
+              "description": "年份"
+            },
+            "月": {
+              "type": "string",
+              "description": "月份"
+            },
+            "日": {
+              "type": "string",
+              "description": "日期"
+            },
+            "时辰": {
+              "type": "string",
+              "description": "时辰"
+            }
+          },
+          "required": [
+            "年号",
+            "年",
+            "月",
+            "日",
+            "时辰"
+          ]
+        },
+        "当前地点": {
+          "type": "string",
+          "description": "当前所在位置"
+        },
+        "当前事件": {
+          "type": "string",
+          "description": "正在进行的事件"
+        },
+        "粮草": {
+          "type": "object",
+          "properties": {
+            "存粮": {
+              "type": "number",
+              "description": "当前存粮（万石）"
+            },
+            "年净收入": {
+              "type": "number",
+              "description": "年粮食净收入（万石）"
+            }
+          },
+          "required": [
+            "存粮",
+            "年净收入"
+          ]
+        },
+        "库银": {
+          "type": "object",
+          "properties": {
+            "存银": {
+              "type": "number",
+              "description": "当前国库存银（万两）"
+            },
+            "年净收入": {
+              "type": "number",
+              "description": "年财政净收入（万两）"
+            }
+          },
+          "required": [
+            "存银",
+            "年净收入"
+          ]
+        },
+        "兵力": {
+          "type": "number",
+          "description": "中央常备军（万人）"
+        },
+        "军心": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "军队士气与忠诚度（0-100）"
+        },
+        "民心": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "百姓安定与拥戴程度（0-100）"
+        },
+        "腐化": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "官僚贪腐程度（0-100）"
+        },
+        "科技": {
+          "type": "number",
+          "description": "综合技术发展水平（点数）"
+        },
+        "威望": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "皇权威严与朝廷向心力（0-100）"
+        },
+        "当前政策": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "description": "正在推行的政策列表"
+        },
+        "最近动作": {
+          "description": "玩家最近在状态栏执行的动作",
+          "$ref": "#/$defs/__schema1"
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "当前事件",
+        "粮草",
+        "库银",
+        "兵力",
+        "军心",
+        "民心",
+        "腐化",
+        "科技",
+        "威望",
+        "当前政策"
+      ]
+    }
+  },
+  "required": [
+    "stat_data"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "名称": {
+          "type": "string",
+          "description": "政策名称"
+        },
+        "进度": {
+          "type": "number",
+          "description": "完成进度（0-100）"
+        },
+        "剩余月数": {
+          "type": "number",
+          "description": "剩余执行月数"
+        },
+        "效果说明": {
+          "type": "string",
+          "description": "政策效果描述"
+        }
+      },
+      "required": [
+        "名称",
+        "进度",
+        "剩余月数",
+        "效果说明"
+      ]
+    },
+    "__schema1": {
+      "type": "string"
+    }
+  }
+}

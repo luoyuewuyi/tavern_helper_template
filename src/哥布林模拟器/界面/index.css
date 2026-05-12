@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@theme {
+  --font-serif: "Noto Serif SC", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-title: "Zhi Mang Xing", cursive;
+  --color-swamp-950: #050806; --color-swamp-900: #0a0f0d; --color-swamp-800: #111811; --color-swamp-700: #1a241a;
+  --color-bone-50: #f4f7f2; --color-bone-100: #e2ecd9; --color-bone-200: #c2d1b8; --color-bone-300: #9cb38c;
+  --color-blood-800: #591111; --color-blood-900: #3b0b0b;
+  --color-void-800: #2a1636; --color-void-900: #1c0e24;
+  --color-gold-900: #4a3f23; --color-gold-800: #6b5a33; --color-gold-700: #8c7743; --color-gold-600: #b89b5e; --color-gold-500: #d4b872;
+}
+@layer base {
+  body { background-color: var(--color-swamp-900); color: var(--color-bone-100); font-family: var(--font-serif); }
+}
+@layer utilities {
+  .bg-texture-scroll { background-color: var(--color-swamp-800); background-image: radial-gradient(ellipse at center, rgba(140,119,67,0.05) 0%, rgba(10,15,13,0.8) 100%); box-shadow: inset 0 0 40px rgba(0,0,0,0.8); }
+  .border-gold-glow { border-color: var(--color-gold-700); box-shadow: 0 0 10px rgba(140,119,67,0.2); }
+  @keyframes shimmer { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
+}
