@@ -1,0 +1,12 @@
+---
+description: Tavo 与 SillyTavern 角色卡任务的强制入口路由
+alwaysApply: true
+---
+
+# 角色卡平台路由
+
+- 用户明确说 Tavo：读取 `.claude/skills/tavo-card-building/SKILL.md`，不要应用本目录里的酒馆变量、TavernHelper、MVU、酒馆脚本和酒馆前端规则。
+- 用户明确说酒馆、SillyTavern、MVU 或 TavernHelper：读取 `.claude/skills/tavern-card-building/SKILL.md`，再按任务读取本目录中的酒馆规则。
+- 用户只说角色卡或制卡、没有说明平台：先问“这次做 Tavo 还是酒馆（SillyTavern）？”，不要默认酒馆，也不要先创建项目。
+- 用户已明确平台时直接工作，不重复询问。
+- 迁移可以分析两边，但实现、验证、导入和回读必须以目标平台为准。

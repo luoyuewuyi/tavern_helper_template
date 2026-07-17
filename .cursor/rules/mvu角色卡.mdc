@@ -103,19 +103,29 @@ function defineMvuDataStore<T extends z.ZodObject>(
 
 其中 `Schema` 是变量结构, `variable_option` 是要访问的变量类型, `additional_setup` 是可选的额外设置函数.
 
-例如, `示例/角色卡示例示例/store.ts` 中定义了访问 `useDataStore` 函数:
+例如, `示例/角色卡示例/界面/状态栏/context.ts` 先固定界面所在楼层, `store.ts` 再复用同一个选项:
 
 ```ts
+// context.ts
+export const messageId = getCurrentMessageId();
+export const variableOption = Object.freeze({
+  type: 'message',
+  message_id: messageId,
+} as const satisfies VariableOption);
+
+// store.ts
 import { defineMvuDataStore } from '@util/mvu';
-export const useDataStore = defineMvuDataStore(Schema, { type: 'message', message_id: getCurrentMessageId() });
+import { variableOption } from './context';
+
+export const useDataStore = defineMvuDataStore(Schema, variableOption);
 ```
 
-其中 `const message_id = getCurrentMessageId()` 即获取界面所在楼层的楼层号, 因此 `const data = useDataStore()` 将能用于获取或修改该楼层的 MVU 变量.
+`getCurrentMessageId()` 获取界面所在楼层的楼层号. 入口等待、store、刷新和写回都必须导入这个 `variableOption`; 不能在入口用省略 `message_id` 的 `getVariables({ type: 'message' })`, 因为它默认读取最新楼层.
 
 或者, 前端界面可能会有需要在界面初始化时对 MVU 变量进行额外设置的需求, 则可以使用 `additional_setup`:
 
 ```ts
-export const useDataStore = defineMvuDataStore(Schema, { type: 'message', message_id: getCurrentMessageId() }, data => {
+export const useDataStore = defineMvuDataStore(Schema, variableOption, data => {
   // 无论界面所在楼层原本记录有什么日志, 在初始化时强制置空
   data.value.系统状态.玩家本轮操作日志 = [];
 });

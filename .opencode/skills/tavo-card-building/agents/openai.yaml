@@ -1,0 +1,8 @@
+interface:
+  display_name: "Tavo 角色卡制作"
+  short_description: "Tavo CCv3 角色卡、变量、世界书、正则与渲染全流程"
+  brand_color: "#1C8C87"
+  default_prompt: "使用 $tavo-card-building 自动制作或检查一张 Tavo 角色卡，并按 Tavo 原生语义完成验证。"
+
+policy:
+  allow_implicit_invocation: true

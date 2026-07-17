@@ -7,7 +7,11 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "dump": "node dump_schema.ts",
-    "sync": "node tavern_sync.mjs"
+    "sync": "node tavern_sync.mjs",
+    "tavo:new": "python -B -X utf8 .claude/skills/tavo-card-building/scripts/new_tavo_project.py",
+    "tavo:validate": "python -B -X utf8 .claude/skills/tavo-card-building/scripts/validate_tavo_project.py",
+    "tavo:build": "python -B -X utf8 .claude/skills/tavo-card-building/scripts/build_tavo_project.py",
+    "tavo:test": "python -B -X utf8 .claude/skills/tavo-card-building/scripts/test_tavo_tooling.py -v"
   },
   "browserslist": [
     "defaults and partially supports es6-module"

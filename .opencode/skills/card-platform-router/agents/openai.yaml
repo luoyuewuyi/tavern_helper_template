@@ -1,0 +1,8 @@
+interface:
+  display_name: "角色卡平台路由"
+  short_description: "先确认 Tavo 或酒馆，再进入完全独立的制卡技能"
+  brand_color: "#1C8C87"
+  default_prompt: "使用 $card-platform-router 先确认我要制作 Tavo 还是 SillyTavern／酒馆角色卡。"
+
+policy:
+  allow_implicit_invocation: true

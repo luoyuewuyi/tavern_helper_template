@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background: transparent;
+}
+
+.connection-state {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.connection-state.is-error {
+  color: #ffb4b4;
+}
+

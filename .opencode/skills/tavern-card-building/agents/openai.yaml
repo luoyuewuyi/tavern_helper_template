@@ -1,0 +1,4 @@
+interface:
+  display_name: "酒馆角色卡全流程（通用版）"
+  short_description: "构建、改造与验证通用 SillyTavern 角色卡"
+  default_prompt: "使用 $tavern-card-building 的自包含契约构建或改造这张 SillyTavern 角色卡，不参考任意旧卡；严格验证 MVU／开局／多模块界面，完成后主动执行最终 TavernSync push 与回读。"

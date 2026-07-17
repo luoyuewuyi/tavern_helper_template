@@ -13,8 +13,19 @@ MVU 变量框架是一个独立的酒馆助手脚本. 它作用于消息楼层�
 对于使用了 MVU 的脚本或前端界面, **你必须在代码加载时, 在顶部执行以下代码**:
 
 - 使用 `await waitGlobalInitialized('Mvu');` 等待 MVU 变量框架初始化完成, **从而能够使用 `Mvu` 这个对象** (接下来的示例中, 我会在开头都等待 MVU 变量框架初始化来提醒你这一点, 但**你在实际编写时只需要在代码顶部等待一次)**;
-- 如果是前端界面, 使用 `await waitUntil(() => _.has(getVariables({type: 'message'}), 'stat_data'));` 等待所在消息楼层变量有被正确设置, **从而能够使用消息楼层变量**;
+- 如果是消息楼层前端界面, 先在 `context.ts` 计算一次 `getCurrentMessageId()` 并导出共享 `variableOption`, 再使用 `await waitUntil(() => _.has(getVariables(variableOption), 'stat_data'));` 等待该确切楼层的变量. `getVariables({ type: 'message' })` 省略 `message_id` 时默认读取 `latest`, **不能代表 iframe 所在楼层**, 禁止与当前楼层 store 混用;
 - 如果是脚本, 合理使用 `waitUntil` 等待变量被正确设置.
+
+```ts
+// context.ts
+export const messageId = getCurrentMessageId();
+export const variableOption = Object.freeze({
+  type: 'message',
+  message_id: messageId,
+} as const satisfies VariableOption);
+```
+
+等待、首次读取、store、刷新和写回必须导入同一个 `variableOption`. store helper 如果需要把 `'latest'` 归一化成 `-1`, 必须复制后修改内部副本, 不得原地修改共享对象.
 
 ## 数据存储
 
