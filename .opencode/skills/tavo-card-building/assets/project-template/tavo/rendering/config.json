@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "target": "first_mes_append",
+  "apply_to_all_greetings": true,
+  "regex_group": "",
+  "regex_entry": "",
+  "include_javascript": false,
+  "markup_files": [
+    "markup.html"
+  ],
+  "style_files": [
+    "tokens.css",
+    "styles.css",
+    "responsive.css"
+  ],
+  "script_files": [
+    "state-adapter.js",
+    "actions.js",
+    "lifecycle.js"
+  ],
+  "visual_review": {
+    "status": "pending",
+    "desktop_screenshot": "",
+    "mobile_screenshot": "",
+    "notes": ""
+  },
+  "plain_text_fallback": ""
+}

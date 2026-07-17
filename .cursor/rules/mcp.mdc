@@ -1,5 +1,6 @@
 ---
-alwaysApply: true
+description: 仅在已确认目标为 SillyTavern／酒馆并需要操控酒馆页面时读取
+alwaysApply: false
 ---
 
 # MCP

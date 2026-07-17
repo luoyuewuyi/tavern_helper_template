@@ -1,0 +1,113 @@
+diff --git a/src/client/character.ts b/src/client/character.ts
+index c7ceb64..9f42b5a 100644
+--- a/src/client/character.ts
++++ b/src/client/character.ts
+@@ -3,11 +3,13 @@ import { get_socket } from '@client/socket';
+ import { Character } from '@server/tavern/character';
+ 
+ async function update_character(name: string, data: Character) {
+-  let worldbook = RawCharacter.find({ name }) ? getCharWorldbookNames(name).primary : null;
+-  if (data.entries.length !== 0 || worldbook !== null) {
+-    worldbook ??= data.worldbook;
+-    await createOrReplaceWorldbook(worldbook, data.entries);
+-    _.set(data, 'worldbook', worldbook);
++  // `null` is an explicit "no worldbook" state. Do not invent a same-name
++  // worldbook and do not rewrite an unrelated book when detaching it.
++  if (data.worldbook === null && data.entries.length !== 0) {
++    throw Error('角色卡未绑定世界书 (worldbook: null)，但同步数据包含非空世界书条目；请先修正配置，避免静默丢失条目');
++  }
++  if (data.worldbook !== null) {
++    await createOrReplaceWorldbook(data.worldbook, data.entries);
+   }
+ 
+   _.set(
+@@ -43,20 +45,20 @@ export function register_character() {
+     try {
+       const character = await getCharacter(data.name);
+       _.set(character, 'avatar', await fetch(getCharAvatarPath(data.name) as string).then(res => res.blob()));
+-      if (character.worldbook !== null && !getWorldbookNames().includes(character.worldbook)) {
+-        throw Error(`未能找到角色卡绑定的世界书 '${character.worldbook}', 请确认已经导入到酒馆中`);
++      const worldbook = character.worldbook;
++      if (worldbook !== null && !getWorldbookNames().includes(worldbook)) {
++        throw Error(`未能找到角色卡绑定的世界书 '${worldbook}', 请确认已经导入到酒馆中`);
+       }
+-      _.set(character, 'worldbook', character.worldbook ?? data.name);
+       _.set(
+         character,
+         'entries',
+-        character.worldbook !== null
+-          ? await getWorldbook(character.worldbook).then(worldbook => {
+-              worldbook.forEach(entry => {
++        worldbook !== null
++          ? await getWorldbook(worldbook).then(entries => {
++              entries.forEach(entry => {
+                 entry.strategy.keys = entry.strategy.keys.map(_.toString);
+                 entry.strategy.keys_secondary.keys = entry.strategy.keys_secondary.keys.map(_.toString);
+               });
+-              return worldbook;
++              return entries;
+             })
+           : [],
+       );
+diff --git a/src/server/syncer/character.ts b/src/server/syncer/character.ts
+index 2110b22..2b03b73 100644
+--- a/src/server/syncer/character.ts
++++ b/src/server/syncer/character.ts
+@@ -468,7 +468,7 @@ export class Character_syncer extends Syncer_interface {
+ 
+     // 世界书名称
+     {
+-      if (!local_data.worldbook || local_data.worldbook === '与角色卡名称相同') {
++      if (local_data.worldbook === undefined || local_data.worldbook === '与角色卡名称相同') {
+         _.set(local_data, 'worldbook', this.name);
+       }
+     }
+diff --git a/src/server/tavern/character.ts b/src/server/tavern/character.ts
+index fbfdd72..89e0709 100644
+--- a/src/server/tavern/character.ts
++++ b/src/server/tavern/character.ts
+@@ -13,7 +13,7 @@ export const Character = z.strictObject({
+ 
+   description: z.string().default(''),
+   anchors: z.record(z.string(), z.any()).prefault({}),
+-  worldbook: z.string(),
++  worldbook: z.string().trim().min(1).nullable(),
+   entries: z.array(Worldbook_entry).prefault([]),
+ 
+   extensions: Extensions.optional().describe('扩展字段: 用于为预设绑定额外数据'),
+diff --git a/src/type/character.en.ts b/src/type/character.en.ts
+index 23b39e2..a97c088 100644
+--- a/src/type/character.en.ts
++++ b/src/type/character.en.ts
+@@ -47,7 +47,12 @@ export const Character = z.strictObject({
+ 
+   anchors: Worldbook.shape.anchors,
+ 
+-  worldbook: z.coerce.string().nullish().describe('世界书名称: 填为 `null` 或不设置该字段则与角色卡名称相同'),
++  worldbook: z.coerce
++    .string()
++    .trim()
++    .min(1, 'worldbook must be a non-empty name, null, or omitted')
++    .nullish()
++    .describe('Worldbook name: `null` means no worldbook; omit the field to use the character name'),
+   entries: Worldbook.shape.entries,
+ 
+   extensions: Extensions.optional().describe('扩展字段: 用于为预设绑定额外数据'),
+diff --git a/src/type/character.zh.ts b/src/type/character.zh.ts
+index cf907c1..84a9e73 100644
+--- a/src/type/character.zh.ts
++++ b/src/type/character.zh.ts
+@@ -63,7 +63,12 @@ export const Character = z.strictObject({
+ 
+   锚点: Worldbook.shape.锚点,
+ 
+-  世界书名称: z.coerce.string().nullish().describe('世界书名称: 填为 `null` 或不设置该字段则与角色卡名称相同'),
++  世界书名称: z.coerce
++    .string()
++    .trim()
++    .min(1, '世界书名称必须是非空名称、null，或省略该字段')
++    .nullish()
++    .describe('世界书名称: `null` 表示不绑定世界书；不设置该字段则与角色卡名称相同'),
+   条目: Worldbook.shape.条目,
+ 
+   扩展字段: Extensions.optional().describe('扩展字段: 用于为预设绑定额外数据'),

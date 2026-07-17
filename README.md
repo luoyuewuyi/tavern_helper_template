@@ -1,4 +1,13 @@
-# tavern_helper_template
+# AI 角色卡制作仓库（Tavo / SillyTavern）
+
+AI 收到制卡任务后先确认目标平台：用户已明确 Tavo 或酒馆时直接进入对应分支；未明确时先问“这次做 Tavo 还是酒馆（SillyTavern）？”。
+
+- Tavo：读取 `.claude/skills/tavo-card-building/SKILL.md`，项目位于 `tavo_cards/`，直接构建 Tavo 可导入的完整 CCv3 成品，不经过酒馆或 TavernSync。
+- SillyTavern／酒馆：读取 `.claude/skills/tavern-card-building/SKILL.md`，继续使用本仓库原有模板、`src/`、角色卡目录和 TavernSync。
+
+变量、正则、脚本和前端运行时不跨平台混用。以下内容是仓库原有的 SillyTavern／酒馆助手模板说明。
+
+## SillyTavern／酒馆助手模板
 
 酒馆助手编写前端界面或脚本的模板.
 

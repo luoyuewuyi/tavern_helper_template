@@ -1,5 +1,6 @@
 ---
-alwaysApply: true
+description: 仅在已确认目标为 SillyTavern／酒馆时读取的酒馆变量规则
+alwaysApply: false
 ---
 # 酒馆变量
 

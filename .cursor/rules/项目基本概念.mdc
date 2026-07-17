@@ -1,5 +1,6 @@
 ---
-alwaysApply: true
+description: 仅在已确认目标为 SillyTavern／酒馆时读取的项目基本概念
+alwaysApply: false
 ---
 # 项目基本概念
 
